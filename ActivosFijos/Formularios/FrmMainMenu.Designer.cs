@@ -1,0 +1,422 @@
+﻿namespace ActivosFijos.Formularios
+{
+    partial class FrmMainMenu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainMenu));
+            this.PnlMenuTop = new System.Windows.Forms.Panel();
+            this.PbxRestaurar = new System.Windows.Forms.PictureBox();
+            this.PbxMinimizar = new System.Windows.Forms.PictureBox();
+            this.PbxMaximizar = new System.Windows.Forms.PictureBox();
+            this.PbxSalir = new System.Windows.Forms.PictureBox();
+            this.LblDashBoard = new System.Windows.Forms.Label();
+            this.PbxMenuSidebar = new System.Windows.Forms.PictureBox();
+            this.PnlSidebarWraper = new System.Windows.Forms.Panel();
+            this.BnfGradientPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.BtnPropietarios = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.LblRheagerCode = new System.Windows.Forms.Label();
+            this.LblLogoEmpresa = new System.Windows.Forms.Label();
+            this.BtnActivos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnAreas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BnfLineSidebar = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.BnfCurvaSidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.MoverDashBoard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.BnfRadioPanelChart = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.PnlWraper = new System.Windows.Forms.Panel();
+            this.PnlMenuTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxRestaurar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxMaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxMenuSidebar)).BeginInit();
+            this.PnlSidebarWraper.SuspendLayout();
+            this.BnfGradientPanel.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // PnlMenuTop
+            // 
+            this.PnlMenuTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.PnlMenuTop.Controls.Add(this.PbxRestaurar);
+            this.PnlMenuTop.Controls.Add(this.PbxMinimizar);
+            this.PnlMenuTop.Controls.Add(this.PbxMaximizar);
+            this.PnlMenuTop.Controls.Add(this.PbxSalir);
+            this.PnlMenuTop.Controls.Add(this.LblDashBoard);
+            this.PnlMenuTop.Controls.Add(this.PbxMenuSidebar);
+            this.PnlMenuTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlMenuTop.Location = new System.Drawing.Point(0, 0);
+            this.PnlMenuTop.Margin = new System.Windows.Forms.Padding(4);
+            this.PnlMenuTop.Name = "PnlMenuTop";
+            this.PnlMenuTop.Size = new System.Drawing.Size(1942, 69);
+            this.PnlMenuTop.TabIndex = 0;
+            // 
+            // PbxRestaurar
+            // 
+            this.PbxRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbxRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("PbxRestaurar.Image")));
+            this.PbxRestaurar.Location = new System.Drawing.Point(1841, 17);
+            this.PbxRestaurar.Margin = new System.Windows.Forms.Padding(4);
+            this.PbxRestaurar.Name = "PbxRestaurar";
+            this.PbxRestaurar.Size = new System.Drawing.Size(40, 37);
+            this.PbxRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxRestaurar.TabIndex = 5;
+            this.PbxRestaurar.TabStop = false;
+            this.PbxRestaurar.Visible = false;
+            this.PbxRestaurar.Click += new System.EventHandler(this.PbxRestaurar_Click);
+            // 
+            // PbxMinimizar
+            // 
+            this.PbxMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("PbxMinimizar.Image")));
+            this.PbxMinimizar.Location = new System.Drawing.Point(1793, 17);
+            this.PbxMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.PbxMinimizar.Name = "PbxMinimizar";
+            this.PbxMinimizar.Size = new System.Drawing.Size(40, 37);
+            this.PbxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxMinimizar.TabIndex = 4;
+            this.PbxMinimizar.TabStop = false;
+            this.PbxMinimizar.Click += new System.EventHandler(this.PbxMinimizar_Click);
+            // 
+            // PbxMaximizar
+            // 
+            this.PbxMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbxMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("PbxMaximizar.Image")));
+            this.PbxMaximizar.Location = new System.Drawing.Point(1841, 17);
+            this.PbxMaximizar.Margin = new System.Windows.Forms.Padding(4);
+            this.PbxMaximizar.Name = "PbxMaximizar";
+            this.PbxMaximizar.Size = new System.Drawing.Size(40, 37);
+            this.PbxMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxMaximizar.TabIndex = 3;
+            this.PbxMaximizar.TabStop = false;
+            this.PbxMaximizar.Click += new System.EventHandler(this.PbxMaximizar_Click);
+            // 
+            // PbxSalir
+            // 
+            this.PbxSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbxSalir.Image = ((System.Drawing.Image)(resources.GetObject("PbxSalir.Image")));
+            this.PbxSalir.Location = new System.Drawing.Point(1889, 17);
+            this.PbxSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.PbxSalir.Name = "PbxSalir";
+            this.PbxSalir.Size = new System.Drawing.Size(40, 37);
+            this.PbxSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxSalir.TabIndex = 2;
+            this.PbxSalir.TabStop = false;
+            this.PbxSalir.Click += new System.EventHandler(this.PbxSalir_Click);
+            // 
+            // LblDashBoard
+            // 
+            this.LblDashBoard.AutoSize = true;
+            this.LblDashBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDashBoard.ForeColor = System.Drawing.Color.White;
+            this.LblDashBoard.Location = new System.Drawing.Point(68, 20);
+            this.LblDashBoard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblDashBoard.Name = "LblDashBoard";
+            this.LblDashBoard.Size = new System.Drawing.Size(376, 25);
+            this.LblDashBoard.TabIndex = 1;
+            this.LblDashBoard.Text = "ADMINISTRACION de ACTIVOS FIJOS ";
+            // 
+            // PbxMenuSidebar
+            // 
+            this.PbxMenuSidebar.Image = ((System.Drawing.Image)(resources.GetObject("PbxMenuSidebar.Image")));
+            this.PbxMenuSidebar.Location = new System.Drawing.Point(16, 15);
+            this.PbxMenuSidebar.Margin = new System.Windows.Forms.Padding(4);
+            this.PbxMenuSidebar.Name = "PbxMenuSidebar";
+            this.PbxMenuSidebar.Size = new System.Drawing.Size(40, 37);
+            this.PbxMenuSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbxMenuSidebar.TabIndex = 0;
+            this.PbxMenuSidebar.TabStop = false;
+            this.PbxMenuSidebar.Click += new System.EventHandler(this.PbxMenuSidebar_Click);
+            // 
+            // PnlSidebarWraper
+            // 
+            this.PnlSidebarWraper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.PnlSidebarWraper.Controls.Add(this.BnfGradientPanel);
+            this.PnlSidebarWraper.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PnlSidebarWraper.Location = new System.Drawing.Point(0, 69);
+            this.PnlSidebarWraper.Margin = new System.Windows.Forms.Padding(4);
+            this.PnlSidebarWraper.Name = "PnlSidebarWraper";
+            this.PnlSidebarWraper.Size = new System.Drawing.Size(259, 916);
+            this.PnlSidebarWraper.TabIndex = 1;
+            // 
+            // BnfGradientPanel
+            // 
+            this.BnfGradientPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BnfGradientPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BnfGradientPanel.BackgroundImage")));
+            this.BnfGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BnfGradientPanel.Controls.Add(this.BtnPropietarios);
+            this.BnfGradientPanel.Controls.Add(this.LblRheagerCode);
+            this.BnfGradientPanel.Controls.Add(this.LblLogoEmpresa);
+            this.BnfGradientPanel.Controls.Add(this.BtnActivos);
+            this.BnfGradientPanel.Controls.Add(this.BtnAreas);
+            this.BnfGradientPanel.Controls.Add(this.BnfLineSidebar);
+            this.BnfGradientPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            this.BnfGradientPanel.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            this.BnfGradientPanel.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            this.BnfGradientPanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.BnfGradientPanel.Location = new System.Drawing.Point(11, 0);
+            this.BnfGradientPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.BnfGradientPanel.Name = "BnfGradientPanel";
+            this.BnfGradientPanel.Quality = 10;
+            this.BnfGradientPanel.Size = new System.Drawing.Size(240, 901);
+            this.BnfGradientPanel.TabIndex = 0;
+            // 
+            // BtnPropietarios
+            // 
+            this.BtnPropietarios.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnPropietarios.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPropietarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnPropietarios.BorderRadius = 0;
+            this.BtnPropietarios.ButtonText = "     PROPIETARIOS";
+            this.BtnPropietarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPropietarios.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnPropietarios.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnPropietarios.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnPropietarios.Iconimage")));
+            this.BtnPropietarios.Iconimage_right = null;
+            this.BtnPropietarios.Iconimage_right_Selected = null;
+            this.BtnPropietarios.Iconimage_Selected = null;
+            this.BtnPropietarios.IconMarginLeft = 0;
+            this.BtnPropietarios.IconMarginRight = 0;
+            this.BtnPropietarios.IconRightVisible = true;
+            this.BtnPropietarios.IconRightZoom = 0D;
+            this.BtnPropietarios.IconVisible = true;
+            this.BtnPropietarios.IconZoom = 50D;
+            this.BtnPropietarios.IsTab = false;
+            this.BtnPropietarios.Location = new System.Drawing.Point(1, 203);
+            this.BtnPropietarios.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnPropietarios.Name = "BtnPropietarios";
+            this.BtnPropietarios.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnPropietarios.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnPropietarios.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnPropietarios.selected = false;
+            this.BtnPropietarios.Size = new System.Drawing.Size(236, 57);
+            this.BtnPropietarios.TabIndex = 12;
+            this.BtnPropietarios.Text = "     PROPIETARIOS";
+            this.BtnPropietarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnPropietarios.Textcolor = System.Drawing.Color.White;
+            this.BtnPropietarios.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPropietarios.Click += new System.EventHandler(this.BtnPropietarios_Click);
+            // 
+            // LblRheagerCode
+            // 
+            this.LblRheagerCode.AutoSize = true;
+            this.LblRheagerCode.BackColor = System.Drawing.Color.Transparent;
+            this.LblRheagerCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRheagerCode.ForeColor = System.Drawing.Color.Olive;
+            this.LblRheagerCode.Location = new System.Drawing.Point(72, 20);
+            this.LblRheagerCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblRheagerCode.Name = "LblRheagerCode";
+            this.LblRheagerCode.Size = new System.Drawing.Size(155, 24);
+            this.LblRheagerCode.TabIndex = 6;
+            this.LblRheagerCode.Text = "ESVALHOLDING";
+            // 
+            // LblLogoEmpresa
+            // 
+            this.LblLogoEmpresa.AutoSize = true;
+            this.LblLogoEmpresa.BackColor = System.Drawing.Color.Transparent;
+            this.LblLogoEmpresa.Font = new System.Drawing.Font("Broadway", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLogoEmpresa.ForeColor = System.Drawing.Color.Olive;
+            this.LblLogoEmpresa.Location = new System.Drawing.Point(-1, 11);
+            this.LblLogoEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblLogoEmpresa.Name = "LblLogoEmpresa";
+            this.LblLogoEmpresa.Size = new System.Drawing.Size(72, 42);
+            this.LblLogoEmpresa.TabIndex = 11;
+            this.LblLogoEmpresa.Text = "EV";
+            // 
+            // BtnActivos
+            // 
+            this.BtnActivos.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnActivos.BackColor = System.Drawing.Color.Transparent;
+            this.BtnActivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnActivos.BorderRadius = 0;
+            this.BtnActivos.ButtonText = "ACTIVOS";
+            this.BtnActivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActivos.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnActivos.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnActivos.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnActivos.Iconimage")));
+            this.BtnActivos.Iconimage_right = null;
+            this.BtnActivos.Iconimage_right_Selected = null;
+            this.BtnActivos.Iconimage_Selected = null;
+            this.BtnActivos.IconMarginLeft = 0;
+            this.BtnActivos.IconMarginRight = 0;
+            this.BtnActivos.IconRightVisible = true;
+            this.BtnActivos.IconRightZoom = 0D;
+            this.BtnActivos.IconVisible = true;
+            this.BtnActivos.IconZoom = 50D;
+            this.BtnActivos.IsTab = false;
+            this.BtnActivos.Location = new System.Drawing.Point(1, 79);
+            this.BtnActivos.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnActivos.Name = "BtnActivos";
+            this.BtnActivos.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnActivos.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnActivos.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnActivos.selected = false;
+            this.BtnActivos.Size = new System.Drawing.Size(239, 57);
+            this.BtnActivos.TabIndex = 10;
+            this.BtnActivos.Text = "ACTIVOS";
+            this.BtnActivos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnActivos.Textcolor = System.Drawing.Color.White;
+            this.BtnActivos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActivos.Click += new System.EventHandler(this.BtnActivos_Click);
+            // 
+            // BtnAreas
+            // 
+            this.BtnAreas.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAreas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAreas.BorderRadius = 0;
+            this.BtnAreas.ButtonText = "AREAS";
+            this.BtnAreas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAreas.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnAreas.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnAreas.Iconimage")));
+            this.BtnAreas.Iconimage_right = null;
+            this.BtnAreas.Iconimage_right_Selected = null;
+            this.BtnAreas.Iconimage_Selected = null;
+            this.BtnAreas.IconMarginLeft = 0;
+            this.BtnAreas.IconMarginRight = 0;
+            this.BtnAreas.IconRightVisible = true;
+            this.BtnAreas.IconRightZoom = 0D;
+            this.BtnAreas.IconVisible = true;
+            this.BtnAreas.IconZoom = 50D;
+            this.BtnAreas.IsTab = false;
+            this.BtnAreas.Location = new System.Drawing.Point(4, 141);
+            this.BtnAreas.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnAreas.Name = "BtnAreas";
+            this.BtnAreas.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnAreas.selected = false;
+            this.BtnAreas.Size = new System.Drawing.Size(236, 57);
+            this.BtnAreas.TabIndex = 9;
+            this.BtnAreas.Text = "AREAS";
+            this.BtnAreas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnAreas.Textcolor = System.Drawing.Color.White;
+            this.BtnAreas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAreas.Click += new System.EventHandler(this.BtnAreas_Click);
+            // 
+            // BnfLineSidebar
+            // 
+            this.BnfLineSidebar.BackColor = System.Drawing.Color.Transparent;
+            this.BnfLineSidebar.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BnfLineSidebar.LineThickness = 1;
+            this.BnfLineSidebar.Location = new System.Drawing.Point(4, 59);
+            this.BnfLineSidebar.Margin = new System.Windows.Forms.Padding(5);
+            this.BnfLineSidebar.Name = "BnfLineSidebar";
+            this.BnfLineSidebar.Size = new System.Drawing.Size(229, 1);
+            this.BnfLineSidebar.TabIndex = 7;
+            this.BnfLineSidebar.Transparency = 255;
+            this.BnfLineSidebar.Vertical = false;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // BnfCurvaSidebar
+            // 
+            this.BnfCurvaSidebar.ElipseRadius = 7;
+            this.BnfCurvaSidebar.TargetControl = this.BnfGradientPanel;
+            // 
+            // MoverDashBoard
+            // 
+            this.MoverDashBoard.Fixed = true;
+            this.MoverDashBoard.Horizontal = true;
+            this.MoverDashBoard.TargetControl = this.PnlMenuTop;
+            this.MoverDashBoard.Vertical = true;
+            // 
+            // BnfRadioPanelChart
+            // 
+            this.BnfRadioPanelChart.ElipseRadius = 5;
+            this.BnfRadioPanelChart.TargetControl = this;
+            // 
+            // PnlWraper
+            // 
+            this.PnlWraper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.PnlWraper.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PnlWraper.BackgroundImage")));
+            this.PnlWraper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlWraper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlWraper.Location = new System.Drawing.Point(259, 69);
+            this.PnlWraper.Margin = new System.Windows.Forms.Padding(4);
+            this.PnlWraper.Name = "PnlWraper";
+            this.PnlWraper.Size = new System.Drawing.Size(1683, 916);
+            this.PnlWraper.TabIndex = 2;
+            // 
+            // FrmMainMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(1942, 985);
+            this.Controls.Add(this.PnlWraper);
+            this.Controls.Add(this.PnlSidebarWraper);
+            this.Controls.Add(this.PnlMenuTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmMainMenu";
+            this.PnlMenuTop.ResumeLayout(false);
+            this.PnlMenuTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxRestaurar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxMenuSidebar)).EndInit();
+            this.PnlSidebarWraper.ResumeLayout(false);
+            this.BnfGradientPanel.ResumeLayout(false);
+            this.BnfGradientPanel.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel PnlMenuTop;
+        private System.Windows.Forms.Panel PnlSidebarWraper;
+        private System.Windows.Forms.PictureBox PbxRestaurar;
+        private System.Windows.Forms.PictureBox PbxMinimizar;
+        private System.Windows.Forms.PictureBox PbxMaximizar;
+        private System.Windows.Forms.PictureBox PbxSalir;
+        private System.Windows.Forms.Label LblDashBoard;
+        private System.Windows.Forms.PictureBox PbxMenuSidebar;
+        private Bunifu.Framework.UI.BunifuGradientPanel BnfGradientPanel;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnAreas;
+        private Bunifu.Framework.UI.BunifuSeparator BnfLineSidebar;
+        private System.Windows.Forms.Label LblRheagerCode;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse BnfCurvaSidebar;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnActivos;
+        private System.Windows.Forms.Label LblLogoEmpresa;
+        private Bunifu.Framework.UI.BunifuDragControl MoverDashBoard;
+        private Bunifu.Framework.UI.BunifuElipse BnfRadioPanelChart;
+        private System.Windows.Forms.Panel PnlWraper;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnPropietarios;
+    }
+}
