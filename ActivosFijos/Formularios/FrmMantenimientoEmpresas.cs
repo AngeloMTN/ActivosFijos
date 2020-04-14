@@ -6,7 +6,7 @@ namespace ActivosFijos.Formularios
 {
     public partial class FrmMantenimientoEmpresas : Form
     {
-        readonly ClsQueryPropietarios sql = new ClsQueryPropietarios();
+        readonly ClsQueryEmpresas sql = new ClsQueryEmpresas();
 
         public FrmMantenimientoEmpresas()
         {
@@ -132,7 +132,7 @@ namespace ActivosFijos.Formularios
             }
         }
 
-        private void DgvAreas_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvEmpresas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
@@ -147,9 +147,10 @@ namespace ActivosFijos.Formularios
                     TxtNombre.Enabled = false;
                 }
             }
+
         }
 
-        private void FrmMantenimientoPropietarios_Load(object sender, EventArgs e)
+        private void FrmMantenimientoEmpresas_Load(object sender, EventArgs e)
         {
             DgvEmpresas.DataSource = sql.MostrarDatos();
             BtnGrabar.Visible = false;

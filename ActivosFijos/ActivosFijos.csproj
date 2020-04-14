@@ -83,7 +83,7 @@
     <Compile Include="Clases\ClsObtenerConexion.cs" />
     <Compile Include="Clases\ClsQueryActivos.cs" />
     <Compile Include="Clases\ClsQueryAreas.cs" />
-    <Compile Include="Clases\ClsQueryPropietarios.cs" />
+    <Compile Include="Clases\ClsQueryEmpresas.cs" />
     <Compile Include="Clases\ClsQueryReportes.cs" />
     <Compile Include="Formularios\FrmMainMenu.cs">
       <SubType>Form</SubType>
@@ -103,11 +103,11 @@
     <Compile Include="Formularios\FrmMantenimientoAreas.Designer.cs">
       <DependentUpon>FrmMantenimientoAreas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmMantenimientoPropietarios.cs">
+    <Compile Include="Formularios\FrmMantenimientoEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmMantenimientoPropietarios.designer.cs">
-      <DependentUpon>FrmMantenimientoPropietarios.cs</DependentUpon>
+    <Compile Include="Formularios\FrmMantenimientoEmpresas.designer.cs">
+      <DependentUpon>FrmMantenimientoEmpresas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmReporteActivos.cs">
       <SubType>Form</SubType>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="Formularios\FrmMantenimientoAreas.resx">
       <DependentUpon>FrmMantenimientoAreas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmMantenimientoPropietarios.resx">
-      <DependentUpon>FrmMantenimientoPropietarios.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmMantenimientoEmpresas.resx">
+      <DependentUpon>FrmMantenimientoEmpresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReporteActivos.resx">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>

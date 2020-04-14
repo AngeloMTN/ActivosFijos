@@ -24,13 +24,26 @@ namespace ActivosFijos.Formularios
             CmbFiltroArea.DataSource = ClsQueryActivos.CargarComboBoxAreas();
             CmbFiltroArea.DisplayMember = "areNombre";
             CmbFiltroArea.ValueMember = "areId";
+
             CmbArea.DataSource = ClsQueryActivos.CargarComboBoxAreas();
             CmbArea.DisplayMember = "areNombre";
             CmbArea.ValueMember = "areId";
-            CmbPropietarios.DataSource = ClsQueryActivos.CargarComboBoxPropietarios();
-            CmbPropietarios.DisplayMember = "proNombre";
-            CmbPropietarios.ValueMember = "proId";
 
+            CmbCtaContable.DataSource = ClsQueryActivos.CargarComboBoxPlanCuentas();
+            CmbCtaContable.DisplayMember = "pctNombre";
+            CmbCtaContable.ValueMember = "pctId";
+
+            CmbCedulaCustodio.DataSource = ClsQueryActivos.CargarComboBoxCustodios();
+            CmbCedulaCustodio.DisplayMember = "cusNombre";
+            CmbCedulaCustodio.ValueMember = "cusId";
+
+            CmbRucProveedor.DataSource = ClsQueryActivos.CargarComboBoxProveedores();
+            CmbRucProveedor.DisplayMember = "proNombre";
+            CmbRucProveedor.ValueMember = "proId";
+
+            CmbEmpresas.DataSource = ClsQueryActivos.CargarComboBoxEmpresas();
+            CmbEmpresas.DisplayMember = "empNombre";
+            CmbEmpresas.ValueMember = "empId";
 
         }
 
@@ -46,6 +59,9 @@ namespace ActivosFijos.Formularios
 
             TxtFiltroNombre.Enabled = false;
             CmbFiltroArea.Enabled = false;
+            BtnFiltroBuscar.Enabled = false;
+            DtpFechaCorteDepre.Enabled = false;
+            BtnRecalcularDepre.Enabled = false;
 
             TxtNombre.Enabled = true;
             CmbArea.Enabled = true;
@@ -56,7 +72,7 @@ namespace ActivosFijos.Formularios
             TxtPctjeIva.Enabled = true;
             TxtValorIva.Enabled = true;
             TxtValorTotal.Enabled = true;
-            CmbPropietarios.Enabled = true;
+            CmbEmpresas.Enabled = true;
             CmbEstado.Enabled = true;
 
             TxtId.Text = "";
@@ -64,14 +80,20 @@ namespace ActivosFijos.Formularios
             CmbArea.Text = "";
             TxtNombre.Text = "";
             TxtObservaciones.Text = "";
-            DtpFechaCompra.Value = DateTime.Today;
             TxtValorBase0.Text = "0.00";
             TxtValorBaseIva.Text = "0.00";
             TxtPctjeIva.Text = "0.0";
             TxtValorIva.Text = "0.00";
             TxtValorTotal.Text = "0.00";
-            CmbPropietarios.Text = "";
-            CmbEstado.SelectedIndex = 0;
+            TxtDepreDiaria.Text = "0.00";
+            TxtDepreAcumulada.Text = "0.00";
+            TxtValorActual.Text = "0.00";
+            TxtFactura.Text = "";
+            DtpFechaCompra.Value = DateTime.Today;
+            CmbCtaContable.SelectedIndex = 0;
+            CmbRucProveedor.SelectedIndex = 0;
+            CmbCedulaCustodio.SelectedIndex = 0;
+            CmbEmpresas.SelectedIndex = 0;
 
         }
 
@@ -120,18 +142,27 @@ namespace ActivosFijos.Formularios
 
                 TxtFiltroNombre.Enabled = false;
                 CmbFiltroArea.Enabled = false;
-                CmbEstado.Enabled = true;
+                BtnFiltroBuscar.Enabled = false;
+                DtpFechaCorteDepre.Enabled = false;
+                BtnRecalcularDepre.Enabled = false;
 
+                TxtCodBarra.Enabled = true;
                 CmbArea.Enabled = true;
                 TxtNombre.Enabled = true;
                 TxtObservaciones.Enabled = true;
-                DtpFechaCompra.Enabled = true;
                 TxtValorBase0.Enabled = true;
                 TxtValorBaseIva.Enabled = true;
                 TxtPctjeIva.Enabled = true;
                 TxtValorIva.Enabled = true;
                 TxtValorTotal.Enabled = true;
-                CmbPropietarios.Enabled = true;
+                TxtFactura.Enabled = true;
+                DtpFechaCompra.Enabled = true;
+                CmbCtaContable.Enabled = true;
+                CmbRucProveedor.Enabled = true;
+                CmbCedulaCustodio.Enabled = true;
+                CmbEmpresas.Enabled = true;
+                CmbDepreciable.Enabled = true;
+                CmbEstado.Enabled = true;
 
             }
             else
@@ -182,7 +213,7 @@ namespace ActivosFijos.Formularios
 
                 Int32 secNew = Convert.ToInt32(secMax) + 1;
                 string are = CmbArea.SelectedValue.ToString().Trim();
-                string ppt = CmbPropietarios.SelectedValue.ToString().Trim();
+                string ppt = CmbEmpresas.SelectedValue.ToString().Trim();
                 int area = int.Parse(are);
                 string arch = String.Format("{0:000}", area);
                 string arch1 = String.Format("{0:000000}", secNew);
@@ -238,7 +269,7 @@ namespace ActivosFijos.Formularios
             if (opcion == "upd")
             {
                 string area = CmbArea.SelectedValue.ToString().Trim();
-                string ppt = CmbPropietarios.SelectedValue.ToString().Trim();
+                string ppt = CmbEmpresas.SelectedValue.ToString().Trim();
                 int are = int.Parse(area);
                 string arch = String.Format("{0:000}", are);
                 string archivo = ppt + "-" + arch + "-" + TxtArchivo.Text.Substring(6, 6);
@@ -326,18 +357,28 @@ namespace ActivosFijos.Formularios
 
             TxtFiltroNombre.Enabled = true;
             CmbFiltroArea.Enabled = true;
-            CmbEstado.Enabled = false;
+            BtnFiltroBuscar.Enabled = true;
+            DtpFechaCorteDepre.Enabled = true;
+            BtnRecalcularDepre.Enabled = true;
 
+            TxtCodBarra.Enabled = false;
             CmbArea.Enabled = false;
             TxtNombre.Enabled = false;
             TxtObservaciones.Enabled = false;
-            DtpFechaCompra.Enabled = false;
             TxtValorBase0.Enabled = false;
             TxtValorBaseIva.Enabled = false;
             TxtPctjeIva.Enabled = false;
             TxtValorIva.Enabled = false;
             TxtValorTotal.Enabled = false;
-            CmbPropietarios.Enabled = false;
+            TxtFactura.Enabled = false;
+            DtpFechaCompra.Enabled = false;
+            CmbCtaContable.Enabled = false;
+            CmbRucProveedor.Enabled = false;
+            CmbCedulaCustodio.Enabled = false;
+            CmbEmpresas.Enabled = false;
+            CmbDepreciable.Enabled = false;
+            CmbEstado.Enabled = false;
+
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -350,18 +391,27 @@ namespace ActivosFijos.Formularios
 
             TxtFiltroNombre.Enabled = true;
             CmbFiltroArea.Enabled = true;
-            CmbEstado.Enabled = false;
+            BtnFiltroBuscar.Enabled = true;
+            DtpFechaCorteDepre.Enabled = true;
+            BtnRecalcularDepre.Enabled = true;
 
+            TxtCodBarra.Enabled = false;
             CmbArea.Enabled = false;
             TxtNombre.Enabled = false;
             TxtObservaciones.Enabled = false;
-            DtpFechaCompra.Enabled = false;
             TxtValorBase0.Enabled = false;
             TxtValorBaseIva.Enabled = false;
             TxtPctjeIva.Enabled = false;
             TxtValorIva.Enabled = false;
             TxtValorTotal.Enabled = false;
-            CmbPropietarios.Enabled = false;
+            TxtFactura.Enabled = false;
+            DtpFechaCompra.Enabled = false;
+            CmbCtaContable.Enabled = false;
+            CmbRucProveedor.Enabled = false;
+            CmbCedulaCustodio.Enabled = false;
+            CmbEmpresas.Enabled = false;
+            CmbDepreciable.Enabled = false;
+            CmbEstado.Enabled = false;
             CmbEstado.SelectedIndex = 0;
         }
 
@@ -370,6 +420,9 @@ namespace ActivosFijos.Formularios
             DgvActivos.DataSource = sql.MostrarDatos();
             BtnGrabar.Visible = false;
             BtnCancelar.Visible = false;
+            DtpFechaCompra.Value = DateTime.Today;
+            DtpFechaCorteDepre.Value = DateTime.Today;
+            CmbDepreciable.SelectedItem = 0;
             CmbEstado.SelectedIndex = 0;
 
         }
@@ -396,11 +449,25 @@ namespace ActivosFijos.Formularios
                     TxtPctjeIva.Text = pctiva.ToString("###.00").Trim();
                     double iva = Convert.ToDouble(fila.Cells[9].Value);
                     TxtValorIva.Text = iva.ToString("#,###.00").Trim();
-                    double vaortotal = Convert.ToDouble(fila.Cells[10].Value);
-                    TxtValorTotal.Text = vaortotal.ToString("#,###.00").Trim();
-                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[11].Value);
-                    CmbPropietarios.SelectedValue = Convert.ToInt32(fila.Cells[12].Value);
-                    switch (Convert.ToString(fila.Cells[14].Value).Trim())
+                    double valortotal = Convert.ToDouble(fila.Cells[10].Value);
+                    TxtValorTotal.Text = valortotal.ToString("#,###.00").Trim();
+                    double deprediaria = Convert.ToDouble(fila.Cells[11].Value);
+                    TxtDepreDiaria.Text = deprediaria.ToString("#,###.00").Trim();
+                    double depreacumulada = Convert.ToDouble(fila.Cells[12].Value);
+                    TxtDepreAcumulada.Text = depreacumulada.ToString("#,###.00").Trim();
+                    double vaolractual = Convert.ToDouble(fila.Cells[13].Value);
+                    TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
+                    TxtFactura.Text = Convert.ToString(fila.Cells[14].Value);
+                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[15].Value);
+                    CmbCtaContable.SelectedValue = Convert.ToInt32(fila.Cells[16].Value);
+                    CmbRucProveedor.SelectedValue = Convert.ToString(fila.Cells[18].Value);
+                    CmbCedulaCustodio.SelectedValue = Convert.ToString(fila.Cells[20].Value);
+                    TxtCodBarra.Text = Convert.ToString(fila.Cells[22].Value);
+                    if (Convert.ToString(fila.Cells[23].Value).Trim() == "S")
+                        CmbDepreciable.SelectedIndex = 0;
+                    else
+                        CmbDepreciable.SelectedIndex = 1;
+                    switch (Convert.ToString(fila.Cells[24].Value).Trim())
                     {
                         case "ACTIVO":
                             CmbEstado.SelectedIndex = 0;
@@ -412,17 +479,26 @@ namespace ActivosFijos.Formularios
                             CmbEstado.SelectedIndex = 2;
                             break;
                     }
+                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[25].Value);
+                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[27].Value);
 
+                    TxtCodBarra.Enabled = false;
                     CmbArea.Enabled = false;
                     TxtNombre.Enabled = false;
                     TxtObservaciones.Enabled = false;
-                    DtpFechaCompra.Enabled = false;
                     TxtValorBase0.Enabled = false;
                     TxtValorBaseIva.Enabled = false;
                     TxtPctjeIva.Enabled = false;
                     TxtValorIva.Enabled = false;
                     TxtValorTotal.Enabled = false;
-                    CmbPropietarios.Enabled = false;
+                    TxtFactura.Enabled = false;
+                    DtpFechaCompra.Enabled = false;
+                    CmbCtaContable.Enabled = false;
+                    CmbRucProveedor.Enabled = false;
+                    CmbCedulaCustodio.Enabled = false;
+                    CmbEmpresas.Enabled = false;
+                    CmbDepreciable.Enabled = false;
+                    CmbEstado.Enabled = false;
 
                     nombreArchivo = null;
 
@@ -531,7 +607,6 @@ namespace ActivosFijos.Formularios
             {
                 MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
     }
 }

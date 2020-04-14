@@ -3,7 +3,7 @@ using System.Data.SQLite;
 
 namespace ActivosFijos.Clases
 {
-    class ClsQueryPropietarios
+    class ClsQueryEmpresas
     {
         readonly SQLiteConnection conexion = ClsObtenerConexion.Conexion();
         private DataSet ds;
@@ -12,9 +12,9 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT proId AS PptroId, proNombre AS NombreDelPropietario ";
-            cadenaSql += "FROM Propietarios ";
-            cadenaSql += "ORDER BY proNombre";
+            cadenaSql += "SELECT empId AS Id, empNombre AS NombreDeLaEmpresa ";
+            cadenaSql += "FROM Empresas ";
+            cadenaSql += "ORDER BY empNombre";
             SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             ds = new DataSet();
@@ -27,13 +27,13 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT proId AS PptroId, proNombre AS NombreDelPropietario ";
-            cadenaSql += "FROM Propietarios ";
+            cadenaSql += "SELECT empId AS Id, empNombre AS NombreDeLaEmpresa ";
+            cadenaSql += "FROM Empresas ";
             if (nombre != "")
             {
-                cadenaSql += "WHERE proNombre LIKE '%{0}%' ";
+                cadenaSql += "WHERE empNombre LIKE '%{0}%' ";
             }
-            cadenaSql += "ORDER BY proNombre";
+            cadenaSql += "ORDER BY empNombre";
             SQLiteCommand cmd = new SQLiteCommand(string.Format(cadenaSql, nombre), conexion);
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             ds = new DataSet();
@@ -46,7 +46,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string secId = null;
-            SQLiteCommand cmd = new SQLiteCommand(string.Format("SELECT max(proId) FROM Propietarios"), conexion);
+            SQLiteCommand cmd = new SQLiteCommand(string.Format("SELECT max(empId) FROM Empresas"), conexion);
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -57,10 +57,10 @@ namespace ActivosFijos.Clases
             return secId;
         }
 
-        public bool Insertar(string proId, string proNombre)
+        public bool Insertar(string empId, string empNombre)
         {
             conexion.Open();
-            SQLiteCommand cmd = new SQLiteCommand(string.Format("INSERT INTO Propietarios VALUES('{0}', '{1}')", new string[] { proId, proNombre}), conexion);
+            SQLiteCommand cmd = new SQLiteCommand(string.Format("INSERT INTO Empresas VALUES('{0}', '{1}')", new string[] { empId, empNombre}), conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
             if (filasAfectadas > 0)
@@ -69,10 +69,10 @@ namespace ActivosFijos.Clases
                 return false;
         }
 
-        public bool Eliminar(string proId)
+        public bool Eliminar(string empId)
         {
             conexion.Open();
-            string cadenaSql = "DELETE FROM Propietarios WHERE proId = " + proId;
+            string cadenaSql = "DELETE FROM Empresas WHERE empId = " + empId;
             SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
@@ -82,10 +82,10 @@ namespace ActivosFijos.Clases
                 return false;
         }
 
-        public bool Actualizar(string proId, string proNombre)
+        public bool Actualizar(string empId, string empNombre)
         {
             conexion.Open();
-            string cadenaSql = "UPDATE Propietarios SET proNombre = '" + proNombre + "' WHERE proId = " + proId;
+            string cadenaSql = "UPDATE Empresas SET empNombre = '" + empNombre + "' WHERE empId = " + empId;
             SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();

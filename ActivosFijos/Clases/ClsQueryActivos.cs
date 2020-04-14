@@ -20,10 +20,28 @@ namespace ActivosFijos.Clases
             public string AreNombre { get; set; }
         }
 
-        public class Propietarios
+        public class PlanCuentas
+        {
+            public int PctId { get; set; }
+            public string PctNombre { get; set; }
+        }
+
+        public class Proveedores
         {
             public int ProId { get; set; }
             public string ProNombre { get; set; }
+        }
+
+        public class Custodios
+        {
+            public int CusId { get; set; }
+            public string CusNombre { get; set; }
+        }
+
+        public class Empresas
+        {
+            public int EmpId { get; set; }
+            public string EmpNombre { get; set; }
         }
 
         public DataTable MostrarDatos()
@@ -34,11 +52,20 @@ namespace ActivosFijos.Clases
             cadenaSql += "Areas.areNombre AS NombreDelArea, Activos.actNombre AS NombreDelActivo, Activos.actObservaciones AS Observaciones, ";
             cadenaSql += "Activos.actValorBase0 AS ValorBase0, Activos.actValorBaseIva AS ValorBaseIva, ";
             cadenaSql += "Activos.actPctjeIva AS PctjeIva, Activos.actValorIva AS ValorIva, Activos.actValorTotal AS ValorTotal, ";
-            cadenaSql += "Activos.actFechaCompra AS FechaCompra, Activos.empId AS PropId, Empresas.empNombre AS Empresa, ";
-            cadenaSql += "Activos.actEstado AS Estado ";
+            cadenaSql += "Activos.actDepreDiaria AS DepreDiaria, Activos.actDepreAcumulada AS DepreAcumulada, ";
+            cadenaSql += "Activos.actValorActual AS ValorActual, Activos.actFactura AS NumFactura, Activos.actFechaCompra AS FechaCompra, ";
+            cadenaSql += "Activos.pctCuenta AS CtaContable, PlanCuentas.pctNombre AS CuentaNombre, ";
+            cadenaSql += "Activos.proRuc AS Ruc, Proveedores.proNombre, ";
+            cadenaSql += "Activos.cusCedula AS Cedula, Custodios.cusNombre AS NombreCustodio, ";
+            cadenaSql += "Activos.actCodBarra AS CodBarra, Activos.actDepreciable AS Depreciable, Activos.actEstado AS Estado, ";
+            cadenaSql += "Activos.empId AS PropId, Empresas.empNombre AS Empresa, ";
+            cadenaSql += "Activos.actFechaCorteDepre AS FechaCorteDepre ";
             cadenaSql += "FROM Activos ";
             cadenaSql += "INNER JOIN Areas ON Activos.areId = Areas.areId ";
             cadenaSql += "INNER JOIN Empresas ON Activos.empId = Empresas.empId ";
+            cadenaSql += "INNER JOIN Proveedores ON Activos.proRuc = Proveedores.proRuc ";
+            cadenaSql += "INNER JOIN Custodios ON Activos.cusCedula = Custodios.cusCedula ";
+            cadenaSql += "INNER JOIN PlanCuentas ON Activos.pctCuenta = PlanCuentas.pctCuenta ";
             cadenaSql += "ORDER BY Activos.actNombre";
             SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
@@ -74,9 +101,87 @@ namespace ActivosFijos.Clases
             return lista;
         }
 
-        public static List<Propietarios> CargarComboBoxPropietarios()
+        public static List<PlanCuentas> CargarComboBoxPlanCuentas()
         {
-            List<Propietarios> lista = new List<Propietarios>();
+            List<PlanCuentas> lista = new List<PlanCuentas>();
+            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            conexion.Open();
+            string cadenaSql = null;
+            cadenaSql += "SELECT pctId, pctId||' - '||pctNombre AS NombreDelArea ";
+            cadenaSql += "FROM PlanCuentas ";
+            cadenaSql += "ORDER BY substr(pctNombre, instr(pctNombre, ' - '))";
+            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                PlanCuentas pPlanCuentas = new PlanCuentas
+                {
+                    PctId = Convert.ToInt32(dr[0]),
+                    PctNombre = Convert.ToString(dr[1])
+                };
+                lista.Add(pPlanCuentas);
+            }
+            dr.Close();
+            conexion.Close();
+            //cb.SelectedIndex = 0;
+            return lista;
+        }
+
+        public static List<Custodios> CargarComboBoxCustodios()
+        {
+            List<Custodios> lista = new List<Custodios>();
+            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            conexion.Open();
+            string cadenaSql = null;
+            cadenaSql += "SELECT cusId, cusId||' - '||cusNombre AS NombreDelArea ";
+            cadenaSql += "FROM Custodios ";
+            cadenaSql += "ORDER BY substr(cusNombre, instr(cusNombre, ' - '))";
+            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Custodios pCustodios = new Custodios
+                {
+                    CusId = Convert.ToInt32(dr[0]),
+                    CusNombre = Convert.ToString(dr[1])
+                };
+                lista.Add(pCustodios);
+            }
+            dr.Close();
+            conexion.Close();
+            //cb.SelectedIndex = 0;
+            return lista;
+        }
+
+        public static List<Proveedores> CargarComboBoxProveedores()
+        {
+            List<Proveedores> lista = new List<Proveedores>();
+            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            conexion.Open();
+            string cadenaSql = null;
+            cadenaSql += "SELECT proId, proId||' - '||proNombre AS NombreDelArea ";
+            cadenaSql += "FROM Proveedores ";
+            cadenaSql += "ORDER BY substr(proNombre, instr(proNombre, ' - '))";
+            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Proveedores pProveedores = new Proveedores
+                {
+                    ProId = Convert.ToInt32(dr[0]),
+                    ProNombre = Convert.ToString(dr[1])
+                };
+                lista.Add(pProveedores);
+            }
+            dr.Close();
+            conexion.Close();
+            //cb.SelectedIndex = 0;
+            return lista;
+        }
+
+        public static List<Empresas> CargarComboBoxEmpresas()
+        {
+            List<Empresas> lista = new List<Empresas>();
             SQLiteConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
@@ -87,12 +192,12 @@ namespace ActivosFijos.Clases
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Propietarios pPropietarios = new Propietarios
+                Empresas pEmpresas = new Empresas
                 {
-                    ProId = Convert.ToInt32(dr[0]),
-                    ProNombre = Convert.ToString(dr[1])
+                    EmpId = Convert.ToInt32(dr[0]),
+                    EmpNombre = Convert.ToString(dr[1])
                 };
-                lista.Add(pPropietarios);
+                lista.Add(pEmpresas);
             }
             dr.Close();
             conexion.Close();
@@ -108,11 +213,20 @@ namespace ActivosFijos.Clases
             cadenaSql += "Areas.areNombre AS NombreDelArea, Activos.actNombre AS NombreDelActivo, Activos.actObservaciones AS Observaciones, ";
             cadenaSql += "Activos.actValorBase0 AS ValorBase0, Activos.actValorBaseIva AS ValorBaseIva, ";
             cadenaSql += "Activos.actPctjeIva AS PctjeIva, Activos.actValorIva AS ValorIva, Activos.actValorTotal AS ValorTotal, ";
-            cadenaSql += "Activos.actFechaCompra AS FechaCompra, Activos.empId AS PropId, Empresa.empNombre AS Empresa ";
-            cadenaSql += "Activos.actEstado AS Estado ";
+            cadenaSql += "Activos.actDepreDiaria AS DepreDiaria, Activos.actDepreAcumulada AS DepreAcumulada, ";
+            cadenaSql += "Activos.actValorActual AS ValorActual, Activos.actFactura AS NumFactura, Activos.actFechaCompra AS FechaCompra, ";
+            cadenaSql += "Activos.pctCuenta AS CtaContable, PlanCuentas.pctNombre AS CuentaNombre, ";
+            cadenaSql += "Activos.proRuc AS Ruc, Proveedores.proNombre, ";
+            cadenaSql += "Activos.cusCedula AS Cedula, Custodios.cusNombre AS NombreCustodio, ";
+            cadenaSql += "Activos.actCodBarra AS CodBarra, Activos.actDepreciable AS Depreciable, Activos.actEstado AS Estado, ";
+            cadenaSql += "Activos.empId AS PropId, Empresas.empNombre AS Empresa, ";
+            cadenaSql += "Activos.actFechaCorteDepre AS FechaCorteDepre ";
             cadenaSql += "FROM Activos ";
             cadenaSql += "INNER JOIN Areas ON Activos.areId = Areas.areId ";
             cadenaSql += "INNER JOIN Empresas ON Activos.empId = Empresas.empId ";
+            cadenaSql += "INNER JOIN Proveedores ON Activos.proRuc = Proveedores.proRuc ";
+            cadenaSql += "INNER JOIN Custodios ON Activos.cusCedula = Custodios.cusCedula ";
+            cadenaSql += "INNER JOIN PlanCuentas ON Activos.pctCuenta = PlanCuentas.pctCuenta ";
             if (nombre != "" && area != "0")
             {
                 cadenaSql += "WHERE Activos.actNombre LIKE '%{0}%' AND Activos.areId LIKE '{1}' ";
