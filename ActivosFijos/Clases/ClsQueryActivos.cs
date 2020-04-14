@@ -107,7 +107,7 @@ namespace ActivosFijos.Clases
             SQLiteConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT pctId, pctId||' - '||pctNombre AS NombreDelArea ";
+            cadenaSql += "SELECT pctId,pctCuenta||' - '||pctNombre AS NombreDelArea ";
             cadenaSql += "FROM PlanCuentas ";
             cadenaSql += "ORDER BY substr(pctNombre, instr(pctNombre, ' - '))";
             SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
@@ -133,7 +133,7 @@ namespace ActivosFijos.Clases
             SQLiteConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT cusId, cusId||' - '||cusNombre AS NombreDelArea ";
+            cadenaSql += "SELECT cusId, cusCedula||' - '||cusNombre AS NombreDelArea ";
             cadenaSql += "FROM Custodios ";
             cadenaSql += "ORDER BY substr(cusNombre, instr(cusNombre, ' - '))";
             SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
@@ -159,7 +159,7 @@ namespace ActivosFijos.Clases
             SQLiteConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT proId, proId||' - '||proNombre AS NombreDelArea ";
+            cadenaSql += "SELECT proId, proRuc||' - '||proNombre AS NombreDelArea ";
             cadenaSql += "FROM Proveedores ";
             cadenaSql += "ORDER BY substr(proNombre, instr(proNombre, ' - '))";
             SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);

@@ -459,9 +459,12 @@ namespace ActivosFijos.Formularios
                     TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
                     TxtFactura.Text = Convert.ToString(fila.Cells[14].Value);
                     DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[15].Value);
-                    CmbCtaContable.SelectedValue = Convert.ToInt32(fila.Cells[16].Value);
-                    CmbRucProveedor.SelectedValue = Convert.ToString(fila.Cells[18].Value);
-                    CmbCedulaCustodio.SelectedValue = Convert.ToString(fila.Cells[20].Value);
+                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[16].Value));
+                    CmbCtaContable.SelectedValue = indexcta;
+                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[18].Value));
+                    CmbRucProveedor.SelectedValue = indexpro;
+                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[20].Value));
+                    CmbCedulaCustodio.SelectedValue = indexcus;
                     TxtCodBarra.Text = Convert.ToString(fila.Cells[22].Value);
                     if (Convert.ToString(fila.Cells[23].Value).Trim() == "S")
                         CmbDepreciable.SelectedIndex = 0;
