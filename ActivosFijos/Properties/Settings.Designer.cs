@@ -25,7 +25,7 @@ namespace ActivosFijos.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\localhost\\DataBases\\DataSQLite\\FotosAF\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\SISTEMAS-LP\\CarpetaPublica\\DIGITALIZACION\\FotosAF\\")]
         public string RutaDelArchivo {
             get {
                 return ((string)(this["RutaDelArchivo"]));
@@ -35,7 +35,8 @@ namespace ActivosFijos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=\\\\\\\\localhost\\\\DataBases\\\\DataSQLite\\\\ActivosFijos.s3db;Version=3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=SISTEMAS-LP;Port=5432;User Id=postgres;Password=admin;Database=ActivosFijo" +
+            "s")]
         public string ActivosFijosConnectionString {
             get {
                 return ((string)(this["ActivosFijosConnectionString"]));

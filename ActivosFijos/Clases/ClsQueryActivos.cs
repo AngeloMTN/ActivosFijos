@@ -1,14 +1,15 @@
 ﻿using System.Data;
-using System.Data.SQLite;
 using System.Collections.Generic;
 using System;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace ActivosFijos.Clases
 {
     class ClsQueryActivos
     {
-        readonly SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+        string cadenaSql;
+        readonly NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
         private DataSet ds;
 
         public object CmbArea { get; private set; }
@@ -47,28 +48,45 @@ namespace ActivosFijos.Clases
         public DataTable MostrarDatos()
         {
             conexion.Open();
-            string cadenaSql = null;
-            cadenaSql += "SELECT Activos.actId AS ActivoId, Activos.actArchivo AS Archivo, Activos.areId AS AreaId, ";
-            cadenaSql += "Areas.areNombre AS NombreDelArea, Activos.actNombre AS NombreDelActivo, Activos.actObservaciones AS Observaciones, ";
-            cadenaSql += "Activos.actValorBase0 AS ValorBase0, Activos.actValorBaseIva AS ValorBaseIva, ";
-            cadenaSql += "Activos.actPctjeIva AS PctjeIva, Activos.actValorIva AS ValorIva, Activos.actValorTotal AS ValorTotal, ";
-            cadenaSql += "Activos.actDepreDiaria AS DepreDiaria, Activos.actDepreAcumulada AS DepreAcumulada, ";
-            cadenaSql += "Activos.actValorActual AS ValorActual, Activos.actFactura AS NumFactura, Activos.actFechaCompra AS FechaCompra, ";
-            cadenaSql += "Activos.pctCuenta AS CtaContable, PlanCuentas.pctNombre AS CuentaNombre, ";
-            cadenaSql += "Activos.proRuc AS Ruc, Proveedores.proNombre, ";
-            cadenaSql += "Activos.cusCedula AS Cedula, Custodios.cusNombre AS NombreCustodio, ";
-            cadenaSql += "Activos.actCodBarra AS CodBarra, Activos.actDepreciable AS Depreciable, Activos.actEstado AS Estado, ";
-            cadenaSql += "Activos.empId AS PropId, Empresas.empNombre AS Empresa, ";
-            cadenaSql += "Activos.actFechaCorteDepre AS FechaCorteDepre ";
-            cadenaSql += "FROM Activos ";
-            cadenaSql += "INNER JOIN Areas ON Activos.areId = Areas.areId ";
-            cadenaSql += "INNER JOIN Empresas ON Activos.empId = Empresas.empId ";
-            cadenaSql += "INNER JOIN Proveedores ON Activos.proRuc = Proveedores.proRuc ";
-            cadenaSql += "INNER JOIN Custodios ON Activos.cusCedula = Custodios.cusCedula ";
-            cadenaSql += "INNER JOIN PlanCuentas ON Activos.pctCuenta = PlanCuentas.pctCuenta ";
-            cadenaSql += "ORDER BY Activos.actNombre";
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            cadenaSql = null;
+            cadenaSql += "SELECT ";
+            cadenaSql += "\"Activos\".\"actId\" AS Activo, ";
+            cadenaSql += "trim(\"Activos\".\"actCodBarra\") AS CodBarra, ";
+            cadenaSql += "\"Activos\".\"actArchivo\" AS Archivo, ";
+            cadenaSql += "trim(\"Activos\".\"actNombre\") AS NombreDelActivo, ";
+            cadenaSql += "trim(\"Activos\".\"actObservaciones\") AS Observaciones, ";
+            cadenaSql += "\"Activos\".\"areId\" AS Id, ";
+            cadenaSql += "trim(\"Areas\".\"areNombre\") AS NombreDelArea, ";
+            cadenaSql += "trim(\"Activos\".\"pctCuenta\") AS CtaNro, ";
+            cadenaSql += "trim(\"PlanCuentas\".\"pctNombre\") AS CuentaNombre, ";
+            cadenaSql += "\"Activos\".\"cusCedula\" AS Cedula, ";
+            cadenaSql += "trim(\"Custodios\".\"cusNombre\") AS NombreCustodio, ";
+            cadenaSql += "\"Activos\".\"actFactura\" AS NumFactura, ";
+            cadenaSql += "\"Activos\".\"actFechaCompra\" AS FechaCompra, ";
+            cadenaSql += "trim(\"Activos\".\"proRuc\") AS Ruc, ";
+            cadenaSql += "trim(\"Proveedores\".\"proNombre\") AS NombreProveedor, ";
+            cadenaSql += "\"Activos\".\"actValorBase0\" AS ValorBase0, ";
+            cadenaSql += "\"Activos\".\"actValorBaseIva\" AS ValorBaseIva, ";
+            cadenaSql += "\"Activos\".\"actPctjeIva\" AS PctjeIva, ";
+            cadenaSql += "\"Activos\".\"actValorIva\" AS ValorIva, ";
+            cadenaSql += "\"Activos\".\"actValorTotal\" AS ValorTotal, ";
+            cadenaSql += "\"Activos\".\"actDepreDiaria\" AS DepreDiaria, ";
+            cadenaSql += "\"Activos\".\"actDepreAcumulada\" AS DepreAcumulada, ";
+            cadenaSql += "\"Activos\".\"actValorActual\" AS ValorActual, ";
+            cadenaSql += "\"Activos\".\"actFechaCorteDepre\" AS FechaCorteDepre, ";
+            cadenaSql += "\"Activos\".\"actDepreciable\" AS Depreciable, ";
+            cadenaSql += "\"Activos\".\"actEstado\" AS Estado, ";
+            cadenaSql += "\"Activos\".\"empId\" AS PropId, ";
+            cadenaSql += "trim(\"Empresas\".\"empNombre\") AS Empresa ";
+            cadenaSql += "FROM \"Activos\" ";
+            cadenaSql += "INNER JOIN \"Areas\" ON \"Activos\".\"areId\" = \"Areas\".\"areId\" ";
+            cadenaSql += "INNER JOIN \"Empresas\" ON \"Activos\".\"empId\" = \"Empresas\".\"empId\" ";
+            cadenaSql += "INNER JOIN \"Proveedores\" ON \"Activos\".\"proRuc\" = \"Proveedores\".\"proRuc\" ";
+            cadenaSql += "INNER JOIN \"Custodios\" ON \"Activos\".\"cusCedula\" = \"Custodios\".\"cusCedula\" ";
+            cadenaSql += "INNER JOIN \"PlanCuentas\" ON \"Activos\".\"pctCuenta\" = \"PlanCuentas\".\"pctCuenta\" ";
+            cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds, "tabla");
             conexion.Close();
@@ -78,14 +96,14 @@ namespace ActivosFijos.Clases
         public static List<Areas> CargarComboBoxAreas()
         {
             List<Areas> lista = new List<Areas>();
-            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT areId, areId||' - '||areNombre AS NombreDelArea ";
-            cadenaSql += "FROM Areas ";
-            cadenaSql += "ORDER BY substr(areNombre, instr(areNombre, ' - '))";
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataReader dr = cmd.ExecuteReader();
+            cadenaSql += "SELECT \"areId\", \"areId\"||' - '||\"areNombre\" AS NombreDelArea ";
+            cadenaSql += "FROM \"Areas\" ";
+            cadenaSql += "ORDER BY substr(\"areNombre\", POSITION(' - ' IN \"areNombre\"))";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 Areas pAreas = new Areas
@@ -104,14 +122,14 @@ namespace ActivosFijos.Clases
         public static List<PlanCuentas> CargarComboBoxPlanCuentas()
         {
             List<PlanCuentas> lista = new List<PlanCuentas>();
-            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT pctId,pctCuenta||' - '||pctNombre AS NombreDelArea ";
-            cadenaSql += "FROM PlanCuentas ";
-            cadenaSql += "ORDER BY substr(pctNombre, instr(pctNombre, ' - '))";
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataReader dr = cmd.ExecuteReader();
+            cadenaSql += "SELECT \"pctId\",\"pctCuenta\"||' - '||\"pctNombre\" AS NombreDelArea ";
+            cadenaSql += "FROM \"PlanCuentas\" ";
+            cadenaSql += "ORDER BY substr(\"pctNombre\", POSITION(' - ' IN \"pctNombre\"))";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 PlanCuentas pPlanCuentas = new PlanCuentas
@@ -130,14 +148,14 @@ namespace ActivosFijos.Clases
         public static List<Custodios> CargarComboBoxCustodios()
         {
             List<Custodios> lista = new List<Custodios>();
-            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT cusId, cusCedula||' - '||cusNombre AS NombreDelArea ";
-            cadenaSql += "FROM Custodios ";
-            cadenaSql += "ORDER BY substr(cusNombre, instr(cusNombre, ' - '))";
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataReader dr = cmd.ExecuteReader();
+            cadenaSql += "SELECT \"cusId\", \"cusCedula\"||' - '||\"cusNombre\" AS NombreDelArea ";
+            cadenaSql += "FROM \"Custodios\" ";
+            cadenaSql += "ORDER BY substr(\"cusNombre\", POSITION(' - ' IN \"cusNombre\"))";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 Custodios pCustodios = new Custodios
@@ -156,14 +174,14 @@ namespace ActivosFijos.Clases
         public static List<Proveedores> CargarComboBoxProveedores()
         {
             List<Proveedores> lista = new List<Proveedores>();
-            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT proId, proRuc||' - '||proNombre AS NombreDelArea ";
-            cadenaSql += "FROM Proveedores ";
-            cadenaSql += "ORDER BY substr(proNombre, instr(proNombre, ' - '))";
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataReader dr = cmd.ExecuteReader();
+            cadenaSql += "SELECT \"proId\", \"proRuc\"||' - '||\"proNombre\" AS NombreDelArea ";
+            cadenaSql += "FROM \"Proveedores\" ";
+            cadenaSql += "ORDER BY substr(\"proNombre\", POSITION(' - ' IN \"proNombre\"))";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 Proveedores pProveedores = new Proveedores
@@ -182,14 +200,14 @@ namespace ActivosFijos.Clases
         public static List<Empresas> CargarComboBoxEmpresas()
         {
             List<Empresas> lista = new List<Empresas>();
-            SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+            NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT empId, empId||' - '||empNombre AS NombreDeLaEmpresa ";
-            cadenaSql += "FROM Empresas ";
-            //cadenaSql += "ORDER BY substr(proNombre, instr(proNombre, ' - '))";
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataReader dr = cmd.ExecuteReader();
+            cadenaSql += "SELECT \"empId\", \"empId\"||' - '||\"empNombre\" AS NombreDeLaEmpresa ";
+            cadenaSql += "FROM \"Empresas\" ";
+            //cadenaSql += "ORDER BY substr(\"empNombre\", POSITION(' - ' IN \"empNombre\"))";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 Empresas pEmpresas = new Empresas
@@ -208,43 +226,60 @@ namespace ActivosFijos.Clases
         public DataTable Buscar(string nombre, string area)
         {
             conexion.Open();
-            string cadenaSql = null;
-            cadenaSql += "SELECT Activos.actId AS ActivoId, Activos.actArchivo AS Archivo, Activos.areId AS AreaId, ";
-            cadenaSql += "Areas.areNombre AS NombreDelArea, Activos.actNombre AS NombreDelActivo, Activos.actObservaciones AS Observaciones, ";
-            cadenaSql += "Activos.actValorBase0 AS ValorBase0, Activos.actValorBaseIva AS ValorBaseIva, ";
-            cadenaSql += "Activos.actPctjeIva AS PctjeIva, Activos.actValorIva AS ValorIva, Activos.actValorTotal AS ValorTotal, ";
-            cadenaSql += "Activos.actDepreDiaria AS DepreDiaria, Activos.actDepreAcumulada AS DepreAcumulada, ";
-            cadenaSql += "Activos.actValorActual AS ValorActual, Activos.actFactura AS NumFactura, Activos.actFechaCompra AS FechaCompra, ";
-            cadenaSql += "Activos.pctCuenta AS CtaContable, PlanCuentas.pctNombre AS CuentaNombre, ";
-            cadenaSql += "Activos.proRuc AS Ruc, Proveedores.proNombre, ";
-            cadenaSql += "Activos.cusCedula AS Cedula, Custodios.cusNombre AS NombreCustodio, ";
-            cadenaSql += "Activos.actCodBarra AS CodBarra, Activos.actDepreciable AS Depreciable, Activos.actEstado AS Estado, ";
-            cadenaSql += "Activos.empId AS PropId, Empresas.empNombre AS Empresa, ";
-            cadenaSql += "Activos.actFechaCorteDepre AS FechaCorteDepre ";
-            cadenaSql += "FROM Activos ";
-            cadenaSql += "INNER JOIN Areas ON Activos.areId = Areas.areId ";
-            cadenaSql += "INNER JOIN Empresas ON Activos.empId = Empresas.empId ";
-            cadenaSql += "INNER JOIN Proveedores ON Activos.proRuc = Proveedores.proRuc ";
-            cadenaSql += "INNER JOIN Custodios ON Activos.cusCedula = Custodios.cusCedula ";
-            cadenaSql += "INNER JOIN PlanCuentas ON Activos.pctCuenta = PlanCuentas.pctCuenta ";
+            cadenaSql = null;
+            cadenaSql += "SELECT ";
+            cadenaSql += "\"Activos\".\"actId\" AS Activo, ";
+            cadenaSql += "trim(\"Activos\".\"actCodBarra\") AS CodBarra, ";
+            cadenaSql += "\"Activos\".\"actArchivo\" AS Archivo, ";
+            cadenaSql += "trim(\"Activos\".\"actNombre\") AS NombreDelActivo, ";
+            cadenaSql += "trim(\"Activos\".\"actObservaciones\") AS Observaciones, ";
+            cadenaSql += "\"Activos\".\"areId\" AS Id, ";
+            cadenaSql += "trim(\"Areas\".\"areNombre\") AS NombreDelArea, ";
+            cadenaSql += "trim(\"Activos\".\"pctCuenta\") AS CtaNro, ";
+            cadenaSql += "trim(\"PlanCuentas\".\"pctNombre\") AS CuentaNombre, ";
+            cadenaSql += "\"Activos\".\"cusCedula\" AS Cedula, ";
+            cadenaSql += "trim(\"Custodios\".\"cusNombre\") AS NombreCustodio, ";
+            cadenaSql += "\"Activos\".\"actFactura\" AS NumFactura, ";
+            cadenaSql += "\"Activos\".\"actFechaCompra\" AS FechaCompra, ";
+            cadenaSql += "trim(\"Activos\".\"proRuc\") AS Ruc, ";
+            cadenaSql += "trim(\"Proveedores\".\"proNombre\") AS NombreProveedor, ";
+            cadenaSql += "\"Activos\".\"actValorBase0\" AS ValorBase0, ";
+            cadenaSql += "\"Activos\".\"actValorBaseIva\" AS ValorBaseIva, ";
+            cadenaSql += "\"Activos\".\"actPctjeIva\" AS PctjeIva, ";
+            cadenaSql += "\"Activos\".\"actValorIva\" AS ValorIva, ";
+            cadenaSql += "\"Activos\".\"actValorTotal\" AS ValorTotal, ";
+            cadenaSql += "\"Activos\".\"actDepreDiaria\" AS DepreDiaria, ";
+            cadenaSql += "\"Activos\".\"actDepreAcumulada\" AS DepreAcumulada, ";
+            cadenaSql += "\"Activos\".\"actValorActual\" AS ValorActual, ";
+            cadenaSql += "\"Activos\".\"actFechaCorteDepre\" AS FechaCorteDepre, ";
+            cadenaSql += "\"Activos\".\"actDepreciable\" AS Depreciable, ";
+            cadenaSql += "\"Activos\".\"actEstado\" AS Estado, ";
+            cadenaSql += "\"Activos\".\"empId\" AS PropId, ";
+            cadenaSql += "trim(\"Empresas\".\"empNombre\") AS Empresa ";
+            cadenaSql += "FROM \"Activos\" ";
+            cadenaSql += "INNER JOIN \"Areas\" ON \"Activos\".\"areId\" = \"Areas\".\"areId\" ";
+            cadenaSql += "INNER JOIN \"Empresas\" ON \"Activos\".\"empId\" = \"Empresas\".\"empId\" ";
+            cadenaSql += "INNER JOIN \"Proveedores\" ON \"Activos\".\"proRuc\" = \"Proveedores\".\"proRuc\" ";
+            cadenaSql += "INNER JOIN \"Custodios\" ON \"Activos\".\"cusCedula\" = \"Custodios\".\"cusCedula\" ";
+            cadenaSql += "INNER JOIN \"PlanCuentas\" ON \"Activos\".\"pctCuenta\" = \"PlanCuentas\".\"pctCuenta\" ";
             if (nombre != "" && area != "0")
             {
-                cadenaSql += "WHERE Activos.actNombre LIKE '%{0}%' AND Activos.areId LIKE '{1}' ";
+                cadenaSql += "WHERE \"Activos\".\"actNombre\" LIKE '%{0}%' AND \"Activos\".\"areId\" LIKE '{1}' ";
             }
             else
             {
                 if (nombre == "" && area != "0")
                 {
-                    cadenaSql += "WHERE Activos.areId LIKE '{1}' ";
+                    cadenaSql += "WHERE \"Activos\".\"areId\" LIKE '{1}' ";
                 }
                 else
                 {
-                    cadenaSql += "WHERE Activos.actNombre LIKE '%{0}%' ";
+                    cadenaSql += "WHERE \"Activos\".\"actNombre\" LIKE '%{0}%' ";
                 }
             }
-            cadenaSql += "ORDER BY Activos.actNombre";
-            SQLiteCommand cmd = new SQLiteCommand(string.Format(cadenaSql, nombre, area), conexion);
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format(cadenaSql, nombre, area), conexion);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds, "tabla");
             conexion.Close();
@@ -255,8 +290,8 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string secId = null;
-            SQLiteCommand cmd = new SQLiteCommand(string.Format("SELECT max(actId) FROM Activos"), conexion);
-            SQLiteDataReader dr = cmd.ExecuteReader();
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(\"actId\") FROM \"Activos\""), conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 secId = dr[0].ToString();
@@ -266,10 +301,67 @@ namespace ActivosFijos.Clases
             return secId;
         }
 
-        public bool Insertar(string actId, string actArchivo, string areId, string actNombre, string actObservaciones, double actValorBase0, double actValorBaseIva, double actPctjeIva, double actValorIva, double actValorTotal, DateTime actFechaCompra, string proId, string actEstado)
+        public bool Insertar(string actId, string actCodBarra, string actArchivo, 
+            string actNombre, string actObservaciones, string areId, string pctCuenta, 
+            string cusCedula, string actFactura, DateTime actFechaCompra, string proRuc, 
+            double actValorBase0, double actValorBaseIva, double actPctjeIva, double actValorIva, 
+            double actValorTotal, double actDepreDiaria, double actDepreAcumulada, 
+            double actValorActual, DateTime actFechaCorteDepre, string actDepreciable, 
+            string actEstado, string empId)
         {
             conexion.Open();
-            SQLiteCommand cmd = new SQLiteCommand(string.Format("INSERT INTO Activos VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}')", new string[] { actId, actArchivo, areId, actNombre, actObservaciones, actValorBase0.ToString(), actValorBaseIva.ToString(), actPctjeIva.ToString(), actValorIva.ToString(), actValorTotal.ToString(), actFechaCompra.ToString().Substring(0,10), proId.ToString(), actEstado.ToString()} ), conexion);
+            cadenaSql = null;
+            cadenaSql += "INSERT INTO \"Activos\" (";
+            cadenaSql += "\"actId\", ";
+            cadenaSql += "\"actCodBarra\", ";
+            cadenaSql += "\"actArchivo\", ";
+            cadenaSql += "\"actNombre\", ";
+            cadenaSql += "\"actObservaciones\", ";
+            cadenaSql += "\"areId\", ";
+            cadenaSql += "\"pctCuenta\", ";
+            cadenaSql += "\"cusCedula\", ";
+            cadenaSql += "\"actFactura\", ";
+            cadenaSql += "\"actFechaCopmpra\", ";
+            cadenaSql += "\"proRuc\", ";
+            cadenaSql += "\"actValorBase0\", ";
+            cadenaSql += "\"actValorBaseIva\", ";
+            cadenaSql += "\"actPctjeIva\", ";
+            cadenaSql += "\"actValorIva\", ";
+            cadenaSql += "\"actValorTotal\", ";
+            cadenaSql += "\"actDepreDiaria\", ";
+            cadenaSql += "\"actDepreAcumulada\", ";
+            cadenaSql += "\"actValorActual\", ";
+            cadenaSql += "\"actFechaCorteDepre\", ";
+            cadenaSql += "\"actDepreciable\", ";
+            cadenaSql += "\"actEstado\", ";
+            cadenaSql += "\"empId\" ";
+            cadenaSql += ")";
+            cadenaSql += "VALUES('";
+            cadenaSql += actId + "', '";
+            cadenaSql += actCodBarra + "', '";
+            cadenaSql += actArchivo + "', '";
+            cadenaSql += actNombre + "', '";
+            cadenaSql += actObservaciones + "', '";
+            cadenaSql += areId + "', '";
+            cadenaSql += pctCuenta + "', '";
+            cadenaSql += cusCedula + "', '";
+            cadenaSql += actFactura + "', '";
+            cadenaSql += actFechaCompra.ToString().Substring(0, 10) + "', '";
+            cadenaSql += proRuc + "', '";
+            cadenaSql += actValorBase0.ToString() + "', '";
+            cadenaSql += actValorBaseIva.ToString() + "', '";
+            cadenaSql += actPctjeIva.ToString() + "', '";
+            cadenaSql += actValorIva.ToString() + "', '";
+            cadenaSql += actValorTotal.ToString() + "', '";
+            cadenaSql += actDepreDiaria.ToString() + "', '";
+            cadenaSql += actDepreAcumulada.ToString() + "', '";
+            cadenaSql += actValorActual.ToString() + "', '";
+            cadenaSql += actFechaCorteDepre.ToString().Substring(0, 10) + "', '";
+            cadenaSql += actDepreciable + "', '";
+            cadenaSql += actEstado + "', '";
+            cadenaSql += empId + "'";
+            cadenaSql += ") ";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
             if (filasAfectadas > 0)
@@ -281,7 +373,7 @@ namespace ActivosFijos.Clases
         public bool Eliminar(string actId)
         {
             conexion.Open();
-            SQLiteCommand cmd = new SQLiteCommand(string.Format("DELETE FROM Activos WHERE actId = '{0}'", actId), conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("DELETE FROM \"Activos\" WHERE \"actId\" = '{0}'", actId), conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
             if (filasAfectadas > 0)
@@ -290,11 +382,41 @@ namespace ActivosFijos.Clases
                 return false;
         }
 
-        public bool Actualizar(string actId, string archivo, string areId, string actNombre, string actObservaciones, double actValorBase0, double actValorBaseIva, double actPctjeIva, double actValorIva, double actValorTotal, DateTime actFechaCompra, string proId, string actEstado)
+        public bool Actualizar(Int32 actId, string actCodBarra, string archivo,
+            string actNombre, string actObservaciones, Int32 areId, string pctCuenta,
+            string cusCedula, string actFactura, DateTime actFechaCompra, string proRuc,
+            double actValorBase0, double actValorBaseIva, double actPctjeIva, double actValorIva,
+            double actValorTotal, double actDepreDiaria, double actDepreAcumulada,
+            double actValorActual, DateTime actFechaCorteDepre, string actDepreciable,
+            string actEstado, Int32 empId)
         {
             conexion.Open();
-            string cadenaSql = "UPDATE Activos SET actArchivo = '{1}', areId = '{2}', actNombre = '{3}', actObservaciones = '{4}', actValorBase0 = '{5}', actValorBaseIva = '{6}', actPctjeIva = '{7}', actValorIva = '{8}', actValorTotal = '{9}', actFechaCompra = '{10}', proId = '{11}', actEstado = '{12}' WHERE actId = '{0}'";
-            SQLiteCommand cmd = new SQLiteCommand(string.Format(cadenaSql, new string[] { actId, archivo, areId, actNombre, actObservaciones, actValorBase0.ToString(), actValorBaseIva.ToString(), actPctjeIva.ToString(), actValorIva.ToString(), actValorTotal.ToString(), actFechaCompra.ToString().Substring(0,10), proId.ToString(), actEstado.ToString()}), conexion);
+            cadenaSql = null;
+            cadenaSql += "UPDATE \"Activos\" SET ";
+            cadenaSql += "\"actCodBarra\" = '" + actCodBarra + "', ";
+            cadenaSql += "\"actArchivo\" = '" + archivo + "', ";
+            cadenaSql += "\"actNombre\" = '" + actNombre + "', ";
+            cadenaSql += "\"actObservaciones\" = '" + actObservaciones + "', ";
+            cadenaSql += "\"areId\" = '" + areId + "', ";
+            cadenaSql += "\"pctCuenta\" = '" + pctCuenta + "', ";
+            cadenaSql += "\"cusCedula\" = '" + cusCedula + "', ";
+            cadenaSql += "\"actFactura\" = '" + actFactura + "', ";
+            cadenaSql += "\"actFechaCompra\" = '" + actFechaCompra.ToString().Substring(0, 10) + "', ";
+            cadenaSql += "\"proRuc\" = '" + proRuc + "', ";
+            cadenaSql += "\"actValorBase0\" = '" + actValorBase0.ToString() + "', ";
+            cadenaSql += "\"actValorBaseIva\" = '" + actValorBaseIva.ToString() + "', ";
+            cadenaSql += "\"actPctjeIva\" = '" + actPctjeIva.ToString() + "', ";
+            cadenaSql += "\"actValorIva\" = '" + actValorIva.ToString() + "', ";
+            cadenaSql += "\"actValorTotal\" = '" + actValorTotal.ToString() + "', ";
+            cadenaSql += "\"actDepreDiaria\" = '" + actDepreDiaria.ToString() + "', ";
+            cadenaSql += "\"actDepreAcumulada\" = '" + actDepreAcumulada.ToString() + "', ";
+            cadenaSql += "\"actValorActual\" = '" + actValorActual.ToString() + "', ";
+            cadenaSql += "\"actFechaCorteDepre\" = '" + actFechaCorteDepre.ToString().Substring(0, 10) + "' ";
+            cadenaSql += "\"actDepreciable\" = '" + actDepreciable + "', ";
+            cadenaSql += "\"actEstado\" = '" + actEstado + "', ";
+            cadenaSql += "\"empId\" = '" + empId + "', ";
+            cadenaSql += "WHERE \"actId\" = '" + actId +"'";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
             if (filasAfectadas > 0)

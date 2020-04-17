@@ -1,5 +1,5 @@
 ﻿using ActivosFijos.Properties;
-using System.Data.SQLite;
+using Npgsql;
 using System.Windows.Forms;
 
 namespace ActivosFijos.Clases
@@ -8,9 +8,9 @@ namespace ActivosFijos.Clases
     {
         public static string obtenerCadenaConexion = Settings.Default.ActivosFijosConnectionString;
 
-        public static SQLiteConnection Conexion()
+        public static NpgsqlConnection Conexion()
         {
-            SQLiteConnection conexion = new SQLiteConnection(obtenerCadenaConexion);
+            NpgsqlConnection conexion = new NpgsqlConnection(obtenerCadenaConexion);
             return conexion;
         }
 

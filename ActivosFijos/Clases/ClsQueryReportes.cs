@@ -1,14 +1,11 @@
 ﻿using System.Data;
-using System.Data.SQLite;
-using System.Collections.Generic;
-using System;
-using System.Windows.Forms;
+using Npgsql;
 
 namespace ActivosFijos.Clases
 {
     class ClsQueryReportes
     {
-        readonly SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+        readonly NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
         private DataSet ds;
 
         public DataTable CargarRpvActivos()
@@ -26,8 +23,8 @@ namespace ActivosFijos.Clases
             cadenaSql += "INNER JOIN Propietarios ON Activos.actPropietario = Propietarios.proId ";
             cadenaSql += "ORDER BY Activos.actNombre";
 
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds, "tabla");
             conexion.Close();

@@ -213,11 +213,23 @@ namespace ActivosFijos.Formularios
 
                 Int32 secNew = Convert.ToInt32(secMax) + 1;
                 string are = CmbArea.SelectedValue.ToString().Trim();
-                string ppt = CmbEmpresas.SelectedValue.ToString().Trim();
+                string epr = CmbEmpresas.SelectedValue.ToString().Trim();
                 int area = int.Parse(are);
                 string arch = String.Format("{0:000}", area);
                 string arch1 = String.Format("{0:000000}", secNew);
-                string archivo = ppt + "-" + arch + "-" + arch1;
+                string archivo = epr + "-" + arch + "-" + arch1;
+                string[] cta = CmbCtaContable.Text.ToString().Trim().Split(' ');
+                string ctaCtb = cta[0];
+                string[] rucs = CmbRucProveedor.Text.ToString().Trim().Split(' ');
+                string ruc = rucs[0];
+                string[] ced = CmbCedulaCustodio.Text.ToString().Trim().Split(' ');
+                string cedula = ced[0];
+
+                string dpr = "";
+                if (CmbDepreciable.SelectedItem.ToString().Trim() == "SI")
+                    dpr = "S";
+                else
+                    dpr = "N";
                 string estado = "";
                 switch (CmbEstado.SelectedIndex)
                 {
@@ -232,7 +244,31 @@ namespace ActivosFijos.Formularios
                         break;
                 }
 
-                if (sql.Insertar(secNew.ToString(), archivo, are, TxtNombre.Text, TxtObservaciones.Text, Convert.ToDouble(TxtValorBase0.Text), Convert.ToDouble(TxtValorBaseIva.Text), Convert.ToDouble(TxtPctjeIva.Text), Convert.ToDouble(TxtValorIva.Text), Convert.ToDouble(TxtValorTotal.Text), Convert.ToDateTime(DtpFechaCompra.Value), ppt, estado))
+                var dd = DtpFechaCorteDepre.Value - DtpFechaCompra.Value;
+
+                if (sql.Insertar(secNew.ToString(),
+                                 TxtCodBarra.Text,
+                                 archivo,
+                                 TxtNombre.Text,
+                                 TxtObservaciones.Text,
+                                 are,
+                                 ctaCtb,
+                                 cedula,
+                                 TxtFactura.Text,
+                                 Convert.ToDateTime(DtpFechaCompra.Value),
+                                 ruc,
+                                 Convert.ToDouble(TxtValorBase0.Text),
+                                 Convert.ToDouble(TxtValorBaseIva.Text),
+                                 Convert.ToDouble(TxtPctjeIva.Text),
+                                 Convert.ToDouble(TxtValorIva.Text),
+                                 Convert.ToDouble(TxtValorTotal.Text),
+                                 Convert.ToDouble(TxtDepreDiaria.Text),
+                                 Convert.ToDouble(TxtDepreAcumulada.Text),
+                                 Convert.ToDouble(TxtValorActual),
+                                 DtpFechaCorteDepre.Value,
+                                 dpr,
+                                 estado,
+                                 epr))
                 {
                     TxtArchivo.Text = archivo;
                     DgvActivos.DataSource = sql.MostrarDatos();
@@ -268,15 +304,31 @@ namespace ActivosFijos.Formularios
 
             if (opcion == "upd")
             {
-                string area = CmbArea.SelectedValue.ToString().Trim();
-                string ppt = CmbEmpresas.SelectedValue.ToString().Trim();
-                int are = int.Parse(area);
-                string arch = String.Format("{0:000}", are);
-                string archivo = ppt + "-" + arch + "-" + TxtArchivo.Text.Substring(6, 6);
+                //string area = CmbArea.SelectedValue.ToString().Trim();
+                //string epr = CmbEmpresas.SelectedValue.ToString().Trim();
+                Int32 area = CmbArea.SelectedIndex;
+                Int32 epr = CmbEmpresas.SelectedIndex;
+
+                //int are = int.Parse(area);
+                string arch = String.Format("{0:000}", area);
+                string archivo = epr + "-" + arch + "-" + TxtArchivo.Text.Substring(6, 6);
                 string ext = ".jpg";
                 string oldName = rutaArchivo + TxtArchivo.Text + ext;
                 string nameOld = TxtArchivo.Text + ext;
                 string newName = archivo + ext;
+                string[] cta = CmbCtaContable.Text.ToString().Trim().Split(' ');
+                string ctaCtb = cta[0];
+                string[] rucs = CmbRucProveedor.Text.ToString().Trim().Split(' ');
+                string ruc = rucs[0];
+                string[] ced = CmbCedulaCustodio.Text.ToString().Trim().Split(' ');
+                string cedula = ced[0];
+
+                string dpr = "";
+                if (CmbDepreciable.SelectedItem.ToString().Trim() == "SI")
+                    dpr = "S";
+                else
+                    dpr = "N";
+
                 string estado = "";
                 switch (CmbEstado.SelectedIndex)
                 {
@@ -290,8 +342,31 @@ namespace ActivosFijos.Formularios
                         estado = "BAJA";
                         break;
                 }
+                var dd = DtpFechaCorteDepre.Value - DtpFechaCompra.Value;
 
-                if (sql.Actualizar(TxtId.Text, archivo, area, TxtNombre.Text, TxtObservaciones.Text, Convert.ToDouble(TxtValorBase0.Text), Convert.ToDouble(TxtValorBaseIva.Text), Convert.ToDouble(TxtPctjeIva.Text), Convert.ToDouble(TxtValorIva.Text), Convert.ToDouble(TxtValorTotal.Text), DtpFechaCompra.Value, ppt, estado))
+                if (sql.Actualizar(Convert.ToInt32(TxtId.Text),
+                                   TxtCodBarra.Text,
+                                   archivo,
+                                   TxtNombre.Text,
+                                   TxtObservaciones.Text,
+                                   area,
+                                   ctaCtb,
+                                   cedula,
+                                   TxtFactura.Text,
+                                   Convert.ToDateTime(DtpFechaCompra.Value),
+                                   ruc,
+                                   Convert.ToDouble(TxtValorBase0.Text),
+                                   Convert.ToDouble(TxtValorBaseIva.Text),
+                                   Convert.ToDouble(TxtPctjeIva.Text),
+                                   Convert.ToDouble(TxtValorIva.Text),
+                                   Convert.ToDouble(TxtValorTotal.Text),
+                                   Convert.ToDouble(TxtDepreDiaria.Text),
+                                   Convert.ToDouble(TxtDepreAcumulada.Text),
+                                   Convert.ToDouble(TxtValorActual),
+                                   Convert.ToDateTime(DtpFechaCorteDepre.Value),
+                                   dpr,
+                                   estado,
+                                   epr))
                 {
                     for (int i = 0; i < Directory.EnumerateFiles(rutaArchivo).Count(); i++)
                     {
@@ -422,7 +497,7 @@ namespace ActivosFijos.Formularios
             BtnCancelar.Visible = false;
             DtpFechaCompra.Value = DateTime.Today;
             DtpFechaCorteDepre.Value = DateTime.Today;
-            CmbDepreciable.SelectedItem = 0;
+            CmbDepreciable.SelectedIndex = 0;
             CmbEstado.SelectedIndex = 0;
 
         }
@@ -436,41 +511,42 @@ namespace ActivosFijos.Formularios
                 if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
                 {
                     DataGridViewRow fila = DgvActivos.Rows[e.RowIndex];
-                    TxtId.Text = Convert.ToString(fila.Cells[0].Value);
-                    TxtArchivo.Text = Convert.ToString(fila.Cells[1].Value);
-                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[2].Value);
-                    TxtNombre.Text = Convert.ToString(fila.Cells[4].Value);
-                    TxtObservaciones.Text = Convert.ToString(fila.Cells[5].Value);
-                    double base0 = Convert.ToDouble(fila.Cells[6].Value);
+                    TxtId.Text = Convert.ToString(fila.Cells[0].Value).Trim();
+                    TxtCodBarra.Text = Convert.ToString(fila.Cells[1].Value).Trim();
+                    TxtArchivo.Text = Convert.ToString(fila.Cells[2].Value).Trim();
+                    TxtNombre.Text = Convert.ToString(fila.Cells[3].Value).Trim();
+                    TxtObservaciones.Text = Convert.ToString(fila.Cells[4].Value).Trim();
+                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[5].Value);
+                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[7].Value).Trim());
+                    CmbCtaContable.SelectedIndex = indexcta;
+                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[9].Value).Trim());
+                    CmbCedulaCustodio.SelectedIndex = indexcus;
+                    TxtFactura.Text = Convert.ToString(fila.Cells[11].Value).Trim();
+                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[12].Value);
+                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[13].Value).Trim());
+                    CmbRucProveedor.SelectedIndex = indexpro;
+                    double base0 = Convert.ToDouble(fila.Cells[15].Value);
                     TxtValorBase0.Text = base0.ToString("#,###.00").Trim();
-                    double baseiva = Convert.ToDouble(fila.Cells[7].Value);
+                    double baseiva = Convert.ToDouble(fila.Cells[16].Value);
                     TxtValorBaseIva.Text = baseiva.ToString("#,###.00").Trim();
-                    double pctiva = Convert.ToDouble(fila.Cells[8].Value);
+                    double pctiva = Convert.ToDouble(fila.Cells[17].Value);
                     TxtPctjeIva.Text = pctiva.ToString("###.00").Trim();
-                    double iva = Convert.ToDouble(fila.Cells[9].Value);
+                    double iva = Convert.ToDouble(fila.Cells[18].Value);
                     TxtValorIva.Text = iva.ToString("#,###.00").Trim();
-                    double valortotal = Convert.ToDouble(fila.Cells[10].Value);
+                    double valortotal = Convert.ToDouble(fila.Cells[19].Value);
                     TxtValorTotal.Text = valortotal.ToString("#,###.00").Trim();
-                    double deprediaria = Convert.ToDouble(fila.Cells[11].Value);
+                    double deprediaria = Convert.ToDouble(fila.Cells[20].Value);
                     TxtDepreDiaria.Text = deprediaria.ToString("#,###.00").Trim();
-                    double depreacumulada = Convert.ToDouble(fila.Cells[12].Value);
+                    double depreacumulada = Convert.ToDouble(fila.Cells[21].Value);
                     TxtDepreAcumulada.Text = depreacumulada.ToString("#,###.00").Trim();
-                    double vaolractual = Convert.ToDouble(fila.Cells[13].Value);
+                    double vaolractual = Convert.ToDouble(fila.Cells[22].Value);
                     TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
-                    TxtFactura.Text = Convert.ToString(fila.Cells[14].Value);
-                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[15].Value);
-                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[16].Value));
-                    CmbCtaContable.SelectedValue = indexcta;
-                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[18].Value));
-                    CmbRucProveedor.SelectedValue = indexpro;
-                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[20].Value));
-                    CmbCedulaCustodio.SelectedValue = indexcus;
-                    TxtCodBarra.Text = Convert.ToString(fila.Cells[22].Value);
-                    if (Convert.ToString(fila.Cells[23].Value).Trim() == "S")
+                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[23].Value);
+                    if (Convert.ToString(fila.Cells[24].Value).Trim() == "S")
                         CmbDepreciable.SelectedIndex = 0;
                     else
                         CmbDepreciable.SelectedIndex = 1;
-                    switch (Convert.ToString(fila.Cells[24].Value).Trim())
+                    switch (Convert.ToString(fila.Cells[25].Value).Trim())
                     {
                         case "ACTIVO":
                             CmbEstado.SelectedIndex = 0;
@@ -482,8 +558,7 @@ namespace ActivosFijos.Formularios
                             CmbEstado.SelectedIndex = 2;
                             break;
                     }
-                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[25].Value);
-                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[27].Value);
+                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[26].Value);
 
                     TxtCodBarra.Enabled = false;
                     CmbArea.Enabled = false;

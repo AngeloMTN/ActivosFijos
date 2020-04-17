@@ -1,11 +1,11 @@
 ﻿using System.Data;
-using System.Data.SQLite;
+using Npgsql;
 
 namespace ActivosFijos.Clases
 {
     class ClsQueryEmpresas
     {
-        readonly SQLiteConnection conexion = ClsObtenerConexion.Conexion();
+        readonly NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
         private DataSet ds;
 
         public DataTable MostrarDatos()
@@ -15,8 +15,8 @@ namespace ActivosFijos.Clases
             cadenaSql += "SELECT empId AS Id, empNombre AS NombreDeLaEmpresa ";
             cadenaSql += "FROM Empresas ";
             cadenaSql += "ORDER BY empNombre";
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds, "tabla");
             conexion.Close();
@@ -34,8 +34,8 @@ namespace ActivosFijos.Clases
                 cadenaSql += "WHERE empNombre LIKE '%{0}%' ";
             }
             cadenaSql += "ORDER BY empNombre";
-            SQLiteCommand cmd = new SQLiteCommand(string.Format(cadenaSql, nombre), conexion);
-            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format(cadenaSql, nombre), conexion);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds, "tabla");
             conexion.Close();
@@ -46,8 +46,8 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string secId = null;
-            SQLiteCommand cmd = new SQLiteCommand(string.Format("SELECT max(empId) FROM Empresas"), conexion);
-            SQLiteDataReader dr = cmd.ExecuteReader();
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(empId) FROM Empresas"), conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 secId = dr[0].ToString();
@@ -60,7 +60,7 @@ namespace ActivosFijos.Clases
         public bool Insertar(string empId, string empNombre)
         {
             conexion.Open();
-            SQLiteCommand cmd = new SQLiteCommand(string.Format("INSERT INTO Empresas VALUES('{0}', '{1}')", new string[] { empId, empNombre}), conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("INSERT INTO Empresas VALUES('{0}', '{1}')", new string[] { empId, empNombre}), conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
             if (filasAfectadas > 0)
@@ -73,7 +73,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = "DELETE FROM Empresas WHERE empId = " + empId;
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
             if (filasAfectadas > 0)
@@ -86,7 +86,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = "UPDATE Empresas SET empNombre = '" + empNombre + "' WHERE empId = " + empId;
-            SQLiteCommand cmd = new SQLiteCommand(cadenaSql, conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
             if (filasAfectadas > 0)
