@@ -63,23 +63,39 @@ namespace ActivosFijos.Formularios
             DtpFechaCorteDepre.Enabled = false;
             BtnRecalcularDepre.Enabled = false;
 
+            TxtCodBarra.Enabled = false;
             TxtNombre.Enabled = true;
-            CmbArea.Enabled = true;
             TxtObservaciones.Enabled = true;
+            CmbArea.Enabled = true;
+            CmbCtaContable.Enabled = true;
+            CmbCedulaCustodio.Enabled = true;
+            TxtFactura.Enabled = true;
             DtpFechaCompra.Enabled = true;
+            CmbRucProveedor.Enabled = true;
             TxtValorBase0.Enabled = true;
             TxtValorBaseIva.Enabled = true;
             TxtPctjeIva.Enabled = true;
             TxtValorIva.Enabled = true;
             TxtValorTotal.Enabled = true;
-            CmbEmpresas.Enabled = true;
+            TxtDepreDiaria.Enabled = false;
+            TxtDepreAcumulada.Enabled = false;
+            TxtValorActual.Enabled = false;
+            DtpFechaCorteDepre.Enabled = true;
+            CmbDepreciable.Enabled = true;
             CmbEstado.Enabled = true;
+            CmbEmpresas.Enabled = true;
 
             TxtId.Text = "";
+            TxtCodBarra.Text = "";
             TxtArchivo.Text = "";
-            CmbArea.Text = "";
             TxtNombre.Text = "";
             TxtObservaciones.Text = "";
+            CmbArea.SelectedIndex = 0;
+            CmbCtaContable.SelectedIndex = 0;
+            CmbCedulaCustodio.SelectedIndex = 0;
+            TxtFactura.Text = "";
+            DtpFechaCompra.Value = DateTime.Today;
+            CmbRucProveedor.SelectedIndex = 0;
             TxtValorBase0.Text = "0.00";
             TxtValorBaseIva.Text = "0.00";
             TxtPctjeIva.Text = "0.0";
@@ -88,11 +104,8 @@ namespace ActivosFijos.Formularios
             TxtDepreDiaria.Text = "0.00";
             TxtDepreAcumulada.Text = "0.00";
             TxtValorActual.Text = "0.00";
-            TxtFactura.Text = "";
-            DtpFechaCompra.Value = DateTime.Today;
-            CmbCtaContable.SelectedIndex = 0;
-            CmbRucProveedor.SelectedIndex = 0;
-            CmbCedulaCustodio.SelectedIndex = 0;
+            CmbDepreciable.SelectedIndex = 0;
+            CmbEstado.SelectedIndex = 0;
             CmbEmpresas.SelectedIndex = 0;
 
         }
@@ -146,7 +159,6 @@ namespace ActivosFijos.Formularios
                 DtpFechaCorteDepre.Enabled = false;
                 BtnRecalcularDepre.Enabled = false;
 
-                TxtCodBarra.Enabled = true;
                 CmbArea.Enabled = true;
                 TxtNombre.Enabled = true;
                 TxtObservaciones.Enabled = true;
@@ -216,8 +228,8 @@ namespace ActivosFijos.Formularios
                 string epr = CmbEmpresas.SelectedValue.ToString().Trim();
                 int area = int.Parse(are);
                 string arch = String.Format("{0:000}", area);
-                string arch1 = String.Format("{0:000000}", secNew);
-                string archivo = epr + "-" + arch + "-" + arch1;
+                string cbarra = String.Format("{0:000000}", secNew);
+                string archivo = epr + "-" + arch + "-" + cbarra;
                 string[] cta = CmbCtaContable.Text.ToString().Trim().Split(' ');
                 string ctaCtb = cta[0];
                 string[] rucs = CmbRucProveedor.Text.ToString().Trim().Split(' ');
@@ -244,10 +256,8 @@ namespace ActivosFijos.Formularios
                         break;
                 }
 
-                var dd = DtpFechaCorteDepre.Value - DtpFechaCompra.Value;
-
                 if (sql.Insertar(secNew.ToString(),
-                                 TxtCodBarra.Text,
+                                 cbarra,
                                  archivo,
                                  TxtNombre.Text,
                                  TxtObservaciones.Text,
@@ -262,15 +272,16 @@ namespace ActivosFijos.Formularios
                                  Convert.ToDouble(TxtPctjeIva.Text),
                                  Convert.ToDouble(TxtValorIva.Text),
                                  Convert.ToDouble(TxtValorTotal.Text),
-                                 Convert.ToDouble(TxtDepreDiaria.Text),
-                                 Convert.ToDouble(TxtDepreAcumulada.Text),
-                                 Convert.ToDouble(TxtValorActual),
-                                 DtpFechaCorteDepre.Value,
+                                 0.00,
+                                 0.00,
+                                 0.00,
+                                 Convert.ToDateTime("1900-12-31"),
                                  dpr,
                                  estado,
                                  epr))
                 {
                     TxtArchivo.Text = archivo;
+                    TxtCodBarra.Text = cbarra;
                     DgvActivos.DataSource = sql.MostrarDatos();
                     MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -304,13 +315,11 @@ namespace ActivosFijos.Formularios
 
             if (opcion == "upd")
             {
-                //string area = CmbArea.SelectedValue.ToString().Trim();
-                //string epr = CmbEmpresas.SelectedValue.ToString().Trim();
-                Int32 area = CmbArea.SelectedIndex;
-                Int32 epr = CmbEmpresas.SelectedIndex;
+                string area = CmbArea.SelectedValue.ToString().Trim();
+                string epr = CmbEmpresas.SelectedValue.ToString().Trim();
 
-                //int are = int.Parse(area);
-                string arch = String.Format("{0:000}", area);
+                int are = int.Parse(area);
+                string arch = String.Format("{0:000}", are);
                 string archivo = epr + "-" + arch + "-" + TxtArchivo.Text.Substring(6, 6);
                 string ext = ".jpg";
                 string oldName = rutaArchivo + TxtArchivo.Text + ext;
@@ -342,10 +351,8 @@ namespace ActivosFijos.Formularios
                         estado = "BAJA";
                         break;
                 }
-                var dd = DtpFechaCorteDepre.Value - DtpFechaCompra.Value;
 
-                if (sql.Actualizar(Convert.ToInt32(TxtId.Text),
-                                   TxtCodBarra.Text,
+                if (sql.Actualizar(TxtId.Text,
                                    archivo,
                                    TxtNombre.Text,
                                    TxtObservaciones.Text,
@@ -362,8 +369,7 @@ namespace ActivosFijos.Formularios
                                    Convert.ToDouble(TxtValorTotal.Text),
                                    Convert.ToDouble(TxtDepreDiaria.Text),
                                    Convert.ToDouble(TxtDepreAcumulada.Text),
-                                   Convert.ToDouble(TxtValorActual),
-                                   Convert.ToDateTime(DtpFechaCorteDepre.Value),
+                                   Convert.ToDouble(TxtValorActual.Text),
                                    dpr,
                                    estado,
                                    epr))

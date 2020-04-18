@@ -301,13 +301,29 @@ namespace ActivosFijos.Clases
             return secId;
         }
 
-        public bool Insertar(string actId, string actCodBarra, string actArchivo, 
-            string actNombre, string actObservaciones, string areId, string pctCuenta, 
-            string cusCedula, string actFactura, DateTime actFechaCompra, string proRuc, 
-            double actValorBase0, double actValorBaseIva, double actPctjeIva, double actValorIva, 
-            double actValorTotal, double actDepreDiaria, double actDepreAcumulada, 
-            double actValorActual, DateTime actFechaCorteDepre, string actDepreciable, 
-            string actEstado, string empId)
+        public bool Insertar(string actId,
+                             string actCodBarra,
+                             string actArchivo,
+                             string actNombre,
+                             string actObservaciones,
+                             string areId,
+                             string pctCuenta,
+                             string cusCedula,
+                             string actFactura,
+                             DateTime actFechaCompra,
+                             string proRuc,
+                             double actValorBase0,
+                             double actValorBaseIva,
+                             double actPctjeIva,
+                             double actValorIva,
+                             double actValorTotal,
+                             double actDepreDiaria,
+                             double actDepreAcumulada,
+                             double actValorActual,
+                             DateTime actFechaCorteDepre,
+                             string actDepreciable,
+                             string actEstado,
+                             string empId)
         {
             conexion.Open();
             cadenaSql = null;
@@ -321,7 +337,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"pctCuenta\", ";
             cadenaSql += "\"cusCedula\", ";
             cadenaSql += "\"actFactura\", ";
-            cadenaSql += "\"actFechaCopmpra\", ";
+            cadenaSql += "\"actFechaCompra\", ";
             cadenaSql += "\"proRuc\", ";
             cadenaSql += "\"actValorBase0\", ";
             cadenaSql += "\"actValorBaseIva\", ";
@@ -346,7 +362,7 @@ namespace ActivosFijos.Clases
             cadenaSql += pctCuenta + "', '";
             cadenaSql += cusCedula + "', '";
             cadenaSql += actFactura + "', '";
-            cadenaSql += actFechaCompra.ToString().Substring(0, 10) + "', '";
+            cadenaSql += actFechaCompra.ToString() + "', '";
             cadenaSql += proRuc + "', '";
             cadenaSql += actValorBase0.ToString() + "', '";
             cadenaSql += actValorBaseIva.ToString() + "', '";
@@ -356,11 +372,10 @@ namespace ActivosFijos.Clases
             cadenaSql += actDepreDiaria.ToString() + "', '";
             cadenaSql += actDepreAcumulada.ToString() + "', '";
             cadenaSql += actValorActual.ToString() + "', '";
-            cadenaSql += actFechaCorteDepre.ToString().Substring(0, 10) + "', '";
+            cadenaSql += actFechaCorteDepre.ToString() + "', '";
             cadenaSql += actDepreciable + "', '";
             cadenaSql += actEstado + "', '";
-            cadenaSql += empId + "'";
-            cadenaSql += ") ";
+            cadenaSql += empId + "')";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
@@ -382,18 +397,31 @@ namespace ActivosFijos.Clases
                 return false;
         }
 
-        public bool Actualizar(Int32 actId, string actCodBarra, string archivo,
-            string actNombre, string actObservaciones, Int32 areId, string pctCuenta,
-            string cusCedula, string actFactura, DateTime actFechaCompra, string proRuc,
-            double actValorBase0, double actValorBaseIva, double actPctjeIva, double actValorIva,
-            double actValorTotal, double actDepreDiaria, double actDepreAcumulada,
-            double actValorActual, DateTime actFechaCorteDepre, string actDepreciable,
-            string actEstado, Int32 empId)
+        public bool Actualizar(string actId,
+                               string archivo,
+                               string actNombre,
+                               string actObservaciones,
+                               string areId,
+                               string pctCuenta,
+                               string cusCedula,
+                               string actFactura,
+                               DateTime actFechaCompra,
+                               string proRuc,
+                               double actValorBase0,
+                               double actValorBaseIva,
+                               double actPctjeIva,
+                               double actValorIva,
+                               double actValorTotal,
+                               double actDepreDiaria,
+                               double actDepreAcumulada,
+                               double actValorActual,
+                               string actDepreciable,
+                               string actEstado,
+                               string empId)
         {
             conexion.Open();
             cadenaSql = null;
             cadenaSql += "UPDATE \"Activos\" SET ";
-            cadenaSql += "\"actCodBarra\" = '" + actCodBarra + "', ";
             cadenaSql += "\"actArchivo\" = '" + archivo + "', ";
             cadenaSql += "\"actNombre\" = '" + actNombre + "', ";
             cadenaSql += "\"actObservaciones\" = '" + actObservaciones + "', ";
@@ -401,7 +429,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"pctCuenta\" = '" + pctCuenta + "', ";
             cadenaSql += "\"cusCedula\" = '" + cusCedula + "', ";
             cadenaSql += "\"actFactura\" = '" + actFactura + "', ";
-            cadenaSql += "\"actFechaCompra\" = '" + actFechaCompra.ToString().Substring(0, 10) + "', ";
+            cadenaSql += "\"actFechaCompra\" = '" + actFechaCompra.ToString() + "', ";
             cadenaSql += "\"proRuc\" = '" + proRuc + "', ";
             cadenaSql += "\"actValorBase0\" = '" + actValorBase0.ToString() + "', ";
             cadenaSql += "\"actValorBaseIva\" = '" + actValorBaseIva.ToString() + "', ";
@@ -411,10 +439,9 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"actDepreDiaria\" = '" + actDepreDiaria.ToString() + "', ";
             cadenaSql += "\"actDepreAcumulada\" = '" + actDepreAcumulada.ToString() + "', ";
             cadenaSql += "\"actValorActual\" = '" + actValorActual.ToString() + "', ";
-            cadenaSql += "\"actFechaCorteDepre\" = '" + actFechaCorteDepre.ToString().Substring(0, 10) + "' ";
             cadenaSql += "\"actDepreciable\" = '" + actDepreciable + "', ";
             cadenaSql += "\"actEstado\" = '" + actEstado + "', ";
-            cadenaSql += "\"empId\" = '" + empId + "', ";
+            cadenaSql += "\"empId\" = '" + empId + "' ";
             cadenaSql += "WHERE \"actId\" = '" + actId +"'";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
