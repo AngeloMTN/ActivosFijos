@@ -12,7 +12,7 @@ namespace ActivosFijos.Formularios
 {
     public partial class FrmMantenimientoActivos : Form
     {
-        private static readonly string rutaArchivo = Settings.Default.RutaDelArchivo;
+        public static readonly string rutaArchivo = Settings.Default.RutaDelArchivo;
         public string nombreArchivo = null;
         public string opcion = null;
 
@@ -57,6 +57,8 @@ namespace ActivosFijos.Formularios
             BtnCancelar.Visible = true;
             BtnModificar.Visible = false;
 
+            BtnGrabar.Enabled = true;
+            BtnCancelar.Enabled = true;
             TxtFiltroNombre.Enabled = false;
             CmbFiltroArea.Enabled = false;
             BtnFiltroBuscar.Enabled = false;
@@ -87,7 +89,9 @@ namespace ActivosFijos.Formularios
 
             TxtId.Text = "";
             TxtCodBarra.Text = "";
-            TxtArchivo.Text = "";
+            string archivo = sql.SecuenciaArchivo(rutaArchivo);
+            TxtArchivo.Text = archivo;
+
             TxtNombre.Text = "";
             TxtObservaciones.Text = "";
             CmbArea.SelectedIndex = 0;
@@ -104,6 +108,8 @@ namespace ActivosFijos.Formularios
             TxtDepreDiaria.Text = "0.00";
             TxtDepreAcumulada.Text = "0.00";
             TxtValorActual.Text = "0.00";
+            DtpFinVidaUtilContable.Value = DateTime.Today;
+            DtpFechaCorteDepre.Value = DateTime.Today;
             CmbDepreciable.SelectedIndex = 0;
             CmbEstado.SelectedIndex = 0;
             CmbEmpresas.SelectedIndex = 0;
@@ -228,10 +234,11 @@ namespace ActivosFijos.Formularios
                 string epr = CmbEmpresas.SelectedValue.ToString().Trim();
                 int area = int.Parse(are);
                 string arch = String.Format("{0:000}", area);
+                string archivo = TxtArchivo.Text;
                 string cbarra = String.Format("{0:000000}", secNew);
-                string archivo = epr + "-" + arch + "-" + cbarra;
-                string[] cta = CmbCtaContable.Text.ToString().Trim().Split(' ');
+                string[] cta = CmbCtaContable.Text.ToString().Trim().Split('-');
                 string ctaCtb = cta[0];
+                string vidaUtil = cta[2];
                 string[] rucs = CmbRucProveedor.Text.ToString().Trim().Split(' ');
                 string ruc = rucs[0];
                 string[] ced = CmbCedulaCustodio.Text.ToString().Trim().Split(' ');
@@ -276,11 +283,12 @@ namespace ActivosFijos.Formularios
                                  0.00,
                                  0.00,
                                  Convert.ToDateTime("1900-12-31"),
+                                 Convert.ToDateTime("1900-12-31"),
                                  dpr,
                                  estado,
-                                 epr))
+                                 epr,
+                                 vidaUtil))
                 {
-                    TxtArchivo.Text = archivo;
                     TxtCodBarra.Text = cbarra;
                     DgvActivos.DataSource = sql.MostrarDatos();
                     MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -506,6 +514,12 @@ namespace ActivosFijos.Formularios
             CmbDepreciable.SelectedIndex = 0;
             CmbEstado.SelectedIndex = 0;
 
+            BtnCancelar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnGrabar.Enabled = false;
+            BtnModificar.Enabled = false;
+            BtnVisualizar.Enabled = false;
+            BtnRecalcularDepre.Enabled = false;
         }
 
         private void DgvActivos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -547,12 +561,13 @@ namespace ActivosFijos.Formularios
                     TxtDepreAcumulada.Text = depreacumulada.ToString("#,###.00").Trim();
                     double vaolractual = Convert.ToDouble(fila.Cells[22].Value);
                     TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
-                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[23].Value);
-                    if (Convert.ToString(fila.Cells[24].Value).Trim() == "S")
+                    DtpFinVidaUtilContable.Value = Convert.ToDateTime(fila.Cells[23].Value);
+                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[24].Value);
+                    if (Convert.ToString(fila.Cells[25].Value).Trim() == "S")
                         CmbDepreciable.SelectedIndex = 0;
                     else
                         CmbDepreciable.SelectedIndex = 1;
-                    switch (Convert.ToString(fila.Cells[25].Value).Trim())
+                    switch (Convert.ToString(fila.Cells[26].Value).Trim())
                     {
                         case "ACTIVO":
                             CmbEstado.SelectedIndex = 0;
@@ -564,7 +579,7 @@ namespace ActivosFijos.Formularios
                             CmbEstado.SelectedIndex = 2;
                             break;
                     }
-                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[26].Value);
+                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[27].Value);
 
                     TxtCodBarra.Enabled = false;
                     CmbArea.Enabled = false;
@@ -583,6 +598,14 @@ namespace ActivosFijos.Formularios
                     CmbEmpresas.Enabled = false;
                     CmbDepreciable.Enabled = false;
                     CmbEstado.Enabled = false;
+
+                    BtnCancelar.Enabled = true;
+                    BtnEliminar.Enabled = true;
+                    BtnGrabar.Enabled = true;
+                    BtnModificar.Enabled = true;
+                    BtnVisualizar.Enabled = true;
+                    BtnRecalcularDepre.Enabled = true;
+                    DtpFechaCorteDepre.Enabled = true;
 
                     nombreArchivo = null;
 
@@ -691,6 +714,40 @@ namespace ActivosFijos.Formularios
             {
                 MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void BtnRecalcularDepre_Click(object sender, EventArgs e)
+        {
+            if (TxtId.Text.Trim() != "")
+            {
+                DialogResult resp = MessageBox.Show("Confirma que desea ReCalcular la Depreciación...?", "", MessageBoxButtons.YesNo);
+                if (resp == DialogResult.Yes)
+                {
+                    sql.Recalcular(DtpFechaCorteDepre.Value);
+                    MessageBox.Show("Depreciación ReCalculada OK...", "ReCalcular Depreciación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    /*
+                    if (sql.Recalcular(DtpFechaCorteDepre.Value, DtpFechaCompra.Value))
+                    {
+                        DgvActivos.DataSource = sql.MostrarDatos();
+
+                        MessageBox.Show("Depreciación ReCalculada OK...", "ReCalcular Depreciación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        CmbEstado.SelectedIndex = 0;
+                        BtnFiltroBuscar.PerformClick();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Eliminar Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    */
+                }
+            }
+            else
+            {
+                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

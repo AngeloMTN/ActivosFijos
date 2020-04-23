@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgListado = new System.Windows.Forms.TabPage();
             this.BtnReportes = new System.Windows.Forms.Button();
@@ -98,6 +98,8 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnGrabar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.DtpFinVidaUtilContable = new System.Windows.Forms.DateTimePicker();
+            this.LblFinVidaUtilContable = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TpgListado.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,6 +177,7 @@
             this.BtnRecalcularDepre.TabIndex = 7;
             this.BtnRecalcularDepre.Text = "Recalcular...";
             this.BtnRecalcularDepre.UseVisualStyleBackColor = false;
+            this.BtnRecalcularDepre.Click += new System.EventHandler(this.BtnRecalcularDepre_Click);
             // 
             // LblFechaCorteDepre
             // 
@@ -269,45 +272,45 @@
             this.DgvActivos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvActivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.DgvActivos.ColumnHeadersHeight = 30;
             this.DgvActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle22;
             this.DgvActivos.EnableHeadersVisualStyles = false;
             this.DgvActivos.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvActivos.Location = new System.Drawing.Point(6, 112);
             this.DgvActivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvActivos.Name = "DgvActivos";
             this.DgvActivos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.DgvActivos.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.DgvActivos.RowTemplate.Height = 24;
             this.DgvActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvActivos.Size = new System.Drawing.Size(1245, 592);
@@ -332,6 +335,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LblFinVidaUtilContable);
+            this.groupBox1.Controls.Add(this.DtpFinVidaUtilContable);
             this.groupBox1.Controls.Add(this.LblDepreciable);
             this.groupBox1.Controls.Add(this.CmbDepreciable);
             this.groupBox1.Controls.Add(this.LblCedulaCustodio);
@@ -390,7 +395,7 @@
             this.LblDepreciable.AutoSize = true;
             this.LblDepreciable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDepreciable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblDepreciable.Location = new System.Drawing.Point(493, 444);
+            this.LblDepreciable.Location = new System.Drawing.Point(90, 508);
             this.LblDepreciable.Name = "LblDepreciable";
             this.LblDepreciable.Size = new System.Drawing.Size(112, 18);
             this.LblDepreciable.TabIndex = 41;
@@ -404,7 +409,7 @@
             this.CmbDepreciable.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.CmbDepreciable.Location = new System.Drawing.Point(630, 438);
+            this.CmbDepreciable.Location = new System.Drawing.Point(233, 503);
             this.CmbDepreciable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbDepreciable.Name = "CmbDepreciable";
             this.CmbDepreciable.Size = new System.Drawing.Size(68, 28);
@@ -415,7 +420,7 @@
             this.LblCedulaCustodio.AutoSize = true;
             this.LblCedulaCustodio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCedulaCustodio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCedulaCustodio.Location = new System.Drawing.Point(483, 370);
+            this.LblCedulaCustodio.Location = new System.Drawing.Point(483, 334);
             this.LblCedulaCustodio.Name = "LblCedulaCustodio";
             this.LblCedulaCustodio.Size = new System.Drawing.Size(122, 18);
             this.LblCedulaCustodio.TabIndex = 38;
@@ -426,7 +431,7 @@
             this.CmbCedulaCustodio.Enabled = false;
             this.CmbCedulaCustodio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbCedulaCustodio.FormattingEnabled = true;
-            this.CmbCedulaCustodio.Location = new System.Drawing.Point(630, 362);
+            this.CmbCedulaCustodio.Location = new System.Drawing.Point(630, 329);
             this.CmbCedulaCustodio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbCedulaCustodio.Name = "CmbCedulaCustodio";
             this.CmbCedulaCustodio.Size = new System.Drawing.Size(535, 28);
@@ -437,7 +442,7 @@
             this.LblRucProveedor.AutoSize = true;
             this.LblRucProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblRucProveedor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblRucProveedor.Location = new System.Drawing.Point(493, 333);
+            this.LblRucProveedor.Location = new System.Drawing.Point(493, 299);
             this.LblRucProveedor.Name = "LblRucProveedor";
             this.LblRucProveedor.Size = new System.Drawing.Size(112, 18);
             this.LblRucProveedor.TabIndex = 36;
@@ -448,7 +453,7 @@
             this.CmbRucProveedor.Enabled = false;
             this.CmbRucProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbRucProveedor.FormattingEnabled = true;
-            this.CmbRucProveedor.Location = new System.Drawing.Point(630, 324);
+            this.CmbRucProveedor.Location = new System.Drawing.Point(630, 294);
             this.CmbRucProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbRucProveedor.Name = "CmbRucProveedor";
             this.CmbRucProveedor.Size = new System.Drawing.Size(535, 28);
@@ -459,7 +464,7 @@
             this.LblCtaContable.AutoSize = true;
             this.LblCtaContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCtaContable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCtaContable.Location = new System.Drawing.Point(483, 294);
+            this.LblCtaContable.Location = new System.Drawing.Point(483, 263);
             this.LblCtaContable.Name = "LblCtaContable";
             this.LblCtaContable.Size = new System.Drawing.Size(122, 18);
             this.LblCtaContable.TabIndex = 34;
@@ -470,7 +475,7 @@
             this.CmbCtaContable.Enabled = false;
             this.CmbCtaContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbCtaContable.FormattingEnabled = true;
-            this.CmbCtaContable.Location = new System.Drawing.Point(630, 286);
+            this.CmbCtaContable.Location = new System.Drawing.Point(630, 259);
             this.CmbCtaContable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbCtaContable.Name = "CmbCtaContable";
             this.CmbCtaContable.Size = new System.Drawing.Size(535, 28);
@@ -481,7 +486,7 @@
             this.LblFactura.AutoSize = true;
             this.LblFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFactura.Location = new System.Drawing.Point(531, 220);
+            this.LblFactura.Location = new System.Drawing.Point(531, 194);
             this.LblFactura.Name = "LblFactura";
             this.LblFactura.Size = new System.Drawing.Size(74, 18);
             this.LblFactura.TabIndex = 32;
@@ -491,7 +496,7 @@
             // 
             this.TxtFactura.Enabled = false;
             this.TxtFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFactura.Location = new System.Drawing.Point(630, 213);
+            this.TxtFactura.Location = new System.Drawing.Point(630, 189);
             this.TxtFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtFactura.Name = "TxtFactura";
             this.TxtFactura.Size = new System.Drawing.Size(207, 28);
@@ -502,7 +507,7 @@
             this.LblValorActual.AutoSize = true;
             this.LblValorActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblValorActual.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblValorActual.Location = new System.Drawing.Point(112, 487);
+            this.LblValorActual.Location = new System.Drawing.Point(112, 440);
             this.LblValorActual.Name = "LblValorActual";
             this.LblValorActual.Size = new System.Drawing.Size(90, 18);
             this.LblValorActual.TabIndex = 30;
@@ -512,7 +517,7 @@
             // 
             this.TxtValorActual.Enabled = false;
             this.TxtValorActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorActual.Location = new System.Drawing.Point(233, 479);
+            this.TxtValorActual.Location = new System.Drawing.Point(233, 434);
             this.TxtValorActual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorActual.Name = "TxtValorActual";
             this.TxtValorActual.Size = new System.Drawing.Size(169, 28);
@@ -524,7 +529,7 @@
             this.LblDepreAcumulada.AutoSize = true;
             this.LblDepreAcumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDepreAcumulada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblDepreAcumulada.Location = new System.Drawing.Point(26, 449);
+            this.LblDepreAcumulada.Location = new System.Drawing.Point(26, 404);
             this.LblDepreAcumulada.Name = "LblDepreAcumulada";
             this.LblDepreAcumulada.Size = new System.Drawing.Size(176, 18);
             this.LblDepreAcumulada.TabIndex = 28;
@@ -534,7 +539,7 @@
             // 
             this.TxtDepreAcumulada.Enabled = false;
             this.TxtDepreAcumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDepreAcumulada.Location = new System.Drawing.Point(233, 440);
+            this.TxtDepreAcumulada.Location = new System.Drawing.Point(233, 399);
             this.TxtDepreAcumulada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDepreAcumulada.Name = "TxtDepreAcumulada";
             this.TxtDepreAcumulada.Size = new System.Drawing.Size(169, 28);
@@ -546,7 +551,7 @@
             this.LblDepreDiaria.AutoSize = true;
             this.LblDepreDiaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDepreDiaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblDepreDiaria.Location = new System.Drawing.Point(61, 411);
+            this.LblDepreDiaria.Location = new System.Drawing.Point(61, 370);
             this.LblDepreDiaria.Name = "LblDepreDiaria";
             this.LblDepreDiaria.Size = new System.Drawing.Size(141, 18);
             this.LblDepreDiaria.TabIndex = 26;
@@ -556,7 +561,7 @@
             // 
             this.TxtDepreDiaria.Enabled = false;
             this.TxtDepreDiaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDepreDiaria.Location = new System.Drawing.Point(233, 401);
+            this.TxtDepreDiaria.Location = new System.Drawing.Point(233, 364);
             this.TxtDepreDiaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDepreDiaria.Name = "TxtDepreDiaria";
             this.TxtDepreDiaria.Size = new System.Drawing.Size(169, 28);
@@ -590,7 +595,7 @@
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEstado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblEstado.Location = new System.Drawing.Point(546, 484);
+            this.LblEstado.Location = new System.Drawing.Point(546, 405);
             this.LblEstado.Name = "LblEstado";
             this.LblEstado.Size = new System.Drawing.Size(59, 18);
             this.LblEstado.TabIndex = 22;
@@ -605,7 +610,7 @@
             "ACTIVO",
             "INACTIVO",
             "BAJA"});
-            this.CmbEstado.Location = new System.Drawing.Point(630, 476);
+            this.CmbEstado.Location = new System.Drawing.Point(630, 399);
             this.CmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbEstado.Name = "CmbEstado";
             this.CmbEstado.Size = new System.Drawing.Size(138, 28);
@@ -616,7 +621,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(295, 292);
+            this.label1.Location = new System.Drawing.Point(310, 265);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 18);
             this.label1.TabIndex = 0;
@@ -626,10 +631,10 @@
             // 
             this.TxtPctjeIva.Enabled = false;
             this.TxtPctjeIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPctjeIva.Location = new System.Drawing.Point(233, 287);
+            this.TxtPctjeIva.Location = new System.Drawing.Point(233, 259);
             this.TxtPctjeIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtPctjeIva.Name = "TxtPctjeIva";
-            this.TxtPctjeIva.Size = new System.Drawing.Size(58, 28);
+            this.TxtPctjeIva.Size = new System.Drawing.Size(68, 28);
             this.TxtPctjeIva.TabIndex = 19;
             this.TxtPctjeIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPctjeIva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPctjeIva_KeyPress);
@@ -639,7 +644,7 @@
             this.LblPctjeIva.AutoSize = true;
             this.LblPctjeIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPctjeIva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblPctjeIva.Location = new System.Drawing.Point(172, 296);
+            this.LblPctjeIva.Location = new System.Drawing.Point(172, 263);
             this.LblPctjeIva.Name = "LblPctjeIva";
             this.LblPctjeIva.Size = new System.Drawing.Size(30, 18);
             this.LblPctjeIva.TabIndex = 0;
@@ -650,7 +655,7 @@
             this.CmbEmpresas.Enabled = false;
             this.CmbEmpresas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbEmpresas.FormattingEnabled = true;
-            this.CmbEmpresas.Location = new System.Drawing.Point(630, 400);
+            this.CmbEmpresas.Location = new System.Drawing.Point(630, 364);
             this.CmbEmpresas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbEmpresas.Name = "CmbEmpresas";
             this.CmbEmpresas.Size = new System.Drawing.Size(535, 28);
@@ -661,7 +666,7 @@
             this.LblEmpresa.AutoSize = true;
             this.LblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblEmpresa.Location = new System.Drawing.Point(533, 408);
+            this.LblEmpresa.Location = new System.Drawing.Point(533, 370);
             this.LblEmpresa.Name = "LblEmpresa";
             this.LblEmpresa.Size = new System.Drawing.Size(72, 18);
             this.LblEmpresa.TabIndex = 0;
@@ -673,7 +678,7 @@
             this.DtpFechaCompra.Enabled = false;
             this.DtpFechaCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaCompra.Location = new System.Drawing.Point(630, 251);
+            this.DtpFechaCompra.Location = new System.Drawing.Point(630, 224);
             this.DtpFechaCompra.Name = "DtpFechaCompra";
             this.DtpFechaCompra.Size = new System.Drawing.Size(138, 27);
             this.DtpFechaCompra.TabIndex = 23;
@@ -683,7 +688,7 @@
             // 
             this.TxtValorTotal.Enabled = false;
             this.TxtValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorTotal.Location = new System.Drawing.Point(233, 363);
+            this.TxtValorTotal.Location = new System.Drawing.Point(233, 329);
             this.TxtValorTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorTotal.Name = "TxtValorTotal";
             this.TxtValorTotal.Size = new System.Drawing.Size(169, 28);
@@ -695,7 +700,7 @@
             // 
             this.TxtValorIva.Enabled = false;
             this.TxtValorIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorIva.Location = new System.Drawing.Point(232, 325);
+            this.TxtValorIva.Location = new System.Drawing.Point(232, 294);
             this.TxtValorIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorIva.Name = "TxtValorIva";
             this.TxtValorIva.Size = new System.Drawing.Size(170, 28);
@@ -707,7 +712,7 @@
             // 
             this.TxtValorBaseIva.Enabled = false;
             this.TxtValorBaseIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorBaseIva.Location = new System.Drawing.Point(233, 251);
+            this.TxtValorBaseIva.Location = new System.Drawing.Point(233, 224);
             this.TxtValorBaseIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorBaseIva.Name = "TxtValorBaseIva";
             this.TxtValorBaseIva.Size = new System.Drawing.Size(169, 28);
@@ -719,7 +724,7 @@
             // 
             this.TxtValorBase0.Enabled = false;
             this.TxtValorBase0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorBase0.Location = new System.Drawing.Point(233, 214);
+            this.TxtValorBase0.Location = new System.Drawing.Point(233, 189);
             this.TxtValorBase0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorBase0.Name = "TxtValorBase0";
             this.TxtValorBase0.Size = new System.Drawing.Size(169, 28);
@@ -732,7 +737,7 @@
             this.LblFechaCompra.AutoSize = true;
             this.LblFechaCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaCompra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaCompra.Location = new System.Drawing.Point(474, 258);
+            this.LblFechaCompra.Location = new System.Drawing.Point(474, 230);
             this.LblFechaCompra.Name = "LblFechaCompra";
             this.LblFechaCompra.Size = new System.Drawing.Size(131, 18);
             this.LblFechaCompra.TabIndex = 0;
@@ -743,7 +748,7 @@
             this.LblValorTotal.AutoSize = true;
             this.LblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblValorTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblValorTotal.Location = new System.Drawing.Point(119, 371);
+            this.LblValorTotal.Location = new System.Drawing.Point(119, 334);
             this.LblValorTotal.Name = "LblValorTotal";
             this.LblValorTotal.Size = new System.Drawing.Size(83, 18);
             this.LblValorTotal.TabIndex = 0;
@@ -754,7 +759,7 @@
             this.LblIva.AutoSize = true;
             this.LblIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblIva.Location = new System.Drawing.Point(134, 333);
+            this.LblIva.Location = new System.Drawing.Point(134, 299);
             this.LblIva.Name = "LblIva";
             this.LblIva.Size = new System.Drawing.Size(68, 18);
             this.LblIva.TabIndex = 0;
@@ -765,7 +770,7 @@
             this.LblBaseIva.AutoSize = true;
             this.LblBaseIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBaseIva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblBaseIva.Location = new System.Drawing.Point(96, 260);
+            this.LblBaseIva.Location = new System.Drawing.Point(96, 230);
             this.LblBaseIva.Name = "LblBaseIva";
             this.LblBaseIva.Size = new System.Drawing.Size(106, 18);
             this.LblBaseIva.TabIndex = 0;
@@ -776,7 +781,7 @@
             this.LblBase0.AutoSize = true;
             this.LblBase0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBase0.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblBase0.Location = new System.Drawing.Point(106, 223);
+            this.LblBase0.Location = new System.Drawing.Point(106, 194);
             this.LblBase0.Name = "LblBase0";
             this.LblBase0.Size = new System.Drawing.Size(96, 18);
             this.LblBase0.TabIndex = 0;
@@ -786,7 +791,7 @@
             // 
             this.TxtObservaciones.Enabled = false;
             this.TxtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtObservaciones.Location = new System.Drawing.Point(233, 122);
+            this.TxtObservaciones.Location = new System.Drawing.Point(233, 117);
             this.TxtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtObservaciones.MaxLength = 75;
             this.TxtObservaciones.Name = "TxtObservaciones";
@@ -798,7 +803,7 @@
             // 
             this.LblObservaciones.AutoSize = true;
             this.LblObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblObservaciones.Location = new System.Drawing.Point(90, 129);
+            this.LblObservaciones.Location = new System.Drawing.Point(90, 122);
             this.LblObservaciones.Name = "LblObservaciones";
             this.LblObservaciones.Size = new System.Drawing.Size(112, 18);
             this.LblObservaciones.TabIndex = 0;
@@ -831,17 +836,17 @@
             this.CmbArea.Enabled = false;
             this.CmbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbArea.FormattingEnabled = true;
-            this.CmbArea.Location = new System.Drawing.Point(233, 159);
+            this.CmbArea.Location = new System.Drawing.Point(233, 152);
             this.CmbArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbArea.Name = "CmbArea";
-            this.CmbArea.Size = new System.Drawing.Size(576, 30);
+            this.CmbArea.Size = new System.Drawing.Size(604, 30);
             this.CmbArea.TabIndex = 16;
             // 
             // TxtNombre
             // 
             this.TxtNombre.Enabled = false;
             this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(233, 61);
+            this.TxtNombre.Location = new System.Drawing.Point(233, 58);
             this.TxtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtNombre.MaxLength = 150;
             this.TxtNombre.Multiline = true;
@@ -858,7 +863,7 @@
             this.TxtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtId.MaxLength = 10;
             this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(56, 28);
+            this.TxtId.Size = new System.Drawing.Size(68, 28);
             this.TxtId.TabIndex = 0;
             // 
             // LblArea
@@ -866,7 +871,7 @@
             this.LblArea.AutoSize = true;
             this.LblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblArea.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblArea.Location = new System.Drawing.Point(160, 166);
+            this.LblArea.Location = new System.Drawing.Point(160, 159);
             this.LblArea.Name = "LblArea";
             this.LblArea.Size = new System.Drawing.Size(42, 18);
             this.LblArea.TabIndex = 0;
@@ -877,7 +882,7 @@
             this.LblNombre.AutoSize = true;
             this.LblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblNombre.Location = new System.Drawing.Point(136, 67);
+            this.LblNombre.Location = new System.Drawing.Point(136, 63);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(66, 18);
             this.LblNombre.TabIndex = 0;
@@ -958,6 +963,29 @@
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // DtpFinVidaUtilContable
+            // 
+            this.DtpFinVidaUtilContable.CustomFormat = "yyyy/MM/dd";
+            this.DtpFinVidaUtilContable.Enabled = false;
+            this.DtpFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFinVidaUtilContable.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFinVidaUtilContable.Location = new System.Drawing.Point(233, 469);
+            this.DtpFinVidaUtilContable.Name = "DtpFinVidaUtilContable";
+            this.DtpFinVidaUtilContable.Size = new System.Drawing.Size(138, 27);
+            this.DtpFinVidaUtilContable.TabIndex = 44;
+            this.DtpFinVidaUtilContable.Value = new System.DateTime(2020, 4, 13, 16, 3, 15, 0);
+            // 
+            // LblFinVidaUtilContable
+            // 
+            this.LblFinVidaUtilContable.AutoSize = true;
+            this.LblFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFinVidaUtilContable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblFinVidaUtilContable.Location = new System.Drawing.Point(20, 474);
+            this.LblFinVidaUtilContable.Name = "LblFinVidaUtilContable";
+            this.LblFinVidaUtilContable.Size = new System.Drawing.Size(182, 18);
+            this.LblFinVidaUtilContable.TabIndex = 45;
+            this.LblFinVidaUtilContable.Text = "Finaliza Vida Util Contable:";
             // 
             // FrmMantenimientoActivos
             // 
@@ -1055,5 +1083,7 @@
         private System.Windows.Forms.Button BtnRecalcularDepre;
         private System.Windows.Forms.Label LblFechaCorteDepre;
         private System.Windows.Forms.DateTimePicker DtpFechaCorteDepre;
+        private System.Windows.Forms.Label LblFinVidaUtilContable;
+        private System.Windows.Forms.DateTimePicker DtpFinVidaUtilContable;
     }
 }

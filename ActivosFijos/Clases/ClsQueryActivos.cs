@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using System.Windows.Forms;
 using Npgsql;
+using System.IO;
+using System.Linq;
 
 namespace ActivosFijos.Clases
 {
@@ -73,6 +75,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"Activos\".\"actDepreDiaria\" AS DepreDiaria, ";
             cadenaSql += "\"Activos\".\"actDepreAcumulada\" AS DepreAcumulada, ";
             cadenaSql += "\"Activos\".\"actValorActual\" AS ValorActual, ";
+            cadenaSql += "\"Activos\".\"actFinVidaUtil\" AS FinVidaUtil, ";
             cadenaSql += "\"Activos\".\"actFechaCorteDepre\" AS FechaCorteDepre, ";
             cadenaSql += "\"Activos\".\"actDepreciable\" AS Depreciable, ";
             cadenaSql += "\"Activos\".\"actEstado\" AS Estado, ";
@@ -84,7 +87,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "INNER JOIN \"Proveedores\" ON \"Activos\".\"proRuc\" = \"Proveedores\".\"proRuc\" ";
             cadenaSql += "INNER JOIN \"Custodios\" ON \"Activos\".\"cusCedula\" = \"Custodios\".\"cusCedula\" ";
             cadenaSql += "INNER JOIN \"PlanCuentas\" ON \"Activos\".\"pctCuenta\" = \"PlanCuentas\".\"pctCuenta\" ";
-            cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
+            //cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
@@ -125,7 +128,7 @@ namespace ActivosFijos.Clases
             NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT \"pctId\",\"pctCuenta\"||' - '||\"pctNombre\" AS NombreDelArea ";
+            cadenaSql += "SELECT \"pctId\",\"pctCuenta\"||' - '||\"pctNombre\"||' - ['||\"pctVidaUtilAnios\"||'] ' AS NombreDelArea ";
             cadenaSql += "FROM \"PlanCuentas\" ";
             cadenaSql += "ORDER BY substr(\"pctNombre\", POSITION(' - ' IN \"pctNombre\"))";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
@@ -251,6 +254,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"Activos\".\"actDepreDiaria\" AS DepreDiaria, ";
             cadenaSql += "\"Activos\".\"actDepreAcumulada\" AS DepreAcumulada, ";
             cadenaSql += "\"Activos\".\"actValorActual\" AS ValorActual, ";
+            cadenaSql += "\"Activos\".\"actFinVidaUtil\" AS FinVidaUtil, ";
             cadenaSql += "\"Activos\".\"actFechaCorteDepre\" AS FechaCorteDepre, ";
             cadenaSql += "\"Activos\".\"actDepreciable\" AS Depreciable, ";
             cadenaSql += "\"Activos\".\"actEstado\" AS Estado, ";
@@ -301,6 +305,27 @@ namespace ActivosFijos.Clases
             return secId;
         }
 
+        public string SecuenciaArchivo(string rutaArchivo)
+        {
+            string nombreArchivo = null;
+            Int32 secNewArch = 0;
+
+            List<String> lista = new List<String>();
+            DirectoryInfo di = new DirectoryInfo(rutaArchivo);
+            foreach (var fi in di.GetFiles())
+            {
+                lista.Add(fi.Name.Substring(1,4));
+            }
+            lista.Sort();
+            if (lista.Count() <= 0)
+                secNewArch += 1;
+            else
+                secNewArch = Convert.ToInt32(lista[lista.Count - 1]) + 1;
+
+            nombreArchivo = "A" + String.Format("{0:0000}", secNewArch);
+            return nombreArchivo;
+        }
+
         public bool Insertar(string actId,
                              string actCodBarra,
                              string actArchivo,
@@ -320,10 +345,12 @@ namespace ActivosFijos.Clases
                              double actDepreDiaria,
                              double actDepreAcumulada,
                              double actValorActual,
+                             DateTime actFinVidaUtilAnios,
                              DateTime actFechaCorteDepre,
                              string actDepreciable,
                              string actEstado,
-                             string empId)
+                             string empId,
+                             string actVidaUtilAnios)
         {
             conexion.Open();
             cadenaSql = null;
@@ -347,6 +374,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"actDepreDiaria\", ";
             cadenaSql += "\"actDepreAcumulada\", ";
             cadenaSql += "\"actValorActual\", ";
+            cadenaSql += "\"actFinVidaUtilAnios\", ";
             cadenaSql += "\"actFechaCorteDepre\", ";
             cadenaSql += "\"actDepreciable\", ";
             cadenaSql += "\"actEstado\", ";
@@ -372,6 +400,7 @@ namespace ActivosFijos.Clases
             cadenaSql += actDepreDiaria.ToString() + "', '";
             cadenaSql += actDepreAcumulada.ToString() + "', '";
             cadenaSql += actValorActual.ToString() + "', '";
+            cadenaSql += actFinVidaUtilAnios.ToString() + "', '";
             cadenaSql += actFechaCorteDepre.ToString() + "', '";
             cadenaSql += actDepreciable + "', '";
             cadenaSql += actEstado + "', '";
@@ -469,5 +498,32 @@ namespace ActivosFijos.Clases
                     ((ComboBox)combo).SelectedIndex = 0;
             }
         }
+
+        public void Recalcular(DateTime fechaCorte)
+        {
+            string cadenaSql = null;
+
+            conexion.Open();
+            cadenaSql += "UPDATE \"Activos\" SET \"actFechaCorteDepre\" = '" + fechaCorte + "'; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actVidaUtilMeses\" = 12 * \"pctVidaUtilAnios\"; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actVidaUtilDias\" = \"actFinVidaUtil\" - \"actFechaCompra\"; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actFinVidaUtil\" = (365 * \"pctVidaUtilAnios\") + \"actFechaCompra\"; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actTiempoDepreDias\" = \"actFechaCorteDepre\" - \"actFechaCompra\"; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actPorDepreDias\" = \"actVidaUtilDias\" - \"actTiempoDepreDias\"; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actDepreDiaria\" = \"actValorActual\" / \"actVidaUtilDias\"; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actDepreAcumulada\" = \"actDepreDiaria\" * \"actTiempoDepreDias\"; ";
+            cadenaSql += "UPDATE \"Activos\" SET \"actValorActual\" = \"actValorTotal\" - \"actDepreAcumulada\"; ";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion); 
+            cmd.ExecuteNonQuery();
+            /*
+            cadenaSql += "\"actVidaUtilDias\" = \"actFinVidaUtil\" - \"actFechaCompra\", ";
+            cadenaSql += "\"actDepreAcumulada\" = '" + x1;
+            cadenaSql += "\"actDepreAcumulada\" = '" + x1;
+            NpgsqlCommand cmd1 = new NpgsqlCommand(cadenaSql, conexion);
+            cmd1.ExecuteNonQuery();
+            */
+            conexion.Close();
+        }
+
     }
 }
