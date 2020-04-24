@@ -12,9 +12,9 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT areId AS AreaId, areNombre AS NombreDelArea ";
-            cadenaSql += "FROM Areas ";
-            cadenaSql += "ORDER BY areNombre";
+            cadenaSql += "SELECT \"areId\" AS AreaId, \"areNombre\" AS NombreDelArea ";
+            cadenaSql += "FROM \"Areas\" ";
+            cadenaSql += "ORDER BY \"areNombre\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
@@ -27,13 +27,13 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT areId AS AreaId, areNombre AS NombreDelArea ";
-            cadenaSql += "FROM Areas ";
+            cadenaSql += "SELECT \"areId\" AS AreaId, \"areNombre\" AS NombreDelArea ";
+            cadenaSql += "FROM \"Areas\" ";
             if (nombre != "")
             {
-                cadenaSql += "WHERE areNombre LIKE '%{0}%' ";
+                cadenaSql += "WHERE \"areNombre\" ILIKE '%{0}%' ";
             }
-            cadenaSql += "ORDER BY areNombre";
+            cadenaSql += "ORDER BY \"areNombre\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(string.Format(cadenaSql, nombre), conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();

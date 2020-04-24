@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgListado = new System.Windows.Forms.TabPage();
             this.BtnReportes = new System.Windows.Forms.Button();
@@ -48,6 +48,8 @@
             this.DgvActivos = new System.Windows.Forms.DataGridView();
             this.TpgMantenimiento = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LblFinVidaUtilContable = new System.Windows.Forms.Label();
+            this.DtpFinVidaUtilContable = new System.Windows.Forms.DateTimePicker();
             this.LblDepreciable = new System.Windows.Forms.Label();
             this.CmbDepreciable = new System.Windows.Forms.ComboBox();
             this.LblCedulaCustodio = new System.Windows.Forms.Label();
@@ -98,8 +100,6 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnGrabar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
-            this.DtpFinVidaUtilContable = new System.Windows.Forms.DateTimePicker();
-            this.LblFinVidaUtilContable = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TpgListado.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -272,45 +272,45 @@
             this.DgvActivos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvActivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvActivos.ColumnHeadersHeight = 30;
             this.DgvActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvActivos.EnableHeadersVisualStyles = false;
             this.DgvActivos.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvActivos.Location = new System.Drawing.Point(6, 112);
             this.DgvActivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvActivos.Name = "DgvActivos";
             this.DgvActivos.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvActivos.RowHeadersWidth = 51;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvActivos.RowTemplate.Height = 24;
             this.DgvActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvActivos.Size = new System.Drawing.Size(1245, 592);
@@ -389,6 +389,29 @@
             this.groupBox1.Size = new System.Drawing.Size(1236, 626);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // LblFinVidaUtilContable
+            // 
+            this.LblFinVidaUtilContable.AutoSize = true;
+            this.LblFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFinVidaUtilContable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblFinVidaUtilContable.Location = new System.Drawing.Point(20, 474);
+            this.LblFinVidaUtilContable.Name = "LblFinVidaUtilContable";
+            this.LblFinVidaUtilContable.Size = new System.Drawing.Size(182, 18);
+            this.LblFinVidaUtilContable.TabIndex = 45;
+            this.LblFinVidaUtilContable.Text = "Finaliza Vida Util Contable:";
+            // 
+            // DtpFinVidaUtilContable
+            // 
+            this.DtpFinVidaUtilContable.CustomFormat = "yyyy/MM/dd";
+            this.DtpFinVidaUtilContable.Enabled = false;
+            this.DtpFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFinVidaUtilContable.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFinVidaUtilContable.Location = new System.Drawing.Point(233, 469);
+            this.DtpFinVidaUtilContable.Name = "DtpFinVidaUtilContable";
+            this.DtpFinVidaUtilContable.Size = new System.Drawing.Size(138, 27);
+            this.DtpFinVidaUtilContable.TabIndex = 44;
+            this.DtpFinVidaUtilContable.Value = new System.DateTime(2020, 4, 13, 16, 3, 15, 0);
             // 
             // LblDepreciable
             // 
@@ -638,6 +661,7 @@
             this.TxtPctjeIva.TabIndex = 19;
             this.TxtPctjeIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPctjeIva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPctjeIva_KeyPress);
+            this.TxtPctjeIva.Leave += new System.EventHandler(this.TxtPctjeIva_Leave);
             // 
             // LblPctjeIva
             // 
@@ -719,6 +743,7 @@
             this.TxtValorBaseIva.TabIndex = 18;
             this.TxtValorBaseIva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtValorBaseIva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtValorBaseIva_KeyPress);
+            this.TxtValorBaseIva.Leave += new System.EventHandler(this.TxtValorBaseIva_Leave);
             // 
             // TxtValorBase0
             // 
@@ -731,6 +756,7 @@
             this.TxtValorBase0.TabIndex = 17;
             this.TxtValorBase0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtValorBase0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtValorBase0_KeyPress);
+            this.TxtValorBase0.Leave += new System.EventHandler(this.TxtValorBase0_Leave);
             // 
             // LblFechaCompra
             // 
@@ -963,29 +989,6 @@
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // DtpFinVidaUtilContable
-            // 
-            this.DtpFinVidaUtilContable.CustomFormat = "yyyy/MM/dd";
-            this.DtpFinVidaUtilContable.Enabled = false;
-            this.DtpFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFinVidaUtilContable.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFinVidaUtilContable.Location = new System.Drawing.Point(233, 469);
-            this.DtpFinVidaUtilContable.Name = "DtpFinVidaUtilContable";
-            this.DtpFinVidaUtilContable.Size = new System.Drawing.Size(138, 27);
-            this.DtpFinVidaUtilContable.TabIndex = 44;
-            this.DtpFinVidaUtilContable.Value = new System.DateTime(2020, 4, 13, 16, 3, 15, 0);
-            // 
-            // LblFinVidaUtilContable
-            // 
-            this.LblFinVidaUtilContable.AutoSize = true;
-            this.LblFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFinVidaUtilContable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFinVidaUtilContable.Location = new System.Drawing.Point(20, 474);
-            this.LblFinVidaUtilContable.Name = "LblFinVidaUtilContable";
-            this.LblFinVidaUtilContable.Size = new System.Drawing.Size(182, 18);
-            this.LblFinVidaUtilContable.TabIndex = 45;
-            this.LblFinVidaUtilContable.Text = "Finaliza Vida Util Contable:";
             // 
             // FrmMantenimientoActivos
             // 

@@ -12,9 +12,9 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT empId AS Id, empNombre AS NombreDeLaEmpresa ";
-            cadenaSql += "FROM Empresas ";
-            cadenaSql += "ORDER BY empNombre";
+            cadenaSql += "SELECT \"empId\" AS Id, \"empNombre\" AS NombreDeLaEmpresa ";
+            cadenaSql += "FROM \"Empresas\" ";
+            cadenaSql += "ORDER BY \"empNombre\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
@@ -27,13 +27,13 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT empId AS Id, empNombre AS NombreDeLaEmpresa ";
-            cadenaSql += "FROM Empresas ";
+            cadenaSql += "SELECT \"empId\" AS Id, \"empNombre\" AS NombreDeLaEmpresa ";
+            cadenaSql += "FROM \"Empresas\" ";
             if (nombre != "")
             {
-                cadenaSql += "WHERE empNombre LIKE '%{0}%' ";
+                cadenaSql += "WHERE \"empNombre\" ILIKE '%{0}%' ";
             }
-            cadenaSql += "ORDER BY empNombre";
+            cadenaSql += "ORDER BY \"empNombre\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(string.Format(cadenaSql, nombre), conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();

@@ -68,14 +68,40 @@ namespace ActivosFijos.Formularios
             //AbrirFormularioHijo(new FrmGestionActivos());
         }
 
+        private void BtnTablas_Click(object sender, EventArgs e)
+        {
+            if (PnlSubMenuTablas.Visible)
+                PnlSubMenuTablas.Visible = false;
+            else
+                PnlSubMenuTablas.Visible = true;
+
+        }
+
         private void BtnAreas_Click(object sender, EventArgs e)
         {
+            PnlSubMenuTablas.Visible = false;
             AbrirFormularioHijo(new FrmMantenimientoAreas());
         }
 
-        private void BtnPropietarios_Click(object sender, EventArgs e)
+        private void BtnCustodios_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void BtnEmpresas_Click(object sender, EventArgs e)
+        {
+            PnlSubMenuTablas.Visible = false;
             AbrirFormularioHijo(new FrmMantenimientoEmpresas());
+        }
+
+        private void BtnPlanCuentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnProveedores_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,17 +39,22 @@
             this.PbxMenuSidebar = new System.Windows.Forms.PictureBox();
             this.PnlSidebarWraper = new System.Windows.Forms.Panel();
             this.BnfGradientPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.BtnPropietarios = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.PnlSubMenuTablas = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.BtnTablas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.LblRheagerCode = new System.Windows.Forms.Label();
             this.LblLogoEmpresa = new System.Windows.Forms.Label();
             this.BtnActivos = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.BtnAreas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BnfLineSidebar = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.BnfCurvaSidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.MoverDashBoard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.BnfRadioPanelChart = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.PnlWraper = new System.Windows.Forms.Panel();
+            this.BtnProveedores = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnPlanCuentas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnCustodios = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnEmpresas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnAreas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PnlMenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxMinimizar)).BeginInit();
@@ -58,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbxMenuSidebar)).BeginInit();
             this.PnlSidebarWraper.SuspendLayout();
             this.BnfGradientPanel.SuspendLayout();
+            this.PnlSubMenuTablas.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlMenuTop
@@ -170,11 +176,11 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BnfGradientPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BnfGradientPanel.BackgroundImage")));
             this.BnfGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BnfGradientPanel.Controls.Add(this.BtnPropietarios);
+            this.BnfGradientPanel.Controls.Add(this.PnlSubMenuTablas);
+            this.BnfGradientPanel.Controls.Add(this.BtnTablas);
             this.BnfGradientPanel.Controls.Add(this.LblRheagerCode);
             this.BnfGradientPanel.Controls.Add(this.LblLogoEmpresa);
             this.BnfGradientPanel.Controls.Add(this.BtnActivos);
-            this.BnfGradientPanel.Controls.Add(this.BtnAreas);
             this.BnfGradientPanel.Controls.Add(this.BnfLineSidebar);
             this.BnfGradientPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.BnfGradientPanel.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
@@ -187,41 +193,61 @@
             this.BnfGradientPanel.Size = new System.Drawing.Size(240, 901);
             this.BnfGradientPanel.TabIndex = 0;
             // 
-            // BtnPropietarios
+            // PnlSubMenuTablas
             // 
-            this.BtnPropietarios.Activecolor = System.Drawing.Color.Transparent;
-            this.BtnPropietarios.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPropietarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnPropietarios.BorderRadius = 0;
-            this.BtnPropietarios.ButtonText = "     PROPIETARIOS";
-            this.BtnPropietarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPropietarios.DisabledColor = System.Drawing.Color.Gray;
-            this.BtnPropietarios.Iconcolor = System.Drawing.Color.Transparent;
-            this.BtnPropietarios.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnPropietarios.Iconimage")));
-            this.BtnPropietarios.Iconimage_right = null;
-            this.BtnPropietarios.Iconimage_right_Selected = null;
-            this.BtnPropietarios.Iconimage_Selected = null;
-            this.BtnPropietarios.IconMarginLeft = 0;
-            this.BtnPropietarios.IconMarginRight = 0;
-            this.BtnPropietarios.IconRightVisible = true;
-            this.BtnPropietarios.IconRightZoom = 0D;
-            this.BtnPropietarios.IconVisible = true;
-            this.BtnPropietarios.IconZoom = 50D;
-            this.BtnPropietarios.IsTab = false;
-            this.BtnPropietarios.Location = new System.Drawing.Point(1, 203);
-            this.BtnPropietarios.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnPropietarios.Name = "BtnPropietarios";
-            this.BtnPropietarios.Normalcolor = System.Drawing.Color.Transparent;
-            this.BtnPropietarios.OnHovercolor = System.Drawing.Color.Transparent;
-            this.BtnPropietarios.OnHoverTextColor = System.Drawing.Color.White;
-            this.BtnPropietarios.selected = false;
-            this.BtnPropietarios.Size = new System.Drawing.Size(236, 57);
-            this.BtnPropietarios.TabIndex = 12;
-            this.BtnPropietarios.Text = "     PROPIETARIOS";
-            this.BtnPropietarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnPropietarios.Textcolor = System.Drawing.Color.White;
-            this.BtnPropietarios.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPropietarios.Click += new System.EventHandler(this.BtnPropietarios_Click);
+            this.PnlSubMenuTablas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PnlSubMenuTablas.BackgroundImage")));
+            this.PnlSubMenuTablas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlSubMenuTablas.Controls.Add(this.BtnProveedores);
+            this.PnlSubMenuTablas.Controls.Add(this.BtnPlanCuentas);
+            this.PnlSubMenuTablas.Controls.Add(this.BtnCustodios);
+            this.PnlSubMenuTablas.Controls.Add(this.BtnEmpresas);
+            this.PnlSubMenuTablas.Controls.Add(this.BtnAreas);
+            this.PnlSubMenuTablas.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            this.PnlSubMenuTablas.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            this.PnlSubMenuTablas.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
+            this.PnlSubMenuTablas.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.PnlSubMenuTablas.Location = new System.Drawing.Point(19, 187);
+            this.PnlSubMenuTablas.Name = "PnlSubMenuTablas";
+            this.PnlSubMenuTablas.Quality = 10;
+            this.PnlSubMenuTablas.Size = new System.Drawing.Size(218, 221);
+            this.PnlSubMenuTablas.TabIndex = 19;
+            this.PnlSubMenuTablas.Visible = false;
+            // 
+            // BtnTablas
+            // 
+            this.BtnTablas.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnTablas.BackColor = System.Drawing.Color.Transparent;
+            this.BtnTablas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnTablas.BorderRadius = 0;
+            this.BtnTablas.ButtonText = "               TABLAS";
+            this.BtnTablas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnTablas.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnTablas.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnTablas.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnTablas.Iconimage")));
+            this.BtnTablas.Iconimage_right = null;
+            this.BtnTablas.Iconimage_right_Selected = null;
+            this.BtnTablas.Iconimage_Selected = null;
+            this.BtnTablas.IconMarginLeft = 0;
+            this.BtnTablas.IconMarginRight = 0;
+            this.BtnTablas.IconRightVisible = true;
+            this.BtnTablas.IconRightZoom = 0D;
+            this.BtnTablas.IconVisible = true;
+            this.BtnTablas.IconZoom = 50D;
+            this.BtnTablas.IsTab = false;
+            this.BtnTablas.Location = new System.Drawing.Point(-1, 142);
+            this.BtnTablas.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnTablas.Name = "BtnTablas";
+            this.BtnTablas.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnTablas.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnTablas.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnTablas.selected = false;
+            this.BtnTablas.Size = new System.Drawing.Size(236, 50);
+            this.BtnTablas.TabIndex = 15;
+            this.BtnTablas.Text = "               TABLAS";
+            this.BtnTablas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnTablas.Textcolor = System.Drawing.Color.White;
+            this.BtnTablas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTablas.Click += new System.EventHandler(this.BtnTablas_Click);
             // 
             // LblRheagerCode
             // 
@@ -255,7 +281,7 @@
             this.BtnActivos.BackColor = System.Drawing.Color.Transparent;
             this.BtnActivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnActivos.BorderRadius = 0;
-            this.BtnActivos.ButtonText = "ACTIVOS";
+            this.BtnActivos.ButtonText = "               ACTIVOS";
             this.BtnActivos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnActivos.DisabledColor = System.Drawing.Color.Gray;
             this.BtnActivos.Iconcolor = System.Drawing.Color.Transparent;
@@ -279,47 +305,11 @@
             this.BtnActivos.selected = false;
             this.BtnActivos.Size = new System.Drawing.Size(239, 57);
             this.BtnActivos.TabIndex = 10;
-            this.BtnActivos.Text = "ACTIVOS";
-            this.BtnActivos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnActivos.Text = "               ACTIVOS";
+            this.BtnActivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnActivos.Textcolor = System.Drawing.Color.White;
             this.BtnActivos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActivos.Click += new System.EventHandler(this.BtnActivos_Click);
-            // 
-            // BtnAreas
-            // 
-            this.BtnAreas.Activecolor = System.Drawing.Color.Transparent;
-            this.BtnAreas.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAreas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAreas.BorderRadius = 0;
-            this.BtnAreas.ButtonText = "AREAS";
-            this.BtnAreas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAreas.DisabledColor = System.Drawing.Color.Gray;
-            this.BtnAreas.Iconcolor = System.Drawing.Color.Transparent;
-            this.BtnAreas.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnAreas.Iconimage")));
-            this.BtnAreas.Iconimage_right = null;
-            this.BtnAreas.Iconimage_right_Selected = null;
-            this.BtnAreas.Iconimage_Selected = null;
-            this.BtnAreas.IconMarginLeft = 0;
-            this.BtnAreas.IconMarginRight = 0;
-            this.BtnAreas.IconRightVisible = true;
-            this.BtnAreas.IconRightZoom = 0D;
-            this.BtnAreas.IconVisible = true;
-            this.BtnAreas.IconZoom = 50D;
-            this.BtnAreas.IsTab = false;
-            this.BtnAreas.Location = new System.Drawing.Point(4, 141);
-            this.BtnAreas.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnAreas.Name = "BtnAreas";
-            this.BtnAreas.Normalcolor = System.Drawing.Color.Transparent;
-            this.BtnAreas.OnHovercolor = System.Drawing.Color.Transparent;
-            this.BtnAreas.OnHoverTextColor = System.Drawing.Color.White;
-            this.BtnAreas.selected = false;
-            this.BtnAreas.Size = new System.Drawing.Size(236, 57);
-            this.BtnAreas.TabIndex = 9;
-            this.BtnAreas.Text = "AREAS";
-            this.BtnAreas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnAreas.Textcolor = System.Drawing.Color.White;
-            this.BtnAreas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAreas.Click += new System.EventHandler(this.BtnAreas_Click);
             // 
             // BnfLineSidebar
             // 
@@ -368,6 +358,187 @@
             this.PnlWraper.Size = new System.Drawing.Size(1683, 916);
             this.PnlWraper.TabIndex = 2;
             // 
+            // BtnProveedores
+            // 
+            this.BtnProveedores.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnProveedores.BackColor = System.Drawing.Color.Transparent;
+            this.BtnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnProveedores.BorderRadius = 0;
+            this.BtnProveedores.ButtonText = "■ Proveedores";
+            this.BtnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnProveedores.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnProveedores.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnProveedores.Iconimage = null;
+            this.BtnProveedores.Iconimage_right = null;
+            this.BtnProveedores.Iconimage_right_Selected = null;
+            this.BtnProveedores.Iconimage_Selected = null;
+            this.BtnProveedores.IconMarginLeft = 0;
+            this.BtnProveedores.IconMarginRight = 0;
+            this.BtnProveedores.IconRightVisible = true;
+            this.BtnProveedores.IconRightZoom = 0D;
+            this.BtnProveedores.IconVisible = true;
+            this.BtnProveedores.IconZoom = 50D;
+            this.BtnProveedores.IsTab = false;
+            this.BtnProveedores.Location = new System.Drawing.Point(43, 171);
+            this.BtnProveedores.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnProveedores.Name = "BtnProveedores";
+            this.BtnProveedores.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnProveedores.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnProveedores.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnProveedores.selected = false;
+            this.BtnProveedores.Size = new System.Drawing.Size(173, 35);
+            this.BtnProveedores.TabIndex = 31;
+            this.BtnProveedores.Text = "■ Proveedores";
+            this.BtnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProveedores.Textcolor = System.Drawing.Color.White;
+            this.BtnProveedores.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedores.Click += new System.EventHandler(this.BtnProveedores_Click);
+            // 
+            // BtnPlanCuentas
+            // 
+            this.BtnPlanCuentas.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnPlanCuentas.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPlanCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnPlanCuentas.BorderRadius = 0;
+            this.BtnPlanCuentas.ButtonText = "■ Plan de Cuentas";
+            this.BtnPlanCuentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPlanCuentas.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnPlanCuentas.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnPlanCuentas.Iconimage = null;
+            this.BtnPlanCuentas.Iconimage_right = null;
+            this.BtnPlanCuentas.Iconimage_right_Selected = null;
+            this.BtnPlanCuentas.Iconimage_Selected = null;
+            this.BtnPlanCuentas.IconMarginLeft = 0;
+            this.BtnPlanCuentas.IconMarginRight = 0;
+            this.BtnPlanCuentas.IconRightVisible = true;
+            this.BtnPlanCuentas.IconRightZoom = 0D;
+            this.BtnPlanCuentas.IconVisible = true;
+            this.BtnPlanCuentas.IconZoom = 50D;
+            this.BtnPlanCuentas.IsTab = false;
+            this.BtnPlanCuentas.Location = new System.Drawing.Point(43, 130);
+            this.BtnPlanCuentas.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnPlanCuentas.Name = "BtnPlanCuentas";
+            this.BtnPlanCuentas.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnPlanCuentas.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnPlanCuentas.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnPlanCuentas.selected = false;
+            this.BtnPlanCuentas.Size = new System.Drawing.Size(171, 35);
+            this.BtnPlanCuentas.TabIndex = 30;
+            this.BtnPlanCuentas.Text = "■ Plan de Cuentas";
+            this.BtnPlanCuentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPlanCuentas.Textcolor = System.Drawing.Color.White;
+            this.BtnPlanCuentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPlanCuentas.Click += new System.EventHandler(this.BtnPlanCuentas_Click);
+            // 
+            // BtnCustodios
+            // 
+            this.BtnCustodios.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnCustodios.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCustodios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCustodios.BorderRadius = 0;
+            this.BtnCustodios.ButtonText = "■ Custodios";
+            this.BtnCustodios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCustodios.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnCustodios.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnCustodios.Iconimage = null;
+            this.BtnCustodios.Iconimage_right = null;
+            this.BtnCustodios.Iconimage_right_Selected = null;
+            this.BtnCustodios.Iconimage_Selected = null;
+            this.BtnCustodios.IconMarginLeft = 0;
+            this.BtnCustodios.IconMarginRight = 0;
+            this.BtnCustodios.IconRightVisible = true;
+            this.BtnCustodios.IconRightZoom = 0D;
+            this.BtnCustodios.IconVisible = true;
+            this.BtnCustodios.IconZoom = 50D;
+            this.BtnCustodios.IsTab = false;
+            this.BtnCustodios.Location = new System.Drawing.Point(43, 48);
+            this.BtnCustodios.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnCustodios.Name = "BtnCustodios";
+            this.BtnCustodios.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnCustodios.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnCustodios.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnCustodios.selected = false;
+            this.BtnCustodios.Size = new System.Drawing.Size(171, 35);
+            this.BtnCustodios.TabIndex = 29;
+            this.BtnCustodios.Text = "■ Custodios";
+            this.BtnCustodios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCustodios.Textcolor = System.Drawing.Color.White;
+            this.BtnCustodios.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCustodios.Click += new System.EventHandler(this.BtnCustodios_Click);
+            // 
+            // BtnEmpresas
+            // 
+            this.BtnEmpresas.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnEmpresas.BackColor = System.Drawing.Color.Transparent;
+            this.BtnEmpresas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnEmpresas.BorderRadius = 0;
+            this.BtnEmpresas.ButtonText = "■ Empresas";
+            this.BtnEmpresas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEmpresas.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnEmpresas.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnEmpresas.Iconimage = null;
+            this.BtnEmpresas.Iconimage_right = null;
+            this.BtnEmpresas.Iconimage_right_Selected = null;
+            this.BtnEmpresas.Iconimage_Selected = null;
+            this.BtnEmpresas.IconMarginLeft = 0;
+            this.BtnEmpresas.IconMarginRight = 0;
+            this.BtnEmpresas.IconRightVisible = true;
+            this.BtnEmpresas.IconRightZoom = 0D;
+            this.BtnEmpresas.IconVisible = true;
+            this.BtnEmpresas.IconZoom = 50D;
+            this.BtnEmpresas.IsTab = false;
+            this.BtnEmpresas.Location = new System.Drawing.Point(43, 89);
+            this.BtnEmpresas.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnEmpresas.Name = "BtnEmpresas";
+            this.BtnEmpresas.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnEmpresas.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnEmpresas.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnEmpresas.selected = false;
+            this.BtnEmpresas.Size = new System.Drawing.Size(170, 35);
+            this.BtnEmpresas.TabIndex = 28;
+            this.BtnEmpresas.Text = "■ Empresas";
+            this.BtnEmpresas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEmpresas.Textcolor = System.Drawing.Color.White;
+            this.BtnEmpresas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEmpresas.Click += new System.EventHandler(this.BtnEmpresas_Click);
+            // 
+            // BtnAreas
+            // 
+            this.BtnAreas.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAreas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAreas.BorderRadius = 0;
+            this.BtnAreas.ButtonText = "■ Areas";
+            this.BtnAreas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAreas.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnAreas.ForeColor = System.Drawing.Color.White;
+            this.BtnAreas.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.Iconimage = null;
+            this.BtnAreas.Iconimage_right = null;
+            this.BtnAreas.Iconimage_right_Selected = null;
+            this.BtnAreas.Iconimage_Selected = null;
+            this.BtnAreas.IconMarginLeft = 0;
+            this.BtnAreas.IconMarginRight = 0;
+            this.BtnAreas.IconRightVisible = true;
+            this.BtnAreas.IconRightZoom = 0D;
+            this.BtnAreas.IconVisible = true;
+            this.BtnAreas.IconZoom = 50D;
+            this.BtnAreas.IsTab = false;
+            this.BtnAreas.Location = new System.Drawing.Point(43, 7);
+            this.BtnAreas.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnAreas.Name = "BtnAreas";
+            this.BtnAreas.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnAreas.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnAreas.selected = false;
+            this.BtnAreas.Size = new System.Drawing.Size(173, 35);
+            this.BtnAreas.TabIndex = 27;
+            this.BtnAreas.Text = "■ Areas";
+            this.BtnAreas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAreas.Textcolor = System.Drawing.Color.White;
+            this.BtnAreas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAreas.Click += new System.EventHandler(this.BtnAreas_Click);
+            // 
             // FrmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -392,6 +563,7 @@
             this.PnlSidebarWraper.ResumeLayout(false);
             this.BnfGradientPanel.ResumeLayout(false);
             this.BnfGradientPanel.PerformLayout();
+            this.PnlSubMenuTablas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -407,7 +579,6 @@
         private System.Windows.Forms.Label LblDashBoard;
         private System.Windows.Forms.PictureBox PbxMenuSidebar;
         private Bunifu.Framework.UI.BunifuGradientPanel BnfGradientPanel;
-        private Bunifu.Framework.UI.BunifuFlatButton BtnAreas;
         private Bunifu.Framework.UI.BunifuSeparator BnfLineSidebar;
         private System.Windows.Forms.Label LblRheagerCode;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
@@ -417,6 +588,12 @@
         private Bunifu.Framework.UI.BunifuDragControl MoverDashBoard;
         private Bunifu.Framework.UI.BunifuElipse BnfRadioPanelChart;
         private System.Windows.Forms.Panel PnlWraper;
-        private Bunifu.Framework.UI.BunifuFlatButton BtnPropietarios;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnTablas;
+        private Bunifu.Framework.UI.BunifuGradientPanel PnlSubMenuTablas;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnProveedores;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnPlanCuentas;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnCustodios;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnEmpresas;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnAreas;
     }
 }

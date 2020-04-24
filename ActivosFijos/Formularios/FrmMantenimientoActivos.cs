@@ -77,8 +77,8 @@ namespace ActivosFijos.Formularios
             TxtValorBase0.Enabled = true;
             TxtValorBaseIva.Enabled = true;
             TxtPctjeIva.Enabled = true;
-            TxtValorIva.Enabled = true;
-            TxtValorTotal.Enabled = true;
+            TxtValorIva.Enabled = false;
+            TxtValorTotal.Enabled = false;
             TxtDepreDiaria.Enabled = false;
             TxtDepreAcumulada.Enabled = false;
             TxtValorActual.Enabled = false;
@@ -125,9 +125,20 @@ namespace ActivosFijos.Formularios
                 {
                     if (sql.Eliminar(TxtId.Text))
                     {
+                        Computer myComputer = new Computer();
                         DgvActivos.DataSource = sql.MostrarDatos();
-
                         MessageBox.Show("Datos Eliminados OK...", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //Validar que el archivo exista para poder eliminarlo
+                        var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
+                                     where file.Name.Equals(Convert.ToString(TxtArchivo.Text).Trim() + ".jpg")
+                                     select file;
+
+                        if (_Files.Count() > 0)
+                        {
+                            myComputer.FileSystem.DeleteFile(rutaArchivo +  Convert.ToString(TxtArchivo.Text).Trim() + ".jpg");
+                            MessageBox.Show("El archivo asociado " + TxtArchivo.Text.Trim() + ".JPG se Elimino OK...", "Eliminación Archivo JPG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
 
                         sql.LimpiarCampos(this, groupBox1);
                         CmbEstado.SelectedIndex = 0;
@@ -171,8 +182,8 @@ namespace ActivosFijos.Formularios
                 TxtValorBase0.Enabled = true;
                 TxtValorBaseIva.Enabled = true;
                 TxtPctjeIva.Enabled = true;
-                TxtValorIva.Enabled = true;
-                TxtValorTotal.Enabled = true;
+                TxtValorIva.Enabled = false;
+                TxtValorTotal.Enabled = false;
                 TxtFactura.Enabled = true;
                 DtpFechaCompra.Enabled = true;
                 CmbCtaContable.Enabled = true;
@@ -326,13 +337,6 @@ namespace ActivosFijos.Formularios
                 string area = CmbArea.SelectedValue.ToString().Trim();
                 string epr = CmbEmpresas.SelectedValue.ToString().Trim();
 
-                int are = int.Parse(area);
-                string arch = String.Format("{0:000}", are);
-                string archivo = epr + "-" + arch + "-" + TxtArchivo.Text.Substring(6, 6);
-                string ext = ".jpg";
-                string oldName = rutaArchivo + TxtArchivo.Text + ext;
-                string nameOld = TxtArchivo.Text + ext;
-                string newName = archivo + ext;
                 string[] cta = CmbCtaContable.Text.ToString().Trim().Split(' ');
                 string ctaCtb = cta[0];
                 string[] rucs = CmbRucProveedor.Text.ToString().Trim().Split(' ');
@@ -361,7 +365,6 @@ namespace ActivosFijos.Formularios
                 }
 
                 if (sql.Actualizar(TxtId.Text,
-                                   archivo,
                                    TxtNombre.Text,
                                    TxtObservaciones.Text,
                                    area,
@@ -382,21 +385,6 @@ namespace ActivosFijos.Formularios
                                    estado,
                                    epr))
                 {
-                    for (int i = 0; i < Directory.EnumerateFiles(rutaArchivo).Count(); i++)
-                    {
-                        FileInfo k = new FileInfo(Directory.GetFiles(rutaArchivo)[i]);
-                        if (k.Name == TxtArchivo.Text + ext)
-                        {
-                            if (nameOld != newName)
-                            {
-                                myComputer.FileSystem.RenameFile(oldName, newName);
-                                break;
-                            }
-                        }
-                    }
-
-                    //Proceso para actualizar unicamente el area cuando ya exista el archivo
-                    TxtArchivo.Text = archivo;
                     DgvActivos.DataSource = sql.MostrarDatos();
 
                     MessageBox.Show("Datos Modificados OK...", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -404,7 +392,7 @@ namespace ActivosFijos.Formularios
                     //Validar que el archivo no exista para poder crearlo en caso de que selecciono
                     //Cancelar en el cuadro de dialogo que se selecciona la foto
                     var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
-                                 where file.Name.Substring(6, 10).Equals(Convert.ToString(archivo).Substring(6, 6) + ".jpg")
+                                 where file.Name.Equals(Convert.ToString(TxtArchivo.Text).Trim() + ".jpg")
                                  select file;
 
                     if (_Files.Count() == 0)
@@ -414,17 +402,18 @@ namespace ActivosFijos.Formularios
                         {
                             Filter = "Archivos|*.jpg|Todos|*.*"
                         };
-                        var resultado = ofd.ShowDialog();
+                        DialogResult resultado = ofd.ShowDialog();
 
                         if (resultado == DialogResult.OK)
                         {
                             string extencion = ofd.FileName.Substring(ofd.FileName.IndexOf("."));
                             string nomArch = ofd.SafeFileName;
-                            oldName = ofd.FileName;
-                            newName = rutaArchivo + nomArch;
+                            string oldName = ofd.FileName;
+                            string newName = rutaArchivo + nomArch;
                             myComputer.FileSystem.MoveFile(oldName, newName);
-                            myComputer.FileSystem.RenameFile(newName, archivo + extencion);
+                            myComputer.FileSystem.RenameFile(newName, TxtArchivo.Text.Trim() + extencion);
                             MessageBox.Show("El archivo JPG se guardo OK...", "Creación Archivo JPG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                     
                         }
                         else
                         {
@@ -748,6 +737,28 @@ namespace ActivosFijos.Formularios
                 MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void TxtValorBase0_Leave(object sender, EventArgs e)
+        {
+            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
+            TxtValorTotal.Text = Convert.ToString(vt);
+
+        }
+
+        private void TxtValorBaseIva_Leave(object sender, EventArgs e)
+        {
+            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
+            TxtValorTotal.Text = Convert.ToString(vt);
+
+        }
+
+        private void TxtPctjeIva_Leave(object sender, EventArgs e)
+        {
+            var vi = Convert.ToDouble(TxtValorBaseIva.Text) * (Convert.ToDouble(TxtPctjeIva.Text) / 100);
+            TxtValorIva.Text = Convert.ToString(vi);
+            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
+            TxtValorTotal.Text = Convert.ToString(vt);
         }
     }
 }
