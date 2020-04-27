@@ -28,25 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimientoActivos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgListado = new System.Windows.Forms.TabPage();
-            this.BtnReportes = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnVisualizar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnReportes = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnRecalcularDepre = new System.Windows.Forms.Button();
             this.LblFechaCorteDepre = new System.Windows.Forms.Label();
             this.DtpFechaCorteDepre = new System.Windows.Forms.DateTimePicker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnFiltroBuscar = new System.Windows.Forms.Button();
             this.CmbFiltroArea = new System.Windows.Forms.ComboBox();
             this.TxtFiltroNombre = new System.Windows.Forms.TextBox();
             this.LblFiltroArea = new System.Windows.Forms.Label();
             this.LblFiltroNombre = new System.Windows.Forms.Label();
-            this.BtnVisualizar = new System.Windows.Forms.Button();
             this.DgvActivos = new System.Windows.Forms.DataGridView();
             this.TpgMantenimiento = new System.Windows.Forms.TabPage();
+            this.BtnCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnGrabar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnEliminar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnModificar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnNuevo = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LblFinVidaUtilContable = new System.Windows.Forms.Label();
             this.DtpFinVidaUtilContable = new System.Windows.Forms.DateTimePicker();
@@ -95,11 +101,6 @@
             this.LblArea = new System.Windows.Forms.Label();
             this.LblNombre = new System.Windows.Forms.Label();
             this.LblId = new System.Windows.Forms.Label();
-            this.BtnNuevo = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnGrabar = new System.Windows.Forms.Button();
-            this.BtnCancelar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TpgListado.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -124,9 +125,12 @@
             // TpgListado
             // 
             this.TpgListado.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TpgListado.Controls.Add(this.BtnReportes);
-            this.TpgListado.Controls.Add(this.groupBox2);
             this.TpgListado.Controls.Add(this.BtnVisualizar);
+            this.TpgListado.Controls.Add(this.BtnReportes);
+            this.TpgListado.Controls.Add(this.BtnRecalcularDepre);
+            this.TpgListado.Controls.Add(this.LblFechaCorteDepre);
+            this.TpgListado.Controls.Add(this.DtpFechaCorteDepre);
+            this.TpgListado.Controls.Add(this.groupBox2);
             this.TpgListado.Controls.Add(this.DgvActivos);
             this.TpgListado.Location = new System.Drawing.Point(4, 34);
             this.TpgListado.Name = "TpgListado";
@@ -135,59 +139,79 @@
             this.TpgListado.TabIndex = 0;
             this.TpgListado.Text = "Listado";
             // 
+            // BtnVisualizar
+            // 
+            this.BtnVisualizar.ActiveBorderThickness = 1;
+            this.BtnVisualizar.ActiveCornerRadius = 20;
+            this.BtnVisualizar.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnVisualizar.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnVisualizar.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnVisualizar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnVisualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnVisualizar.BackgroundImage")));
+            this.BtnVisualizar.ButtonText = "FOTO";
+            this.BtnVisualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVisualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVisualizar.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnVisualizar.IdleBorderThickness = 1;
+            this.BtnVisualizar.IdleCornerRadius = 20;
+            this.BtnVisualizar.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnVisualizar.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnVisualizar.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnVisualizar.Location = new System.Drawing.Point(968, 21);
+            this.BtnVisualizar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnVisualizar.Name = "BtnVisualizar";
+            this.BtnVisualizar.Size = new System.Drawing.Size(130, 70);
+            this.BtnVisualizar.TabIndex = 45;
+            this.BtnVisualizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnVisualizar.Click += new System.EventHandler(this.BtnVisualizar_Click);
+            // 
             // BtnReportes
             // 
-            this.BtnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReportes.Location = new System.Drawing.Point(1150, 16);
+            this.BtnReportes.ActiveBorderThickness = 1;
+            this.BtnReportes.ActiveCornerRadius = 20;
+            this.BtnReportes.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnReportes.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnReportes.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnReportes.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnReportes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnReportes.BackgroundImage")));
+            this.BtnReportes.ButtonText = "REPORTES";
+            this.BtnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnReportes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReportes.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnReportes.IdleBorderThickness = 1;
+            this.BtnReportes.IdleCornerRadius = 20;
+            this.BtnReportes.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnReportes.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnReportes.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnReportes.Location = new System.Drawing.Point(1119, 21);
+            this.BtnReportes.Margin = new System.Windows.Forms.Padding(5);
             this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Size = new System.Drawing.Size(101, 53);
-            this.BtnReportes.TabIndex = 5;
-            this.BtnReportes.Text = "Reporte";
-            this.BtnReportes.UseVisualStyleBackColor = false;
+            this.BtnReportes.Size = new System.Drawing.Size(130, 70);
+            this.BtnReportes.TabIndex = 44;
+            this.BtnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.BtnRecalcularDepre);
-            this.groupBox2.Controls.Add(this.LblFechaCorteDepre);
-            this.groupBox2.Controls.Add(this.DtpFechaCorteDepre);
-            this.groupBox2.Controls.Add(this.BtnFiltroBuscar);
-            this.groupBox2.Controls.Add(this.CmbFiltroArea);
-            this.groupBox2.Controls.Add(this.TxtFiltroNombre);
-            this.groupBox2.Controls.Add(this.LblFiltroArea);
-            this.groupBox2.Controls.Add(this.LblFiltroNombre);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 5);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(1042, 93);
-            this.groupBox2.TabIndex = 23;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filtros:";
             // 
             // BtnRecalcularDepre
             // 
             this.BtnRecalcularDepre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.BtnRecalcularDepre.Location = new System.Drawing.Point(933, 15);
+            this.BtnRecalcularDepre.Location = new System.Drawing.Point(827, 10);
             this.BtnRecalcularDepre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRecalcularDepre.Name = "BtnRecalcularDepre";
-            this.BtnRecalcularDepre.Size = new System.Drawing.Size(103, 39);
-            this.BtnRecalcularDepre.TabIndex = 7;
-            this.BtnRecalcularDepre.Text = "Recalcular...";
+            this.BtnRecalcularDepre.Size = new System.Drawing.Size(93, 39);
+            this.BtnRecalcularDepre.TabIndex = 42;
+            this.BtnRecalcularDepre.Text = "Calcular";
             this.BtnRecalcularDepre.UseVisualStyleBackColor = false;
             this.BtnRecalcularDepre.Click += new System.EventHandler(this.BtnRecalcularDepre_Click);
             // 
             // LblFechaCorteDepre
             // 
             this.LblFechaCorteDepre.AutoSize = true;
-            this.LblFechaCorteDepre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaCorteDepre.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaCorteDepre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaCorteDepre.Location = new System.Drawing.Point(822, 15);
+            this.LblFechaCorteDepre.Location = new System.Drawing.Point(716, 14);
             this.LblFechaCorteDepre.Name = "LblFechaCorteDepre";
-            this.LblFechaCorteDepre.Size = new System.Drawing.Size(99, 36);
-            this.LblFechaCorteDepre.TabIndex = 40;
+            this.LblFechaCorteDepre.Size = new System.Drawing.Size(107, 38);
+            this.LblFechaCorteDepre.TabIndex = 43;
             this.LblFechaCorteDepre.Text = "Fecha Corte \r\nDepreciacion:";
             // 
             // DtpFechaCorteDepre
@@ -196,16 +220,33 @@
             this.DtpFechaCorteDepre.Enabled = false;
             this.DtpFechaCorteDepre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaCorteDepre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaCorteDepre.Location = new System.Drawing.Point(760, 56);
+            this.DtpFechaCorteDepre.Location = new System.Drawing.Point(720, 58);
             this.DtpFechaCorteDepre.Name = "DtpFechaCorteDepre";
-            this.DtpFechaCorteDepre.Size = new System.Drawing.Size(152, 27);
-            this.DtpFechaCorteDepre.TabIndex = 6;
+            this.DtpFechaCorteDepre.Size = new System.Drawing.Size(140, 27);
+            this.DtpFechaCorteDepre.TabIndex = 41;
             this.DtpFechaCorteDepre.Value = new System.DateTime(2020, 4, 13, 16, 3, 5, 0);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.BtnFiltroBuscar);
+            this.groupBox2.Controls.Add(this.CmbFiltroArea);
+            this.groupBox2.Controls.Add(this.TxtFiltroNombre);
+            this.groupBox2.Controls.Add(this.LblFiltroArea);
+            this.groupBox2.Controls.Add(this.LblFiltroNombre);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(8, 5);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(697, 93);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtros:";
             // 
             // BtnFiltroBuscar
             // 
             this.BtnFiltroBuscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnFiltroBuscar.Location = new System.Drawing.Point(626, 16);
+            this.BtnFiltroBuscar.Location = new System.Drawing.Point(586, 18);
             this.BtnFiltroBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnFiltroBuscar.Name = "BtnFiltroBuscar";
             this.BtnFiltroBuscar.Size = new System.Drawing.Size(102, 68);
@@ -218,27 +259,27 @@
             // 
             this.CmbFiltroArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbFiltroArea.FormattingEnabled = true;
-            this.CmbFiltroArea.Location = new System.Drawing.Point(78, 53);
+            this.CmbFiltroArea.Location = new System.Drawing.Point(83, 53);
             this.CmbFiltroArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbFiltroArea.Name = "CmbFiltroArea";
-            this.CmbFiltroArea.Size = new System.Drawing.Size(531, 28);
+            this.CmbFiltroArea.Size = new System.Drawing.Size(492, 28);
             this.CmbFiltroArea.TabIndex = 2;
             // 
             // TxtFiltroNombre
             // 
             this.TxtFiltroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFiltroNombre.Location = new System.Drawing.Point(78, 18);
+            this.TxtFiltroNombre.Location = new System.Drawing.Point(83, 18);
             this.TxtFiltroNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtFiltroNombre.Name = "TxtFiltroNombre";
-            this.TxtFiltroNombre.Size = new System.Drawing.Size(531, 27);
+            this.TxtFiltroNombre.Size = new System.Drawing.Size(492, 27);
             this.TxtFiltroNombre.TabIndex = 1;
             // 
             // LblFiltroArea
             // 
             this.LblFiltroArea.AutoSize = true;
-            this.LblFiltroArea.Location = new System.Drawing.Point(30, 58);
+            this.LblFiltroArea.Location = new System.Drawing.Point(29, 58);
             this.LblFiltroArea.Name = "LblFiltroArea";
-            this.LblFiltroArea.Size = new System.Drawing.Size(42, 18);
+            this.LblFiltroArea.Size = new System.Drawing.Size(49, 20);
             this.LblFiltroArea.TabIndex = 1;
             this.LblFiltroArea.Text = "Area:";
             // 
@@ -247,22 +288,9 @@
             this.LblFiltroNombre.AutoSize = true;
             this.LblFiltroNombre.Location = new System.Drawing.Point(6, 22);
             this.LblFiltroNombre.Name = "LblFiltroNombre";
-            this.LblFiltroNombre.Size = new System.Drawing.Size(66, 18);
+            this.LblFiltroNombre.Size = new System.Drawing.Size(72, 20);
             this.LblFiltroNombre.TabIndex = 0;
             this.LblFiltroNombre.Text = "Nombre:";
-            // 
-            // BtnVisualizar
-            // 
-            this.BtnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnVisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVisualizar.Location = new System.Drawing.Point(1062, 16);
-            this.BtnVisualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnVisualizar.Name = "BtnVisualizar";
-            this.BtnVisualizar.Size = new System.Drawing.Size(82, 54);
-            this.BtnVisualizar.TabIndex = 4;
-            this.BtnVisualizar.Text = "FOTO";
-            this.BtnVisualizar.UseVisualStyleBackColor = false;
-            this.BtnVisualizar.Click += new System.EventHandler(this.BtnVisualizar_Click);
             // 
             // DgvActivos
             // 
@@ -320,18 +348,148 @@
             // TpgMantenimiento
             // 
             this.TpgMantenimiento.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TpgMantenimiento.Controls.Add(this.groupBox1);
-            this.TpgMantenimiento.Controls.Add(this.BtnNuevo);
-            this.TpgMantenimiento.Controls.Add(this.BtnModificar);
-            this.TpgMantenimiento.Controls.Add(this.BtnEliminar);
-            this.TpgMantenimiento.Controls.Add(this.BtnGrabar);
             this.TpgMantenimiento.Controls.Add(this.BtnCancelar);
+            this.TpgMantenimiento.Controls.Add(this.BtnGrabar);
+            this.TpgMantenimiento.Controls.Add(this.BtnEliminar);
+            this.TpgMantenimiento.Controls.Add(this.BtnModificar);
+            this.TpgMantenimiento.Controls.Add(this.BtnNuevo);
+            this.TpgMantenimiento.Controls.Add(this.groupBox1);
             this.TpgMantenimiento.Location = new System.Drawing.Point(4, 34);
             this.TpgMantenimiento.Name = "TpgMantenimiento";
             this.TpgMantenimiento.Padding = new System.Windows.Forms.Padding(3);
             this.TpgMantenimiento.Size = new System.Drawing.Size(1257, 709);
             this.TpgMantenimiento.TabIndex = 1;
             this.TpgMantenimiento.Text = "Mantenimiento";
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.ActiveBorderThickness = 1;
+            this.BtnCancelar.ActiveCornerRadius = 20;
+            this.BtnCancelar.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnCancelar.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnCancelar.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.BackgroundImage")));
+            this.BtnCancelar.ButtonText = "CANCELAR";
+            this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnCancelar.IdleBorderThickness = 1;
+            this.BtnCancelar.IdleCornerRadius = 20;
+            this.BtnCancelar.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnCancelar.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnCancelar.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnCancelar.Location = new System.Drawing.Point(738, 634);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(160, 70);
+            this.BtnCancelar.TabIndex = 23;
+            this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // BtnGrabar
+            // 
+            this.BtnGrabar.ActiveBorderThickness = 1;
+            this.BtnGrabar.ActiveCornerRadius = 20;
+            this.BtnGrabar.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnGrabar.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnGrabar.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnGrabar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnGrabar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnGrabar.BackgroundImage")));
+            this.BtnGrabar.ButtonText = "GRABAR";
+            this.BtnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGrabar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGrabar.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnGrabar.IdleBorderThickness = 1;
+            this.BtnGrabar.IdleCornerRadius = 20;
+            this.BtnGrabar.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnGrabar.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnGrabar.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnGrabar.Location = new System.Drawing.Point(553, 634);
+            this.BtnGrabar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnGrabar.Name = "BtnGrabar";
+            this.BtnGrabar.Size = new System.Drawing.Size(160, 70);
+            this.BtnGrabar.TabIndex = 22;
+            this.BtnGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnGrabar.Click += new System.EventHandler(this.BtnGrabar_Click);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.ActiveBorderThickness = 1;
+            this.BtnEliminar.ActiveCornerRadius = 20;
+            this.BtnEliminar.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnEliminar.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnEliminar.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEliminar.BackgroundImage")));
+            this.BtnEliminar.ButtonText = "ELIMINAR";
+            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnEliminar.IdleBorderThickness = 1;
+            this.BtnEliminar.IdleCornerRadius = 20;
+            this.BtnEliminar.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnEliminar.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnEliminar.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnEliminar.Location = new System.Drawing.Point(373, 634);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(160, 70);
+            this.BtnEliminar.TabIndex = 21;
+            this.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.ActiveBorderThickness = 1;
+            this.BtnModificar.ActiveCornerRadius = 20;
+            this.BtnModificar.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnModificar.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnModificar.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnModificar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnModificar.BackgroundImage")));
+            this.BtnModificar.ButtonText = "MODIFICAR";
+            this.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnModificar.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnModificar.IdleBorderThickness = 1;
+            this.BtnModificar.IdleCornerRadius = 20;
+            this.BtnModificar.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnModificar.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnModificar.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnModificar.Location = new System.Drawing.Point(192, 634);
+            this.BtnModificar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(160, 70);
+            this.BtnModificar.TabIndex = 20;
+            this.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // BtnNuevo
+            // 
+            this.BtnNuevo.ActiveBorderThickness = 1;
+            this.BtnNuevo.ActiveCornerRadius = 20;
+            this.BtnNuevo.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnNuevo.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnNuevo.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnNuevo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnNuevo.BackgroundImage")));
+            this.BtnNuevo.ButtonText = "NUEVO";
+            this.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNuevo.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnNuevo.IdleBorderThickness = 1;
+            this.BtnNuevo.IdleCornerRadius = 20;
+            this.BtnNuevo.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnNuevo.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnNuevo.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnNuevo.Location = new System.Drawing.Point(11, 634);
+            this.BtnNuevo.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnNuevo.Name = "BtnNuevo";
+            this.BtnNuevo.Size = new System.Drawing.Size(160, 70);
+            this.BtnNuevo.TabIndex = 19;
+            this.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // groupBox1
             // 
@@ -925,71 +1083,6 @@
             this.LblId.TabIndex = 0;
             this.LblId.Text = "Id:";
             // 
-            // BtnNuevo
-            // 
-            this.BtnNuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevo.Location = new System.Drawing.Point(10, 643);
-            this.BtnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(120, 50);
-            this.BtnNuevo.TabIndex = 8;
-            this.BtnNuevo.Text = "Nuevo";
-            this.BtnNuevo.UseVisualStyleBackColor = false;
-            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnModificar.Location = new System.Drawing.Point(166, 643);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(120, 50);
-            this.BtnModificar.TabIndex = 9;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Location = new System.Drawing.Point(323, 643);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(120, 50);
-            this.BtnEliminar.TabIndex = 10;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = false;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // BtnGrabar
-            // 
-            this.BtnGrabar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGrabar.Location = new System.Drawing.Point(483, 643);
-            this.BtnGrabar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnGrabar.Name = "BtnGrabar";
-            this.BtnGrabar.Size = new System.Drawing.Size(120, 50);
-            this.BtnGrabar.TabIndex = 11;
-            this.BtnGrabar.Text = "Grabar";
-            this.BtnGrabar.UseVisualStyleBackColor = false;
-            this.BtnGrabar.Click += new System.EventHandler(this.BtnGrabar_Click);
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(640, 643);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(120, 50);
-            this.BtnCancelar.TabIndex = 12;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
             // FrmMantenimientoActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1009,6 +1102,7 @@
             this.Load += new System.EventHandler(this.FrmMantenimientoActivos_Load);
             this.tabControl1.ResumeLayout(false);
             this.TpgListado.ResumeLayout(false);
+            this.TpgListado.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvActivos)).EndInit();
@@ -1023,20 +1117,13 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TpgListado;
         private System.Windows.Forms.TabPage TpgMantenimiento;
-        private System.Windows.Forms.Button BtnReportes;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BtnFiltroBuscar;
         private System.Windows.Forms.ComboBox CmbFiltroArea;
         private System.Windows.Forms.TextBox TxtFiltroNombre;
         private System.Windows.Forms.Label LblFiltroArea;
         private System.Windows.Forms.Label LblFiltroNombre;
-        private System.Windows.Forms.Button BtnVisualizar;
         private System.Windows.Forms.DataGridView DgvActivos;
-        private System.Windows.Forms.Button BtnCancelar;
-        private System.Windows.Forms.Button BtnGrabar;
-        private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.Button BtnModificar;
-        private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtPctjeIva;
@@ -1083,10 +1170,17 @@
         private System.Windows.Forms.ComboBox CmbCtaContable;
         private System.Windows.Forms.Label LblDepreciable;
         private System.Windows.Forms.ComboBox CmbDepreciable;
+        private System.Windows.Forms.Label LblFinVidaUtilContable;
+        private System.Windows.Forms.DateTimePicker DtpFinVidaUtilContable;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnCancelar;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnGrabar;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnEliminar;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnModificar;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnNuevo;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnVisualizar;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnReportes;
         private System.Windows.Forms.Button BtnRecalcularDepre;
         private System.Windows.Forms.Label LblFechaCorteDepre;
         private System.Windows.Forms.DateTimePicker DtpFechaCorteDepre;
-        private System.Windows.Forms.Label LblFinVidaUtilContable;
-        private System.Windows.Forms.DateTimePicker DtpFinVidaUtilContable;
     }
 }

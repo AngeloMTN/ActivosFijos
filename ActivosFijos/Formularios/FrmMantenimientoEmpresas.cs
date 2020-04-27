@@ -15,6 +15,42 @@ namespace ActivosFijos.Formularios
 
         public string opcion = null;
 
+        private void BtnFiltroBuscar_Click(object sender, EventArgs e)
+        {
+            if (TxtFiltroNombre.Text != "")
+            {
+                DgvEmpresas.DataSource = sql.Buscar(TxtFiltroNombre.Text);
+            }
+            else
+            {
+                DgvEmpresas.DataSource = sql.MostrarDatos();
+            }
+        }
+
+        private void DgvEmpresas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int totalFilas = DgvEmpresas.Rows.Count;
+                int filaSeleccionada = DgvEmpresas.CurrentRow.Index;
+                if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
+                {
+                    DataGridViewRow fila = DgvEmpresas.Rows[e.RowIndex];
+                    TxtCodigo.Text = Convert.ToString(fila.Cells[0].Value);
+                    TxtNombre.Text = Convert.ToString(fila.Cells[1].Value);
+
+                    TxtNombre.Enabled = false;
+                }
+            }
+        }
+
+        private void FrmMantenimientoEmpresas_Load(object sender, EventArgs e)
+        {
+            DgvEmpresas.DataSource = sql.MostrarDatos();
+            BtnGrabar.Visible = false;
+            BtnCancelar.Visible = false;
+        }
+
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             opcion = "add";
@@ -51,20 +87,40 @@ namespace ActivosFijos.Formularios
             DialogResult resp = MessageBox.Show("Confirma que desea Eliminar el Nivel...?", "", MessageBoxButtons.YesNo);
             if (resp == DialogResult.Yes)
             {
-                if (sql.Eliminar(TxtCodigo.Text))
+                if (TxtCodigo.Text.Trim() != "")
                 {
-                    DgvEmpresas.DataSource = sql.MostrarDatos();
+                    if (sql.Eliminar(TxtCodigo.Text))
+                    {
+                        DgvEmpresas.DataSource = sql.MostrarDatos();
 
-                    TxtCodigo.Text = "";
-                    TxtNombre.Text = "";
+                        TxtCodigo.Text = "";
+                        TxtNombre.Text = "";
 
-                    MessageBox.Show("Datos Eliminados OK...", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Datos Eliminados OK...", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Eliminar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al Eliminar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            BtnNuevo.Visible = true;
+            BtnEliminar.Visible = true;
+            BtnGrabar.Visible = false;
+            BtnCancelar.Visible = false;
+            BtnModificar.Visible = true;
+
+            TxtNombre.Enabled = false;
+
         }
 
         private void BtnGrabar_Click(object sender, EventArgs e)
@@ -88,14 +144,21 @@ namespace ActivosFijos.Formularios
 
             if (opcion == "upd")
             {
-                if (sql.Actualizar(TxtCodigo.Text, TxtNombre.Text))
+                if (TxtCodigo.Text.Trim() != "")
                 {
-                    DgvEmpresas.DataSource = sql.MostrarDatos();
-                    MessageBox.Show("Datos Modificados OK...", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (sql.Actualizar(TxtCodigo.Text, TxtNombre.Text))
+                    {
+                        DgvEmpresas.DataSource = sql.MostrarDatos();
+                        MessageBox.Show("Datos Modificados OK...", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Modificar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al Modificar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -106,55 +169,7 @@ namespace ActivosFijos.Formularios
             BtnModificar.Visible = true;
 
             TxtNombre.Enabled = false;
-        }
 
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            BtnNuevo.Visible = true;
-            BtnEliminar.Visible = true;
-            BtnGrabar.Visible = false;
-            BtnCancelar.Visible = false;
-            BtnModificar.Visible = true;
-
-            TxtNombre.Enabled = false;
-
-        }
-
-        private void BtnFiltroBuscar_Click(object sender, EventArgs e)
-        {
-            if (TxtFiltroNombre.Text != "")
-            {
-                DgvEmpresas.DataSource = sql.Buscar(TxtFiltroNombre.Text);
-            }
-            else
-            {
-                DgvEmpresas.DataSource = sql.MostrarDatos();
-            }
-        }
-
-        private void DgvEmpresas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                int totalFilas = DgvEmpresas.Rows.Count;
-                int filaSeleccionada = DgvEmpresas.CurrentRow.Index;
-                if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
-                {
-                    DataGridViewRow fila = DgvEmpresas.Rows[e.RowIndex];
-                    TxtCodigo.Text = Convert.ToString(fila.Cells[0].Value);
-                    TxtNombre.Text = Convert.ToString(fila.Cells[1].Value);
-
-                    TxtNombre.Enabled = false;
-                }
-            }
-
-        }
-
-        private void FrmMantenimientoEmpresas_Load(object sender, EventArgs e)
-        {
-            DgvEmpresas.DataSource = sql.MostrarDatos();
-            BtnGrabar.Visible = false;
-            BtnCancelar.Visible = false;
         }
     }
 }

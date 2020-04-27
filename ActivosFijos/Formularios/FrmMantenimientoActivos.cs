@@ -47,6 +47,185 @@ namespace ActivosFijos.Formularios
 
         }
 
+        private void FrmMantenimientoActivos_Load(object sender, EventArgs e)
+        {
+            DgvActivos.DataSource = sql.MostrarDatos();
+            BtnGrabar.Visible = false;
+            BtnCancelar.Visible = false;
+            DtpFechaCompra.Value = DateTime.Today;
+            DtpFechaCorteDepre.Value = DateTime.Today;
+            CmbDepreciable.SelectedIndex = 0;
+            CmbEstado.SelectedIndex = 0;
+
+            BtnCancelar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnGrabar.Enabled = false;
+            BtnModificar.Enabled = false;
+            //BtnVisualizar.Enabled = false;
+            BtnRecalcularDepre.Enabled = false;
+        }
+
+        private void DgvActivos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int totalFilas = DgvActivos.Rows.Count;
+                int filaSeleccionada = DgvActivos.CurrentRow.Index;
+                if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
+                {
+                    DataGridViewRow fila = DgvActivos.Rows[e.RowIndex];
+                    TxtId.Text = Convert.ToString(fila.Cells[0].Value).Trim();
+                    TxtCodBarra.Text = Convert.ToString(fila.Cells[1].Value).Trim();
+                    TxtArchivo.Text = Convert.ToString(fila.Cells[2].Value).Trim();
+                    TxtNombre.Text = Convert.ToString(fila.Cells[3].Value).Trim();
+                    TxtObservaciones.Text = Convert.ToString(fila.Cells[4].Value).Trim();
+                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[5].Value);
+                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[7].Value).Trim());
+                    CmbCtaContable.SelectedIndex = indexcta;
+                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[9].Value).Trim());
+                    CmbCedulaCustodio.SelectedIndex = indexcus;
+                    TxtFactura.Text = Convert.ToString(fila.Cells[11].Value).Trim();
+                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[12].Value);
+                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[13].Value).Trim());
+                    CmbRucProveedor.SelectedIndex = indexpro;
+                    double base0 = Convert.ToDouble(fila.Cells[15].Value);
+                    TxtValorBase0.Text = base0.ToString("#,###.00").Trim();
+                    double baseiva = Convert.ToDouble(fila.Cells[16].Value);
+                    TxtValorBaseIva.Text = baseiva.ToString("#,###.00").Trim();
+                    double pctiva = Convert.ToDouble(fila.Cells[17].Value);
+                    TxtPctjeIva.Text = pctiva.ToString("###.00").Trim();
+                    double iva = Convert.ToDouble(fila.Cells[18].Value);
+                    TxtValorIva.Text = iva.ToString("#,###.00").Trim();
+                    double valortotal = Convert.ToDouble(fila.Cells[19].Value);
+                    TxtValorTotal.Text = valortotal.ToString("#,###.00").Trim();
+                    double deprediaria = Convert.ToDouble(fila.Cells[20].Value);
+                    TxtDepreDiaria.Text = deprediaria.ToString("#,###.00").Trim();
+                    double depreacumulada = Convert.ToDouble(fila.Cells[21].Value);
+                    TxtDepreAcumulada.Text = depreacumulada.ToString("#,###.00").Trim();
+                    double vaolractual = Convert.ToDouble(fila.Cells[22].Value);
+                    TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
+                    DtpFinVidaUtilContable.Value = Convert.ToDateTime(fila.Cells[23].Value);
+                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[24].Value);
+                    if (Convert.ToString(fila.Cells[25].Value).Trim() == "S")
+                        CmbDepreciable.SelectedIndex = 0;
+                    else
+                        CmbDepreciable.SelectedIndex = 1;
+                    switch (Convert.ToString(fila.Cells[26].Value).Trim())
+                    {
+                        case "ACTIVO":
+                            CmbEstado.SelectedIndex = 0;
+                            break;
+                        case "INACTIVO":
+                            CmbEstado.SelectedIndex = 1;
+                            break;
+                        case "BAJA":
+                            CmbEstado.SelectedIndex = 2;
+                            break;
+                    }
+                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[27].Value);
+
+                    TxtCodBarra.Enabled = false;
+                    CmbArea.Enabled = false;
+                    TxtNombre.Enabled = false;
+                    TxtObservaciones.Enabled = false;
+                    TxtValorBase0.Enabled = false;
+                    TxtValorBaseIva.Enabled = false;
+                    TxtPctjeIva.Enabled = false;
+                    TxtValorIva.Enabled = false;
+                    TxtValorTotal.Enabled = false;
+                    TxtFactura.Enabled = false;
+                    DtpFechaCompra.Enabled = false;
+                    CmbCtaContable.Enabled = false;
+                    CmbRucProveedor.Enabled = false;
+                    CmbCedulaCustodio.Enabled = false;
+                    CmbEmpresas.Enabled = false;
+                    CmbDepreciable.Enabled = false;
+                    CmbEstado.Enabled = false;
+
+                    BtnCancelar.Enabled = true;
+                    BtnEliminar.Enabled = true;
+                    BtnGrabar.Enabled = true;
+                    BtnModificar.Enabled = true;
+                    BtnVisualizar.Enabled = true;
+                    BtnRecalcularDepre.Enabled = true;
+                    DtpFechaCorteDepre.Enabled = true;
+
+                    nombreArchivo = null;
+
+                    var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
+                                 where file.Name.Equals(Convert.ToString(fila.Cells[2].Value) + ".jpg")
+                                 select file;
+
+                    if (_Files.Count() == 0)
+                    {
+                        nombreArchivo = null;
+                    }
+                    else
+                    {
+                        nombreArchivo += Convert.ToString(fila.Cells[2].Value) + ".jpg";
+                    }
+                }
+            }
+
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsObtenerConexion.ValidarCaracteres(e);
+        }
+
+        private void TxtObservaciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsObtenerConexion.ValidarCaracteres(e);
+        }
+
+        private void TxtValorBase0_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsObtenerConexion.ValidarNumeros(e);
+        }
+
+        private void TxtValorBaseIva_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsObtenerConexion.ValidarNumeros(e);
+        }
+
+        private void TxtPctjeIva_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsObtenerConexion.ValidarNumeros(e);
+        }
+
+        private void TxtValorIva_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsObtenerConexion.ValidarNumeros(e);
+        }
+
+        private void TxtValorTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsObtenerConexion.ValidarNumeros(e);
+        }
+
+        private void TxtValorBase0_Leave(object sender, EventArgs e)
+        {
+            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
+            TxtValorTotal.Text = Convert.ToString(vt);
+
+        }
+
+        private void TxtValorBaseIva_Leave(object sender, EventArgs e)
+        {
+            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
+            TxtValorTotal.Text = Convert.ToString(vt);
+
+        }
+
+        private void TxtPctjeIva_Leave(object sender, EventArgs e)
+        {
+            var vi = Convert.ToDouble(TxtValorBaseIva.Text) * (Convert.ToDouble(TxtPctjeIva.Text) / 100);
+            TxtValorIva.Text = Convert.ToString(vi);
+            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
+            TxtValorTotal.Text = Convert.ToString(vt);
+        }
+
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             opcion = "add";
@@ -116,48 +295,6 @@ namespace ActivosFijos.Formularios
 
         }
 
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            if (TxtId.Text.Trim() != "")
-            {
-                DialogResult resp = MessageBox.Show("Confirma que desea Eliminar el Activo...?", "", MessageBoxButtons.YesNo);
-                if (resp == DialogResult.Yes)
-                {
-                    if (sql.Eliminar(TxtId.Text))
-                    {
-                        Computer myComputer = new Computer();
-                        DgvActivos.DataSource = sql.MostrarDatos();
-                        MessageBox.Show("Datos Eliminados OK...", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        //Validar que el archivo exista para poder eliminarlo
-                        var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
-                                     where file.Name.Equals(Convert.ToString(TxtArchivo.Text).Trim() + ".jpg")
-                                     select file;
-
-                        if (_Files.Count() > 0)
-                        {
-                            myComputer.FileSystem.DeleteFile(rutaArchivo +  Convert.ToString(TxtArchivo.Text).Trim() + ".jpg");
-                            MessageBox.Show("El archivo asociado " + TxtArchivo.Text.Trim() + ".JPG se Elimino OK...", "Eliminación Archivo JPG", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                        sql.LimpiarCampos(this, groupBox1);
-                        CmbEstado.SelectedIndex = 0;
-                        BtnFiltroBuscar.PerformClick();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al Eliminar Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
-
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             if (TxtId.Text.Trim() != "")
@@ -201,30 +338,44 @@ namespace ActivosFijos.Formularios
 
         }
 
-        private void BtnFiltroBuscar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            string filtroNivel1 = CmbFiltroArea.Text.Substring(0, CmbFiltroArea.Text.IndexOf("-") - 1).Trim();
-            if (TxtFiltroNombre.Text != "" && filtroNivel1 != "0")
+            if (TxtId.Text.Trim() != "")
             {
-                DgvActivos.DataSource = sql.Buscar(TxtFiltroNombre.Text, filtroNivel1);
-            }
-            else
-            {
-                if (TxtFiltroNombre.Text != "" || filtroNivel1 == "0")
+                DialogResult resp = MessageBox.Show("Confirma que desea Eliminar el Activo...?", "", MessageBoxButtons.YesNo);
+                if (resp == DialogResult.Yes)
                 {
-                    DgvActivos.DataSource = sql.Buscar(TxtFiltroNombre.Text, filtroNivel1);
-                }
-                else
-                {
-                    if (TxtFiltroNombre.Text == "" || filtroNivel1 != "0")
+                    if (sql.Eliminar(TxtId.Text))
                     {
-                        DgvActivos.DataSource = sql.Buscar(TxtFiltroNombre.Text, filtroNivel1);
+                        Computer myComputer = new Computer();
+                        DgvActivos.DataSource = sql.MostrarDatos();
+                        MessageBox.Show("Datos Eliminados OK...", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //Validar que el archivo exista para poder eliminarlo
+                        var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
+                                     where file.Name.Equals(Convert.ToString(TxtArchivo.Text).Trim() + ".jpg")
+                                     select file;
+
+                        if (_Files.Count() > 0)
+                        {
+                            myComputer.FileSystem.DeleteFile(rutaArchivo + Convert.ToString(TxtArchivo.Text).Trim() + ".jpg");
+                            MessageBox.Show("El archivo asociado " + TxtArchivo.Text.Trim() + ".JPG se Elimino OK...", "Eliminación Archivo JPG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        sql.LimpiarCampos(this, groupBox1);
+                        CmbEstado.SelectedIndex = 0;
+                        BtnFiltroBuscar.PerformClick();
+
                     }
                     else
                     {
-                        DgvActivos.DataSource = sql.MostrarDatos();
+                        MessageBox.Show("Error al Eliminar Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -413,7 +564,7 @@ namespace ActivosFijos.Formularios
                             myComputer.FileSystem.MoveFile(oldName, newName);
                             myComputer.FileSystem.RenameFile(newName, TxtArchivo.Text.Trim() + extencion);
                             MessageBox.Show("El archivo JPG se guardo OK...", "Creación Archivo JPG", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                     
+
                         }
                         else
                         {
@@ -491,163 +642,32 @@ namespace ActivosFijos.Formularios
             CmbDepreciable.Enabled = false;
             CmbEstado.Enabled = false;
             CmbEstado.SelectedIndex = 0;
+
         }
 
-        private void FrmMantenimientoActivos_Load(object sender, EventArgs e)
+        private void BtnVisualizar_Click(object sender, EventArgs e)
         {
-            DgvActivos.DataSource = sql.MostrarDatos();
-            BtnGrabar.Visible = false;
-            BtnCancelar.Visible = false;
-            DtpFechaCompra.Value = DateTime.Today;
-            DtpFechaCorteDepre.Value = DateTime.Today;
-            CmbDepreciable.SelectedIndex = 0;
-            CmbEstado.SelectedIndex = 0;
-
-            BtnCancelar.Enabled = false;
-            BtnEliminar.Enabled = false;
-            BtnGrabar.Enabled = false;
-            BtnModificar.Enabled = false;
-            BtnVisualizar.Enabled = false;
-            BtnRecalcularDepre.Enabled = false;
-        }
-
-        private void DgvActivos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
+            if (TxtId.Text.Trim() != "")
             {
-                int totalFilas = DgvActivos.Rows.Count;
-                int filaSeleccionada = DgvActivos.CurrentRow.Index;
-                if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
+                string nomArch = TxtArchivo.Text.Trim() + ".jpg";
+                var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
+                             where file.Name.Equals(nomArch)
+                             select file;
+
+                if (_Files.Count() > 0)
                 {
-                    DataGridViewRow fila = DgvActivos.Rows[e.RowIndex];
-                    TxtId.Text = Convert.ToString(fila.Cells[0].Value).Trim();
-                    TxtCodBarra.Text = Convert.ToString(fila.Cells[1].Value).Trim();
-                    TxtArchivo.Text = Convert.ToString(fila.Cells[2].Value).Trim();
-                    TxtNombre.Text = Convert.ToString(fila.Cells[3].Value).Trim();
-                    TxtObservaciones.Text = Convert.ToString(fila.Cells[4].Value).Trim();
-                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[5].Value);
-                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[7].Value).Trim());
-                    CmbCtaContable.SelectedIndex = indexcta;
-                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[9].Value).Trim());
-                    CmbCedulaCustodio.SelectedIndex = indexcus;
-                    TxtFactura.Text = Convert.ToString(fila.Cells[11].Value).Trim();
-                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[12].Value);
-                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[13].Value).Trim());
-                    CmbRucProveedor.SelectedIndex = indexpro;
-                    double base0 = Convert.ToDouble(fila.Cells[15].Value);
-                    TxtValorBase0.Text = base0.ToString("#,###.00").Trim();
-                    double baseiva = Convert.ToDouble(fila.Cells[16].Value);
-                    TxtValorBaseIva.Text = baseiva.ToString("#,###.00").Trim();
-                    double pctiva = Convert.ToDouble(fila.Cells[17].Value);
-                    TxtPctjeIva.Text = pctiva.ToString("###.00").Trim();
-                    double iva = Convert.ToDouble(fila.Cells[18].Value);
-                    TxtValorIva.Text = iva.ToString("#,###.00").Trim();
-                    double valortotal = Convert.ToDouble(fila.Cells[19].Value);
-                    TxtValorTotal.Text = valortotal.ToString("#,###.00").Trim();
-                    double deprediaria = Convert.ToDouble(fila.Cells[20].Value);
-                    TxtDepreDiaria.Text = deprediaria.ToString("#,###.00").Trim();
-                    double depreacumulada = Convert.ToDouble(fila.Cells[21].Value);
-                    TxtDepreAcumulada.Text = depreacumulada.ToString("#,###.00").Trim();
-                    double vaolractual = Convert.ToDouble(fila.Cells[22].Value);
-                    TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
-                    DtpFinVidaUtilContable.Value = Convert.ToDateTime(fila.Cells[23].Value);
-                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[24].Value);
-                    if (Convert.ToString(fila.Cells[25].Value).Trim() == "S")
-                        CmbDepreciable.SelectedIndex = 0;
-                    else
-                        CmbDepreciable.SelectedIndex = 1;
-                    switch (Convert.ToString(fila.Cells[26].Value).Trim())
-                    {
-                        case "ACTIVO":
-                            CmbEstado.SelectedIndex = 0;
-                            break;
-                        case "INACTIVO":
-                            CmbEstado.SelectedIndex = 1;
-                            break;
-                        case "BAJA":
-                            CmbEstado.SelectedIndex = 2;
-                            break;
-                    }
-                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[27].Value);
-
-                    TxtCodBarra.Enabled = false;
-                    CmbArea.Enabled = false;
-                    TxtNombre.Enabled = false;
-                    TxtObservaciones.Enabled = false;
-                    TxtValorBase0.Enabled = false;
-                    TxtValorBaseIva.Enabled = false;
-                    TxtPctjeIva.Enabled = false;
-                    TxtValorIva.Enabled = false;
-                    TxtValorTotal.Enabled = false;
-                    TxtFactura.Enabled = false;
-                    DtpFechaCompra.Enabled = false;
-                    CmbCtaContable.Enabled = false;
-                    CmbRucProveedor.Enabled = false;
-                    CmbCedulaCustodio.Enabled = false;
-                    CmbEmpresas.Enabled = false;
-                    CmbDepreciable.Enabled = false;
-                    CmbEstado.Enabled = false;
-
-                    BtnCancelar.Enabled = true;
-                    BtnEliminar.Enabled = true;
-                    BtnGrabar.Enabled = true;
-                    BtnModificar.Enabled = true;
-                    BtnVisualizar.Enabled = true;
-                    BtnRecalcularDepre.Enabled = true;
-                    DtpFechaCorteDepre.Enabled = true;
-
-                    nombreArchivo = null;
-
-                    var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
-                                 where file.Name.Equals(Convert.ToString(fila.Cells[2].Value) + ".jpg")
-                                 select file;
-
-                    if (_Files.Count() == 0)
-                    {
-                        nombreArchivo = null;
-                    }
-                    else
-                    {
-                        nombreArchivo += Convert.ToString(fila.Cells[2].Value) + ".jpg";
-                    }
+                    Process.Start(rutaArchivo + nomArch);
+                }
+                else
+                {
+                    MessageBox.Show("No existe la Foto del Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-        }
-
-        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsObtenerConexion.ValidarCaracteres(e);
-        }
-
-        private void TxtObservaciones_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsObtenerConexion.ValidarCaracteres(e);
-        }
-
-        private void TxtValorBase0_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsObtenerConexion.ValidarNumeros(e);
-        }
-
-        private void TxtValorBaseIva_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsObtenerConexion.ValidarNumeros(e);
-        }
-
-        private void TxtPctjeIva_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsObtenerConexion.ValidarNumeros(e);
-        }
-
-        private void TxtValorIva_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsObtenerConexion.ValidarNumeros(e);
-        }
-
-        private void TxtValorTotal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClsObtenerConexion.ValidarNumeros(e);
         }
 
         private void BtnReportes_Click(object sender, EventArgs e)
@@ -681,30 +701,6 @@ namespace ActivosFijos.Formularios
 
         }
 
-        private void BtnVisualizar_Click(object sender, EventArgs e)
-        {
-            if (TxtId.Text.Trim() != "")
-            {
-                string nomArch = TxtArchivo.Text.Trim() + ".jpg";
-                var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
-                             where file.Name.Equals(nomArch)
-                             select file;
-
-                if (_Files.Count() > 0)
-                {
-                    Process.Start(rutaArchivo + nomArch);
-                }
-                else
-                {
-                    MessageBox.Show("No existe la Foto del Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
         private void BtnRecalcularDepre_Click(object sender, EventArgs e)
         {
             if (TxtId.Text.Trim() != "")
@@ -714,22 +710,6 @@ namespace ActivosFijos.Formularios
                 {
                     sql.Recalcular(DtpFechaCorteDepre.Value);
                     MessageBox.Show("Depreciación ReCalculada OK...", "ReCalcular Depreciación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    /*
-                    if (sql.Recalcular(DtpFechaCorteDepre.Value, DtpFechaCompra.Value))
-                    {
-                        DgvActivos.DataSource = sql.MostrarDatos();
-
-                        MessageBox.Show("Depreciación ReCalculada OK...", "ReCalcular Depreciación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        CmbEstado.SelectedIndex = 0;
-                        BtnFiltroBuscar.PerformClick();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al Eliminar Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    */
                 }
             }
             else
@@ -739,26 +719,32 @@ namespace ActivosFijos.Formularios
 
         }
 
-        private void TxtValorBase0_Leave(object sender, EventArgs e)
+        private void BtnFiltroBuscar_Click(object sender, EventArgs e)
         {
-            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
-            TxtValorTotal.Text = Convert.ToString(vt);
+            string filtroNivel1 = CmbFiltroArea.Text.Substring(0, CmbFiltroArea.Text.IndexOf("-") - 1).Trim();
+            if (TxtFiltroNombre.Text != "" && filtroNivel1 != "0")
+            {
+                DgvActivos.DataSource = sql.Buscar(TxtFiltroNombre.Text, filtroNivel1);
+            }
+            else
+            {
+                if (TxtFiltroNombre.Text != "" || filtroNivel1 == "0")
+                {
+                    DgvActivos.DataSource = sql.Buscar(TxtFiltroNombre.Text, filtroNivel1);
+                }
+                else
+                {
+                    if (TxtFiltroNombre.Text == "" || filtroNivel1 != "0")
+                    {
+                        DgvActivos.DataSource = sql.Buscar(TxtFiltroNombre.Text, filtroNivel1);
+                    }
+                    else
+                    {
+                        DgvActivos.DataSource = sql.MostrarDatos();
+                    }
+                }
+            }
 
-        }
-
-        private void TxtValorBaseIva_Leave(object sender, EventArgs e)
-        {
-            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
-            TxtValorTotal.Text = Convert.ToString(vt);
-
-        }
-
-        private void TxtPctjeIva_Leave(object sender, EventArgs e)
-        {
-            var vi = Convert.ToDouble(TxtValorBaseIva.Text) * (Convert.ToDouble(TxtPctjeIva.Text) / 100);
-            TxtValorIva.Text = Convert.ToString(vi);
-            var vt = Convert.ToDouble(TxtValorBase0.Text) + Convert.ToDouble(TxtValorBaseIva.Text) + Convert.ToDouble(TxtValorIva.Text);
-            TxtValorTotal.Text = Convert.ToString(vt);
         }
     }
 }

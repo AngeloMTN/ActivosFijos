@@ -46,7 +46,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string secId = null;
-            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(areId) FROM Areas"), conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(\"areId\") FROM \"Areas\" "), conexion);
             NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {

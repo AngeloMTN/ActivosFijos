@@ -200,18 +200,18 @@
   </data>
   <data name="BtnTablas.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAJWSURBVGhD7Zo9SBxRFEa30FJFxSJqlYBiEFKktRQUAimsQ4yNYmWRIkpIZ5FGEMHOThDExjJV
-        EAslkDKmiL+g2ImdTX5ezt13h3VmFpmZfeO8XebAab438/Z+rjusM1ZaFmNMDz71xB4d62E4sA0X8RJ9
-        Q2b6gG06bhhZwH0U/uIv/O6JxygzCXsYL0H4sbpszA8c0tgbmGkYj2RAWNS4BuE1SsthjbyD2UbwH15q
-        ZCHoQuFEI29hxjM7qunUqBr22cz81MhbZEY7qunTqCxQhXOf4XuUS10jzuMT3TYGa+4LcN4rDC5zLrjB
-        ft0+BHkuBXbs6WYN6/1U0/gVhWndPgR5LgW+2NPNS40ywx7Ldiszp1EI8lwLbOFqg35DoZACLimkwCd8
-        06C7KBRSoOk/A2UB9sinAGtvUa4QpxEn0O8C5MHX2HpMofcFZu2yWcHuiO3ofYE5u2yWNQpB3jQFfuNd
-        xNdYFghgj/JXKAZ50gLybtS7MZXGdRRmdfsQ5LkUkG+RrhnT7UOQ51JALqcbWO+mVFoPcUG3jsGa+wJZ
-        YK9eHMdRjRLB8d4UmLRbmk2NEsHxZQEnsFdZQKOyQCbY61ELvLPL5gA/O3IbhQ19mURwfKYCg3hbPcIt
-        f3BSXyYRHJ++gMDaAM6g/HHjyhe6fWI4J1sBX5AZ7agtViB4xHSqkbcwY/wRk0AgD/nkzkOqL1ePCbM9
-        1xmvNKpBGDxmlbco9Ycrb5jp/mPWJY1rEN5/0C0tzzF6E6soL/DhB92CLGBz/qtBFA7swOhNrKLs0LFa
-        jUrlP7Sq+ZGFVmFGAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAlZJREFUaEPt
+        mj1IHFEURrfQUkXFImqVgGIQUqS1FBQCKaxDjI1iZZEiSkhnkUYQwc5OEMTGMlUQCyWQMqaIv6DYiZ1N
+        fl7O3XeHdWYWmZl947xd5sBpvjfz9n6uO6wzVloWY0wPPvXEHh3rYTiwDRfxEn1DZvqAbTpuGFnAfRT+
+        4i/87onHKDMJexgvQfixumzMDxzS2BuYaRiPZEBY1LgG4TVKy2GNvIPZRvAfXmpkIehC4UQjb2HGMzuq
+        6dSoGvbZzPzUyFtkRjuq6dOoLFCFc5/he5RLXSPO4xPdNgZr7gtw3isMLnMuuMF+3T4EeS4FduzpZg3r
+        /VTT+BWFad0+BHkuBb7Y081LjTLDHst2KzOnUQjyXAts4WqDfkOhkAIuKaTAJ3zToLsoFFKg6T8DZQH2
+        yKcAa29RrhCnESfQ7wLkwdfYekyh9wVm7bJZwe6I7eh9gTm7bJY1CkHeNAV+413E11gWCGCP8lcoBnnS
+        AvJu1LsxlcZ1FGZ1+xDkuRSQb5GuGdPtQ5DnUkAupxtY76ZUWg9xQbeOwZr7Allgr14cx1GNEsHx3hSY
+        tFuaTY0SwfFlASewV1lAo7JAJtjrUQu8s8vmAD87chuFDX2ZRHB8pgKDeFs9wi1/cFJfJhEcn76AwNoA
+        zqD8cePKF7p9YjgnWwFfkBntqC1WIHjEdKqRtzBj/BGTQCAP+eTOQ6ovV48Jsz3XGa80qkEYPGaVtyj1
+        hytvmOn+Y9YljWsQ3n/QLS3PMXoTqygv8OEH3YIsYHP+q0EUDuzA6E2souzQsVqNSuU/tKr5kYVWYUYA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="BtnActivos.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

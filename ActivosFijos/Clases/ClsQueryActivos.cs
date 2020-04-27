@@ -268,17 +268,17 @@ namespace ActivosFijos.Clases
             cadenaSql += "INNER JOIN \"PlanCuentas\" ON \"Activos\".\"pctCuenta\" = \"PlanCuentas\".\"pctCuenta\" ";
             if (nombre != "" && area != "0")
             {
-                cadenaSql += "WHERE \"Activos\".\"actNombre\" LIKE '%{0}%' AND \"Activos\".\"areId\" LIKE '{1}' ";
+                cadenaSql += "WHERE \"Activos\".\"actNombre\" ILIKE '%{0}%' AND \"Activos\".\"areId\" ILIKE '{1}' ";
             }
             else
             {
                 if (nombre == "" && area != "0")
                 {
-                    cadenaSql += "WHERE \"Activos\".\"areId\" LIKE '{1}' ";
+                    cadenaSql += "WHERE \"Activos\".\"areId\" ILIKE '{1}' ";
                 }
                 else
                 {
-                    cadenaSql += "WHERE \"Activos\".\"actNombre\" LIKE '%{0}%' ";
+                    cadenaSql += "WHERE \"Activos\".\"actNombre\" ILIKE '%{0}%' ";
                 }
             }
             cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
