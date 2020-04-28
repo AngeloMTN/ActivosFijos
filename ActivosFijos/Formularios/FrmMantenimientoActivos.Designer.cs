@@ -551,11 +551,11 @@
             // LblFinVidaUtilContable
             // 
             this.LblFinVidaUtilContable.AutoSize = true;
-            this.LblFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFinVidaUtilContable.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFinVidaUtilContable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LblFinVidaUtilContable.Location = new System.Drawing.Point(20, 474);
             this.LblFinVidaUtilContable.Name = "LblFinVidaUtilContable";
-            this.LblFinVidaUtilContable.Size = new System.Drawing.Size(182, 18);
+            this.LblFinVidaUtilContable.Size = new System.Drawing.Size(201, 20);
             this.LblFinVidaUtilContable.TabIndex = 45;
             this.LblFinVidaUtilContable.Text = "Finaliza Vida Util Contable:";
             // 
@@ -574,11 +574,11 @@
             // LblDepreciable
             // 
             this.LblDepreciable.AutoSize = true;
-            this.LblDepreciable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDepreciable.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDepreciable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblDepreciable.Location = new System.Drawing.Point(90, 508);
+            this.LblDepreciable.Location = new System.Drawing.Point(98, 508);
             this.LblDepreciable.Name = "LblDepreciable";
-            this.LblDepreciable.Size = new System.Drawing.Size(112, 18);
+            this.LblDepreciable.Size = new System.Drawing.Size(123, 20);
             this.LblDepreciable.TabIndex = 41;
             this.LblDepreciable.Text = "Es Depreciable:";
             // 
@@ -599,11 +599,11 @@
             // LblCedulaCustodio
             // 
             this.LblCedulaCustodio.AutoSize = true;
-            this.LblCedulaCustodio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCedulaCustodio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCedulaCustodio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCedulaCustodio.Location = new System.Drawing.Point(483, 334);
+            this.LblCedulaCustodio.Location = new System.Drawing.Point(479, 334);
             this.LblCedulaCustodio.Name = "LblCedulaCustodio";
-            this.LblCedulaCustodio.Size = new System.Drawing.Size(122, 18);
+            this.LblCedulaCustodio.Size = new System.Drawing.Size(136, 20);
             this.LblCedulaCustodio.TabIndex = 38;
             this.LblCedulaCustodio.Text = "Cedula Custodio:";
             // 
@@ -621,11 +621,11 @@
             // LblRucProveedor
             // 
             this.LblRucProveedor.AutoSize = true;
-            this.LblRucProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRucProveedor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblRucProveedor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblRucProveedor.Location = new System.Drawing.Point(493, 299);
+            this.LblRucProveedor.Location = new System.Drawing.Point(491, 299);
             this.LblRucProveedor.Name = "LblRucProveedor";
-            this.LblRucProveedor.Size = new System.Drawing.Size(112, 18);
+            this.LblRucProveedor.Size = new System.Drawing.Size(124, 20);
             this.LblRucProveedor.TabIndex = 36;
             this.LblRucProveedor.Text = "Ruc Proveedor:";
             // 
@@ -643,11 +643,11 @@
             // LblCtaContable
             // 
             this.LblCtaContable.AutoSize = true;
-            this.LblCtaContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCtaContable.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCtaContable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCtaContable.Location = new System.Drawing.Point(483, 263);
+            this.LblCtaContable.Location = new System.Drawing.Point(474, 263);
             this.LblCtaContable.Name = "LblCtaContable";
-            this.LblCtaContable.Size = new System.Drawing.Size(122, 18);
+            this.LblCtaContable.Size = new System.Drawing.Size(141, 20);
             this.LblCtaContable.TabIndex = 34;
             this.LblCtaContable.Text = "Cuenta Contable:";
             // 
@@ -665,11 +665,11 @@
             // LblFactura
             // 
             this.LblFactura.AutoSize = true;
-            this.LblFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFactura.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LblFactura.Location = new System.Drawing.Point(531, 194);
             this.LblFactura.Name = "LblFactura";
-            this.LblFactura.Size = new System.Drawing.Size(74, 18);
+            this.LblFactura.Size = new System.Drawing.Size(84, 20);
             this.LblFactura.TabIndex = 32;
             this.LblFactura.Text = "Factura #:";
             // 
@@ -686,11 +686,11 @@
             // LblValorActual
             // 
             this.LblValorActual.AutoSize = true;
-            this.LblValorActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblValorActual.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblValorActual.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblValorActual.Location = new System.Drawing.Point(112, 440);
+            this.LblValorActual.Location = new System.Drawing.Point(117, 440);
             this.LblValorActual.Name = "LblValorActual";
-            this.LblValorActual.Size = new System.Drawing.Size(90, 18);
+            this.LblValorActual.Size = new System.Drawing.Size(104, 20);
             this.LblValorActual.TabIndex = 30;
             this.LblValorActual.Text = "Valor Actual:";
             // 
@@ -708,11 +708,11 @@
             // LblDepreAcumulada
             // 
             this.LblDepreAcumulada.AutoSize = true;
-            this.LblDepreAcumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDepreAcumulada.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDepreAcumulada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblDepreAcumulada.Location = new System.Drawing.Point(26, 404);
+            this.LblDepreAcumulada.Location = new System.Drawing.Point(18, 404);
             this.LblDepreAcumulada.Name = "LblDepreAcumulada";
-            this.LblDepreAcumulada.Size = new System.Drawing.Size(176, 18);
+            this.LblDepreAcumulada.Size = new System.Drawing.Size(203, 20);
             this.LblDepreAcumulada.TabIndex = 28;
             this.LblDepreAcumulada.Text = "Depreciacion Acumulada:";
             // 
@@ -730,11 +730,11 @@
             // LblDepreDiaria
             // 
             this.LblDepreDiaria.AutoSize = true;
-            this.LblDepreDiaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDepreDiaria.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDepreDiaria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LblDepreDiaria.Location = new System.Drawing.Point(61, 370);
             this.LblDepreDiaria.Name = "LblDepreDiaria";
-            this.LblDepreDiaria.Size = new System.Drawing.Size(141, 18);
+            this.LblDepreDiaria.Size = new System.Drawing.Size(160, 20);
             this.LblDepreDiaria.TabIndex = 26;
             this.LblDepreDiaria.Text = "Depreciacion Diaria:";
             // 
@@ -752,11 +752,11 @@
             // LblCodBarra
             // 
             this.LblCodBarra.AutoSize = true;
-            this.LblCodBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCodBarra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCodBarra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LblCodBarra.Location = new System.Drawing.Point(323, 28);
             this.LblCodBarra.Name = "LblCodBarra";
-            this.LblCodBarra.Size = new System.Drawing.Size(96, 18);
+            this.LblCodBarra.Size = new System.Drawing.Size(107, 20);
             this.LblCodBarra.TabIndex = 24;
             this.LblCodBarra.Text = "CodigoBarra:";
             // 
@@ -764,7 +764,7 @@
             // 
             this.TxtCodBarra.Enabled = false;
             this.TxtCodBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodBarra.Location = new System.Drawing.Point(427, 23);
+            this.TxtCodBarra.Location = new System.Drawing.Point(449, 23);
             this.TxtCodBarra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCodBarra.MaxLength = 10;
             this.TxtCodBarra.Name = "TxtCodBarra";
@@ -774,11 +774,11 @@
             // LblEstado
             // 
             this.LblEstado.AutoSize = true;
-            this.LblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblEstado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEstado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblEstado.Location = new System.Drawing.Point(546, 405);
+            this.LblEstado.Location = new System.Drawing.Point(553, 405);
             this.LblEstado.Name = "LblEstado";
-            this.LblEstado.Size = new System.Drawing.Size(59, 18);
+            this.LblEstado.Size = new System.Drawing.Size(62, 20);
             this.LblEstado.TabIndex = 22;
             this.LblEstado.Text = "Estado:";
             // 
@@ -824,11 +824,11 @@
             // LblPctjeIva
             // 
             this.LblPctjeIva.AutoSize = true;
-            this.LblPctjeIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPctjeIva.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPctjeIva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblPctjeIva.Location = new System.Drawing.Point(172, 263);
+            this.LblPctjeIva.Location = new System.Drawing.Point(183, 263);
             this.LblPctjeIva.Name = "LblPctjeIva";
-            this.LblPctjeIva.Size = new System.Drawing.Size(30, 18);
+            this.LblPctjeIva.Size = new System.Drawing.Size(38, 20);
             this.LblPctjeIva.TabIndex = 0;
             this.LblPctjeIva.Text = "Iva:";
             // 
@@ -846,11 +846,11 @@
             // LblEmpresa
             // 
             this.LblEmpresa.AutoSize = true;
-            this.LblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblEmpresa.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblEmpresa.Location = new System.Drawing.Point(533, 370);
+            this.LblEmpresa.Location = new System.Drawing.Point(540, 370);
             this.LblEmpresa.Name = "LblEmpresa";
-            this.LblEmpresa.Size = new System.Drawing.Size(72, 18);
+            this.LblEmpresa.Size = new System.Drawing.Size(75, 20);
             this.LblEmpresa.TabIndex = 0;
             this.LblEmpresa.Text = "Empresa:";
             // 
@@ -919,55 +919,55 @@
             // LblFechaCompra
             // 
             this.LblFechaCompra.AutoSize = true;
-            this.LblFechaCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaCompra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaCompra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaCompra.Location = new System.Drawing.Point(474, 230);
+            this.LblFechaCompra.Location = new System.Drawing.Point(468, 230);
             this.LblFechaCompra.Name = "LblFechaCompra";
-            this.LblFechaCompra.Size = new System.Drawing.Size(131, 18);
+            this.LblFechaCompra.Size = new System.Drawing.Size(147, 20);
             this.LblFechaCompra.TabIndex = 0;
             this.LblFechaCompra.Text = "Fecha de Compra:";
             // 
             // LblValorTotal
             // 
             this.LblValorTotal.AutoSize = true;
-            this.LblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblValorTotal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblValorTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblValorTotal.Location = new System.Drawing.Point(119, 334);
+            this.LblValorTotal.Location = new System.Drawing.Point(132, 334);
             this.LblValorTotal.Name = "LblValorTotal";
-            this.LblValorTotal.Size = new System.Drawing.Size(83, 18);
+            this.LblValorTotal.Size = new System.Drawing.Size(89, 20);
             this.LblValorTotal.TabIndex = 0;
             this.LblValorTotal.Text = "Valor Total:";
             // 
             // LblIva
             // 
             this.LblIva.AutoSize = true;
-            this.LblIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIva.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblIva.Location = new System.Drawing.Point(134, 299);
+            this.LblIva.Location = new System.Drawing.Point(140, 299);
             this.LblIva.Name = "LblIva";
-            this.LblIva.Size = new System.Drawing.Size(68, 18);
+            this.LblIva.Size = new System.Drawing.Size(81, 20);
             this.LblIva.TabIndex = 0;
             this.LblIva.Text = "Valor Iva:";
             // 
             // LblBaseIva
             // 
             this.LblBaseIva.AutoSize = true;
-            this.LblBaseIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBaseIva.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBaseIva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblBaseIva.Location = new System.Drawing.Point(96, 230);
+            this.LblBaseIva.Location = new System.Drawing.Point(101, 230);
             this.LblBaseIva.Name = "LblBaseIva";
-            this.LblBaseIva.Size = new System.Drawing.Size(106, 18);
+            this.LblBaseIva.Size = new System.Drawing.Size(120, 20);
             this.LblBaseIva.TabIndex = 0;
             this.LblBaseIva.Text = "Valor Base Iva:";
             // 
             // LblBase0
             // 
             this.LblBase0.AutoSize = true;
-            this.LblBase0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBase0.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBase0.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblBase0.Location = new System.Drawing.Point(106, 194);
+            this.LblBase0.Location = new System.Drawing.Point(118, 194);
             this.LblBase0.Name = "LblBase0";
-            this.LblBase0.Size = new System.Drawing.Size(96, 18);
+            this.LblBase0.Size = new System.Drawing.Size(103, 20);
             this.LblBase0.TabIndex = 0;
             this.LblBase0.Text = "Valor Base 0:";
             // 
@@ -986,10 +986,10 @@
             // LblObservaciones
             // 
             this.LblObservaciones.AutoSize = true;
-            this.LblObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblObservaciones.Location = new System.Drawing.Point(90, 122);
+            this.LblObservaciones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblObservaciones.Location = new System.Drawing.Point(96, 122);
             this.LblObservaciones.Name = "LblObservaciones";
-            this.LblObservaciones.Size = new System.Drawing.Size(112, 18);
+            this.LblObservaciones.Size = new System.Drawing.Size(125, 20);
             this.LblObservaciones.TabIndex = 0;
             this.LblObservaciones.Text = "Observaciones:";
             // 
@@ -997,7 +997,7 @@
             // 
             this.TxtArchivo.Enabled = false;
             this.TxtArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtArchivo.Location = new System.Drawing.Point(662, 23);
+            this.TxtArchivo.Location = new System.Drawing.Point(690, 23);
             this.TxtArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtArchivo.MaxLength = 10;
             this.TxtArchivo.Name = "TxtArchivo";
@@ -1007,11 +1007,11 @@
             // LblArchivo
             // 
             this.LblArchivo.AutoSize = true;
-            this.LblArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblArchivo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblArchivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblArchivo.Location = new System.Drawing.Point(596, 28);
+            this.LblArchivo.Location = new System.Drawing.Point(613, 28);
             this.LblArchivo.Name = "LblArchivo";
-            this.LblArchivo.Size = new System.Drawing.Size(61, 18);
+            this.LblArchivo.Size = new System.Drawing.Size(71, 20);
             this.LblArchivo.TabIndex = 0;
             this.LblArchivo.Text = "Archivo:";
             // 
@@ -1053,33 +1053,33 @@
             // LblArea
             // 
             this.LblArea.AutoSize = true;
-            this.LblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblArea.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblArea.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblArea.Location = new System.Drawing.Point(160, 159);
+            this.LblArea.Location = new System.Drawing.Point(172, 159);
             this.LblArea.Name = "LblArea";
-            this.LblArea.Size = new System.Drawing.Size(42, 18);
+            this.LblArea.Size = new System.Drawing.Size(49, 20);
             this.LblArea.TabIndex = 0;
             this.LblArea.Text = "Area:";
             // 
             // LblNombre
             // 
             this.LblNombre.AutoSize = true;
-            this.LblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblNombre.Location = new System.Drawing.Point(136, 63);
+            this.LblNombre.Location = new System.Drawing.Point(149, 63);
             this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(66, 18);
+            this.LblNombre.Size = new System.Drawing.Size(72, 20);
             this.LblNombre.TabIndex = 0;
             this.LblNombre.Text = "Nombre:";
             // 
             // LblId
             // 
             this.LblId.AutoSize = true;
-            this.LblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblId.Location = new System.Drawing.Point(179, 28);
+            this.LblId.Location = new System.Drawing.Point(193, 28);
             this.LblId.Name = "LblId";
-            this.LblId.Size = new System.Drawing.Size(23, 18);
+            this.LblId.Size = new System.Drawing.Size(28, 20);
             this.LblId.TabIndex = 0;
             this.LblId.Text = "Id:";
             // 
