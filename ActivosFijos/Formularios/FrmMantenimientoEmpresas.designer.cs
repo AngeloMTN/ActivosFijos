@@ -173,7 +173,7 @@
             this.DgvEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DgvEmpresas.EnableHeadersVisualStyles = false;
             this.DgvEmpresas.GridColor = System.Drawing.Color.SteelBlue;
-            this.DgvEmpresas.Location = new System.Drawing.Point(12, 175);
+            this.DgvEmpresas.Location = new System.Drawing.Point(12, 144);
             this.DgvEmpresas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvEmpresas.Name = "DgvEmpresas";
             this.DgvEmpresas.ReadOnly = true;
@@ -195,7 +195,7 @@
             this.DgvEmpresas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvEmpresas.RowTemplate.Height = 24;
             this.DgvEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvEmpresas.Size = new System.Drawing.Size(755, 493);
+            this.DgvEmpresas.Size = new System.Drawing.Size(755, 544);
             this.DgvEmpresas.TabIndex = 3;
             this.DgvEmpresas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpresas_CellClick);
             // 
@@ -217,7 +217,7 @@
             this.BtnGrabar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnGrabar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnGrabar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnGrabar.Location = new System.Drawing.Point(619, 685);
+            this.BtnGrabar.Location = new System.Drawing.Point(622, 695);
             this.BtnGrabar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnGrabar.Name = "BtnGrabar";
             this.BtnGrabar.Size = new System.Drawing.Size(140, 60);
@@ -243,7 +243,7 @@
             this.BtnCancelar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnCancelar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnCancelar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnCancelar.Location = new System.Drawing.Point(465, 685);
+            this.BtnCancelar.Location = new System.Drawing.Point(468, 695);
             this.BtnCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(140, 60);
@@ -269,7 +269,7 @@
             this.BtnEliminar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnEliminar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnEliminar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEliminar.Location = new System.Drawing.Point(315, 685);
+            this.BtnEliminar.Location = new System.Drawing.Point(318, 695);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(140, 60);
@@ -295,7 +295,7 @@
             this.BtnModificar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnModificar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnModificar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnModificar.Location = new System.Drawing.Point(165, 685);
+            this.BtnModificar.Location = new System.Drawing.Point(168, 695);
             this.BtnModificar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(140, 60);
@@ -321,7 +321,7 @@
             this.BtnNuevo.IdleFillColor = System.Drawing.Color.Black;
             this.BtnNuevo.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnNuevo.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnNuevo.Location = new System.Drawing.Point(15, 685);
+            this.BtnNuevo.Location = new System.Drawing.Point(18, 695);
             this.BtnNuevo.Margin = new System.Windows.Forms.Padding(5);
             this.BtnNuevo.Name = "BtnNuevo";
             this.BtnNuevo.Size = new System.Drawing.Size(140, 60);
