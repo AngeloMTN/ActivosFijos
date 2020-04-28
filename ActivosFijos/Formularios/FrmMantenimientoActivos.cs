@@ -58,9 +58,9 @@ namespace ActivosFijos.Formularios
             CmbEstado.SelectedIndex = 0;
 
             BtnCancelar.Enabled = false;
-            BtnEliminar.Enabled = false;
+            //BtnEliminar.Enabled = false;
             BtnGrabar.Enabled = false;
-            BtnModificar.Enabled = false;
+            //BtnModificar.Enabled = false;
             //BtnVisualizar.Enabled = false;
             BtnRecalcularDepre.Enabled = false;
         }
@@ -424,62 +424,69 @@ namespace ActivosFijos.Formularios
                         estado = "BAJA";
                         break;
                 }
-
-                if (sql.Insertar(secNew.ToString(),
-                                 cbarra,
-                                 archivo,
-                                 TxtNombre.Text,
-                                 TxtObservaciones.Text,
-                                 are,
-                                 ctaCtb,
-                                 cedula,
-                                 TxtFactura.Text,
-                                 Convert.ToDateTime(DtpFechaCompra.Value),
-                                 ruc,
-                                 Convert.ToDouble(TxtValorBase0.Text),
-                                 Convert.ToDouble(TxtValorBaseIva.Text),
-                                 Convert.ToDouble(TxtPctjeIva.Text),
-                                 Convert.ToDouble(TxtValorIva.Text),
-                                 Convert.ToDouble(TxtValorTotal.Text),
-                                 0.00,
-                                 0.00,
-                                 0.00,
-                                 Convert.ToDateTime("1900-12-31"),
-                                 Convert.ToDateTime("1900-12-31"),
-                                 dpr,
-                                 estado,
-                                 epr,
-                                 vidaUtil))
+                if (TxtNombre.Text.Trim() != "")
                 {
-                    TxtCodBarra.Text = cbarra;
-                    DgvActivos.DataSource = sql.MostrarDatos();
-                    MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //Asignar el nombre correspondiente al archivo jpg
-                    OpenFileDialog ofd = new OpenFileDialog
+                    if (sql.Insertar(secNew.ToString(),
+                                     cbarra,
+                                     archivo,
+                                     TxtNombre.Text,
+                                     TxtObservaciones.Text,
+                                     are,
+                                     ctaCtb,
+                                     cedula,
+                                     TxtFactura.Text,
+                                     Convert.ToDateTime(DtpFechaCompra.Value),
+                                     ruc,
+                                     Convert.ToDouble(TxtValorBase0.Text),
+                                     Convert.ToDouble(TxtValorBaseIva.Text),
+                                     Convert.ToDouble(TxtPctjeIva.Text),
+                                     Convert.ToDouble(TxtValorIva.Text),
+                                     Convert.ToDouble(TxtValorTotal.Text),
+                                     0.00,
+                                     0.00,
+                                     0.00,
+                                     Convert.ToDateTime("1900-12-31"),
+                                     Convert.ToDateTime("1900-12-31"),
+                                     dpr,
+                                     estado,
+                                     epr,
+                                     vidaUtil))
                     {
-                        Filter = "Archivos|*.jpg|Todos|*.*"
-                    };
-                    var resultado = ofd.ShowDialog();
+                        TxtId.Text = secNew.ToString();
+                        TxtCodBarra.Text = cbarra;
+                        DgvActivos.DataSource = sql.MostrarDatos();
+                        MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    if (resultado == DialogResult.OK)
-                    {
-                        string extencion = ofd.FileName.Substring(ofd.FileName.IndexOf("."));
-                        string nomArch = ofd.SafeFileName;
-                        string oldName = ofd.FileName;
-                        string newName = rutaArchivo + nomArch;
-                        myComputer.FileSystem.MoveFile(oldName, newName);
-                        myComputer.FileSystem.RenameFile(newName, archivo + extencion);
-                        MessageBox.Show("El archivo JPG se guardo OK...", "Creación Archivo JPG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Asignar el nombre correspondiente al archivo jpg
+                        OpenFileDialog ofd = new OpenFileDialog
+                        {
+                            Filter = "Archivos|*.jpg|Todos|*.*"
+                        };
+                        var resultado = ofd.ShowDialog();
+
+                        if (resultado == DialogResult.OK)
+                        {
+                            string extencion = ofd.FileName.Substring(ofd.FileName.IndexOf("."));
+                            string nomArch = ofd.SafeFileName;
+                            string oldName = ofd.FileName;
+                            string newName = rutaArchivo + nomArch;
+                            myComputer.FileSystem.MoveFile(oldName, newName);
+                            myComputer.FileSystem.RenameFile(newName, archivo + extencion);
+                            MessageBox.Show("El archivo JPG se guardo OK...", "Creación Archivo JPG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se guardo la Foto del Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No se guardo la Foto del Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al Insertar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error al Insertar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ingrese los datos del activo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -744,7 +751,6 @@ namespace ActivosFijos.Formularios
                     }
                 }
             }
-
         }
     }
 }

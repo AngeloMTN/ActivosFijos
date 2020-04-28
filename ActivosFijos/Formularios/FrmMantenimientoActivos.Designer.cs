@@ -565,7 +565,7 @@
             this.DtpFinVidaUtilContable.Enabled = false;
             this.DtpFinVidaUtilContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFinVidaUtilContable.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFinVidaUtilContable.Location = new System.Drawing.Point(233, 469);
+            this.DtpFinVidaUtilContable.Location = new System.Drawing.Point(248, 469);
             this.DtpFinVidaUtilContable.Name = "DtpFinVidaUtilContable";
             this.DtpFinVidaUtilContable.Size = new System.Drawing.Size(138, 27);
             this.DtpFinVidaUtilContable.TabIndex = 44;
@@ -590,7 +590,7 @@
             this.CmbDepreciable.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.CmbDepreciable.Location = new System.Drawing.Point(233, 503);
+            this.CmbDepreciable.Location = new System.Drawing.Point(248, 503);
             this.CmbDepreciable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbDepreciable.Name = "CmbDepreciable";
             this.CmbDepreciable.Size = new System.Drawing.Size(68, 28);
@@ -601,7 +601,7 @@
             this.LblCedulaCustodio.AutoSize = true;
             this.LblCedulaCustodio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCedulaCustodio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCedulaCustodio.Location = new System.Drawing.Point(479, 334);
+            this.LblCedulaCustodio.Location = new System.Drawing.Point(494, 334);
             this.LblCedulaCustodio.Name = "LblCedulaCustodio";
             this.LblCedulaCustodio.Size = new System.Drawing.Size(136, 20);
             this.LblCedulaCustodio.TabIndex = 38;
@@ -612,7 +612,7 @@
             this.CmbCedulaCustodio.Enabled = false;
             this.CmbCedulaCustodio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbCedulaCustodio.FormattingEnabled = true;
-            this.CmbCedulaCustodio.Location = new System.Drawing.Point(630, 329);
+            this.CmbCedulaCustodio.Location = new System.Drawing.Point(662, 329);
             this.CmbCedulaCustodio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbCedulaCustodio.Name = "CmbCedulaCustodio";
             this.CmbCedulaCustodio.Size = new System.Drawing.Size(535, 28);
@@ -623,7 +623,7 @@
             this.LblRucProveedor.AutoSize = true;
             this.LblRucProveedor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblRucProveedor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblRucProveedor.Location = new System.Drawing.Point(491, 299);
+            this.LblRucProveedor.Location = new System.Drawing.Point(506, 299);
             this.LblRucProveedor.Name = "LblRucProveedor";
             this.LblRucProveedor.Size = new System.Drawing.Size(124, 20);
             this.LblRucProveedor.TabIndex = 36;
@@ -634,7 +634,7 @@
             this.CmbRucProveedor.Enabled = false;
             this.CmbRucProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbRucProveedor.FormattingEnabled = true;
-            this.CmbRucProveedor.Location = new System.Drawing.Point(630, 294);
+            this.CmbRucProveedor.Location = new System.Drawing.Point(662, 294);
             this.CmbRucProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbRucProveedor.Name = "CmbRucProveedor";
             this.CmbRucProveedor.Size = new System.Drawing.Size(535, 28);
@@ -645,7 +645,7 @@
             this.LblCtaContable.AutoSize = true;
             this.LblCtaContable.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCtaContable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCtaContable.Location = new System.Drawing.Point(474, 263);
+            this.LblCtaContable.Location = new System.Drawing.Point(489, 263);
             this.LblCtaContable.Name = "LblCtaContable";
             this.LblCtaContable.Size = new System.Drawing.Size(141, 20);
             this.LblCtaContable.TabIndex = 34;
@@ -656,7 +656,7 @@
             this.CmbCtaContable.Enabled = false;
             this.CmbCtaContable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbCtaContable.FormattingEnabled = true;
-            this.CmbCtaContable.Location = new System.Drawing.Point(630, 259);
+            this.CmbCtaContable.Location = new System.Drawing.Point(662, 259);
             this.CmbCtaContable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbCtaContable.Name = "CmbCtaContable";
             this.CmbCtaContable.Size = new System.Drawing.Size(535, 28);
@@ -667,7 +667,7 @@
             this.LblFactura.AutoSize = true;
             this.LblFactura.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFactura.Location = new System.Drawing.Point(531, 194);
+            this.LblFactura.Location = new System.Drawing.Point(546, 194);
             this.LblFactura.Name = "LblFactura";
             this.LblFactura.Size = new System.Drawing.Size(84, 20);
             this.LblFactura.TabIndex = 32;
@@ -677,7 +677,7 @@
             // 
             this.TxtFactura.Enabled = false;
             this.TxtFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFactura.Location = new System.Drawing.Point(630, 189);
+            this.TxtFactura.Location = new System.Drawing.Point(662, 189);
             this.TxtFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtFactura.Name = "TxtFactura";
             this.TxtFactura.Size = new System.Drawing.Size(207, 28);
@@ -698,7 +698,7 @@
             // 
             this.TxtValorActual.Enabled = false;
             this.TxtValorActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorActual.Location = new System.Drawing.Point(233, 434);
+            this.TxtValorActual.Location = new System.Drawing.Point(248, 434);
             this.TxtValorActual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorActual.Name = "TxtValorActual";
             this.TxtValorActual.Size = new System.Drawing.Size(169, 28);
@@ -720,7 +720,7 @@
             // 
             this.TxtDepreAcumulada.Enabled = false;
             this.TxtDepreAcumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDepreAcumulada.Location = new System.Drawing.Point(233, 399);
+            this.TxtDepreAcumulada.Location = new System.Drawing.Point(248, 399);
             this.TxtDepreAcumulada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDepreAcumulada.Name = "TxtDepreAcumulada";
             this.TxtDepreAcumulada.Size = new System.Drawing.Size(169, 28);
@@ -742,7 +742,7 @@
             // 
             this.TxtDepreDiaria.Enabled = false;
             this.TxtDepreDiaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDepreDiaria.Location = new System.Drawing.Point(233, 364);
+            this.TxtDepreDiaria.Location = new System.Drawing.Point(248, 364);
             this.TxtDepreDiaria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDepreDiaria.Name = "TxtDepreDiaria";
             this.TxtDepreDiaria.Size = new System.Drawing.Size(169, 28);
@@ -754,7 +754,7 @@
             this.LblCodBarra.AutoSize = true;
             this.LblCodBarra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCodBarra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCodBarra.Location = new System.Drawing.Point(323, 28);
+            this.LblCodBarra.Location = new System.Drawing.Point(338, 28);
             this.LblCodBarra.Name = "LblCodBarra";
             this.LblCodBarra.Size = new System.Drawing.Size(107, 20);
             this.LblCodBarra.TabIndex = 24;
@@ -764,7 +764,7 @@
             // 
             this.TxtCodBarra.Enabled = false;
             this.TxtCodBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodBarra.Location = new System.Drawing.Point(449, 23);
+            this.TxtCodBarra.Location = new System.Drawing.Point(464, 23);
             this.TxtCodBarra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCodBarra.MaxLength = 10;
             this.TxtCodBarra.Name = "TxtCodBarra";
@@ -776,7 +776,7 @@
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEstado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblEstado.Location = new System.Drawing.Point(553, 405);
+            this.LblEstado.Location = new System.Drawing.Point(568, 405);
             this.LblEstado.Name = "LblEstado";
             this.LblEstado.Size = new System.Drawing.Size(62, 20);
             this.LblEstado.TabIndex = 22;
@@ -791,7 +791,7 @@
             "ACTIVO",
             "INACTIVO",
             "BAJA"});
-            this.CmbEstado.Location = new System.Drawing.Point(630, 399);
+            this.CmbEstado.Location = new System.Drawing.Point(662, 399);
             this.CmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbEstado.Name = "CmbEstado";
             this.CmbEstado.Size = new System.Drawing.Size(138, 28);
@@ -802,7 +802,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(310, 265);
+            this.label1.Location = new System.Drawing.Point(325, 265);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 18);
             this.label1.TabIndex = 0;
@@ -812,7 +812,7 @@
             // 
             this.TxtPctjeIva.Enabled = false;
             this.TxtPctjeIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPctjeIva.Location = new System.Drawing.Point(233, 259);
+            this.TxtPctjeIva.Location = new System.Drawing.Point(248, 259);
             this.TxtPctjeIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtPctjeIva.Name = "TxtPctjeIva";
             this.TxtPctjeIva.Size = new System.Drawing.Size(68, 28);
@@ -837,7 +837,7 @@
             this.CmbEmpresas.Enabled = false;
             this.CmbEmpresas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbEmpresas.FormattingEnabled = true;
-            this.CmbEmpresas.Location = new System.Drawing.Point(630, 364);
+            this.CmbEmpresas.Location = new System.Drawing.Point(662, 364);
             this.CmbEmpresas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbEmpresas.Name = "CmbEmpresas";
             this.CmbEmpresas.Size = new System.Drawing.Size(535, 28);
@@ -848,7 +848,7 @@
             this.LblEmpresa.AutoSize = true;
             this.LblEmpresa.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblEmpresa.Location = new System.Drawing.Point(540, 370);
+            this.LblEmpresa.Location = new System.Drawing.Point(555, 370);
             this.LblEmpresa.Name = "LblEmpresa";
             this.LblEmpresa.Size = new System.Drawing.Size(75, 20);
             this.LblEmpresa.TabIndex = 0;
@@ -860,7 +860,7 @@
             this.DtpFechaCompra.Enabled = false;
             this.DtpFechaCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaCompra.Location = new System.Drawing.Point(630, 224);
+            this.DtpFechaCompra.Location = new System.Drawing.Point(662, 224);
             this.DtpFechaCompra.Name = "DtpFechaCompra";
             this.DtpFechaCompra.Size = new System.Drawing.Size(138, 27);
             this.DtpFechaCompra.TabIndex = 23;
@@ -870,7 +870,7 @@
             // 
             this.TxtValorTotal.Enabled = false;
             this.TxtValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorTotal.Location = new System.Drawing.Point(233, 329);
+            this.TxtValorTotal.Location = new System.Drawing.Point(248, 329);
             this.TxtValorTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorTotal.Name = "TxtValorTotal";
             this.TxtValorTotal.Size = new System.Drawing.Size(169, 28);
@@ -882,7 +882,7 @@
             // 
             this.TxtValorIva.Enabled = false;
             this.TxtValorIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorIva.Location = new System.Drawing.Point(232, 294);
+            this.TxtValorIva.Location = new System.Drawing.Point(247, 294);
             this.TxtValorIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorIva.Name = "TxtValorIva";
             this.TxtValorIva.Size = new System.Drawing.Size(170, 28);
@@ -894,7 +894,7 @@
             // 
             this.TxtValorBaseIva.Enabled = false;
             this.TxtValorBaseIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorBaseIva.Location = new System.Drawing.Point(233, 224);
+            this.TxtValorBaseIva.Location = new System.Drawing.Point(248, 224);
             this.TxtValorBaseIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorBaseIva.Name = "TxtValorBaseIva";
             this.TxtValorBaseIva.Size = new System.Drawing.Size(169, 28);
@@ -907,7 +907,7 @@
             // 
             this.TxtValorBase0.Enabled = false;
             this.TxtValorBase0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorBase0.Location = new System.Drawing.Point(233, 189);
+            this.TxtValorBase0.Location = new System.Drawing.Point(248, 189);
             this.TxtValorBase0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtValorBase0.Name = "TxtValorBase0";
             this.TxtValorBase0.Size = new System.Drawing.Size(169, 28);
@@ -921,7 +921,7 @@
             this.LblFechaCompra.AutoSize = true;
             this.LblFechaCompra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaCompra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaCompra.Location = new System.Drawing.Point(468, 230);
+            this.LblFechaCompra.Location = new System.Drawing.Point(483, 230);
             this.LblFechaCompra.Name = "LblFechaCompra";
             this.LblFechaCompra.Size = new System.Drawing.Size(147, 20);
             this.LblFechaCompra.TabIndex = 0;
@@ -975,7 +975,7 @@
             // 
             this.TxtObservaciones.Enabled = false;
             this.TxtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtObservaciones.Location = new System.Drawing.Point(233, 117);
+            this.TxtObservaciones.Location = new System.Drawing.Point(248, 117);
             this.TxtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtObservaciones.MaxLength = 75;
             this.TxtObservaciones.Name = "TxtObservaciones";
@@ -997,7 +997,7 @@
             // 
             this.TxtArchivo.Enabled = false;
             this.TxtArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtArchivo.Location = new System.Drawing.Point(690, 23);
+            this.TxtArchivo.Location = new System.Drawing.Point(713, 23);
             this.TxtArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtArchivo.MaxLength = 10;
             this.TxtArchivo.Name = "TxtArchivo";
@@ -1009,7 +1009,7 @@
             this.LblArchivo.AutoSize = true;
             this.LblArchivo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblArchivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblArchivo.Location = new System.Drawing.Point(613, 28);
+            this.LblArchivo.Location = new System.Drawing.Point(628, 28);
             this.LblArchivo.Name = "LblArchivo";
             this.LblArchivo.Size = new System.Drawing.Size(71, 20);
             this.LblArchivo.TabIndex = 0;
@@ -1020,7 +1020,7 @@
             this.CmbArea.Enabled = false;
             this.CmbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbArea.FormattingEnabled = true;
-            this.CmbArea.Location = new System.Drawing.Point(233, 152);
+            this.CmbArea.Location = new System.Drawing.Point(248, 152);
             this.CmbArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbArea.Name = "CmbArea";
             this.CmbArea.Size = new System.Drawing.Size(604, 30);
@@ -1030,7 +1030,7 @@
             // 
             this.TxtNombre.Enabled = false;
             this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(233, 58);
+            this.TxtNombre.Location = new System.Drawing.Point(248, 58);
             this.TxtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtNombre.MaxLength = 150;
             this.TxtNombre.Multiline = true;
@@ -1043,7 +1043,7 @@
             // 
             this.TxtId.Enabled = false;
             this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtId.Location = new System.Drawing.Point(233, 23);
+            this.TxtId.Location = new System.Drawing.Point(248, 23);
             this.TxtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtId.MaxLength = 10;
             this.TxtId.Name = "TxtId";

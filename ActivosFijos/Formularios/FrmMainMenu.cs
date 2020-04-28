@@ -85,7 +85,8 @@ namespace ActivosFijos.Formularios
 
         private void BtnCustodios_Click(object sender, EventArgs e)
         {
-
+            PnlSubMenuTablas.Visible = false;
+            AbrirFormularioHijo(new FrmMantenimientoCustodios());
         }
 
         private void BtnEmpresas_Click(object sender, EventArgs e)
@@ -96,12 +97,14 @@ namespace ActivosFijos.Formularios
 
         private void BtnPlanCuentas_Click(object sender, EventArgs e)
         {
-
+            PnlSubMenuTablas.Visible = false;
+            AbrirFormularioHijo(new FrmMantenimientoPlanCuentas());
         }
 
         private void BtnProveedores_Click(object sender, EventArgs e)
         {
-
+            PnlSubMenuTablas.Visible = false;
+            AbrirFormularioHijo(new FrmMantenimientoProveedores());
         }
     }
 }

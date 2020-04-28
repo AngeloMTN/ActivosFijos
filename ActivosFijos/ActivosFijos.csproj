@@ -111,7 +111,10 @@
     <Compile Include="Clases\ClsObtenerConexion.cs" />
     <Compile Include="Clases\ClsQueryActivos.cs" />
     <Compile Include="Clases\ClsQueryAreas.cs" />
+    <Compile Include="Clases\ClsQueryCustodios.cs" />
     <Compile Include="Clases\ClsQueryEmpresas.cs" />
+    <Compile Include="Clases\ClsQueryPlanCuentas.cs" />
+    <Compile Include="Clases\ClsQueryProveedores.cs" />
     <Compile Include="Clases\ClsQueryReportes.cs" />
     <Compile Include="Formularios\FrmMainMenu.cs">
       <SubType>Form</SubType>
@@ -131,11 +134,29 @@
     <Compile Include="Formularios\FrmMantenimientoAreas.Designer.cs">
       <DependentUpon>FrmMantenimientoAreas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmMantenimientoCustodios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimientoCustodios.Designer.cs">
+      <DependentUpon>FrmMantenimientoCustodios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmMantenimientoEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmMantenimientoEmpresas.designer.cs">
       <DependentUpon>FrmMantenimientoEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimientoPlanCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimientoPlanCuentas.Designer.cs">
+      <DependentUpon>FrmMantenimientoPlanCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimientoProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimientoProveedores.Designer.cs">
+      <DependentUpon>FrmMantenimientoProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmReporteActivos.cs">
       <SubType>Form</SubType>
@@ -154,8 +175,17 @@
     <EmbeddedResource Include="Formularios\FrmMantenimientoAreas.resx">
       <DependentUpon>FrmMantenimientoAreas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMantenimientoCustodios.resx">
+      <DependentUpon>FrmMantenimientoCustodios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMantenimientoEmpresas.resx">
       <DependentUpon>FrmMantenimientoEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMantenimientoPlanCuentas.resx">
+      <DependentUpon>FrmMantenimientoPlanCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMantenimientoProveedores.resx">
+      <DependentUpon>FrmMantenimientoProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReporteActivos.resx">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>

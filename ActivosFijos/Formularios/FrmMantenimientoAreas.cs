@@ -108,7 +108,6 @@ namespace ActivosFijos.Formularios
                     MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -127,19 +126,25 @@ namespace ActivosFijos.Formularios
         {
             if (opcion == "add")
             {
-                string secMax = sql.SecuenciaId();
-                Int32 secNew = Convert.ToInt32(secMax) + 1;
-
-                if (sql.Insertar(secNew.ToString(), TxtNombre.Text))
+                if (TxtCodigo.Text.Trim() != "")
                 {
-                    DgvAreas.DataSource = sql.MostrarDatos();
-                    MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string secMax = sql.SecuenciaId();
+                    Int32 secNew = Convert.ToInt32(secMax) + 1;
+
+                    if (sql.Insertar(secNew.ToString(), TxtNombre.Text))
+                    {
+                        DgvAreas.DataSource = sql.MostrarDatos();
+                        MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Insertar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al Insertar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Falta llenar datos, imposible Grabar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //cmbNivel1.Enabled = false;
             }
 
             if (opcion == "upd")
@@ -169,6 +174,9 @@ namespace ActivosFijos.Formularios
             BtnModificar.Visible = true;
 
             TxtNombre.Enabled = false;
+
+            TxtCodigo.Text = "";
+            TxtNombre.Text = "";
 
         }
     }
