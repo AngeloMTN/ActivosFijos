@@ -49,6 +49,13 @@ namespace ActivosFijos.Formularios
 
         private void FrmMantenimientoActivos_Load(object sender, EventArgs e)
         {
+            string valores = sql.Calcular();
+            string[] tot = valores.Split('|');
+            TxtTotalValorADepreciar.Text = Convert.ToDouble(tot[0]).ToString("#,###.00");
+            TxtTotalDepreDiaria.Text = Convert.ToDouble(tot[1]).ToString("#,###.00");
+            TxtTotalDepreAcumulada.Text = Convert.ToDouble(tot[2]).ToString("#,###.00");
+            TxtTotalValorActual.Text = Convert.ToDouble(tot[3]).ToString("#,###.00");
+
             DgvActivos.DataSource = sql.MostrarDatos();
             BtnGrabar.Visible = false;
             BtnCancelar.Visible = false;
@@ -716,6 +723,13 @@ namespace ActivosFijos.Formularios
                 if (resp == DialogResult.Yes)
                 {
                     sql.Recalcular(DtpFechaCorteDepre.Value);
+                    string valores = sql.Calcular();
+                    string[] tot = valores.Split('|');
+                    TxtTotalValorADepreciar.Text = Convert.ToDouble(tot[0]).ToString("#,###.00");
+                    TxtTotalDepreDiaria.Text = Convert.ToDouble(tot[1]).ToString("#,###.00");
+                    TxtTotalDepreAcumulada.Text = Convert.ToDouble(tot[2]).ToString("#,###.00");
+                    TxtTotalValorActual.Text = Convert.ToDouble(tot[3]).ToString("#,###.00");
+
                     MessageBox.Show("Depreciación ReCalculada OK...", "ReCalcular Depreciación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

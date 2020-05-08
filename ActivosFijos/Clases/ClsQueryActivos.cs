@@ -516,5 +516,31 @@ namespace ActivosFijos.Clases
             conexion.Close();
         }
 
+        public string Calcular()
+        {
+            string cadenaSql = null;
+
+            conexion.Open();
+            string totales = "";
+            cadenaSql += "SELECT ";
+            cadenaSql += "ROUND(SUM(\"actValorTotal\"), 2) AS v1, ";
+            cadenaSql += "ROUND(SUM(\"actDepreDiaria\"), 2) AS v2, ";
+            cadenaSql += "ROUND(SUM(\"actDepreAcumulada\"), 2) AS v3, ";
+            cadenaSql += "ROUND(SUM(\"actValorActual\"), 2) AS v3 ";
+            cadenaSql += "FROM \"Activos\" ";
+            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                totales += dr[0].ToString() + "|";
+                totales += dr[1].ToString() + "|";
+                totales += dr[2].ToString() + "|";
+                totales += dr[3].ToString() + "|";
+            }
+            dr.Close();
+            conexion.Close();
+            return totales;
+        }
+
     }
 }
