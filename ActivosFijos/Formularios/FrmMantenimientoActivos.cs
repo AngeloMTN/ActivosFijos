@@ -692,51 +692,39 @@ namespace ActivosFijos.Formularios
             {
                 ClsDatos data = new ClsDatos
                 {
-                    ActId = Convert.ToInt32(DgvActivos.Rows[i].Cells[0].Value),
-                    ActArchivo = Convert.ToString(DgvActivos.Rows[i].Cells[1].Value),
-                    AreId = Convert.ToInt32(DgvActivos.Rows[i].Cells[2].Value),
-                    AreNombre = Convert.ToString(DgvActivos.Rows[i].Cells[3].Value),
-                    ActNombre = Convert.ToString(DgvActivos.Rows[i].Cells[4].Value),
-                    ActObservaciones = Convert.ToString(DgvActivos.Rows[i].Cells[5].Value),
-                    ActValorBase0 = Convert.ToDouble(DgvActivos.Rows[i].Cells[6].Value),
-                    ActValorBaseIva = Convert.ToDouble(DgvActivos.Rows[i].Cells[7].Value),
-                    ActPctjeIva = Convert.ToDouble(DgvActivos.Rows[i].Cells[8].Value),
-                    ActValorIva = Convert.ToDouble(DgvActivos.Rows[i].Cells[9].Value),
-                    ActValorTotal = Convert.ToDouble(DgvActivos.Rows[i].Cells[10].Value),
-                    ActFechaCompra = Convert.ToString(DgvActivos.Rows[i].Cells[11].Value),
-                    ProId = Convert.ToInt32(DgvActivos.Rows[i].Cells[12].Value),
-                    ProNombre = Convert.ToString(DgvActivos.Rows[i].Cells[13].Value),
-                    ActEstado = Convert.ToString(DgvActivos.Rows[i].Cells[14].Value)
+                    ActId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[0].Value),
+                    ActCodBarra         = Convert.ToString(DgvActivos.Rows[i].Cells[1].Value),
+                    ActArchivo          = Convert.ToString(DgvActivos.Rows[i].Cells[2].Value),
+                    ActNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[3].Value),
+                    ActObservaciones    = Convert.ToString(DgvActivos.Rows[i].Cells[4].Value),
+                    AreId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[5].Value),
+                    AreNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[6].Value),
+                    PctCuenta           = Convert.ToString(DgvActivos.Rows[i].Cells[7].Value),
+                    PctNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[8].Value),
+                    CusCedula           = Convert.ToString(DgvActivos.Rows[i].Cells[9].Value),
+                    CusNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[10].Value),
+                    ActFactura          = Convert.ToString(DgvActivos.Rows[i].Cells[11].Value),
+                    ActFechaCompra      = Convert.ToString(DgvActivos.Rows[i].Cells[12].Value),
+                    ProRuc              = Convert.ToString(DgvActivos.Rows[i].Cells[13].Value),
+                    ProNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[14].Value),
+                    ActValorBase0       = Convert.ToDouble(DgvActivos.Rows[i].Cells[15].Value),
+                    ActValorBaseIva     = Convert.ToDouble(DgvActivos.Rows[i].Cells[16].Value),
+                    ActPctjeIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[17].Value),
+                    ActValorIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[18].Value),
+                    ActValorTotal       = Convert.ToDouble(DgvActivos.Rows[i].Cells[19].Value),
+                    ActDepreDiaria      = Convert.ToDouble(DgvActivos.Rows[i].Cells[20].Value),
+                    ActDepreAcumulada   = Convert.ToDouble(DgvActivos.Rows[i].Cells[21].Value),
+                    ActValorActual      = Convert.ToDouble(DgvActivos.Rows[i].Cells[22].Value),
+                    ActFinVidaUtil      = Convert.ToString(DgvActivos.Rows[i].Cells[23].Value),
+                    ActFechaCorteDepre  = Convert.ToString(DgvActivos.Rows[i].Cells[24].Value),
+                    ActEstado           = Convert.ToString(DgvActivos.Rows[i].Cells[26].Value),
+                    EmpId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[27].Value),
+                    EmpNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[28].Value)
                 };
 
                 rpt.Datos.Add(data);
             }
             rpt.ShowDialog();
-
-        }
-
-        private void BtnRecalcularDepre_Click(object sender, EventArgs e)
-        {
-            if (TxtId.Text.Trim() != "")
-            {
-                DialogResult resp = MessageBox.Show("Confirma que desea ReCalcular la Depreciación...?", "", MessageBoxButtons.YesNo);
-                if (resp == DialogResult.Yes)
-                {
-                    sql.Recalcular(DtpFechaCorteDepre.Value);
-                    string valores = sql.Calcular();
-                    string[] tot = valores.Split('|');
-                    TxtTotalValorADepreciar.Text = Convert.ToDouble(tot[0]).ToString("#,###.00");
-                    TxtTotalDepreDiaria.Text = Convert.ToDouble(tot[1]).ToString("#,###.00");
-                    TxtTotalDepreAcumulada.Text = Convert.ToDouble(tot[2]).ToString("#,###.00");
-                    TxtTotalValorActual.Text = Convert.ToDouble(tot[3]).ToString("#,###.00");
-
-                    MessageBox.Show("Depreciación ReCalculada OK...", "ReCalcular Depreciación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
         }
 
@@ -764,6 +752,30 @@ namespace ActivosFijos.Formularios
                         DgvActivos.DataSource = sql.MostrarDatos();
                     }
                 }
+            }
+        }
+
+        private void BtnRecalcularDepre_Click(object sender, EventArgs e)
+        {
+            if (TxtId.Text.Trim() != "")
+            {
+                DialogResult resp = MessageBox.Show("Confirma que desea ReCalcular la Depreciación...?", "", MessageBoxButtons.YesNo);
+                if (resp == DialogResult.Yes)
+                {
+                    sql.Recalcular(DtpFechaCorteDepre.Value);
+                    string valores = sql.Calcular();
+                    string[] tot = valores.Split('|');
+                    TxtTotalValorADepreciar.Text = Convert.ToDouble(tot[0]).ToString("#,###.00");
+                    TxtTotalDepreDiaria.Text = Convert.ToDouble(tot[1]).ToString("#,###.00");
+                    TxtTotalDepreAcumulada.Text = Convert.ToDouble(tot[2]).ToString("#,###.00");
+                    TxtTotalValorActual.Text = Convert.ToDouble(tot[3]).ToString("#,###.00");
+
+                    MessageBox.Show("Depreciación ReCalculada OK...", "ReCalcular Depreciación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

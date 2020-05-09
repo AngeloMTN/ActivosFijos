@@ -29,17 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimientoActivos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgListado = new System.Windows.Forms.TabPage();
             this.BtnVisualizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnReportes = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnRecalcularDepre = new System.Windows.Forms.Button();
-            this.LblFechaCorteDepre = new System.Windows.Forms.Label();
-            this.DtpFechaCorteDepre = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnFiltroBuscar = new System.Windows.Forms.Button();
             this.CmbFiltroArea = new System.Windows.Forms.ComboBox();
@@ -103,14 +100,17 @@
             this.LblId = new System.Windows.Forms.Label();
             this.TpgValores = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.TxtTotalValorADepreciar = new System.Windows.Forms.TextBox();
+            this.LblTotalValorADepreciar = new System.Windows.Forms.Label();
             this.LblTotalValorActual = new System.Windows.Forms.Label();
             this.TxtTotalValorActual = new System.Windows.Forms.TextBox();
             this.LblTotalDepreAcumulada = new System.Windows.Forms.Label();
             this.TxtTotalDepreAcumulada = new System.Windows.Forms.TextBox();
             this.LblTotalDepreDiaria = new System.Windows.Forms.Label();
             this.TxtTotalDepreDiaria = new System.Windows.Forms.TextBox();
-            this.LblTotalValorADepreciar = new System.Windows.Forms.Label();
-            this.TxtTotalValorADepreciar = new System.Windows.Forms.TextBox();
+            this.BtnRecalcularDepre = new System.Windows.Forms.Button();
+            this.LblFechaCorteDepre = new System.Windows.Forms.Label();
+            this.DtpFechaCorteDepre = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.TpgListado.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,9 +140,6 @@
             this.TpgListado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.TpgListado.Controls.Add(this.BtnVisualizar);
             this.TpgListado.Controls.Add(this.BtnReportes);
-            this.TpgListado.Controls.Add(this.BtnRecalcularDepre);
-            this.TpgListado.Controls.Add(this.LblFechaCorteDepre);
-            this.TpgListado.Controls.Add(this.DtpFechaCorteDepre);
             this.TpgListado.Controls.Add(this.groupBox2);
             this.TpgListado.Controls.Add(this.DgvActivos);
             this.TpgListado.Location = new System.Drawing.Point(4, 34);
@@ -170,10 +167,10 @@
             this.BtnVisualizar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnVisualizar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnVisualizar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnVisualizar.Location = new System.Drawing.Point(968, 21);
+            this.BtnVisualizar.Location = new System.Drawing.Point(870, 21);
             this.BtnVisualizar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnVisualizar.Name = "BtnVisualizar";
-            this.BtnVisualizar.Size = new System.Drawing.Size(130, 70);
+            this.BtnVisualizar.Size = new System.Drawing.Size(170, 70);
             this.BtnVisualizar.TabIndex = 45;
             this.BtnVisualizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnVisualizar.Click += new System.EventHandler(this.BtnVisualizar_Click);
@@ -196,48 +193,13 @@
             this.BtnReportes.IdleFillColor = System.Drawing.Color.Black;
             this.BtnReportes.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnReportes.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnReportes.Location = new System.Drawing.Point(1119, 21);
+            this.BtnReportes.Location = new System.Drawing.Point(1068, 21);
             this.BtnReportes.Margin = new System.Windows.Forms.Padding(5);
             this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Size = new System.Drawing.Size(130, 70);
+            this.BtnReportes.Size = new System.Drawing.Size(170, 70);
             this.BtnReportes.TabIndex = 44;
             this.BtnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
-            // 
-            // BtnRecalcularDepre
-            // 
-            this.BtnRecalcularDepre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.BtnRecalcularDepre.Location = new System.Drawing.Point(827, 10);
-            this.BtnRecalcularDepre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnRecalcularDepre.Name = "BtnRecalcularDepre";
-            this.BtnRecalcularDepre.Size = new System.Drawing.Size(93, 39);
-            this.BtnRecalcularDepre.TabIndex = 42;
-            this.BtnRecalcularDepre.Text = "Calcular";
-            this.BtnRecalcularDepre.UseVisualStyleBackColor = false;
-            this.BtnRecalcularDepre.Click += new System.EventHandler(this.BtnRecalcularDepre_Click);
-            // 
-            // LblFechaCorteDepre
-            // 
-            this.LblFechaCorteDepre.AutoSize = true;
-            this.LblFechaCorteDepre.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaCorteDepre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaCorteDepre.Location = new System.Drawing.Point(716, 14);
-            this.LblFechaCorteDepre.Name = "LblFechaCorteDepre";
-            this.LblFechaCorteDepre.Size = new System.Drawing.Size(107, 38);
-            this.LblFechaCorteDepre.TabIndex = 43;
-            this.LblFechaCorteDepre.Text = "Fecha Corte \r\nDepreciacion:";
-            // 
-            // DtpFechaCorteDepre
-            // 
-            this.DtpFechaCorteDepre.CustomFormat = "yyyy/MM/dd";
-            this.DtpFechaCorteDepre.Enabled = false;
-            this.DtpFechaCorteDepre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaCorteDepre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaCorteDepre.Location = new System.Drawing.Point(720, 58);
-            this.DtpFechaCorteDepre.Name = "DtpFechaCorteDepre";
-            this.DtpFechaCorteDepre.Size = new System.Drawing.Size(140, 27);
-            this.DtpFechaCorteDepre.TabIndex = 41;
-            this.DtpFechaCorteDepre.Value = new System.DateTime(2020, 4, 13, 16, 3, 5, 0);
             // 
             // groupBox2
             // 
@@ -251,7 +213,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(697, 93);
+            this.groupBox2.Size = new System.Drawing.Size(769, 93);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtros:";
@@ -259,10 +221,10 @@
             // BtnFiltroBuscar
             // 
             this.BtnFiltroBuscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnFiltroBuscar.Location = new System.Drawing.Point(586, 18);
+            this.BtnFiltroBuscar.Location = new System.Drawing.Point(651, 24);
             this.BtnFiltroBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnFiltroBuscar.Name = "BtnFiltroBuscar";
-            this.BtnFiltroBuscar.Size = new System.Drawing.Size(102, 68);
+            this.BtnFiltroBuscar.Size = new System.Drawing.Size(102, 50);
             this.BtnFiltroBuscar.TabIndex = 3;
             this.BtnFiltroBuscar.Text = "Buscar...";
             this.BtnFiltroBuscar.UseVisualStyleBackColor = false;
@@ -275,7 +237,7 @@
             this.CmbFiltroArea.Location = new System.Drawing.Point(83, 53);
             this.CmbFiltroArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbFiltroArea.Name = "CmbFiltroArea";
-            this.CmbFiltroArea.Size = new System.Drawing.Size(492, 28);
+            this.CmbFiltroArea.Size = new System.Drawing.Size(542, 28);
             this.CmbFiltroArea.TabIndex = 2;
             // 
             // TxtFiltroNombre
@@ -284,7 +246,7 @@
             this.TxtFiltroNombre.Location = new System.Drawing.Point(83, 18);
             this.TxtFiltroNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtFiltroNombre.Name = "TxtFiltroNombre";
-            this.TxtFiltroNombre.Size = new System.Drawing.Size(492, 27);
+            this.TxtFiltroNombre.Size = new System.Drawing.Size(542, 27);
             this.TxtFiltroNombre.TabIndex = 1;
             // 
             // LblFiltroArea
@@ -313,45 +275,45 @@
             this.DgvActivos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvActivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvActivos.ColumnHeadersHeight = 30;
             this.DgvActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvActivos.EnableHeadersVisualStyles = false;
             this.DgvActivos.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvActivos.Location = new System.Drawing.Point(6, 112);
             this.DgvActivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvActivos.Name = "DgvActivos";
             this.DgvActivos.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvActivos.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvActivos.RowTemplate.Height = 24;
             this.DgvActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvActivos.Size = new System.Drawing.Size(1245, 592);
@@ -1108,6 +1070,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BtnRecalcularDepre);
+            this.groupBox3.Controls.Add(this.LblFechaCorteDepre);
+            this.groupBox3.Controls.Add(this.DtpFechaCorteDepre);
             this.groupBox3.Controls.Add(this.TxtTotalValorADepreciar);
             this.groupBox3.Controls.Add(this.LblTotalValorADepreciar);
             this.groupBox3.Controls.Add(this.LblTotalValorActual);
@@ -1121,6 +1086,28 @@
             this.groupBox3.Size = new System.Drawing.Size(1229, 668);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
+            // 
+            // TxtTotalValorADepreciar
+            // 
+            this.TxtTotalValorADepreciar.Enabled = false;
+            this.TxtTotalValorADepreciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTotalValorADepreciar.Location = new System.Drawing.Point(331, 91);
+            this.TxtTotalValorADepreciar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtTotalValorADepreciar.Name = "TxtTotalValorADepreciar";
+            this.TxtTotalValorADepreciar.Size = new System.Drawing.Size(169, 28);
+            this.TxtTotalValorADepreciar.TabIndex = 38;
+            this.TxtTotalValorADepreciar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // LblTotalValorADepreciar
+            // 
+            this.LblTotalValorADepreciar.AutoSize = true;
+            this.LblTotalValorADepreciar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotalValorADepreciar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblTotalValorADepreciar.Location = new System.Drawing.Point(115, 96);
+            this.LblTotalValorADepreciar.Name = "LblTotalValorADepreciar";
+            this.LblTotalValorADepreciar.Size = new System.Drawing.Size(181, 20);
+            this.LblTotalValorADepreciar.TabIndex = 37;
+            this.LblTotalValorADepreciar.Text = "Total Valor a Depreciar:";
             // 
             // LblTotalValorActual
             // 
@@ -1188,27 +1175,40 @@
             this.TxtTotalDepreDiaria.TabIndex = 33;
             this.TxtTotalDepreDiaria.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // LblTotalValorADepreciar
+            // BtnRecalcularDepre
             // 
-            this.LblTotalValorADepreciar.AutoSize = true;
-            this.LblTotalValorADepreciar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalValorADepreciar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblTotalValorADepreciar.Location = new System.Drawing.Point(115, 96);
-            this.LblTotalValorADepreciar.Name = "LblTotalValorADepreciar";
-            this.LblTotalValorADepreciar.Size = new System.Drawing.Size(181, 20);
-            this.LblTotalValorADepreciar.TabIndex = 37;
-            this.LblTotalValorADepreciar.Text = "Total Valor a Depreciar:";
+            this.BtnRecalcularDepre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnRecalcularDepre.Location = new System.Drawing.Point(529, 22);
+            this.BtnRecalcularDepre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnRecalcularDepre.Name = "BtnRecalcularDepre";
+            this.BtnRecalcularDepre.Size = new System.Drawing.Size(159, 39);
+            this.BtnRecalcularDepre.TabIndex = 45;
+            this.BtnRecalcularDepre.Text = "Re-Calcular";
+            this.BtnRecalcularDepre.UseVisualStyleBackColor = false;
+            this.BtnRecalcularDepre.Click += new System.EventHandler(this.BtnRecalcularDepre_Click);
             // 
-            // TxtTotalValorADepreciar
+            // LblFechaCorteDepre
             // 
-            this.TxtTotalValorADepreciar.Enabled = false;
-            this.TxtTotalValorADepreciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotalValorADepreciar.Location = new System.Drawing.Point(331, 91);
-            this.TxtTotalValorADepreciar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtTotalValorADepreciar.Name = "TxtTotalValorADepreciar";
-            this.TxtTotalValorADepreciar.Size = new System.Drawing.Size(169, 28);
-            this.TxtTotalValorADepreciar.TabIndex = 38;
-            this.TxtTotalValorADepreciar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.LblFechaCorteDepre.AutoSize = true;
+            this.LblFechaCorteDepre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaCorteDepre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblFechaCorteDepre.Location = new System.Drawing.Point(86, 29);
+            this.LblFechaCorteDepre.Name = "LblFechaCorteDepre";
+            this.LblFechaCorteDepre.Size = new System.Drawing.Size(210, 20);
+            this.LblFechaCorteDepre.TabIndex = 46;
+            this.LblFechaCorteDepre.Text = "Fecha Corte Depreciacion:";
+            // 
+            // DtpFechaCorteDepre
+            // 
+            this.DtpFechaCorteDepre.CustomFormat = "yyyy/MM/dd";
+            this.DtpFechaCorteDepre.Enabled = false;
+            this.DtpFechaCorteDepre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaCorteDepre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFechaCorteDepre.Location = new System.Drawing.Point(331, 28);
+            this.DtpFechaCorteDepre.Name = "DtpFechaCorteDepre";
+            this.DtpFechaCorteDepre.Size = new System.Drawing.Size(169, 27);
+            this.DtpFechaCorteDepre.TabIndex = 44;
+            this.DtpFechaCorteDepre.Value = new System.DateTime(2020, 4, 13, 16, 3, 5, 0);
             // 
             // FrmMantenimientoActivos
             // 
@@ -1229,7 +1229,6 @@
             this.Load += new System.EventHandler(this.FrmMantenimientoActivos_Load);
             this.tabControl1.ResumeLayout(false);
             this.TpgListado.ResumeLayout(false);
-            this.TpgListado.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvActivos)).EndInit();
@@ -1309,9 +1308,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 BtnNuevo;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnVisualizar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnReportes;
-        private System.Windows.Forms.Button BtnRecalcularDepre;
-        private System.Windows.Forms.Label LblFechaCorteDepre;
-        private System.Windows.Forms.DateTimePicker DtpFechaCorteDepre;
         private System.Windows.Forms.TabPage TpgValores;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox TxtTotalValorADepreciar;
@@ -1322,5 +1318,8 @@
         private System.Windows.Forms.TextBox TxtTotalDepreAcumulada;
         private System.Windows.Forms.Label LblTotalDepreDiaria;
         private System.Windows.Forms.TextBox TxtTotalDepreDiaria;
+        private System.Windows.Forms.Button BtnRecalcularDepre;
+        private System.Windows.Forms.Label LblFechaCorteDepre;
+        private System.Windows.Forms.DateTimePicker DtpFechaCorteDepre;
     }
 }
