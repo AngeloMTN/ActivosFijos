@@ -528,6 +528,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "ROUND(SUM(\"actDepreAcumulada\"), 2) AS v3, ";
             cadenaSql += "ROUND(SUM(\"actValorActual\"), 2) AS v3 ";
             cadenaSql += "FROM \"Activos\" ";
+            cadenaSql += "WHERE \"actEstado\" = 'ACTIVO'";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
