@@ -427,6 +427,7 @@ namespace ActivosFijos.Clases
         }
 
         public bool Actualizar(string actId,
+                               string actArchivo,
                                string actNombre,
                                string actObservaciones,
                                string areId,
@@ -450,6 +451,7 @@ namespace ActivosFijos.Clases
             conexion.Open();
             cadenaSql = null;
             cadenaSql += "UPDATE \"Activos\" SET ";
+            cadenaSql += "\"actArchivo\" = '" + actArchivo + "', ";
             cadenaSql += "\"actNombre\" = '" + actNombre + "', ";
             cadenaSql += "\"actObservaciones\" = '" + actObservaciones + "', ";
             cadenaSql += "\"areId\" = '" + areId + "', ";
@@ -543,5 +545,20 @@ namespace ActivosFijos.Clases
             return totales;
         }
 
+        public string BuscarArchivo(string arch)
+        {
+            conexion.Open();
+            string rpt = "";
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT \"actArchivo\" FROM \"Activos\" WHERE \"actArchivo\" = '" + arch + "'"), conexion);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
+            ds = new DataSet();
+            da.Fill(ds, "tabla");
+            da.Dispose();
+            cmd.Dispose();
+            conexion.Close();
+
+            int filasRecuperadas = ds.Tables[0].Rows.Count;
+            return filasRecuperadas == 0 ? "NoExiste" : rpt; ;
+        }
     }
 }

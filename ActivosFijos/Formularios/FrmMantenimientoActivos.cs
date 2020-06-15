@@ -14,6 +14,7 @@ namespace ActivosFijos.Formularios
     {
         public static readonly string rutaArchivo = Settings.Default.RutaDelArchivo;
         public string nombreArchivo = null;
+        public string campoArchivo = null;
         public string opcion = null;
 
         readonly ClsQueryActivos sql = new ClsQueryActivos();
@@ -132,6 +133,7 @@ namespace ActivosFijos.Formularios
                     CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[27].Value);
 
                     TxtCodBarra.Enabled = false;
+                    TxtArchivo.Enabled = false;
                     CmbArea.Enabled = false;
                     TxtNombre.Enabled = false;
                     TxtObservaciones.Enabled = false;
@@ -252,6 +254,7 @@ namespace ActivosFijos.Formularios
             BtnRecalcularDepre.Enabled = false;
 
             TxtCodBarra.Enabled = false;
+            TxtArchivo.Enabled = true;
             TxtNombre.Enabled = true;
             TxtObservaciones.Enabled = true;
             CmbArea.Enabled = true;
@@ -321,6 +324,7 @@ namespace ActivosFijos.Formularios
                 BtnRecalcularDepre.Enabled = false;
 
                 CmbArea.Enabled = true;
+                TxtArchivo.Enabled = true;
                 TxtNombre.Enabled = true;
                 TxtObservaciones.Enabled = true;
                 TxtValorBase0.Enabled = true;
@@ -336,7 +340,7 @@ namespace ActivosFijos.Formularios
                 CmbEmpresas.Enabled = true;
                 CmbDepreciable.Enabled = true;
                 CmbEstado.Enabled = true;
-
+                campoArchivo = TxtArchivo.Text;
             }
             else
             {
@@ -530,6 +534,7 @@ namespace ActivosFijos.Formularios
                 }
 
                 if (sql.Actualizar(TxtId.Text,
+                                   TxtArchivo.Text,
                                    TxtNombre.Text,
                                    TxtObservaciones.Text,
                                    area,
@@ -605,6 +610,7 @@ namespace ActivosFijos.Formularios
             BtnRecalcularDepre.Enabled = true;
 
             TxtCodBarra.Enabled = false;
+            TxtArchivo.Enabled = false;
             CmbArea.Enabled = false;
             TxtNombre.Enabled = false;
             TxtObservaciones.Enabled = false;
@@ -639,6 +645,7 @@ namespace ActivosFijos.Formularios
             BtnRecalcularDepre.Enabled = true;
 
             TxtCodBarra.Enabled = false;
+            TxtArchivo.Enabled = false;
             CmbArea.Enabled = false;
             TxtNombre.Enabled = false;
             TxtObservaciones.Enabled = false;
@@ -776,6 +783,16 @@ namespace ActivosFijos.Formularios
             else
             {
                 MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void TxtArchivo_Validated(object sender, EventArgs e)
+        {
+            string respuesta = sql.BuscarArchivo(TxtArchivo.Text.Trim());
+            if (respuesta == "NoExiste")
+            {
+                MessageBox.Show("Nombre de Activo NO EXISTE. Por favor revisar antes de realizar la modificación...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtArchivo.Text = campoArchivo;
             }
         }
     }

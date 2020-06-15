@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimientoActivos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgListado = new System.Windows.Forms.TabPage();
             this.BtnVisualizar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -100,6 +100,9 @@
             this.LblId = new System.Windows.Forms.Label();
             this.TpgValores = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnRecalcularDepre = new System.Windows.Forms.Button();
+            this.LblFechaCorteDepre = new System.Windows.Forms.Label();
+            this.DtpFechaCorteDepre = new System.Windows.Forms.DateTimePicker();
             this.TxtTotalValorADepreciar = new System.Windows.Forms.TextBox();
             this.LblTotalValorADepreciar = new System.Windows.Forms.Label();
             this.LblTotalValorActual = new System.Windows.Forms.Label();
@@ -108,9 +111,6 @@
             this.TxtTotalDepreAcumulada = new System.Windows.Forms.TextBox();
             this.LblTotalDepreDiaria = new System.Windows.Forms.Label();
             this.TxtTotalDepreDiaria = new System.Windows.Forms.TextBox();
-            this.BtnRecalcularDepre = new System.Windows.Forms.Button();
-            this.LblFechaCorteDepre = new System.Windows.Forms.Label();
-            this.DtpFechaCorteDepre = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.TpgListado.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -275,45 +275,45 @@
             this.DgvActivos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvActivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvActivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvActivos.ColumnHeadersHeight = 30;
             this.DgvActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.DefaultCellStyle = dataGridViewCellStyle6;
             this.DgvActivos.EnableHeadersVisualStyles = false;
             this.DgvActivos.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvActivos.Location = new System.Drawing.Point(6, 112);
             this.DgvActivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvActivos.Name = "DgvActivos";
             this.DgvActivos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvActivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvActivos.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvActivos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvActivos.RowTemplate.Height = 24;
             this.DgvActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvActivos.Size = new System.Drawing.Size(1245, 592);
@@ -974,10 +974,11 @@
             this.TxtArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtArchivo.Location = new System.Drawing.Point(713, 23);
             this.TxtArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtArchivo.MaxLength = 10;
+            this.TxtArchivo.MaxLength = 5;
             this.TxtArchivo.Name = "TxtArchivo";
             this.TxtArchivo.Size = new System.Drawing.Size(147, 28);
             this.TxtArchivo.TabIndex = 0;
+            this.TxtArchivo.Validated += new System.EventHandler(this.TxtArchivo_Validated);
             // 
             // LblArchivo
             // 
@@ -1087,6 +1088,41 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
+            // BtnRecalcularDepre
+            // 
+            this.BtnRecalcularDepre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnRecalcularDepre.Location = new System.Drawing.Point(529, 22);
+            this.BtnRecalcularDepre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnRecalcularDepre.Name = "BtnRecalcularDepre";
+            this.BtnRecalcularDepre.Size = new System.Drawing.Size(159, 39);
+            this.BtnRecalcularDepre.TabIndex = 45;
+            this.BtnRecalcularDepre.Text = "Re-Calcular";
+            this.BtnRecalcularDepre.UseVisualStyleBackColor = false;
+            this.BtnRecalcularDepre.Click += new System.EventHandler(this.BtnRecalcularDepre_Click);
+            // 
+            // LblFechaCorteDepre
+            // 
+            this.LblFechaCorteDepre.AutoSize = true;
+            this.LblFechaCorteDepre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaCorteDepre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblFechaCorteDepre.Location = new System.Drawing.Point(86, 29);
+            this.LblFechaCorteDepre.Name = "LblFechaCorteDepre";
+            this.LblFechaCorteDepre.Size = new System.Drawing.Size(210, 20);
+            this.LblFechaCorteDepre.TabIndex = 46;
+            this.LblFechaCorteDepre.Text = "Fecha Corte Depreciacion:";
+            // 
+            // DtpFechaCorteDepre
+            // 
+            this.DtpFechaCorteDepre.CustomFormat = "yyyy/MM/dd";
+            this.DtpFechaCorteDepre.Enabled = false;
+            this.DtpFechaCorteDepre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaCorteDepre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFechaCorteDepre.Location = new System.Drawing.Point(331, 28);
+            this.DtpFechaCorteDepre.Name = "DtpFechaCorteDepre";
+            this.DtpFechaCorteDepre.Size = new System.Drawing.Size(169, 27);
+            this.DtpFechaCorteDepre.TabIndex = 44;
+            this.DtpFechaCorteDepre.Value = new System.DateTime(2020, 4, 13, 16, 3, 5, 0);
+            // 
             // TxtTotalValorADepreciar
             // 
             this.TxtTotalValorADepreciar.Enabled = false;
@@ -1174,41 +1210,6 @@
             this.TxtTotalDepreDiaria.Size = new System.Drawing.Size(169, 28);
             this.TxtTotalDepreDiaria.TabIndex = 33;
             this.TxtTotalDepreDiaria.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // BtnRecalcularDepre
-            // 
-            this.BtnRecalcularDepre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.BtnRecalcularDepre.Location = new System.Drawing.Point(529, 22);
-            this.BtnRecalcularDepre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnRecalcularDepre.Name = "BtnRecalcularDepre";
-            this.BtnRecalcularDepre.Size = new System.Drawing.Size(159, 39);
-            this.BtnRecalcularDepre.TabIndex = 45;
-            this.BtnRecalcularDepre.Text = "Re-Calcular";
-            this.BtnRecalcularDepre.UseVisualStyleBackColor = false;
-            this.BtnRecalcularDepre.Click += new System.EventHandler(this.BtnRecalcularDepre_Click);
-            // 
-            // LblFechaCorteDepre
-            // 
-            this.LblFechaCorteDepre.AutoSize = true;
-            this.LblFechaCorteDepre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaCorteDepre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaCorteDepre.Location = new System.Drawing.Point(86, 29);
-            this.LblFechaCorteDepre.Name = "LblFechaCorteDepre";
-            this.LblFechaCorteDepre.Size = new System.Drawing.Size(210, 20);
-            this.LblFechaCorteDepre.TabIndex = 46;
-            this.LblFechaCorteDepre.Text = "Fecha Corte Depreciacion:";
-            // 
-            // DtpFechaCorteDepre
-            // 
-            this.DtpFechaCorteDepre.CustomFormat = "yyyy/MM/dd";
-            this.DtpFechaCorteDepre.Enabled = false;
-            this.DtpFechaCorteDepre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaCorteDepre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaCorteDepre.Location = new System.Drawing.Point(331, 28);
-            this.DtpFechaCorteDepre.Name = "DtpFechaCorteDepre";
-            this.DtpFechaCorteDepre.Size = new System.Drawing.Size(169, 27);
-            this.DtpFechaCorteDepre.TabIndex = 44;
-            this.DtpFechaCorteDepre.Value = new System.DateTime(2020, 4, 13, 16, 3, 5, 0);
             // 
             // FrmMantenimientoActivos
             // 
