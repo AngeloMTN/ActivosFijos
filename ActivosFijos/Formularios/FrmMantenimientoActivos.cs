@@ -254,7 +254,7 @@ namespace ActivosFijos.Formularios
             BtnRecalcularDepre.Enabled = false;
 
             TxtCodBarra.Enabled = false;
-            TxtArchivo.Enabled = true;
+            TxtArchivo.Enabled = false;
             TxtNombre.Enabled = true;
             TxtObservaciones.Enabled = true;
             CmbArea.Enabled = true;
