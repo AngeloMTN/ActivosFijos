@@ -308,20 +308,18 @@ namespace ActivosFijos.Clases
         public string SecuenciaArchivo(string rutaArchivo)
         {
             string nombreArchivo = null;
-            Int32 secNewArch = 0;
-
-            List<String> lista = new List<String>();
-            DirectoryInfo di = new DirectoryInfo(rutaArchivo);
-            foreach (var fi in di.GetFiles())
+            conexion.Open();
+            string secId = null;
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(substring(\"actArchivo\",2,4)) FROM \"Activos\""), conexion);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                lista.Add(fi.Name.Substring(1,4));
+                secId = dr[0].ToString();
             }
-            lista.Sort();
-            if (lista.Count() <= 0)
-                secNewArch += 1;
-            else
-                secNewArch = Convert.ToInt32(lista[lista.Count - 1]) + 1;
+            dr.Close();
+            conexion.Close();
 
+            int secNewArch = Convert.ToInt32(secId) + 1;
             nombreArchivo = "A" + String.Format("{0:0000}", secNewArch);
             return nombreArchivo;
         }
