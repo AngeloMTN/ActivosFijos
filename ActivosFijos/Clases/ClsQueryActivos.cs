@@ -27,6 +27,7 @@ namespace ActivosFijos.Clases
         {
             public int PctId { get; set; }
             public string PctNombre { get; set; }
+            public int PctVidaUtilAnios { get; set; }
         }
 
         public class Proveedores
@@ -128,7 +129,7 @@ namespace ActivosFijos.Clases
             NpgsqlConnection conexion = ClsObtenerConexion.Conexion();
             conexion.Open();
             string cadenaSql = null;
-            cadenaSql += "SELECT \"pctId\",\"pctCuenta\"||' - '||\"pctNombre\"||' - ['||\"pctVidaUtilAnios\"||'] ' AS NombreDelArea ";
+            cadenaSql += "SELECT \"pctId\",\"pctCuenta\"||' - '||\"pctNombre\"||' - ['||\"pctVidaUtilAnios\"||']' AS NombreDelArea ";
             cadenaSql += "FROM \"PlanCuentas\" ";
             cadenaSql += "ORDER BY substr(\"pctNombre\", POSITION(' - ' IN \"pctNombre\"))";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
@@ -138,7 +139,7 @@ namespace ActivosFijos.Clases
                 PlanCuentas pPlanCuentas = new PlanCuentas
                 {
                     PctId = Convert.ToInt32(dr[0]),
-                    PctNombre = Convert.ToString(dr[1])
+                    PctNombre = Convert.ToString(dr[1]),
                 };
                 lista.Add(pPlanCuentas);
             }
@@ -348,7 +349,7 @@ namespace ActivosFijos.Clases
                              string actDepreciable,
                              string actEstado,
                              string empId,
-                             string actVidaUtilAnios)
+                             string pctVidaUtilAnios)
         {
             conexion.Open();
             cadenaSql = null;
@@ -376,6 +377,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"actFechaCorteDepre\", ";
             cadenaSql += "\"actDepreciable\", ";
             cadenaSql += "\"actEstado\", ";
+            cadenaSql += "\"pctVidaUtilAnios\", ";
             cadenaSql += "\"empId\" ";
             cadenaSql += ")";
             cadenaSql += "VALUES('";
@@ -402,6 +404,7 @@ namespace ActivosFijos.Clases
             cadenaSql += actFechaCorteDepre.ToString() + "', '";
             cadenaSql += actDepreciable + "', '";
             cadenaSql += actEstado + "', '";
+            cadenaSql += pctVidaUtilAnios + "', '";
             cadenaSql += empId + "')";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
@@ -444,6 +447,7 @@ namespace ActivosFijos.Clases
                                double actValorActual,
                                string actDepreciable,
                                string actEstado,
+                               string pctVidaUtilAnios,
                                string empId)
         {
             conexion.Open();
@@ -468,6 +472,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"actValorActual\" = '" + actValorActual.ToString() + "', ";
             cadenaSql += "\"actDepreciable\" = '" + actDepreciable + "', ";
             cadenaSql += "\"actEstado\" = '" + actEstado + "', ";
+            cadenaSql += "\"pctVidaUtilAnios\" = '" + pctVidaUtilAnios + "', ";
             cadenaSql += "\"empId\" = '" + empId + "' ";
             cadenaSql += "WHERE \"actId\" = '" + actId +"'";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);

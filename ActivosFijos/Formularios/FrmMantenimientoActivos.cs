@@ -411,7 +411,8 @@ namespace ActivosFijos.Formularios
                 string cbarra = String.Format("{0:000000}", secNew);
                 string[] cta = CmbCtaContable.Text.ToString().Trim().Split('-');
                 string ctaCtb = cta[0];
-                string vidaUtil = cta[2];
+                string[] cta1 = CmbCtaContable.Text.ToString().Trim().Split('[');
+                string vidaUtil = cta1[1].Substring(0, cta1[1].Length - 1);
                 string[] rucs = CmbRucProveedor.Text.ToString().Trim().Split(' ');
                 string ruc = rucs[0];
                 string[] ced = CmbCedulaCustodio.Text.ToString().Trim().Split(' ');
@@ -508,6 +509,8 @@ namespace ActivosFijos.Formularios
 
                 string[] cta = CmbCtaContable.Text.ToString().Trim().Split(' ');
                 string ctaCtb = cta[0];
+                string[] cta1 = CmbCtaContable.Text.ToString().Trim().Split('[');
+                string vidaUtil = cta1[1].Substring(0, cta1[1].Length - 1);
                 string[] rucs = CmbRucProveedor.Text.ToString().Trim().Split(' ');
                 string ruc = rucs[0];
                 string[] ced = CmbCedulaCustodio.Text.ToString().Trim().Split(' ');
@@ -553,6 +556,7 @@ namespace ActivosFijos.Formularios
                                    Convert.ToDouble(TxtValorActual.Text),
                                    dpr,
                                    estado,
+                                   vidaUtil,
                                    epr))
                 {
                     DgvActivos.DataSource = sql.MostrarDatos();
