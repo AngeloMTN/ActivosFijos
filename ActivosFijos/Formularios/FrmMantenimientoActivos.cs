@@ -86,39 +86,40 @@ namespace ActivosFijos.Formularios
                     TxtCodBarra.Text = Convert.ToString(fila.Cells[1].Value).Trim();
                     TxtArchivo.Text = Convert.ToString(fila.Cells[2].Value).Trim();
                     TxtNombre.Text = Convert.ToString(fila.Cells[3].Value).Trim();
-                    TxtObservaciones.Text = Convert.ToString(fila.Cells[4].Value).Trim();
-                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[5].Value);
-                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[7].Value).Trim());
+                    TxtReferencia.Text = Convert.ToString(fila.Cells[4].Value).Trim();
+                    TxtObservaciones.Text = Convert.ToString(fila.Cells[5].Value).Trim();
+                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[6].Value);
+                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[8].Value).Trim());
                     CmbCtaContable.SelectedIndex = indexcta;
-                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[9].Value).Trim());
+                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[10].Value).Trim());
                     CmbCedulaCustodio.SelectedIndex = indexcus;
-                    TxtFactura.Text = Convert.ToString(fila.Cells[11].Value).Trim();
-                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[12].Value);
-                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[13].Value).Trim());
+                    TxtFactura.Text = Convert.ToString(fila.Cells[12].Value).Trim();
+                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[13].Value);
+                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[14].Value).Trim());
                     CmbRucProveedor.SelectedIndex = indexpro;
-                    double base0 = Convert.ToDouble(fila.Cells[15].Value);
+                    double base0 = Convert.ToDouble(fila.Cells[16].Value);
                     TxtValorBase0.Text = base0.ToString("#,###.00").Trim();
-                    double baseiva = Convert.ToDouble(fila.Cells[16].Value);
+                    double baseiva = Convert.ToDouble(fila.Cells[17].Value);
                     TxtValorBaseIva.Text = baseiva.ToString("#,###.00").Trim();
-                    double pctiva = Convert.ToDouble(fila.Cells[17].Value);
+                    double pctiva = Convert.ToDouble(fila.Cells[18].Value);
                     TxtPctjeIva.Text = pctiva.ToString("###.00").Trim();
-                    double iva = Convert.ToDouble(fila.Cells[18].Value);
+                    double iva = Convert.ToDouble(fila.Cells[19].Value);
                     TxtValorIva.Text = iva.ToString("#,###.00").Trim();
-                    double valortotal = Convert.ToDouble(fila.Cells[19].Value);
+                    double valortotal = Convert.ToDouble(fila.Cells[20].Value);
                     TxtValorTotal.Text = valortotal.ToString("#,###.00").Trim();
-                    double deprediaria = Convert.ToDouble(fila.Cells[20].Value);
+                    double deprediaria = Convert.ToDouble(fila.Cells[21].Value);
                     TxtDepreDiaria.Text = deprediaria.ToString("#,###.00").Trim();
-                    double depreacumulada = Convert.ToDouble(fila.Cells[21].Value);
+                    double depreacumulada = Convert.ToDouble(fila.Cells[22].Value);
                     TxtDepreAcumulada.Text = depreacumulada.ToString("#,###.00").Trim();
-                    double vaolractual = Convert.ToDouble(fila.Cells[22].Value);
+                    double vaolractual = Convert.ToDouble(fila.Cells[23].Value);
                     TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
-                    DtpFinVidaUtilContable.Value = Convert.ToDateTime(fila.Cells[23].Value);
-                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[24].Value);
-                    if (Convert.ToString(fila.Cells[25].Value).Trim() == "S")
+                    DtpFinVidaUtilContable.Value = Convert.ToDateTime(fila.Cells[24].Value);
+                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[25].Value);
+                    if (Convert.ToString(fila.Cells[26].Value).Trim() == "S")
                         CmbDepreciable.SelectedIndex = 0;
                     else
                         CmbDepreciable.SelectedIndex = 1;
-                    switch (Convert.ToString(fila.Cells[26].Value).Trim())
+                    switch (Convert.ToString(fila.Cells[27].Value).Trim())
                     {
                         case "ACTIVO":
                             CmbEstado.SelectedIndex = 0;
@@ -130,7 +131,7 @@ namespace ActivosFijos.Formularios
                             CmbEstado.SelectedIndex = 2;
                             break;
                     }
-                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[27].Value);
+                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[28].Value);
 
                     TxtCodBarra.Enabled = false;
                     TxtArchivo.Enabled = false;
@@ -282,6 +283,7 @@ namespace ActivosFijos.Formularios
             TxtArchivo.Text = archivo;
 
             TxtNombre.Text = "";
+            TxtReferencia.Text = "";
             TxtObservaciones.Text = "";
             CmbArea.SelectedIndex = 0;
             CmbCtaContable.SelectedIndex = 0;
@@ -326,6 +328,7 @@ namespace ActivosFijos.Formularios
                 CmbArea.Enabled = true;
                 TxtArchivo.Enabled = true;
                 TxtNombre.Enabled = true;
+                TxtReferencia.Enabled = true;
                 TxtObservaciones.Enabled = true;
                 TxtValorBase0.Enabled = true;
                 TxtValorBaseIva.Enabled = true;
@@ -442,6 +445,7 @@ namespace ActivosFijos.Formularios
                                      cbarra,
                                      archivo,
                                      TxtNombre.Text,
+                                     TxtReferencia.Text,
                                      TxtObservaciones.Text,
                                      are,
                                      ctaCtb,
@@ -539,6 +543,7 @@ namespace ActivosFijos.Formularios
                 if (sql.Actualizar(TxtId.Text,
                                    TxtArchivo.Text,
                                    TxtNombre.Text,
+                                   TxtReferencia.Text,
                                    TxtObservaciones.Text,
                                    area,
                                    ctaCtb,
@@ -617,6 +622,7 @@ namespace ActivosFijos.Formularios
             TxtArchivo.Enabled = false;
             CmbArea.Enabled = false;
             TxtNombre.Enabled = false;
+            TxtReferencia.Enabled = false;
             TxtObservaciones.Enabled = false;
             TxtValorBase0.Enabled = false;
             TxtValorBaseIva.Enabled = false;
@@ -652,6 +658,7 @@ namespace ActivosFijos.Formularios
             TxtArchivo.Enabled = false;
             CmbArea.Enabled = false;
             TxtNombre.Enabled = false;
+            TxtReferencia.Enabled = false;
             TxtObservaciones.Enabled = false;
             TxtValorBase0.Enabled = false;
             TxtValorBaseIva.Enabled = false;
@@ -707,30 +714,31 @@ namespace ActivosFijos.Formularios
                     ActCodBarra         = Convert.ToString(DgvActivos.Rows[i].Cells[1].Value),
                     ActArchivo          = Convert.ToString(DgvActivos.Rows[i].Cells[2].Value),
                     ActNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[3].Value),
-                    ActObservaciones    = Convert.ToString(DgvActivos.Rows[i].Cells[4].Value),
-                    AreId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[5].Value),
-                    AreNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[6].Value),
-                    PctCuenta           = Convert.ToString(DgvActivos.Rows[i].Cells[7].Value),
-                    PctNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[8].Value),
-                    CusCedula           = Convert.ToString(DgvActivos.Rows[i].Cells[9].Value),
-                    CusNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[10].Value),
-                    ActFactura          = Convert.ToString(DgvActivos.Rows[i].Cells[11].Value),
-                    ActFechaCompra      = Convert.ToString(DgvActivos.Rows[i].Cells[12].Value),
-                    ProRuc              = Convert.ToString(DgvActivos.Rows[i].Cells[13].Value),
-                    ProNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[14].Value),
-                    ActValorBase0       = Convert.ToDouble(DgvActivos.Rows[i].Cells[15].Value),
-                    ActValorBaseIva     = Convert.ToDouble(DgvActivos.Rows[i].Cells[16].Value),
-                    ActPctjeIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[17].Value),
-                    ActValorIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[18].Value),
-                    ActValorTotal       = Convert.ToDouble(DgvActivos.Rows[i].Cells[19].Value),
-                    ActDepreDiaria      = Convert.ToDouble(DgvActivos.Rows[i].Cells[20].Value),
-                    ActDepreAcumulada   = Convert.ToDouble(DgvActivos.Rows[i].Cells[21].Value),
-                    ActValorActual      = Convert.ToDouble(DgvActivos.Rows[i].Cells[22].Value),
-                    ActFinVidaUtil      = Convert.ToString(DgvActivos.Rows[i].Cells[23].Value),
-                    ActFechaCorteDepre  = Convert.ToString(DgvActivos.Rows[i].Cells[24].Value),
-                    ActEstado           = Convert.ToString(DgvActivos.Rows[i].Cells[26].Value),
-                    EmpId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[27].Value),
-                    EmpNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[28].Value)
+                    ActReferencia       = Convert.ToString(DgvActivos.Rows[i].Cells[4].Value),
+                    ActObservaciones    = Convert.ToString(DgvActivos.Rows[i].Cells[5].Value),
+                    AreId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[6].Value),
+                    AreNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[7].Value),
+                    PctCuenta           = Convert.ToString(DgvActivos.Rows[i].Cells[8].Value),
+                    PctNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[9].Value),
+                    CusCedula           = Convert.ToString(DgvActivos.Rows[i].Cells[10].Value),
+                    CusNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[11].Value),
+                    ActFactura          = Convert.ToString(DgvActivos.Rows[i].Cells[12].Value),
+                    ActFechaCompra      = Convert.ToString(DgvActivos.Rows[i].Cells[13].Value),
+                    ProRuc              = Convert.ToString(DgvActivos.Rows[i].Cells[14].Value),
+                    ProNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[15].Value),
+                    ActValorBase0       = Convert.ToDouble(DgvActivos.Rows[i].Cells[16].Value),
+                    ActValorBaseIva     = Convert.ToDouble(DgvActivos.Rows[i].Cells[17].Value),
+                    ActPctjeIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[18].Value),
+                    ActValorIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[19].Value),
+                    ActValorTotal       = Convert.ToDouble(DgvActivos.Rows[i].Cells[20].Value),
+                    ActDepreDiaria      = Convert.ToDouble(DgvActivos.Rows[i].Cells[21].Value),
+                    ActDepreAcumulada   = Convert.ToDouble(DgvActivos.Rows[i].Cells[22].Value),
+                    ActValorActual      = Convert.ToDouble(DgvActivos.Rows[i].Cells[23].Value),
+                    ActFinVidaUtil      = Convert.ToString(DgvActivos.Rows[i].Cells[24].Value),
+                    ActFechaCorteDepre  = Convert.ToString(DgvActivos.Rows[i].Cells[25].Value),
+                    ActEstado           = Convert.ToString(DgvActivos.Rows[i].Cells[27].Value),
+                    EmpId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[28].Value),
+                    EmpNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[29].Value)
                 };
 
                 rpt.Datos.Add(data);

@@ -8,6 +8,7 @@ namespace ActivosFijos.Clases
         public string ActCodBarra { get; set; }
         public string ActArchivo { get; set; }
         public string ActNombre { get; set; }
+        public string ActReferencia { get; set; }
         public string ActObservaciones { get; set; }
         public Int32 AreId { get; set; }
         public string AreNombre { get; set; }

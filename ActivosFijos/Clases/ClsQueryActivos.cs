@@ -57,6 +57,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "trim(\"Activos\".\"actCodBarra\") AS CodBarra, ";
             cadenaSql += "\"Activos\".\"actArchivo\" AS Archivo, ";
             cadenaSql += "trim(\"Activos\".\"actNombre\") AS NombreDelActivo, ";
+            cadenaSql += "trim(\"Activos\".\"actReferencia\") AS Referencia, ";
             cadenaSql += "trim(\"Activos\".\"actObservaciones\") AS Observaciones, ";
             cadenaSql += "\"Activos\".\"areId\" AS Id, ";
             cadenaSql += "trim(\"Areas\".\"areNombre\") AS NombreDelArea, ";
@@ -236,6 +237,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "trim(\"Activos\".\"actCodBarra\") AS CodBarra, ";
             cadenaSql += "\"Activos\".\"actArchivo\" AS Archivo, ";
             cadenaSql += "trim(\"Activos\".\"actNombre\") AS NombreDelActivo, ";
+            cadenaSql += "trim(\"Activos\".\"actReferencia\") AS Referencia, ";
             cadenaSql += "trim(\"Activos\".\"actObservaciones\") AS Observaciones, ";
             cadenaSql += "\"Activos\".\"areId\" AS Id, ";
             cadenaSql += "trim(\"Areas\".\"areNombre\") AS NombreDelArea, ";
@@ -329,6 +331,7 @@ namespace ActivosFijos.Clases
                              string actCodBarra,
                              string actArchivo,
                              string actNombre,
+                             string actReferencia,
                              string actObservaciones,
                              string areId,
                              string pctCuenta,
@@ -358,6 +361,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"actCodBarra\", ";
             cadenaSql += "\"actArchivo\", ";
             cadenaSql += "\"actNombre\", ";
+            cadenaSql += "\"actReferencia\", ";
             cadenaSql += "\"actObservaciones\", ";
             cadenaSql += "\"areId\", ";
             cadenaSql += "\"pctCuenta\", ";
@@ -385,6 +389,7 @@ namespace ActivosFijos.Clases
             cadenaSql += actCodBarra + "', '";
             cadenaSql += actArchivo + "', '";
             cadenaSql += actNombre + "', '";
+            cadenaSql += actReferencia + "', '";
             cadenaSql += actObservaciones + "', '";
             cadenaSql += areId + "', '";
             cadenaSql += pctCuenta + "', '";
@@ -430,6 +435,7 @@ namespace ActivosFijos.Clases
         public bool Actualizar(string actId,
                                string actArchivo,
                                string actNombre,
+                               string actReferencia,
                                string actObservaciones,
                                string areId,
                                string pctCuenta,
@@ -455,6 +461,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "UPDATE \"Activos\" SET ";
             cadenaSql += "\"actArchivo\" = '" + actArchivo + "', ";
             cadenaSql += "\"actNombre\" = '" + actNombre + "', ";
+            cadenaSql += "\"actReferencia\" = '" + actReferencia + "', ";
             cadenaSql += "\"actObservaciones\" = '" + actObservaciones + "', ";
             cadenaSql += "\"areId\" = '" + areId + "', ";
             cadenaSql += "\"pctCuenta\" = '" + pctCuenta + "', ";
