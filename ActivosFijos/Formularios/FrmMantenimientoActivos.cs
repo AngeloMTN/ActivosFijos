@@ -257,6 +257,7 @@ namespace ActivosFijos.Formularios
             TxtCodBarra.Enabled = false;
             TxtArchivo.Enabled = false;
             TxtNombre.Enabled = true;
+            TxtReferencia.Enabled = true;
             TxtObservaciones.Enabled = true;
             CmbArea.Enabled = true;
             CmbCtaContable.Enabled = true;
