@@ -89,7 +89,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "INNER JOIN \"Proveedores\" ON \"Activos\".\"proRuc\" = \"Proveedores\".\"proRuc\" ";
             cadenaSql += "INNER JOIN \"Custodios\" ON \"Activos\".\"cusCedula\" = \"Custodios\".\"cusCedula\" ";
             cadenaSql += "INNER JOIN \"PlanCuentas\" ON \"Activos\".\"pctCuenta\" = \"PlanCuentas\".\"pctCuenta\" ";
-            //cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
+            cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
