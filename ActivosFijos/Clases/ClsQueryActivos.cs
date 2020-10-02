@@ -308,9 +308,8 @@ namespace ActivosFijos.Clases
             return secId;
         }
 
-        public string SecuenciaArchivo(string rutaArchivo)
+        public string SecuenciaArchivo()
         {
-            string nombreArchivo = null;
             conexion.Open();
             string secId = null;
             NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(substring(\"actArchivo\",2,4)) FROM \"Activos\""), conexion);
@@ -323,7 +322,7 @@ namespace ActivosFijos.Clases
             conexion.Close();
 
             int secNewArch = Convert.ToInt32(secId) + 1;
-            nombreArchivo = "A" + String.Format("{0:0000}", secNewArch);
+            string nombreArchivo = "A" + string.Format("{0:0000}", secNewArch);
             return nombreArchivo;
         }
 
@@ -495,17 +494,27 @@ namespace ActivosFijos.Clases
         {
             foreach (var txt in ctr.Controls)
             {
-                if (txt is TextBox)
-                    ((TextBox)txt).Clear();
-                else if (txt is ComboBox)
-                    ((ComboBox)txt).SelectedIndex = 0;
+                switch (txt)
+                {
+                    case TextBox _:
+                        ((TextBox)txt).Clear();
+                        break;
+                    case ComboBox _:
+                        ((ComboBox)txt).SelectedIndex = 0;
+                        break;
+                }
             }
             foreach (var combo in gb.Controls)
             {
-                if (combo is TextBox)
-                    ((TextBox)combo).Clear();
-                else if (combo is ComboBox)
-                    ((ComboBox)combo).SelectedIndex = 0;
+                switch (combo)
+                {
+                    case TextBox _:
+                        ((TextBox)combo).Clear();
+                        break;
+                    case ComboBox _:
+                        ((ComboBox)combo).SelectedIndex = 0;
+                        break;
+                }
             }
         }
 

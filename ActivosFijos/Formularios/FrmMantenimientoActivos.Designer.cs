@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgListado = new System.Windows.Forms.TabPage();
-            this.BtnVisualizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnReportes = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnFiltroBuscar = new System.Windows.Forms.Button();
@@ -51,6 +50,8 @@
             this.BtnModificar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnNuevo = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtReferencia = new System.Windows.Forms.TextBox();
+            this.LblReferencia = new System.Windows.Forms.Label();
             this.LblFinVidaUtilContable = new System.Windows.Forms.Label();
             this.DtpFinVidaUtilContable = new System.Windows.Forms.DateTimePicker();
             this.LblDepreciable = new System.Windows.Forms.Label();
@@ -111,8 +112,6 @@
             this.TxtTotalDepreAcumulada = new System.Windows.Forms.TextBox();
             this.LblTotalDepreDiaria = new System.Windows.Forms.Label();
             this.TxtTotalDepreDiaria = new System.Windows.Forms.TextBox();
-            this.LblReferencia = new System.Windows.Forms.Label();
-            this.TxtReferencia = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.TpgListado.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,7 +139,6 @@
             // TpgListado
             // 
             this.TpgListado.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TpgListado.Controls.Add(this.BtnVisualizar);
             this.TpgListado.Controls.Add(this.BtnReportes);
             this.TpgListado.Controls.Add(this.groupBox2);
             this.TpgListado.Controls.Add(this.DgvActivos);
@@ -150,32 +148,6 @@
             this.TpgListado.Size = new System.Drawing.Size(1257, 709);
             this.TpgListado.TabIndex = 0;
             this.TpgListado.Text = "Listado";
-            // 
-            // BtnVisualizar
-            // 
-            this.BtnVisualizar.ActiveBorderThickness = 1;
-            this.BtnVisualizar.ActiveCornerRadius = 20;
-            this.BtnVisualizar.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnVisualizar.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnVisualizar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnVisualizar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnVisualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnVisualizar.BackgroundImage")));
-            this.BtnVisualizar.ButtonText = "FOTO";
-            this.BtnVisualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnVisualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVisualizar.ForeColor = System.Drawing.Color.DarkGray;
-            this.BtnVisualizar.IdleBorderThickness = 1;
-            this.BtnVisualizar.IdleCornerRadius = 20;
-            this.BtnVisualizar.IdleFillColor = System.Drawing.Color.Black;
-            this.BtnVisualizar.IdleForecolor = System.Drawing.Color.DarkKhaki;
-            this.BtnVisualizar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnVisualizar.Location = new System.Drawing.Point(870, 21);
-            this.BtnVisualizar.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnVisualizar.Name = "BtnVisualizar";
-            this.BtnVisualizar.Size = new System.Drawing.Size(170, 70);
-            this.BtnVisualizar.TabIndex = 45;
-            this.BtnVisualizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnVisualizar.Click += new System.EventHandler(this.BtnVisualizar_Click);
             // 
             // BtnReportes
             // 
@@ -526,6 +498,27 @@
             this.groupBox1.Size = new System.Drawing.Size(1236, 626);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // TxtReferencia
+            // 
+            this.TxtReferencia.Enabled = false;
+            this.TxtReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtReferencia.Location = new System.Drawing.Point(248, 117);
+            this.TxtReferencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtReferencia.MaxLength = 100;
+            this.TxtReferencia.Name = "TxtReferencia";
+            this.TxtReferencia.Size = new System.Drawing.Size(932, 28);
+            this.TxtReferencia.TabIndex = 47;
+            // 
+            // LblReferencia
+            // 
+            this.LblReferencia.AutoSize = true;
+            this.LblReferencia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblReferencia.Location = new System.Drawing.Point(127, 122);
+            this.LblReferencia.Name = "LblReferencia";
+            this.LblReferencia.Size = new System.Drawing.Size(94, 20);
+            this.LblReferencia.TabIndex = 46;
+            this.LblReferencia.Text = "Referencia:";
             // 
             // LblFinVidaUtilContable
             // 
@@ -1215,27 +1208,6 @@
             this.TxtTotalDepreDiaria.TabIndex = 33;
             this.TxtTotalDepreDiaria.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // LblReferencia
-            // 
-            this.LblReferencia.AutoSize = true;
-            this.LblReferencia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblReferencia.Location = new System.Drawing.Point(127, 122);
-            this.LblReferencia.Name = "LblReferencia";
-            this.LblReferencia.Size = new System.Drawing.Size(94, 20);
-            this.LblReferencia.TabIndex = 46;
-            this.LblReferencia.Text = "Referencia:";
-            // 
-            // TxtReferencia
-            // 
-            this.TxtReferencia.Enabled = false;
-            this.TxtReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtReferencia.Location = new System.Drawing.Point(248, 117);
-            this.TxtReferencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtReferencia.MaxLength = 100;
-            this.TxtReferencia.Name = "TxtReferencia";
-            this.TxtReferencia.Size = new System.Drawing.Size(932, 28);
-            this.TxtReferencia.TabIndex = 47;
-            // 
             // FrmMantenimientoActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1332,7 +1304,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 BtnEliminar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnModificar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnNuevo;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnVisualizar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnReportes;
         private System.Windows.Forms.TabPage TpgValores;
         private System.Windows.Forms.GroupBox groupBox3;

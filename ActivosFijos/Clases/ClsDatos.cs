@@ -30,6 +30,7 @@ namespace ActivosFijos.Clases
         public double ActValorActual { get; set; }
         public string ActFinVidaUtil { get; set; }
         public string ActFechaCorteDepre { get; set; }
+        public string ActDepreciable { get; set; }
         public string ActEstado { get; set; }
         public Int32 EmpId { get; set; }
         public string EmpNombre { get; set; }

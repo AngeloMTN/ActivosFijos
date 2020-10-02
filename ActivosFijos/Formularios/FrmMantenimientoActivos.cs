@@ -57,6 +57,17 @@ namespace ActivosFijos.Formularios
             TxtTotalDepreAcumulada.Text = Convert.ToDouble(tot[2]).ToString("#,###.00");
             TxtTotalValorActual.Text = Convert.ToDouble(tot[3]).ToString("#,###.00");
 
+            //Corregido 2020-10-01
+            DataGridViewButtonColumn botonVerFoto = new DataGridViewButtonColumn
+            {
+                HeaderText = "FOTO",
+                Name = "boton",
+                Text = "Ver",
+                UseColumnTextForButtonValue = true
+            };
+            DgvActivos.Columns.Add(botonVerFoto);
+            //--
+
             DgvActivos.DataSource = sql.MostrarDatos();
             BtnGrabar.Visible = false;
             BtnCancelar.Visible = false;
@@ -82,44 +93,44 @@ namespace ActivosFijos.Formularios
                 if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
                 {
                     DataGridViewRow fila = DgvActivos.Rows[e.RowIndex];
-                    TxtId.Text = Convert.ToString(fila.Cells[0].Value).Trim();
-                    TxtCodBarra.Text = Convert.ToString(fila.Cells[1].Value).Trim();
-                    TxtArchivo.Text = Convert.ToString(fila.Cells[2].Value).Trim();
-                    TxtNombre.Text = Convert.ToString(fila.Cells[3].Value).Trim();
-                    TxtReferencia.Text = Convert.ToString(fila.Cells[4].Value).Trim();
-                    TxtObservaciones.Text = Convert.ToString(fila.Cells[5].Value).Trim();
-                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[6].Value);
-                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[8].Value).Trim());
+                    TxtId.Text = Convert.ToString(fila.Cells[1].Value).Trim();
+                    TxtCodBarra.Text = Convert.ToString(fila.Cells[2].Value).Trim();
+                    TxtArchivo.Text = Convert.ToString(fila.Cells[3].Value).Trim();
+                    TxtNombre.Text = Convert.ToString(fila.Cells[4].Value).Trim();
+                    TxtReferencia.Text = Convert.ToString(fila.Cells[5].Value).Trim();
+                    TxtObservaciones.Text = Convert.ToString(fila.Cells[6].Value).Trim();
+                    CmbArea.SelectedValue = Convert.ToInt32(fila.Cells[7].Value);
+                    int indexcta = CmbCtaContable.FindString(Convert.ToString(fila.Cells[9].Value).Trim());
                     CmbCtaContable.SelectedIndex = indexcta;
-                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[10].Value).Trim());
+                    int indexcus = CmbCedulaCustodio.FindString(Convert.ToString(fila.Cells[11].Value).Trim());
                     CmbCedulaCustodio.SelectedIndex = indexcus;
-                    TxtFactura.Text = Convert.ToString(fila.Cells[12].Value).Trim();
-                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[13].Value);
-                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[14].Value).Trim());
+                    TxtFactura.Text = Convert.ToString(fila.Cells[13].Value).Trim();
+                    DtpFechaCompra.Value = Convert.ToDateTime(fila.Cells[14].Value);
+                    int indexpro = CmbRucProveedor.FindString(Convert.ToString(fila.Cells[15].Value).Trim());
                     CmbRucProveedor.SelectedIndex = indexpro;
-                    double base0 = Convert.ToDouble(fila.Cells[16].Value);
+                    double base0 = Convert.ToDouble(fila.Cells[17].Value);
                     TxtValorBase0.Text = base0.ToString("#,###.00").Trim();
-                    double baseiva = Convert.ToDouble(fila.Cells[17].Value);
+                    double baseiva = Convert.ToDouble(fila.Cells[18].Value);
                     TxtValorBaseIva.Text = baseiva.ToString("#,###.00").Trim();
-                    double pctiva = Convert.ToDouble(fila.Cells[18].Value);
+                    double pctiva = Convert.ToDouble(fila.Cells[19].Value);
                     TxtPctjeIva.Text = pctiva.ToString("###.00").Trim();
-                    double iva = Convert.ToDouble(fila.Cells[19].Value);
+                    double iva = Convert.ToDouble(fila.Cells[20].Value);
                     TxtValorIva.Text = iva.ToString("#,###.00").Trim();
-                    double valortotal = Convert.ToDouble(fila.Cells[20].Value);
+                    double valortotal = Convert.ToDouble(fila.Cells[21].Value);
                     TxtValorTotal.Text = valortotal.ToString("#,###.00").Trim();
-                    double deprediaria = Convert.ToDouble(fila.Cells[21].Value);
+                    double deprediaria = Convert.ToDouble(fila.Cells[22].Value);
                     TxtDepreDiaria.Text = deprediaria.ToString("#,###.00").Trim();
-                    double depreacumulada = Convert.ToDouble(fila.Cells[22].Value);
+                    double depreacumulada = Convert.ToDouble(fila.Cells[23].Value);
                     TxtDepreAcumulada.Text = depreacumulada.ToString("#,###.00").Trim();
-                    double vaolractual = Convert.ToDouble(fila.Cells[23].Value);
+                    double vaolractual = Convert.ToDouble(fila.Cells[24].Value);
                     TxtValorActual.Text = vaolractual.ToString("#,###.00").Trim();
-                    DtpFinVidaUtilContable.Value = Convert.ToDateTime(fila.Cells[24].Value);
-                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[25].Value);
-                    if (Convert.ToString(fila.Cells[26].Value).Trim() == "S")
+                    DtpFinVidaUtilContable.Value = Convert.ToDateTime(fila.Cells[25].Value);
+                    DtpFechaCorteDepre.Value = Convert.ToDateTime(fila.Cells[26].Value);
+                    if (Convert.ToString(fila.Cells[27].Value).Trim() == "S")
                         CmbDepreciable.SelectedIndex = 0;
                     else
                         CmbDepreciable.SelectedIndex = 1;
-                    switch (Convert.ToString(fila.Cells[27].Value).Trim())
+                    switch (Convert.ToString(fila.Cells[28].Value).Trim())
                     {
                         case "ACTIVO":
                             CmbEstado.SelectedIndex = 0;
@@ -131,7 +142,7 @@ namespace ActivosFijos.Formularios
                             CmbEstado.SelectedIndex = 2;
                             break;
                     }
-                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[28].Value);
+                    CmbEmpresas.SelectedValue = Convert.ToInt32(fila.Cells[29].Value);
 
                     TxtCodBarra.Enabled = false;
                     TxtArchivo.Enabled = false;
@@ -156,7 +167,6 @@ namespace ActivosFijos.Formularios
                     BtnEliminar.Enabled = true;
                     BtnGrabar.Enabled = true;
                     BtnModificar.Enabled = true;
-                    BtnVisualizar.Enabled = true;
                     BtnRecalcularDepre.Enabled = true;
                     DtpFechaCorteDepre.Enabled = true;
 
@@ -175,8 +185,36 @@ namespace ActivosFijos.Formularios
                         nombreArchivo += Convert.ToString(fila.Cells[2].Value) + ".jpg";
                     }
                 }
-            }
 
+                //Cambio 2020-10-01
+                if (e.ColumnIndex != -1)
+                {
+                    if (this.DgvActivos.Columns[e.ColumnIndex].Name == "boton")
+                    {
+                        if (TxtId.Text.Trim() != "")
+                        {
+                            string nomArch = TxtArchivo.Text.Trim() + ".jpg";
+                            var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
+                                         where file.Name.Equals(nomArch)
+                                         select file;
+
+                            if (_Files.Count() > 0)
+                            {
+                                Process.Start(rutaArchivo + nomArch);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No existe la Foto del Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                //--
+            }
         }
 
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -280,7 +318,7 @@ namespace ActivosFijos.Formularios
 
             TxtId.Text = "";
             TxtCodBarra.Text = "";
-            string archivo = sql.SecuenciaArchivo(rutaArchivo);
+            string archivo = sql.SecuenciaArchivo();
             TxtArchivo.Text = archivo;
 
             TxtNombre.Text = "";
@@ -678,31 +716,6 @@ namespace ActivosFijos.Formularios
 
         }
 
-        private void BtnVisualizar_Click(object sender, EventArgs e)
-        {
-            if (TxtId.Text.Trim() != "")
-            {
-                string nomArch = TxtArchivo.Text.Trim() + ".jpg";
-                var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
-                             where file.Name.Equals(nomArch)
-                             select file;
-
-                if (_Files.Count() > 0)
-                {
-                    Process.Start(rutaArchivo + nomArch);
-                }
-                else
-                {
-                    MessageBox.Show("No existe la Foto del Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
-
         private void BtnReportes_Click(object sender, EventArgs e)
         {
             FrmReporteActivos rpt = new FrmReporteActivos();
@@ -711,35 +724,36 @@ namespace ActivosFijos.Formularios
             {
                 ClsDatos data = new ClsDatos
                 {
-                    ActId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[0].Value),
-                    ActCodBarra         = Convert.ToString(DgvActivos.Rows[i].Cells[1].Value),
-                    ActArchivo          = Convert.ToString(DgvActivos.Rows[i].Cells[2].Value),
-                    ActNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[3].Value),
-                    ActReferencia       = Convert.ToString(DgvActivos.Rows[i].Cells[4].Value),
-                    ActObservaciones    = Convert.ToString(DgvActivos.Rows[i].Cells[5].Value),
-                    AreId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[6].Value),
-                    AreNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[7].Value),
-                    PctCuenta           = Convert.ToString(DgvActivos.Rows[i].Cells[8].Value),
-                    PctNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[9].Value),
-                    CusCedula           = Convert.ToString(DgvActivos.Rows[i].Cells[10].Value),
-                    CusNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[11].Value),
-                    ActFactura          = Convert.ToString(DgvActivos.Rows[i].Cells[12].Value),
-                    ActFechaCompra      = Convert.ToString(DgvActivos.Rows[i].Cells[13].Value),
-                    ProRuc              = Convert.ToString(DgvActivos.Rows[i].Cells[14].Value),
-                    ProNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[15].Value),
-                    ActValorBase0       = Convert.ToDouble(DgvActivos.Rows[i].Cells[16].Value),
-                    ActValorBaseIva     = Convert.ToDouble(DgvActivos.Rows[i].Cells[17].Value),
-                    ActPctjeIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[18].Value),
-                    ActValorIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[19].Value),
-                    ActValorTotal       = Convert.ToDouble(DgvActivos.Rows[i].Cells[20].Value),
-                    ActDepreDiaria      = Convert.ToDouble(DgvActivos.Rows[i].Cells[21].Value),
-                    ActDepreAcumulada   = Convert.ToDouble(DgvActivos.Rows[i].Cells[22].Value),
-                    ActValorActual      = Convert.ToDouble(DgvActivos.Rows[i].Cells[23].Value),
-                    ActFinVidaUtil      = Convert.ToString(DgvActivos.Rows[i].Cells[24].Value),
-                    ActFechaCorteDepre  = Convert.ToString(DgvActivos.Rows[i].Cells[25].Value),
-                    ActEstado           = Convert.ToString(DgvActivos.Rows[i].Cells[27].Value),
-                    EmpId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[28].Value),
-                    EmpNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[29].Value)
+                    ActId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[1].Value),
+                    ActCodBarra         = Convert.ToString(DgvActivos.Rows[i].Cells[2].Value),
+                    ActArchivo          = Convert.ToString(DgvActivos.Rows[i].Cells[3].Value),
+                    ActNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[4].Value),
+                    ActReferencia       = Convert.ToString(DgvActivos.Rows[i].Cells[5].Value),
+                    ActObservaciones    = Convert.ToString(DgvActivos.Rows[i].Cells[6].Value),
+                    AreId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[7].Value),
+                    AreNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[8].Value),
+                    PctCuenta           = Convert.ToString(DgvActivos.Rows[i].Cells[9].Value),
+                    PctNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[10].Value),
+                    CusCedula           = Convert.ToString(DgvActivos.Rows[i].Cells[11].Value),
+                    CusNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[12].Value),
+                    ActFactura          = Convert.ToString(DgvActivos.Rows[i].Cells[13].Value),
+                    ActFechaCompra      = Convert.ToString(DgvActivos.Rows[i].Cells[14].Value),
+                    ProRuc              = Convert.ToString(DgvActivos.Rows[i].Cells[15].Value),
+                    ProNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[16].Value),
+                    ActValorBase0       = Convert.ToDouble(DgvActivos.Rows[i].Cells[17].Value),
+                    ActValorBaseIva     = Convert.ToDouble(DgvActivos.Rows[i].Cells[18].Value),
+                    ActPctjeIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[19].Value),
+                    ActValorIva         = Convert.ToDouble(DgvActivos.Rows[i].Cells[20].Value),
+                    ActValorTotal       = Convert.ToDouble(DgvActivos.Rows[i].Cells[21].Value),
+                    ActDepreDiaria      = Convert.ToDouble(DgvActivos.Rows[i].Cells[22].Value),
+                    ActDepreAcumulada   = Convert.ToDouble(DgvActivos.Rows[i].Cells[23].Value),
+                    ActValorActual      = Convert.ToDouble(DgvActivos.Rows[i].Cells[24].Value),
+                    ActFinVidaUtil      = Convert.ToString(DgvActivos.Rows[i].Cells[25].Value),
+                    ActFechaCorteDepre  = Convert.ToString(DgvActivos.Rows[i].Cells[26].Value),
+                    ActDepreciable      = Convert.ToString(DgvActivos.Rows[i].Cells[27].Value),
+                    ActEstado           = Convert.ToString(DgvActivos.Rows[i].Cells[28].Value),
+                    EmpId               = Convert.ToInt32(DgvActivos.Rows[i].Cells[29].Value),
+                    EmpNombre           = Convert.ToString(DgvActivos.Rows[i].Cells[30].Value)
                 };
 
                 rpt.Datos.Add(data);
