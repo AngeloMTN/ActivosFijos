@@ -173,7 +173,7 @@ namespace ActivosFijos.Formularios
                     nombreArchivo = null;
 
                     var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
-                                 where file.Name.Equals(Convert.ToString(fila.Cells[2].Value) + ".jpg")
+                                 where file.Name.Equals(Convert.ToString(fila.Cells[3].Value) + ".jpg")
                                  select file;
 
                     if (_Files.Count() == 0)
@@ -182,7 +182,7 @@ namespace ActivosFijos.Formularios
                     }
                     else
                     {
-                        nombreArchivo += Convert.ToString(fila.Cells[2].Value) + ".jpg";
+                        nombreArchivo += Convert.ToString(fila.Cells[3].Value) + ".jpg";
                     }
                 }
 

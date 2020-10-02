@@ -48,10 +48,9 @@ namespace ActivosFijos.Clases
             public string EmpNombre { get; set; }
         }
 
-        public DataTable MostrarDatos()
+        public string ConsultaSql()
         {
-            conexion.Open();
-            cadenaSql = null;
+            string cadenaSql = null;
             cadenaSql += "SELECT ";
             cadenaSql += "\"Activos\".\"actId\" AS Activo, ";
             cadenaSql += "trim(\"Activos\".\"actCodBarra\") AS CodBarra, ";
@@ -89,6 +88,14 @@ namespace ActivosFijos.Clases
             cadenaSql += "INNER JOIN \"Proveedores\" ON \"Activos\".\"proRuc\" = \"Proveedores\".\"proRuc\" ";
             cadenaSql += "INNER JOIN \"Custodios\" ON \"Activos\".\"cusCedula\" = \"Custodios\".\"cusCedula\" ";
             cadenaSql += "INNER JOIN \"PlanCuentas\" ON \"Activos\".\"pctCuenta\" = \"PlanCuentas\".\"pctCuenta\" ";
+            return cadenaSql;
+        }
+
+
+        public DataTable MostrarDatos()
+        {
+            conexion.Open();
+            string cadenaSql = ConsultaSql();
             cadenaSql += "ORDER BY \"Activos\".\"actNombre\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
@@ -231,44 +238,7 @@ namespace ActivosFijos.Clases
         public DataTable Buscar(string nombre, string area)
         {
             conexion.Open();
-            cadenaSql = null;
-            cadenaSql += "SELECT ";
-            cadenaSql += "\"Activos\".\"actId\" AS Activo, ";
-            cadenaSql += "trim(\"Activos\".\"actCodBarra\") AS CodBarra, ";
-            cadenaSql += "\"Activos\".\"actArchivo\" AS Archivo, ";
-            cadenaSql += "trim(\"Activos\".\"actNombre\") AS NombreDelActivo, ";
-            cadenaSql += "trim(\"Activos\".\"actReferencia\") AS Referencia, ";
-            cadenaSql += "trim(\"Activos\".\"actObservaciones\") AS Observaciones, ";
-            cadenaSql += "\"Activos\".\"areId\" AS Id, ";
-            cadenaSql += "trim(\"Areas\".\"areNombre\") AS NombreDelArea, ";
-            cadenaSql += "trim(\"Activos\".\"pctCuenta\") AS CtaNro, ";
-            cadenaSql += "trim(\"PlanCuentas\".\"pctNombre\") AS CuentaNombre, ";
-            cadenaSql += "\"Activos\".\"cusCedula\" AS Cedula, ";
-            cadenaSql += "trim(\"Custodios\".\"cusNombre\") AS NombreCustodio, ";
-            cadenaSql += "\"Activos\".\"actFactura\" AS NumFactura, ";
-            cadenaSql += "\"Activos\".\"actFechaCompra\" AS FechaCompra, ";
-            cadenaSql += "trim(\"Activos\".\"proRuc\") AS Ruc, ";
-            cadenaSql += "trim(\"Proveedores\".\"proNombre\") AS NombreProveedor, ";
-            cadenaSql += "\"Activos\".\"actValorBase0\" AS ValorBase0, ";
-            cadenaSql += "\"Activos\".\"actValorBaseIva\" AS ValorBaseIva, ";
-            cadenaSql += "\"Activos\".\"actPctjeIva\" AS PctjeIva, ";
-            cadenaSql += "\"Activos\".\"actValorIva\" AS ValorIva, ";
-            cadenaSql += "\"Activos\".\"actValorTotal\" AS ValorTotal, ";
-            cadenaSql += "\"Activos\".\"actDepreDiaria\" AS DepreDiaria, ";
-            cadenaSql += "\"Activos\".\"actDepreAcumulada\" AS DepreAcumulada, ";
-            cadenaSql += "\"Activos\".\"actValorActual\" AS ValorActual, ";
-            cadenaSql += "\"Activos\".\"actFinVidaUtil\" AS FinVidaUtil, ";
-            cadenaSql += "\"Activos\".\"actFechaCorteDepre\" AS FechaCorteDepre, ";
-            cadenaSql += "\"Activos\".\"actDepreciable\" AS Depreciable, ";
-            cadenaSql += "\"Activos\".\"actEstado\" AS Estado, ";
-            cadenaSql += "\"Activos\".\"empId\" AS PropId, ";
-            cadenaSql += "trim(\"Empresas\".\"empNombre\") AS Empresa ";
-            cadenaSql += "FROM \"Activos\" ";
-            cadenaSql += "INNER JOIN \"Areas\" ON \"Activos\".\"areId\" = \"Areas\".\"areId\" ";
-            cadenaSql += "INNER JOIN \"Empresas\" ON \"Activos\".\"empId\" = \"Empresas\".\"empId\" ";
-            cadenaSql += "INNER JOIN \"Proveedores\" ON \"Activos\".\"proRuc\" = \"Proveedores\".\"proRuc\" ";
-            cadenaSql += "INNER JOIN \"Custodios\" ON \"Activos\".\"cusCedula\" = \"Custodios\".\"cusCedula\" ";
-            cadenaSql += "INNER JOIN \"PlanCuentas\" ON \"Activos\".\"pctCuenta\" = \"PlanCuentas\".\"pctCuenta\" ";
+            string cadenaSql = ConsultaSql();
             if (nombre != "" && area != "0")
             {
                 cadenaSql += "WHERE \"Activos\".\"actNombre\" ILIKE '%{0}%' AND \"Activos\".\"areId\" = '{1}' ";
