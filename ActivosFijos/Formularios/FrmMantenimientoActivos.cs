@@ -90,6 +90,7 @@ namespace ActivosFijos.Formularios
             {
                 int totalFilas = DgvActivos.Rows.Count;
                 int filaSeleccionada = DgvActivos.CurrentRow.Index;
+
                 if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
                 {
                     DataGridViewRow fila = DgvActivos.Rows[e.RowIndex];
@@ -209,7 +210,7 @@ namespace ActivosFijos.Formularios
                         }
                         else
                         {
-                            MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Primero seleccione cualquier fila con Datos para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
