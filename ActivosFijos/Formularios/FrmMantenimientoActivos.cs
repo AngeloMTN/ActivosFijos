@@ -210,7 +210,7 @@ namespace ActivosFijos.Formularios
                         }
                         else
                         {
-                            MessageBox.Show("Primero seleccione cualquier fila con Datos para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Primero seleccione cualquier fila con DATOS para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
