@@ -88,10 +88,10 @@ namespace ActivosFijos.Formularios
         {
             if (e.RowIndex != -1)
             {
-                int totalFilas = DgvActivos.Rows.Count;
+                int totalFilas = DgvActivos.Rows.Count - 2;
                 int filaSeleccionada = DgvActivos.CurrentRow.Index;
 
-                if (filaSeleccionada >= 0 && filaSeleccionada != totalFilas - 1)
+                if (filaSeleccionada >= 0 && filaSeleccionada <= totalFilas)
                 {
                     DataGridViewRow fila = DgvActivos.Rows[e.RowIndex];
                     TxtId.Text = Convert.ToString(fila.Cells[1].Value).Trim();
@@ -185,21 +185,18 @@ namespace ActivosFijos.Formularios
                     {
                         nombreArchivo += Convert.ToString(fila.Cells[3].Value) + ".jpg";
                     }
-                }
 
-                //Cambio 2020-10-01
-                if (e.ColumnIndex != -1)
-                {
-                    if (this.DgvActivos.Columns[e.ColumnIndex].Name == "boton")
+                    //Cambio 2020-10-01
+                    if (e.ColumnIndex != -1)
                     {
-                        if (TxtId.Text.Trim() != "")
+                        if (this.DgvActivos.Columns[e.ColumnIndex].Name == "boton")
                         {
                             string nomArch = TxtArchivo.Text.Trim() + ".jpg";
-                            var _Files = from file in new DirectoryInfo(rutaArchivo).GetFiles()
-                                         where file.Name.Equals(nomArch)
-                                         select file;
+                            var _Imagen = from file in new DirectoryInfo(rutaArchivo).GetFiles()
+                                            where file.Name.Equals(nomArch)
+                                            select file;
 
-                            if (_Files.Count() > 0)
+                            if (_Imagen.Count() > 0)
                             {
                                 Process.Start(rutaArchivo + nomArch);
                             }
@@ -208,13 +205,13 @@ namespace ActivosFijos.Formularios
                                 MessageBox.Show("No existe la Foto del Activo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("Primero seleccione cualquier fila con DATOS para proceder con la Visualizacion...", "Ver Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
                     }
+                    //--
                 }
-                //--
+                else
+                {
+                    sql.LimpiarCampos(this, groupBox1);
+                }
             }
         }
 
