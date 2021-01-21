@@ -116,6 +116,7 @@
     <Compile Include="Clases\ClsQueryPlanCuentas.cs" />
     <Compile Include="Clases\ClsQueryProveedores.cs" />
     <Compile Include="Clases\ClsQueryReportes.cs" />
+    <Compile Include="Clases\ClsQueryVacaciones.cs" />
     <Compile Include="Formularios\FrmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +159,12 @@
     <Compile Include="Formularios\FrmMantenimientoProveedores.Designer.cs">
       <DependentUpon>FrmMantenimientoProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmMantenimientoVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimientoVacaciones.Designer.cs">
+      <DependentUpon>FrmMantenimientoVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmReporteActivos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMantenimientoProveedores.resx">
       <DependentUpon>FrmMantenimientoProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMantenimientoVacaciones.resx">
+      <DependentUpon>FrmMantenimientoVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReporteActivos.resx">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>

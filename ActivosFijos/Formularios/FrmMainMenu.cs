@@ -106,5 +106,10 @@ namespace ActivosFijos.Formularios
             PnlSubMenuTablas.Visible = false;
             AbrirFormularioHijo(new FrmMantenimientoProveedores());
         }
+
+        private void BtnVacaciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new FrmMantenimientoVacaciones());
+        }
     }
 }

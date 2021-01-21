@@ -55,6 +55,7 @@
             this.MoverDashBoard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.BnfRadioPanelChart = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.PnlWraper = new System.Windows.Forms.Panel();
+            this.BtnVacaciones = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PnlMenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxMinimizar)).BeginInit();
@@ -176,6 +177,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BnfGradientPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BnfGradientPanel.BackgroundImage")));
             this.BnfGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BnfGradientPanel.Controls.Add(this.BtnVacaciones);
             this.BnfGradientPanel.Controls.Add(this.PnlSubMenuTablas);
             this.BnfGradientPanel.Controls.Add(this.BtnTablas);
             this.BnfGradientPanel.Controls.Add(this.LblRheagerCode);
@@ -206,7 +208,7 @@
             this.PnlSubMenuTablas.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.PnlSubMenuTablas.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.PnlSubMenuTablas.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.PnlSubMenuTablas.Location = new System.Drawing.Point(19, 187);
+            this.PnlSubMenuTablas.Location = new System.Drawing.Point(19, 249);
             this.PnlSubMenuTablas.Name = "PnlSubMenuTablas";
             this.PnlSubMenuTablas.Quality = 10;
             this.PnlSubMenuTablas.Size = new System.Drawing.Size(218, 221);
@@ -415,7 +417,7 @@
             this.BtnTablas.IconVisible = true;
             this.BtnTablas.IconZoom = 50D;
             this.BtnTablas.IsTab = false;
-            this.BtnTablas.Location = new System.Drawing.Point(-1, 142);
+            this.BtnTablas.Location = new System.Drawing.Point(-1, 203);
             this.BtnTablas.Margin = new System.Windows.Forms.Padding(5);
             this.BtnTablas.Name = "BtnTablas";
             this.BtnTablas.Normalcolor = System.Drawing.Color.Transparent;
@@ -462,7 +464,7 @@
             this.BtnActivos.BackColor = System.Drawing.Color.Transparent;
             this.BtnActivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnActivos.BorderRadius = 0;
-            this.BtnActivos.ButtonText = "            ACTIVOS";
+            this.BtnActivos.ButtonText = "           ACTIVOS";
             this.BtnActivos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnActivos.DisabledColor = System.Drawing.Color.Gray;
             this.BtnActivos.Iconcolor = System.Drawing.Color.Transparent;
@@ -486,7 +488,7 @@
             this.BtnActivos.selected = false;
             this.BtnActivos.Size = new System.Drawing.Size(239, 57);
             this.BtnActivos.TabIndex = 10;
-            this.BtnActivos.Text = "            ACTIVOS";
+            this.BtnActivos.Text = "           ACTIVOS";
             this.BtnActivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnActivos.Textcolor = System.Drawing.Color.White;
             this.BtnActivos.TextFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -538,6 +540,42 @@
             this.PnlWraper.Name = "PnlWraper";
             this.PnlWraper.Size = new System.Drawing.Size(1683, 916);
             this.PnlWraper.TabIndex = 2;
+            // 
+            // BtnVacaciones
+            // 
+            this.BtnVacaciones.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnVacaciones.BackColor = System.Drawing.Color.Transparent;
+            this.BtnVacaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnVacaciones.BorderRadius = 0;
+            this.BtnVacaciones.ButtonText = "           VACACIONES";
+            this.BtnVacaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVacaciones.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnVacaciones.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnVacaciones.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnVacaciones.Iconimage")));
+            this.BtnVacaciones.Iconimage_right = null;
+            this.BtnVacaciones.Iconimage_right_Selected = null;
+            this.BtnVacaciones.Iconimage_Selected = null;
+            this.BtnVacaciones.IconMarginLeft = 0;
+            this.BtnVacaciones.IconMarginRight = 0;
+            this.BtnVacaciones.IconRightVisible = true;
+            this.BtnVacaciones.IconRightZoom = 0D;
+            this.BtnVacaciones.IconVisible = true;
+            this.BtnVacaciones.IconZoom = 50D;
+            this.BtnVacaciones.IsTab = false;
+            this.BtnVacaciones.Location = new System.Drawing.Point(-1, 141);
+            this.BtnVacaciones.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnVacaciones.Name = "BtnVacaciones";
+            this.BtnVacaciones.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnVacaciones.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnVacaciones.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnVacaciones.selected = false;
+            this.BtnVacaciones.Size = new System.Drawing.Size(239, 57);
+            this.BtnVacaciones.TabIndex = 20;
+            this.BtnVacaciones.Text = "           VACACIONES";
+            this.BtnVacaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVacaciones.Textcolor = System.Drawing.Color.White;
+            this.BtnVacaciones.TextFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVacaciones.Click += new System.EventHandler(this.BtnVacaciones_Click);
             // 
             // FrmMainMenu
             // 
@@ -595,5 +633,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton BtnCustodios;
         private Bunifu.Framework.UI.BunifuFlatButton BtnEmpresas;
         private Bunifu.Framework.UI.BunifuFlatButton BtnAreas;
+        private Bunifu.Framework.UI.BunifuFlatButton BtnVacaciones;
     }
 }

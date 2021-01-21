@@ -191,6 +191,30 @@
         Rtztf6mEy/98Caf/GZIO/0cV0lWhw38Al9W9JfvIDo8AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="BtnVacaciones.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAABEtJREFUaEPt
+        mUmIFUcYx8dRZzSacVfUMOKCohIEBQVRFPTiQTSHBE8ig4ogouBB0IN6ET0FL4J6EzxEPAgeBPUgJKDi
+        EpOYEFQUF1xwX1DjNvn933ylPe91VXe/6Z55yPzgB29qqr7ur7qrurq6rghaW1uH4UZcjyOsuLbhRHvj
+        j3gCP6JDv39DJTPEqtcOnNQ43Il3MYk3eBSVaG8L0flw8AY7ifLezsIT3ItzsIeFLhYO1Izb8TaGuIXb
+        cDP+o4IELqHGzCg7VH4Q9BtcjecxxGtUj86wpp+hbDIqoeuYhI6j8TLMmlcHAaahTugZhtDVWIcDrakX
+        6tSjbhnFfY4h3qIbLw0WIgwV+2Oa3v4P77X9LPEC9+EsC5UIdfvgYjyE7zDEUzyAC7FyvFA4HdP0iu5V
+        JTjA2n2Hm/AGOnT/a1YaUwqeAuoORsXVdJvETVT8ia7xryoNoN7+BRdg7GxBuW4N9Y56U/WFZifNUpmm
+        TOqqM3/G+xhC8S+qgY8/Ub3SZLFTQf1B1k5Xy6HbbTd+b9USoa4bL2r3CGMpTyA6p6snD+MirLe4maDd
+        DNStqTHi0PhSgv2tWiLU/RZX4Fn8hJ8pT+AIjkbd19Epzz10UvdgFNr1Rffgcyeg8VYamFbNC3XGo27P
+        iodmRQLWRuVx97VwPdjPqmaCdpNQg/ABOvSwU6e1m/v5eySq47yzlDeBKJS7+/oPVTLUgwo+x6plgnZa
+        jrhp9D0Kzf36exnuwlcYJFUCUajj7uuXamD8jerBoVYtE7SbgDswzYKwHZkTcFC3CXVVonO368H4B44H
+        6upqaPlwBzNRdQJRaDcFdV8/VBDjCmr902zVYuH/S/AvjEPrq/3obrEKcknAQftGLJ9tPmDFA43f8/E0
+        +tA6aCxqMtEsGEuuCUQh1lTUEzV6VTQ178GTpb/i0VJkqYVRnLWlUg+FJeAgpq7KT3gc2z2EYtAYGGnt
+        huNBFYYoPIEoxF/Vdhgvmt16YAs+VkESnZ2ABmwIrZmSlvLtqLUEMtOdQBaI351AOd0JZIH43QmU89Ul
+        cNSOVQjELzwBrVW0Cpxpx8wV4haeQBS9qCy2Y+cC8QpJYAtGl7zlaC0/186hQxAn7wQuucB6pdPrYWjb
+        /HfUS0nVe/m0zSsBvbq2WNgvUKhEluNV9KGdiaoSoU0eCegtLrwTTgV971Iieq/1oa1H1elpzRKhbkcS
+        0N7USguVDhrofVS9/S/6uIypEqFOtQkk93oIGrtEQp+LrqHGUS9rVgH/y5qAen2VNe84BFMi2k27gD70
+        4h6bCGVZElCvD7am+UJgvbcqkXPoQx89tFnVaM3SJpBvryfBwbQLd0ZH9qAvKkpEn5SSEiiu10NwUF2R
+        H/Ai+tAYOdb2swLtvG2wcF0LJ6KvKqGNq3K6pteT4KSUiBaGPrTnv8aq1y6c5GxUItFdOfV6VVvxXQYn
+        PA9P4VYryoG6uv8BiPBqVGADpYkAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="PnlSubMenuTablas.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
