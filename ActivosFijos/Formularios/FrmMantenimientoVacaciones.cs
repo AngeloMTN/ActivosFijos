@@ -374,7 +374,7 @@ namespace ActivosFijos.Formularios
                     if (sql.InsertarVacaciones(secNew.ToString(), cedula, Convert.ToDateTime(DtpFechaSalida.Value), TxtDiasTomados.Text.ToString()))
                     {
                         sql.RecalcularVacaciones();
-
+                        DgvEmpleados.DataSource = sql.MostrarDatos();
                         DgvRegistroVacaciones.DataSource = sql.MostrarDatosVacaciones();
                         CmbRegistroNombre.SelectedIndex = -1;
 
@@ -401,7 +401,7 @@ namespace ActivosFijos.Formularios
                     if (sql.ActualizarVacaciones(TxtIdRegistro.Text, cedula, Convert.ToDateTime(DtpFechaSalida.Value), TxtDiasTomados.Text.ToString()))
                     {
                         sql.RecalcularVacaciones();
-
+                        DgvEmpleados.DataSource = sql.MostrarDatos();
                         DgvRegistroVacaciones.DataSource = sql.MostrarDatosVacaciones();
                         CmbRegistroNombre.SelectedIndex = -1;
                         CmbFiltroRegistroBuscar.SelectedIndex = -1;

@@ -80,9 +80,9 @@ namespace ActivosFijos.Clases
             string cadenaSql = ConsultaSqlVacaciones();
             if (cedula != "")
             {
-                cadenaSql += "WHERE \"empCedula\" ILIKE '%{0}%' ";
+                cadenaSql += "WHERE \"regCedula\" ILIKE '%{0}%' ";
             }
-            //cadenaSql += "ORDER BY \"empFechaSalida\" ";
+            cadenaSql += "ORDER BY \"regFechaSalida\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(string.Format(cadenaSql, cedula), conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
@@ -95,6 +95,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = ConsultaSqlVacaciones();
+            cadenaSql += "ORDER BY \"regCedula\", \"regFechaSalida\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
