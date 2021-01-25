@@ -508,5 +508,27 @@ namespace ActivosFijos.Formularios
                 MessageBox.Show("La fecha de Retorno debe ser mayor o igual a la fecha de Salida ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void CmbRegistroNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
+            string cedula = ced[0].Trim();
+
+            foreach (DataGridViewRow Row in DgvEmpleados.Rows)
+            {
+                string valor = Convert.ToString(Row.Cells["Cedula"].Value).Trim();
+
+                if (valor == cedula)
+                {
+                    //DgvEmpleados.Rows[strFila].DefaultCellStyle.BackColor = Color.Red;
+                    string ant = Convert.ToString(Row.Cells["Antiguedad"].Value).Trim();
+                    string[] antig = ant.Split('|');
+                    TxtAntiguedad.Text = antig[0].Trim();
+                    TxtDiasPorAnio.Text = Convert.ToString(Row.Cells["DiasPorAnio"].Value).Trim();
+                    TxtSaldo.Text = Convert.ToString(Row.Cells["Saldo"].Value).Trim();
+                    break;
+                }
+            }
+        }
     }
 }

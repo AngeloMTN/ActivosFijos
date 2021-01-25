@@ -23,7 +23,7 @@ namespace ActivosFijos.Clases
             string cadenaSql = null;
             cadenaSql += "SELECT \"empId\" AS EmpId, \"empCedula\" AS Cedula, \"empNombre\" AS Nombre, ";
             cadenaSql += "\"empFechaEntrada\" AS Entrada, \"empAntiguedad\" AS Antiguedad, ";
-            cadenaSql += "\"empDiasPorAnio\" AS DiasXAnio,\"empAcumulado\" AS Acumulado, ";
+            cadenaSql += "\"empDiasPorAnio\" AS DiasPorAnio,\"empAcumulado\" AS Acumulado, ";
             cadenaSql += "\"empUtilizado\" AS Utilizado, \"empSaldo\" AS Saldo ";
             cadenaSql += "FROM \"Empleados\" ";
             return cadenaSql;
