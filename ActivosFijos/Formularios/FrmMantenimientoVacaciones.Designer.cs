@@ -30,14 +30,14 @@ namespace ActivosFijos.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimientoVacaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgEmpleados = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -67,19 +67,21 @@ namespace ActivosFijos.Formularios
             this.BtnRegistroCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnRegistroGrabar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnRegistroEliminar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnRegistroModificar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnRegistroNuevo = new Bunifu.Framework.UI.BunifuThinButton2();
             this.TxtDiasTomados = new System.Windows.Forms.TextBox();
             this.LblDiasTomados = new System.Windows.Forms.Label();
             this.DtpFechaSalida = new System.Windows.Forms.DateTimePicker();
             this.LblFechaSalida = new System.Windows.Forms.Label();
-            this.LblEmpleado = new System.Windows.Forms.Label();
             this.CmbRegistroNombre = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.CmbFiltroRegistroBuscar = new System.Windows.Forms.ComboBox();
             this.BtnFiltroRegistroBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.DgvRegistroVacaciones = new System.Windows.Forms.DataGridView();
+            this.LblFechaRetorno = new System.Windows.Forms.Label();
+            this.DtpFechaRetorno = new System.Windows.Forms.DateTimePicker();
+            this.TxtObservaciones = new System.Windows.Forms.TextBox();
+            this.LblObservaciones = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TpgEmpleados.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -337,7 +339,7 @@ namespace ActivosFijos.Formularios
             this.DtpFechaEntrada.Name = "DtpFechaEntrada";
             this.DtpFechaEntrada.Size = new System.Drawing.Size(138, 27);
             this.DtpFechaEntrada.TabIndex = 46;
-            this.DtpFechaEntrada.Value = new System.DateTime(2021, 1, 14, 0, 0, 0, 0);
+            this.DtpFechaEntrada.Value = new System.DateTime(2021, 1, 21, 0, 0, 0, 0);
             // 
             // LblFechaEntrada
             // 
@@ -439,45 +441,45 @@ namespace ActivosFijos.Formularios
             this.DgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DgvEmpleados.ColumnHeadersHeight = 30;
             this.DgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.DefaultCellStyle = dataGridViewCellStyle10;
             this.DgvEmpleados.EnableHeadersVisualStyles = false;
             this.DgvEmpleados.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvEmpleados.Location = new System.Drawing.Point(9, 226);
             this.DgvEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvEmpleados.Name = "DgvEmpleados";
             this.DgvEmpleados.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.DgvEmpleados.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.DgvEmpleados.RowTemplate.Height = 24;
             this.DgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvEmpleados.Size = new System.Drawing.Size(1237, 474);
@@ -498,25 +500,27 @@ namespace ActivosFijos.Formularios
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.LblObservaciones);
+            this.groupBox5.Controls.Add(this.TxtObservaciones);
+            this.groupBox5.Controls.Add(this.DtpFechaRetorno);
+            this.groupBox5.Controls.Add(this.LblFechaRetorno);
             this.groupBox5.Controls.Add(this.TxtIdRegistro);
             this.groupBox5.Controls.Add(this.LblIdRegistro);
             this.groupBox5.Controls.Add(this.BtnRegistroCancelar);
             this.groupBox5.Controls.Add(this.BtnRegistroGrabar);
             this.groupBox5.Controls.Add(this.BtnRegistroEliminar);
-            this.groupBox5.Controls.Add(this.BtnRegistroModificar);
             this.groupBox5.Controls.Add(this.BtnRegistroNuevo);
             this.groupBox5.Controls.Add(this.TxtDiasTomados);
             this.groupBox5.Controls.Add(this.LblDiasTomados);
             this.groupBox5.Controls.Add(this.DtpFechaSalida);
             this.groupBox5.Controls.Add(this.LblFechaSalida);
-            this.groupBox5.Controls.Add(this.LblEmpleado);
             this.groupBox5.Controls.Add(this.CmbRegistroNombre);
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(9, 2);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(1237, 143);
+            this.groupBox5.Size = new System.Drawing.Size(1237, 163);
             this.groupBox5.TabIndex = 47;
             this.groupBox5.TabStop = false;
             // 
@@ -535,8 +539,8 @@ namespace ActivosFijos.Formularios
             // 
             this.LblIdRegistro.AutoSize = true;
             this.LblIdRegistro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIdRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblIdRegistro.Location = new System.Drawing.Point(110, 27);
+            this.LblIdRegistro.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblIdRegistro.Location = new System.Drawing.Point(104, 27);
             this.LblIdRegistro.Name = "LblIdRegistro";
             this.LblIdRegistro.Size = new System.Drawing.Size(28, 20);
             this.LblIdRegistro.TabIndex = 59;
@@ -560,10 +564,10 @@ namespace ActivosFijos.Formularios
             this.BtnRegistroCancelar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnRegistroCancelar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnRegistroCancelar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRegistroCancelar.Location = new System.Drawing.Point(1065, 76);
+            this.BtnRegistroCancelar.Location = new System.Drawing.Point(1078, 85);
             this.BtnRegistroCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnRegistroCancelar.Name = "BtnRegistroCancelar";
-            this.BtnRegistroCancelar.Size = new System.Drawing.Size(160, 60);
+            this.BtnRegistroCancelar.Size = new System.Drawing.Size(140, 60);
             this.BtnRegistroCancelar.TabIndex = 53;
             this.BtnRegistroCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRegistroCancelar.Click += new System.EventHandler(this.BtnRegistroCancelar_Click);
@@ -586,10 +590,10 @@ namespace ActivosFijos.Formularios
             this.BtnRegistroGrabar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnRegistroGrabar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnRegistroGrabar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRegistroGrabar.Location = new System.Drawing.Point(725, 76);
+            this.BtnRegistroGrabar.Location = new System.Drawing.Point(928, 85);
             this.BtnRegistroGrabar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnRegistroGrabar.Name = "BtnRegistroGrabar";
-            this.BtnRegistroGrabar.Size = new System.Drawing.Size(160, 60);
+            this.BtnRegistroGrabar.Size = new System.Drawing.Size(140, 60);
             this.BtnRegistroGrabar.TabIndex = 52;
             this.BtnRegistroGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRegistroGrabar.Click += new System.EventHandler(this.BtnRegistroGrabar_Click);
@@ -612,39 +616,13 @@ namespace ActivosFijos.Formularios
             this.BtnRegistroEliminar.IdleFillColor = System.Drawing.Color.Black;
             this.BtnRegistroEliminar.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnRegistroEliminar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRegistroEliminar.Location = new System.Drawing.Point(1065, 14);
+            this.BtnRegistroEliminar.Location = new System.Drawing.Point(1078, 23);
             this.BtnRegistroEliminar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnRegistroEliminar.Name = "BtnRegistroEliminar";
-            this.BtnRegistroEliminar.Size = new System.Drawing.Size(160, 60);
+            this.BtnRegistroEliminar.Size = new System.Drawing.Size(140, 60);
             this.BtnRegistroEliminar.TabIndex = 51;
             this.BtnRegistroEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRegistroEliminar.Click += new System.EventHandler(this.BtnRegistroEliminar_Click);
-            // 
-            // BtnRegistroModificar
-            // 
-            this.BtnRegistroModificar.ActiveBorderThickness = 1;
-            this.BtnRegistroModificar.ActiveCornerRadius = 20;
-            this.BtnRegistroModificar.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnRegistroModificar.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnRegistroModificar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRegistroModificar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnRegistroModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRegistroModificar.BackgroundImage")));
-            this.BtnRegistroModificar.ButtonText = "MODIFICAR";
-            this.BtnRegistroModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRegistroModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistroModificar.ForeColor = System.Drawing.Color.DarkGray;
-            this.BtnRegistroModificar.IdleBorderThickness = 1;
-            this.BtnRegistroModificar.IdleCornerRadius = 20;
-            this.BtnRegistroModificar.IdleFillColor = System.Drawing.Color.Black;
-            this.BtnRegistroModificar.IdleForecolor = System.Drawing.Color.DarkKhaki;
-            this.BtnRegistroModificar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRegistroModificar.Location = new System.Drawing.Point(895, 14);
-            this.BtnRegistroModificar.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnRegistroModificar.Name = "BtnRegistroModificar";
-            this.BtnRegistroModificar.Size = new System.Drawing.Size(160, 60);
-            this.BtnRegistroModificar.TabIndex = 50;
-            this.BtnRegistroModificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnRegistroModificar.Click += new System.EventHandler(this.BtnRegistroModificar_Click);
             // 
             // BtnRegistroNuevo
             // 
@@ -664,10 +642,10 @@ namespace ActivosFijos.Formularios
             this.BtnRegistroNuevo.IdleFillColor = System.Drawing.Color.Black;
             this.BtnRegistroNuevo.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnRegistroNuevo.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRegistroNuevo.Location = new System.Drawing.Point(725, 14);
+            this.BtnRegistroNuevo.Location = new System.Drawing.Point(928, 23);
             this.BtnRegistroNuevo.Margin = new System.Windows.Forms.Padding(5);
             this.BtnRegistroNuevo.Name = "BtnRegistroNuevo";
-            this.BtnRegistroNuevo.Size = new System.Drawing.Size(160, 60);
+            this.BtnRegistroNuevo.Size = new System.Drawing.Size(140, 60);
             this.BtnRegistroNuevo.TabIndex = 49;
             this.BtnRegistroNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRegistroNuevo.Click += new System.EventHandler(this.BtnRegistroNuevo_Click);
@@ -675,20 +653,21 @@ namespace ActivosFijos.Formularios
             // TxtDiasTomados
             // 
             this.TxtDiasTomados.Enabled = false;
-            this.TxtDiasTomados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDiasTomados.Location = new System.Drawing.Point(452, 99);
+            this.TxtDiasTomados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDiasTomados.Location = new System.Drawing.Point(695, 59);
             this.TxtDiasTomados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDiasTomados.MaxLength = 10;
             this.TxtDiasTomados.Name = "TxtDiasTomados";
             this.TxtDiasTomados.Size = new System.Drawing.Size(68, 28);
             this.TxtDiasTomados.TabIndex = 47;
+            this.TxtDiasTomados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblDiasTomados
             // 
             this.LblDiasTomados.AutoSize = true;
             this.LblDiasTomados.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDiasTomados.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblDiasTomados.Location = new System.Drawing.Point(330, 104);
+            this.LblDiasTomados.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblDiasTomados.Location = new System.Drawing.Point(573, 63);
             this.LblDiasTomados.Name = "LblDiasTomados";
             this.LblDiasTomados.Size = new System.Drawing.Size(111, 20);
             this.LblDiasTomados.TabIndex = 48;
@@ -700,40 +679,30 @@ namespace ActivosFijos.Formularios
             this.DtpFechaSalida.Enabled = false;
             this.DtpFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaSalida.Location = new System.Drawing.Point(149, 99);
+            this.DtpFechaSalida.Location = new System.Drawing.Point(149, 59);
             this.DtpFechaSalida.Name = "DtpFechaSalida";
             this.DtpFechaSalida.Size = new System.Drawing.Size(138, 27);
             this.DtpFechaSalida.TabIndex = 46;
-            this.DtpFechaSalida.Value = new System.DateTime(2021, 1, 14, 0, 0, 0, 0);
+            this.DtpFechaSalida.Value = new System.DateTime(2021, 1, 25, 0, 0, 0, 0);
+            this.DtpFechaSalida.ValueChanged += new System.EventHandler(this.DtpFechaSalida_ValueChanged);
             // 
             // LblFechaSalida
             // 
             this.LblFechaSalida.AutoSize = true;
             this.LblFechaSalida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaSalida.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaSalida.Location = new System.Drawing.Point(8, 103);
+            this.LblFechaSalida.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblFechaSalida.Location = new System.Drawing.Point(26, 63);
             this.LblFechaSalida.Name = "LblFechaSalida";
-            this.LblFechaSalida.Size = new System.Drawing.Size(130, 20);
+            this.LblFechaSalida.Size = new System.Drawing.Size(106, 20);
             this.LblFechaSalida.TabIndex = 45;
-            this.LblFechaSalida.Text = "Fecha de Salida:";
-            // 
-            // LblEmpleado
-            // 
-            this.LblEmpleado.AutoSize = true;
-            this.LblEmpleado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEmpleado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblEmpleado.Location = new System.Drawing.Point(51, 64);
-            this.LblEmpleado.Name = "LblEmpleado";
-            this.LblEmpleado.Size = new System.Drawing.Size(87, 20);
-            this.LblEmpleado.TabIndex = 44;
-            this.LblEmpleado.Text = "Empleado:";
+            this.LblFechaSalida.Text = "Fecha Salida:";
             // 
             // CmbRegistroNombre
             // 
             this.CmbRegistroNombre.Enabled = false;
             this.CmbRegistroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbRegistroNombre.FormattingEnabled = true;
-            this.CmbRegistroNombre.Location = new System.Drawing.Point(149, 60);
+            this.CmbRegistroNombre.Location = new System.Drawing.Point(228, 22);
             this.CmbRegistroNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbRegistroNombre.Name = "CmbRegistroNombre";
             this.CmbRegistroNombre.Size = new System.Drawing.Size(535, 28);
@@ -745,7 +714,7 @@ namespace ActivosFijos.Formularios
             this.groupBox4.Controls.Add(this.BtnFiltroRegistroBuscar);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(10, 150);
+            this.groupBox4.Location = new System.Drawing.Point(10, 169);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -793,50 +762,97 @@ namespace ActivosFijos.Formularios
             this.DgvRegistroVacaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvRegistroVacaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvRegistroVacaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.DgvRegistroVacaciones.ColumnHeadersHeight = 30;
             this.DgvRegistroVacaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.DefaultCellStyle = dataGridViewCellStyle14;
             this.DgvRegistroVacaciones.EnableHeadersVisualStyles = false;
             this.DgvRegistroVacaciones.GridColor = System.Drawing.Color.SteelBlue;
-            this.DgvRegistroVacaciones.Location = new System.Drawing.Point(9, 221);
+            this.DgvRegistroVacaciones.Location = new System.Drawing.Point(9, 235);
             this.DgvRegistroVacaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvRegistroVacaciones.Name = "DgvRegistroVacaciones";
             this.DgvRegistroVacaciones.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.DgvRegistroVacaciones.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvRegistroVacaciones.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvRegistroVacaciones.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DgvRegistroVacaciones.RowTemplate.Height = 24;
             this.DgvRegistroVacaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvRegistroVacaciones.Size = new System.Drawing.Size(1237, 478);
+            this.DgvRegistroVacaciones.Size = new System.Drawing.Size(1237, 464);
             this.DgvRegistroVacaciones.TabIndex = 45;
             this.DgvRegistroVacaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRegistroVacaciones_CellClick);
+            // 
+            // LblFechaRetorno
+            // 
+            this.LblFechaRetorno.AutoSize = true;
+            this.LblFechaRetorno.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaRetorno.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblFechaRetorno.Location = new System.Drawing.Point(299, 63);
+            this.LblFechaRetorno.Name = "LblFechaRetorno";
+            this.LblFechaRetorno.Size = new System.Drawing.Size(121, 20);
+            this.LblFechaRetorno.TabIndex = 61;
+            this.LblFechaRetorno.Text = "Fecha Retorno:";
+            // 
+            // DtpFechaRetorno
+            // 
+            this.DtpFechaRetorno.CustomFormat = "yyyy/MM/dd";
+            this.DtpFechaRetorno.Enabled = false;
+            this.DtpFechaRetorno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaRetorno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFechaRetorno.Location = new System.Drawing.Point(426, 59);
+            this.DtpFechaRetorno.Name = "DtpFechaRetorno";
+            this.DtpFechaRetorno.Size = new System.Drawing.Size(138, 27);
+            this.DtpFechaRetorno.TabIndex = 62;
+            this.DtpFechaRetorno.Value = new System.DateTime(2021, 1, 25, 0, 0, 0, 0);
+            this.DtpFechaRetorno.ValueChanged += new System.EventHandler(this.DtpFechaRetorno_ValueChanged);
+            // 
+            // TxtObservaciones
+            // 
+            this.TxtObservaciones.Enabled = false;
+            this.TxtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtObservaciones.Location = new System.Drawing.Point(149, 96);
+            this.TxtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtObservaciones.MaxLength = 50;
+            this.TxtObservaciones.Multiline = true;
+            this.TxtObservaciones.Name = "TxtObservaciones";
+            this.TxtObservaciones.Size = new System.Drawing.Size(614, 58);
+            this.TxtObservaciones.TabIndex = 63;
+            // 
+            // LblObservaciones
+            // 
+            this.LblObservaciones.AutoSize = true;
+            this.LblObservaciones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblObservaciones.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblObservaciones.Location = new System.Drawing.Point(7, 96);
+            this.LblObservaciones.Name = "LblObservaciones";
+            this.LblObservaciones.Size = new System.Drawing.Size(125, 20);
+            this.LblObservaciones.TabIndex = 64;
+            this.LblObservaciones.Text = "Observaciones:";
             // 
             // FrmMantenimientoVacaciones
             // 
@@ -896,13 +912,11 @@ namespace ActivosFijos.Formularios
         private Bunifu.Framework.UI.BunifuThinButton2 BtnRegistroCancelar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnRegistroGrabar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnRegistroEliminar;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnRegistroModificar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnRegistroNuevo;
         private System.Windows.Forms.TextBox TxtDiasTomados;
         private System.Windows.Forms.Label LblDiasTomados;
         private System.Windows.Forms.DateTimePicker DtpFechaSalida;
         private System.Windows.Forms.Label LblFechaSalida;
-        private System.Windows.Forms.Label LblEmpleado;
         private System.Windows.Forms.ComboBox CmbRegistroNombre;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox CmbFiltroRegistroBuscar;
@@ -913,5 +927,9 @@ namespace ActivosFijos.Formularios
         private System.Windows.Forms.Label IblId;
         private System.Windows.Forms.TextBox TxtIdRegistro;
         private System.Windows.Forms.Label LblIdRegistro;
+        private System.Windows.Forms.Label LblObservaciones;
+        private System.Windows.Forms.TextBox TxtObservaciones;
+        private System.Windows.Forms.DateTimePicker DtpFechaRetorno;
+        private System.Windows.Forms.Label LblFechaRetorno;
     }
 }

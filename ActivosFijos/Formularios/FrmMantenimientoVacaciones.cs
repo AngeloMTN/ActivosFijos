@@ -46,12 +46,15 @@ namespace ActivosFijos.Formularios
             BtnEmpleadoCancelar.Visible = false;
 
             BtnRegistroGrabar.Visible = false;
-            BtnRegistroModificar.Visible = false;
             BtnRegistroEliminar.Visible = false;
             BtnRegistroCancelar.Visible = false;
 
             CmbRegistroNombre.SelectedIndex = -1;
             CmbFiltroRegistroBuscar.SelectedIndex = -1;
+
+            DtpFechaEntrada.Value = DateTime.Today;
+            DtpFechaSalida.Value = DateTime.Today;
+            DtpFechaRetorno.Value = DateTime.Today;
 
             sql.RecalcularVacaciones();
 
@@ -288,33 +291,20 @@ namespace ActivosFijos.Formularios
             BtnRegistroEliminar.Visible = false;
             BtnRegistroGrabar.Visible = true;
             BtnRegistroCancelar.Visible = true;
-            BtnRegistroModificar.Visible = false;
 
             CmbRegistroNombre.Enabled = true;
             DtpFechaSalida.Enabled = true;
-            TxtDiasTomados.Enabled = true;
+            DtpFechaRetorno.Enabled = true;
+            TxtObservaciones.Enabled = true;
 
             CmbFiltroRegistroBuscar.Enabled = false;
             BtnFiltroRegistroBuscar.Enabled = false;
 
             CmbFiltroRegistroBuscar.SelectedItem = 0;
+            DtpFechaRetorno.Value = DateTime.Today;
             DtpFechaSalida.Value = DateTime.Today;
             TxtDiasTomados.Text = "";
-
-        }
-
-        private void BtnRegistroModificar_Click(object sender, EventArgs e)
-        {
-            opcion = "upd";
-            BtnRegistroNuevo.Visible = false;
-            BtnRegistroEliminar.Visible = false;
-            BtnRegistroModificar.Visible = false;
-            BtnRegistroCancelar.Visible = true;
-            BtnRegistroGrabar.Visible = true;
-
-            CmbRegistroNombre.Enabled = true;
-            DtpFechaSalida.Enabled = true;
-            TxtDiasTomados.Enabled = true;
+            TxtObservaciones.Text = "";
 
         }
 
@@ -334,11 +324,12 @@ namespace ActivosFijos.Formularios
                         TxtIdRegistro.Text = "";
                         CmbRegistroNombre.SelectedIndex = -1;
                         DtpFechaSalida.Value = DateTime.Today;
+                        DtpFechaRetorno.Value = DateTime.Today;
                         TxtDiasTomados.Text = "";
+                        TxtObservaciones.Text = "";
 
                         BtnRegistroNuevo.Visible = true;
                         BtnRegistroEliminar.Visible = false;
-                        BtnRegistroModificar.Visible = false;
                         BtnRegistroCancelar.Visible = false;
                         BtnRegistroGrabar.Visible = false;
 
@@ -371,7 +362,12 @@ namespace ActivosFijos.Formularios
                     string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
                     string cedula = ced[0];
 
-                    if (sql.InsertarVacaciones(secNew.ToString(), cedula, Convert.ToDateTime(DtpFechaSalida.Value), TxtDiasTomados.Text.ToString()))
+                    if (sql.InsertarVacaciones(secNew.ToString(),
+                                               cedula,
+                                               Convert.ToDateTime(DtpFechaSalida.Value),
+                                               Convert.ToDateTime(DtpFechaRetorno.Value),
+                                               TxtDiasTomados.Text.ToString(),
+                                               TxtObservaciones.Text))
                     {
                         sql.RecalcularVacaciones();
                         DgvEmpleados.DataSource = sql.MostrarDatos();
@@ -391,46 +387,20 @@ namespace ActivosFijos.Formularios
                 }
             }
 
-            if (opcion == "upd")
-            {
-                if (TxtDiasTomados.Text.Trim() != "")
-                {
-                    string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
-                    string cedula = ced[0];
-
-                    if (sql.ActualizarVacaciones(TxtIdRegistro.Text, cedula, Convert.ToDateTime(DtpFechaSalida.Value), TxtDiasTomados.Text.ToString()))
-                    {
-                        sql.RecalcularVacaciones();
-                        DgvEmpleados.DataSource = sql.MostrarDatos();
-                        DgvRegistroVacaciones.DataSource = sql.MostrarDatosVacaciones();
-                        CmbRegistroNombre.SelectedIndex = -1;
-                        CmbFiltroRegistroBuscar.SelectedIndex = -1;
-
-                        MessageBox.Show("Datos Modificados OK...", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al Modificar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-
             BtnRegistroNuevo.Visible = true;
             BtnRegistroEliminar.Visible = false;
             BtnRegistroGrabar.Visible = false;
             BtnRegistroCancelar.Visible = false;
-            BtnRegistroModificar.Visible = false;
 
             DtpFechaSalida.Value = DateTime.Today;
+            DtpFechaRetorno.Value = DateTime.Today;
             TxtDiasTomados.Text = "";
+            TxtObservaciones.Text = "";
 
             CmbRegistroNombre.Enabled = false;
             DtpFechaSalida.Enabled = false;
-            TxtDiasTomados.Enabled = false;
+            DtpFechaRetorno.Enabled = false;
+            TxtObservaciones.Enabled = false;
 
             CmbFiltroRegistroBuscar.Enabled = true;
             BtnFiltroRegistroBuscar.Enabled = true;
@@ -441,18 +411,21 @@ namespace ActivosFijos.Formularios
         {
             BtnRegistroNuevo.Visible = true;
             BtnRegistroGrabar.Visible = false;
-            BtnRegistroModificar.Visible = false;
             BtnRegistroEliminar.Visible = false;
             BtnRegistroCancelar.Visible = false;
 
             TxtIdRegistro.Text = "";
             CmbRegistroNombre.SelectedIndex = -1;
             DtpFechaSalida.Value = DateTime.Today;
+            DtpFechaRetorno.Value = DateTime.Today;
             TxtDiasTomados.Text = "";
+            TxtObservaciones.Text = "";
 
             CmbRegistroNombre.Enabled = false;
             DtpFechaSalida.Enabled = false;
-            TxtDiasTomados.Enabled = false;
+            DtpFechaRetorno.Enabled = false;
+            TxtObservaciones.Enabled = false;
+
 
             CmbFiltroRegistroBuscar.Enabled = true;
             BtnFiltroRegistroBuscar.Enabled = true;
@@ -490,7 +463,9 @@ namespace ActivosFijos.Formularios
                     int indexreg = CmbRegistroNombre.FindString(Convert.ToString(fila.Cells[1].Value).Trim());
                     CmbRegistroNombre.SelectedIndex = indexreg;
                     DtpFechaSalida.Value = Convert.ToDateTime(fila.Cells[3].Value);
-                    TxtDiasTomados.Text = Convert.ToString(fila.Cells[4].Value);
+                    DtpFechaRetorno.Value = Convert.ToDateTime(fila.Cells[4].Value);
+                    TxtDiasTomados.Text = Convert.ToString(fila.Cells[5].Value);
+                    TxtObservaciones.Text = Convert.ToString(fila.Cells[6].Value);
 
                     TxtCedula.Enabled = false;
                     TxtNombre.Enabled = false;
@@ -501,12 +476,37 @@ namespace ActivosFijos.Formularios
                     sql.LimpiarCampos(this, groupBox2, groupBox3, groupBox4, groupBox5);
                 }
 
-                BtnRegistroModificar.Visible = true;
                 BtnRegistroEliminar.Visible = true;
                 BtnRegistroCancelar.Visible = true;
 
             }
+        }
 
+        private void DtpFechaSalida_ValueChanged(object sender, EventArgs e)
+        {
+            if (DtpFechaSalida.Value <= DtpFechaRetorno.Value)
+            {
+                TimeSpan dias = DtpFechaRetorno.Value - DtpFechaSalida.Value;
+                TxtDiasTomados.Text = dias.Days.ToString();
+            }
+            else
+            {
+                MessageBox.Show("La fecha de Salida debe ser menor o igual a la fecha de Retorno ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void DtpFechaRetorno_ValueChanged(object sender, EventArgs e)
+        {
+            if (DtpFechaRetorno.Value >= DtpFechaSalida.Value)
+            {
+                TimeSpan dias = DtpFechaRetorno.Value - DtpFechaSalida.Value;
+                TxtDiasTomados.Text = dias.Days.ToString();
+            }
+            else
+            {
+                MessageBox.Show("La fecha de Retorno debe ser mayor o igual a la fecha de Salida ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

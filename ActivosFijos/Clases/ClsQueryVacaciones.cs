@@ -37,7 +37,9 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"RegistroVacaciones\".\"regCedula\" AS Cedula, ";
             cadenaSql += "\"Empleados\".\"empNombre\" AS Nombre, ";
             cadenaSql += "\"RegistroVacaciones\".\"regFechaSalida\" AS Salida, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regDiasTomados\" AS DiasTomados ";
+            cadenaSql += "\"RegistroVacaciones\".\"regFechaRetorno\" AS Retorno, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regDiasTomados\" AS DiasTomados, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regObservaciones\" AS Observaciones ";
             cadenaSql += "FROM \"RegistroVacaciones\" ";
             cadenaSql += "INNER JOIN \"Empleados\" ON \"RegistroVacaciones\".\"regCedula\" = \"Empleados\".\"empCedula\" ";
 
@@ -311,7 +313,12 @@ namespace ActivosFijos.Clases
             return lista;
         }
 
-        public bool InsertarVacaciones(string secId, string empCedula, DateTime empFechaSalida, string empDiasTomados)
+        public bool InsertarVacaciones(string secId,
+                                       string regCedula,
+                                       DateTime regFechaSalida,
+                                       DateTime regFechaRetorno,
+                                       string regDiasTomados,
+                                       string regObservaciones)
         {
             conexion.Open();
             cadenaSql = null;
@@ -319,27 +326,20 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"regId\", ";
             cadenaSql += "\"regCedula\", ";
             cadenaSql += "\"regFechaSalida\", ";
-            cadenaSql += "\"regDiasTomados\" ";
+            cadenaSql += "\"regFechaRetorno\", ";
+            cadenaSql += "\"regDiasTomados\", ";
+            cadenaSql += "\"regObservaciones\", ";
+            cadenaSql += "\"regFechaCreacion\" ";
             cadenaSql += ") ";
             cadenaSql += "VALUES('";
             cadenaSql += secId + "', '";
-            cadenaSql += empCedula + "', '";
-            cadenaSql += empFechaSalida.ToString() + "', '";
-            cadenaSql += empDiasTomados + "'";
+            cadenaSql += regCedula + "', '";
+            cadenaSql += regFechaSalida.ToString() + "', '";
+            cadenaSql += regFechaRetorno.ToString() + "', '";
+            cadenaSql += regDiasTomados + "', '";
+            cadenaSql += regObservaciones + "', '";
+            cadenaSql += DateTime.Today + "'";
             cadenaSql += ") ";
-            NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
-            int filasAfectadas = cmd.ExecuteNonQuery();
-            conexion.Close();
-            if (filasAfectadas > 0)
-                return true;
-            else
-                return false;
-        }
-
-        public bool ActualizarVacaciones(string regId, string regCedula, DateTime regFechaSalida, string regDiasTomados)
-        {
-            conexion.Open();
-            string cadenaSql = "UPDATE \"RegistroVacaciones\" SET \"regCedula\" = '" + regCedula + "', \"regFechaSalida\" = '" + regFechaSalida + "', \"regDiasTomados\" = '" + regDiasTomados + "' WHERE \"regId\" = " + regId;
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
