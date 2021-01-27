@@ -17,7 +17,6 @@ namespace ActivosFijos.Formularios
 
         readonly ClsQueryVacaciones sql = new ClsQueryVacaciones();
 
-
         public FrmMantenimientoVacaciones()
         {
             InitializeComponent();
@@ -162,6 +161,30 @@ namespace ActivosFijos.Formularios
                         CmbFiltroRegistroBuscar.SelectedIndex = -1;
 
                         MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //Generacion del reporte de Solicitud de Vacaciones
+
+                        //FrmReporteSolicitudVacaciones rpt = new FrmReporteSolicitudVacaciones();
+
+                        //ClsDatosSolicitudVacaciones data = new ClsDatosSolicitudVacaciones
+                        //{
+                        //    RegId = Convert.ToInt32(TxtIdRegistro.Text.Trim()),
+                        //    RegCedula = TxtCedula.Text.Trim(),
+                        //    EmpNombre = CmbRegistroNombre.Text.Trim(),
+                        //    EmpAntiguedad = TxtAntiguedad.Text.Trim(),
+                        //    EmpDiasPorAnio = TxtDiasPorAnio.Text.Trim(),
+                        //    EmpSaldo = TxtSaldo.Text.Trim(),
+                        //    EmpFechaEntrada = DtpFechaEntrada.Value.ToString().Trim(),
+                        //    RegFechaSalida = DtpFechaSalida.Value.ToString().Trim(),
+                        //    RegFechaRetorno = DtpFechaRetorno.Value.ToString().Trim(),
+                        //    RegDiasTomados = TxtDiasTomados.Text.Trim(),
+                        //    RegObservaciones = TxtObservaciones.Text.Trim(),
+                        //    RegFechaCreacion = Convert.ToString(DateTime.Now)
+                        //};
+
+                        //rpt.DatosSV.Add(data);
+                        //rpt.ShowDialog();
+
                     }
                     else
                     {
@@ -369,12 +392,34 @@ namespace ActivosFijos.Formularios
                                                TxtDiasTomados.Text.ToString(),
                                                TxtObservaciones.Text))
                     {
+                        MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        FrmReporteSolicitudVacaciones rpt = new FrmReporteSolicitudVacaciones();
+
+                        ClsDatosSolicitudVacaciones data = new ClsDatosSolicitudVacaciones
+                        {
+                            RegId = Convert.ToInt32(TxtIdRegistro.Text.Trim()),
+                            RegCedula = TxtCedula.Text.Trim(),
+                            EmpNombre = CmbRegistroNombre.Text.Trim(),
+                            EmpAntiguedad = TxtAntiguedad.Text.Trim(),
+                            EmpDiasPorAnio = TxtDiasPorAnio.Text.Trim(),
+                            EmpSaldo = TxtSaldo.Text.Trim(),
+                            EmpFechaEntrada = DtpFechaEntrada.Value.ToString().Trim(),
+                            RegFechaSalida = DtpFechaSalida.Value.ToString().Trim(),
+                            RegFechaRetorno = DtpFechaRetorno.Value.ToString().Trim(),
+                            RegDiasTomados = TxtDiasTomados.Text.Trim(),
+                            RegObservaciones = TxtObservaciones.Text.Trim(),
+                            RegFechaCreacion = Convert.ToString(DateTime.Now)
+                        };
+
+                        rpt.DatosSV.Add(data);
+                        rpt.ShowDialog();
+
                         sql.RecalcularVacaciones();
                         DgvEmpleados.DataSource = sql.MostrarDatos();
                         DgvRegistroVacaciones.DataSource = sql.MostrarDatosVacaciones();
                         CmbRegistroNombre.SelectedIndex = -1;
 
-                        MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -521,6 +566,7 @@ namespace ActivosFijos.Formularios
                 if (valor == cedula)
                 {
                     //DgvEmpleados.Rows[strFila].DefaultCellStyle.BackColor = Color.Red;
+
                     string ant = Convert.ToString(Row.Cells["Antiguedad"].Value).Trim();
                     string[] antig = ant.Split('|');
                     TxtAntiguedad.Text = antig[0].Trim();

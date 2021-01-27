@@ -30,14 +30,14 @@ namespace ActivosFijos.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimientoVacaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgEmpleados = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -62,6 +62,17 @@ namespace ActivosFijos.Formularios
             this.DgvEmpleados = new System.Windows.Forms.DataGridView();
             this.TpgRegistro = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.LblRegistroNombre = new System.Windows.Forms.Label();
+            this.LblSaldo = new System.Windows.Forms.Label();
+            this.LblDiasPorAnio = new System.Windows.Forms.Label();
+            this.LblAntiguedad = new System.Windows.Forms.Label();
+            this.TxtSaldo = new System.Windows.Forms.TextBox();
+            this.TxtDiasPorAnio = new System.Windows.Forms.TextBox();
+            this.TxtAntiguedad = new System.Windows.Forms.TextBox();
+            this.LblObservaciones = new System.Windows.Forms.Label();
+            this.TxtObservaciones = new System.Windows.Forms.TextBox();
+            this.DtpFechaRetorno = new System.Windows.Forms.DateTimePicker();
+            this.LblFechaRetorno = new System.Windows.Forms.Label();
             this.TxtIdRegistro = new System.Windows.Forms.TextBox();
             this.LblIdRegistro = new System.Windows.Forms.Label();
             this.BtnRegistroCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -78,17 +89,6 @@ namespace ActivosFijos.Formularios
             this.BtnFiltroRegistroBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.DgvRegistroVacaciones = new System.Windows.Forms.DataGridView();
-            this.LblFechaRetorno = new System.Windows.Forms.Label();
-            this.DtpFechaRetorno = new System.Windows.Forms.DateTimePicker();
-            this.TxtObservaciones = new System.Windows.Forms.TextBox();
-            this.LblObservaciones = new System.Windows.Forms.Label();
-            this.TxtAntiguedad = new System.Windows.Forms.TextBox();
-            this.TxtDiasPorAnio = new System.Windows.Forms.TextBox();
-            this.TxtSaldo = new System.Windows.Forms.TextBox();
-            this.LblAntiguedad = new System.Windows.Forms.Label();
-            this.LblDiasPorAnio = new System.Windows.Forms.Label();
-            this.LblSaldo = new System.Windows.Forms.Label();
-            this.LblRegistroNombre = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.TpgEmpleados.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -353,11 +353,11 @@ namespace ActivosFijos.Formularios
             this.LblFechaEntrada.AutoSize = true;
             this.LblFechaEntrada.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaEntrada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaEntrada.Location = new System.Drawing.Point(8, 108);
+            this.LblFechaEntrada.Location = new System.Drawing.Point(18, 108);
             this.LblFechaEntrada.Name = "LblFechaEntrada";
-            this.LblFechaEntrada.Size = new System.Drawing.Size(130, 20);
+            this.LblFechaEntrada.Size = new System.Drawing.Size(120, 20);
             this.LblFechaEntrada.TabIndex = 45;
-            this.LblFechaEntrada.Text = "Fecha de Salida:";
+            this.LblFechaEntrada.Text = "Fecha Entrada:";
             // 
             // LblCedula
             // 
@@ -448,45 +448,45 @@ namespace ActivosFijos.Formularios
             this.DgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvEmpleados.ColumnHeadersHeight = 30;
             this.DgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvEmpleados.EnableHeadersVisualStyles = false;
             this.DgvEmpleados.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvEmpleados.Location = new System.Drawing.Point(9, 226);
             this.DgvEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvEmpleados.Name = "DgvEmpleados";
             this.DgvEmpleados.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvEmpleados.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvEmpleados.RowTemplate.Height = 24;
             this.DgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvEmpleados.Size = new System.Drawing.Size(1237, 474);
@@ -538,11 +538,138 @@ namespace ActivosFijos.Formularios
             this.groupBox5.TabIndex = 47;
             this.groupBox5.TabStop = false;
             // 
+            // LblRegistroNombre
+            // 
+            this.LblRegistroNombre.AutoSize = true;
+            this.LblRegistroNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistroNombre.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblRegistroNombre.Location = new System.Drawing.Point(14, 58);
+            this.LblRegistroNombre.Name = "LblRegistroNombre";
+            this.LblRegistroNombre.Size = new System.Drawing.Size(133, 20);
+            this.LblRegistroNombre.TabIndex = 71;
+            this.LblRegistroNombre.Text = "Cedula/Nombre:";
+            // 
+            // LblSaldo
+            // 
+            this.LblSaldo.AutoSize = true;
+            this.LblSaldo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSaldo.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblSaldo.Location = new System.Drawing.Point(640, 26);
+            this.LblSaldo.Name = "LblSaldo";
+            this.LblSaldo.Size = new System.Drawing.Size(53, 20);
+            this.LblSaldo.TabIndex = 70;
+            this.LblSaldo.Text = "Saldo:";
+            // 
+            // LblDiasPorAnio
+            // 
+            this.LblDiasPorAnio.AutoSize = true;
+            this.LblDiasPorAnio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDiasPorAnio.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblDiasPorAnio.Location = new System.Drawing.Point(443, 26);
+            this.LblDiasPorAnio.Name = "LblDiasPorAnio";
+            this.LblDiasPorAnio.Size = new System.Drawing.Size(97, 20);
+            this.LblDiasPorAnio.TabIndex = 69;
+            this.LblDiasPorAnio.Text = "DiasPorAño:";
+            // 
+            // LblAntiguedad
+            // 
+            this.LblAntiguedad.AutoSize = true;
+            this.LblAntiguedad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAntiguedad.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblAntiguedad.Location = new System.Drawing.Point(248, 26);
+            this.LblAntiguedad.Name = "LblAntiguedad";
+            this.LblAntiguedad.Size = new System.Drawing.Size(100, 20);
+            this.LblAntiguedad.TabIndex = 68;
+            this.LblAntiguedad.Text = "Antiguedad:";
+            // 
+            // TxtSaldo
+            // 
+            this.TxtSaldo.Enabled = false;
+            this.TxtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSaldo.Location = new System.Drawing.Point(708, 21);
+            this.TxtSaldo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtSaldo.MaxLength = 15;
+            this.TxtSaldo.Name = "TxtSaldo";
+            this.TxtSaldo.Size = new System.Drawing.Size(64, 28);
+            this.TxtSaldo.TabIndex = 67;
+            this.TxtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtDiasPorAnio
+            // 
+            this.TxtDiasPorAnio.Enabled = false;
+            this.TxtDiasPorAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDiasPorAnio.Location = new System.Drawing.Point(555, 21);
+            this.TxtDiasPorAnio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtDiasPorAnio.MaxLength = 15;
+            this.TxtDiasPorAnio.Name = "TxtDiasPorAnio";
+            this.TxtDiasPorAnio.Size = new System.Drawing.Size(64, 28);
+            this.TxtDiasPorAnio.TabIndex = 66;
+            this.TxtDiasPorAnio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtAntiguedad
+            // 
+            this.TxtAntiguedad.Enabled = false;
+            this.TxtAntiguedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAntiguedad.Location = new System.Drawing.Point(365, 21);
+            this.TxtAntiguedad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtAntiguedad.MaxLength = 15;
+            this.TxtAntiguedad.Name = "TxtAntiguedad";
+            this.TxtAntiguedad.Size = new System.Drawing.Size(64, 28);
+            this.TxtAntiguedad.TabIndex = 65;
+            this.TxtAntiguedad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LblObservaciones
+            // 
+            this.LblObservaciones.AutoSize = true;
+            this.LblObservaciones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblObservaciones.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblObservaciones.Location = new System.Drawing.Point(20, 133);
+            this.LblObservaciones.Name = "LblObservaciones";
+            this.LblObservaciones.Size = new System.Drawing.Size(125, 20);
+            this.LblObservaciones.TabIndex = 64;
+            this.LblObservaciones.Text = "Observaciones:";
+            // 
+            // TxtObservaciones
+            // 
+            this.TxtObservaciones.Enabled = false;
+            this.TxtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtObservaciones.Location = new System.Drawing.Point(158, 133);
+            this.TxtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtObservaciones.MaxLength = 0;
+            this.TxtObservaciones.Multiline = true;
+            this.TxtObservaciones.Name = "TxtObservaciones";
+            this.TxtObservaciones.Size = new System.Drawing.Size(614, 58);
+            this.TxtObservaciones.TabIndex = 63;
+            // 
+            // DtpFechaRetorno
+            // 
+            this.DtpFechaRetorno.CustomFormat = "yyyy/MM/dd";
+            this.DtpFechaRetorno.Enabled = false;
+            this.DtpFechaRetorno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaRetorno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtpFechaRetorno.Location = new System.Drawing.Point(435, 96);
+            this.DtpFechaRetorno.Name = "DtpFechaRetorno";
+            this.DtpFechaRetorno.Size = new System.Drawing.Size(138, 27);
+            this.DtpFechaRetorno.TabIndex = 62;
+            this.DtpFechaRetorno.Value = new System.DateTime(2021, 1, 25, 0, 0, 0, 0);
+            this.DtpFechaRetorno.ValueChanged += new System.EventHandler(this.DtpFechaRetorno_ValueChanged);
+            // 
+            // LblFechaRetorno
+            // 
+            this.LblFechaRetorno.AutoSize = true;
+            this.LblFechaRetorno.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaRetorno.ForeColor = System.Drawing.Color.DarkGreen;
+            this.LblFechaRetorno.Location = new System.Drawing.Point(308, 100);
+            this.LblFechaRetorno.Name = "LblFechaRetorno";
+            this.LblFechaRetorno.Size = new System.Drawing.Size(121, 20);
+            this.LblFechaRetorno.TabIndex = 61;
+            this.LblFechaRetorno.Text = "Fecha Retorno:";
+            // 
             // TxtIdRegistro
             // 
             this.TxtIdRegistro.Enabled = false;
             this.TxtIdRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdRegistro.Location = new System.Drawing.Point(149, 21);
+            this.TxtIdRegistro.Location = new System.Drawing.Point(162, 21);
             this.TxtIdRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtIdRegistro.MaxLength = 15;
             this.TxtIdRegistro.Name = "TxtIdRegistro";
@@ -554,7 +681,7 @@ namespace ActivosFijos.Formularios
             this.LblIdRegistro.AutoSize = true;
             this.LblIdRegistro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIdRegistro.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblIdRegistro.Location = new System.Drawing.Point(104, 26);
+            this.LblIdRegistro.Location = new System.Drawing.Point(117, 26);
             this.LblIdRegistro.Name = "LblIdRegistro";
             this.LblIdRegistro.Size = new System.Drawing.Size(28, 20);
             this.LblIdRegistro.TabIndex = 59;
@@ -668,7 +795,7 @@ namespace ActivosFijos.Formularios
             // 
             this.TxtDiasTomados.Enabled = false;
             this.TxtDiasTomados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDiasTomados.Location = new System.Drawing.Point(691, 96);
+            this.TxtDiasTomados.Location = new System.Drawing.Point(704, 96);
             this.TxtDiasTomados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDiasTomados.MaxLength = 10;
             this.TxtDiasTomados.Name = "TxtDiasTomados";
@@ -681,7 +808,7 @@ namespace ActivosFijos.Formularios
             this.LblDiasTomados.AutoSize = true;
             this.LblDiasTomados.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDiasTomados.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblDiasTomados.Location = new System.Drawing.Point(569, 100);
+            this.LblDiasTomados.Location = new System.Drawing.Point(582, 100);
             this.LblDiasTomados.Name = "LblDiasTomados";
             this.LblDiasTomados.Size = new System.Drawing.Size(111, 20);
             this.LblDiasTomados.TabIndex = 48;
@@ -693,7 +820,7 @@ namespace ActivosFijos.Formularios
             this.DtpFechaSalida.Enabled = false;
             this.DtpFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaSalida.Location = new System.Drawing.Point(145, 96);
+            this.DtpFechaSalida.Location = new System.Drawing.Point(158, 96);
             this.DtpFechaSalida.Name = "DtpFechaSalida";
             this.DtpFechaSalida.Size = new System.Drawing.Size(138, 27);
             this.DtpFechaSalida.TabIndex = 46;
@@ -705,7 +832,7 @@ namespace ActivosFijos.Formularios
             this.LblFechaSalida.AutoSize = true;
             this.LblFechaSalida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFechaSalida.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblFechaSalida.Location = new System.Drawing.Point(26, 100);
+            this.LblFechaSalida.Location = new System.Drawing.Point(39, 100);
             this.LblFechaSalida.Name = "LblFechaSalida";
             this.LblFechaSalida.Size = new System.Drawing.Size(106, 20);
             this.LblFechaSalida.TabIndex = 45;
@@ -716,7 +843,7 @@ namespace ActivosFijos.Formularios
             this.CmbRegistroNombre.Enabled = false;
             this.CmbRegistroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbRegistroNombre.FormattingEnabled = true;
-            this.CmbRegistroNombre.Location = new System.Drawing.Point(149, 55);
+            this.CmbRegistroNombre.Location = new System.Drawing.Point(162, 55);
             this.CmbRegistroNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbRegistroNombre.Name = "CmbRegistroNombre";
             this.CmbRegistroNombre.Size = new System.Drawing.Size(610, 28);
@@ -777,177 +904,50 @@ namespace ActivosFijos.Formularios
             this.DgvRegistroVacaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvRegistroVacaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvRegistroVacaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvRegistroVacaciones.ColumnHeadersHeight = 30;
             this.DgvRegistroVacaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.DefaultCellStyle = dataGridViewCellStyle6;
             this.DgvRegistroVacaciones.EnableHeadersVisualStyles = false;
             this.DgvRegistroVacaciones.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvRegistroVacaciones.Location = new System.Drawing.Point(9, 274);
             this.DgvRegistroVacaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvRegistroVacaciones.Name = "DgvRegistroVacaciones";
             this.DgvRegistroVacaciones.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvRegistroVacaciones.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvRegistroVacaciones.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvRegistroVacaciones.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvRegistroVacaciones.RowTemplate.Height = 24;
             this.DgvRegistroVacaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvRegistroVacaciones.Size = new System.Drawing.Size(1237, 425);
             this.DgvRegistroVacaciones.TabIndex = 45;
             this.DgvRegistroVacaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvRegistroVacaciones_CellClick);
-            // 
-            // LblFechaRetorno
-            // 
-            this.LblFechaRetorno.AutoSize = true;
-            this.LblFechaRetorno.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaRetorno.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblFechaRetorno.Location = new System.Drawing.Point(295, 100);
-            this.LblFechaRetorno.Name = "LblFechaRetorno";
-            this.LblFechaRetorno.Size = new System.Drawing.Size(121, 20);
-            this.LblFechaRetorno.TabIndex = 61;
-            this.LblFechaRetorno.Text = "Fecha Retorno:";
-            // 
-            // DtpFechaRetorno
-            // 
-            this.DtpFechaRetorno.CustomFormat = "yyyy/MM/dd";
-            this.DtpFechaRetorno.Enabled = false;
-            this.DtpFechaRetorno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaRetorno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaRetorno.Location = new System.Drawing.Point(422, 96);
-            this.DtpFechaRetorno.Name = "DtpFechaRetorno";
-            this.DtpFechaRetorno.Size = new System.Drawing.Size(138, 27);
-            this.DtpFechaRetorno.TabIndex = 62;
-            this.DtpFechaRetorno.Value = new System.DateTime(2021, 1, 25, 0, 0, 0, 0);
-            this.DtpFechaRetorno.ValueChanged += new System.EventHandler(this.DtpFechaRetorno_ValueChanged);
-            // 
-            // TxtObservaciones
-            // 
-            this.TxtObservaciones.Enabled = false;
-            this.TxtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtObservaciones.Location = new System.Drawing.Point(145, 133);
-            this.TxtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtObservaciones.MaxLength = 50;
-            this.TxtObservaciones.Multiline = true;
-            this.TxtObservaciones.Name = "TxtObservaciones";
-            this.TxtObservaciones.Size = new System.Drawing.Size(614, 58);
-            this.TxtObservaciones.TabIndex = 63;
-            // 
-            // LblObservaciones
-            // 
-            this.LblObservaciones.AutoSize = true;
-            this.LblObservaciones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblObservaciones.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblObservaciones.Location = new System.Drawing.Point(7, 133);
-            this.LblObservaciones.Name = "LblObservaciones";
-            this.LblObservaciones.Size = new System.Drawing.Size(125, 20);
-            this.LblObservaciones.TabIndex = 64;
-            this.LblObservaciones.Text = "Observaciones:";
-            // 
-            // TxtAntiguedad
-            // 
-            this.TxtAntiguedad.Enabled = false;
-            this.TxtAntiguedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtAntiguedad.Location = new System.Drawing.Point(352, 21);
-            this.TxtAntiguedad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtAntiguedad.MaxLength = 15;
-            this.TxtAntiguedad.Name = "TxtAntiguedad";
-            this.TxtAntiguedad.Size = new System.Drawing.Size(64, 28);
-            this.TxtAntiguedad.TabIndex = 65;
-            this.TxtAntiguedad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TxtDiasPorAnio
-            // 
-            this.TxtDiasPorAnio.Enabled = false;
-            this.TxtDiasPorAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDiasPorAnio.Location = new System.Drawing.Point(542, 21);
-            this.TxtDiasPorAnio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtDiasPorAnio.MaxLength = 15;
-            this.TxtDiasPorAnio.Name = "TxtDiasPorAnio";
-            this.TxtDiasPorAnio.Size = new System.Drawing.Size(64, 28);
-            this.TxtDiasPorAnio.TabIndex = 66;
-            this.TxtDiasPorAnio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TxtSaldo
-            // 
-            this.TxtSaldo.Enabled = false;
-            this.TxtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSaldo.Location = new System.Drawing.Point(695, 21);
-            this.TxtSaldo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtSaldo.MaxLength = 15;
-            this.TxtSaldo.Name = "TxtSaldo";
-            this.TxtSaldo.Size = new System.Drawing.Size(64, 28);
-            this.TxtSaldo.TabIndex = 67;
-            this.TxtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LblAntiguedad
-            // 
-            this.LblAntiguedad.AutoSize = true;
-            this.LblAntiguedad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAntiguedad.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblAntiguedad.Location = new System.Drawing.Point(235, 26);
-            this.LblAntiguedad.Name = "LblAntiguedad";
-            this.LblAntiguedad.Size = new System.Drawing.Size(100, 20);
-            this.LblAntiguedad.TabIndex = 68;
-            this.LblAntiguedad.Text = "Antiguedad:";
-            // 
-            // LblDiasPorAnio
-            // 
-            this.LblDiasPorAnio.AutoSize = true;
-            this.LblDiasPorAnio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDiasPorAnio.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblDiasPorAnio.Location = new System.Drawing.Point(430, 26);
-            this.LblDiasPorAnio.Name = "LblDiasPorAnio";
-            this.LblDiasPorAnio.Size = new System.Drawing.Size(97, 20);
-            this.LblDiasPorAnio.TabIndex = 69;
-            this.LblDiasPorAnio.Text = "DiasPorAño:";
-            // 
-            // LblSaldo
-            // 
-            this.LblSaldo.AutoSize = true;
-            this.LblSaldo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSaldo.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblSaldo.Location = new System.Drawing.Point(627, 26);
-            this.LblSaldo.Name = "LblSaldo";
-            this.LblSaldo.Size = new System.Drawing.Size(53, 20);
-            this.LblSaldo.TabIndex = 70;
-            this.LblSaldo.Text = "Saldo:";
-            // 
-            // LblRegistroNombre
-            // 
-            this.LblRegistroNombre.AutoSize = true;
-            this.LblRegistroNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistroNombre.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblRegistroNombre.Location = new System.Drawing.Point(1, 58);
-            this.LblRegistroNombre.Name = "LblRegistroNombre";
-            this.LblRegistroNombre.Size = new System.Drawing.Size(133, 20);
-            this.LblRegistroNombre.TabIndex = 71;
-            this.LblRegistroNombre.Text = "Cedula/Nombre:";
             // 
             // FrmMantenimientoVacaciones
             // 

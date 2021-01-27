@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ClsDatos.cs" />
+    <Compile Include="Clases\ClsDatosSolicitudVacaciones.cs" />
     <Compile Include="Clases\ClsObtenerConexion.cs" />
     <Compile Include="Clases\ClsQueryActivos.cs" />
     <Compile Include="Clases\ClsQueryAreas.cs" />
@@ -171,6 +172,12 @@
     <Compile Include="Formularios\FrmReporteActivos.Designer.cs">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmReporteSolicitudVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReporteSolicitudVacaciones.Designer.cs">
+      <DependentUpon>FrmReporteSolicitudVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmMainMenu.resx">
@@ -200,6 +207,9 @@
     <EmbeddedResource Include="Formularios\FrmReporteActivos.resx">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReporteSolicitudVacaciones.resx">
+      <DependentUpon>FrmReporteSolicitudVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -211,8 +221,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\RptActivos.rdlc" />
+    <EmbeddedResource Include="Reportes\RptSolicitudVacaciones.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ActivosFijos.Clases.ClsDatos.datasource" />
+    <None Include="Properties\DataSources\ActivosFijos.Clases.ClsDatosSolicitudVacaciones.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

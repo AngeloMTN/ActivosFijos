@@ -33,7 +33,7 @@ namespace ActivosFijos.Clases
         {
             string cadenaSql = null;
             cadenaSql += "SELECT ";
-            cadenaSql += "\"RegistroVacaciones\".\"regId\" AS Activo, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regId\" AS RegId, ";
             cadenaSql += "\"RegistroVacaciones\".\"regCedula\" AS Cedula, ";
             cadenaSql += "\"Empleados\".\"empNombre\" AS Nombre, ";
             cadenaSql += "\"RegistroVacaciones\".\"regFechaSalida\" AS Salida, ";
@@ -394,7 +394,7 @@ namespace ActivosFijos.Clases
             cadenaSql += " ";
             cadenaSql += "UPDATE \"Empleados\" SET \"empSaldo\" = \"empAcumulado\" - \"empUtilizado\"; ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
-            int filasAfectadas = cmd.ExecuteNonQuery();
+            _ = cmd.ExecuteNonQuery();
             conexion.Close();
         }
 
