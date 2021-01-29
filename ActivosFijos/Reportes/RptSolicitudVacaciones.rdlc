@@ -159,6 +159,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -191,6 +192,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -225,6 +227,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -259,6 +262,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -285,7 +289,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
             <Top>1.4515cm</Top>
-            <Left>6.58939cm</Left>
+            <Left>6.90689cm</Left>
             <Height>0.6cm</Height>
             <Width>2.90217cm</Width>
             <ZIndex>8</ZIndex>
@@ -293,6 +297,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -319,14 +324,15 @@
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
             <Top>1.4515cm</Top>
-            <Left>11.32839cm</Left>
+            <Left>11.96339cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.90217cm</Width>
+            <Width>2.3095cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -351,7 +357,7 @@
             </Paragraphs>
             <rd:DefaultName>RegAntiguedad</rd:DefaultName>
             <Top>1.4515cm</Top>
-            <Left>9.58328cm</Left>
+            <Left>9.90078cm</Left>
             <Height>0.6cm</Height>
             <Width>1.14442cm</Width>
             <ZIndex>10</ZIndex>
@@ -572,12 +578,13 @@
             <Top>2.52765cm</Top>
             <Left>0.27537cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.94971cm</Width>
+            <Width>1.74298cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -602,9 +609,9 @@
             </Paragraphs>
             <rd:DefaultName>RegObservaciones</rd:DefaultName>
             <Top>2.52765cm</Top>
-            <Left>4.62725cm</Left>
-            <Height>1.59484cm</Height>
-            <Width>11.03016cm</Width>
+            <Left>2.44709cm</Left>
+            <Height>1.46784cm</Height>
+            <Width>13.21033cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -702,7 +709,7 @@
             </Paragraphs>
             <rd:DefaultName>RegFechaRetorno</rd:DefaultName>
             <Top>1.09389cm</Top>
-            <Left>6.68348cm</Left>
+            <Left>7.00098cm</Left>
             <Height>0.6cm</Height>
             <Width>3.00144cm</Width>
             <ZIndex>10</ZIndex>
@@ -776,6 +783,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -802,14 +810,15 @@
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
             <Top>0.3175cm</Top>
-            <Left>7.50898cm</Left>
+            <Left>8.22865cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.92333cm</Width>
+            <Width>2.28833cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -836,7 +845,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
             <Top>1.13912cm</Top>
-            <Left>10.31992cm</Left>
+            <Left>10.63742cm</Left>
             <Height>0.6cm</Height>
             <Width>2.90216cm</Width>
             <ZIndex>14</ZIndex>
@@ -844,6 +853,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -878,6 +888,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -904,7 +915,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
             <Top>1.09389cm</Top>
-            <Left>5.11292cm</Left>
+            <Left>5.43042cm</Left>
             <Height>0.6cm</Height>
             <Width>1.31044cm</Width>
             <ZIndex>16</ZIndex>
@@ -912,6 +923,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
