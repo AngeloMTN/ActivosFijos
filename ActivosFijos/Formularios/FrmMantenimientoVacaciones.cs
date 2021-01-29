@@ -43,17 +43,20 @@ namespace ActivosFijos.Formularios
             BtnEmpleadoModificar.Visible = false;
             BtnEmpleadoEliminar.Visible = false;
             BtnEmpleadoCancelar.Visible = false;
+            BtnEmpleadoCancelar.Visible = false;
 
             BtnRegistroGrabar.Visible = false;
             BtnRegistroEliminar.Visible = false;
             BtnRegistroCancelar.Visible = false;
+            BtnImprimirSolicitud.Visible = false;
 
             CmbRegistroNombre.SelectedIndex = -1;
             CmbFiltroRegistroBuscar.SelectedIndex = -1;
 
             DtpFechaEntrada.Value = DateTime.Today;
-            DtpFechaSalida.Value = DateTime.Today;
+            DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
             DtpFechaRetorno.Value = DateTime.Today;
+            DtpFechaSalida.Value = DateTime.Today;
 
             sql.RecalcularVacaciones();
 
@@ -161,30 +164,6 @@ namespace ActivosFijos.Formularios
                         CmbFiltroRegistroBuscar.SelectedIndex = -1;
 
                         MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        //Generacion del reporte de Solicitud de Vacaciones
-
-                        //FrmReporteSolicitudVacaciones rpt = new FrmReporteSolicitudVacaciones();
-
-                        //ClsDatosSolicitudVacaciones data = new ClsDatosSolicitudVacaciones
-                        //{
-                        //    RegId = Convert.ToInt32(TxtIdRegistro.Text.Trim()),
-                        //    RegCedula = TxtCedula.Text.Trim(),
-                        //    EmpNombre = CmbRegistroNombre.Text.Trim(),
-                        //    EmpAntiguedad = TxtAntiguedad.Text.Trim(),
-                        //    EmpDiasPorAnio = TxtDiasPorAnio.Text.Trim(),
-                        //    EmpSaldo = TxtSaldo.Text.Trim(),
-                        //    EmpFechaEntrada = DtpFechaEntrada.Value.ToString().Trim(),
-                        //    RegFechaSalida = DtpFechaSalida.Value.ToString().Trim(),
-                        //    RegFechaRetorno = DtpFechaRetorno.Value.ToString().Trim(),
-                        //    RegDiasTomados = TxtDiasTomados.Text.Trim(),
-                        //    RegObservaciones = TxtObservaciones.Text.Trim(),
-                        //    RegFechaCreacion = Convert.ToString(DateTime.Now)
-                        //};
-
-                        //rpt.DatosSV.Add(data);
-                        //rpt.ShowDialog();
-
                     }
                     else
                     {
@@ -314,6 +293,7 @@ namespace ActivosFijos.Formularios
             BtnRegistroEliminar.Visible = false;
             BtnRegistroGrabar.Visible = true;
             BtnRegistroCancelar.Visible = true;
+            BtnImprimirSolicitud.Visible = true;
 
             CmbRegistroNombre.Enabled = true;
             DtpFechaSalida.Enabled = true;
@@ -324,6 +304,7 @@ namespace ActivosFijos.Formularios
             BtnFiltroRegistroBuscar.Enabled = false;
 
             CmbFiltroRegistroBuscar.SelectedItem = 0;
+            DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
             DtpFechaRetorno.Value = DateTime.Today;
             DtpFechaSalida.Value = DateTime.Today;
             TxtDiasTomados.Text = "";
@@ -346,8 +327,9 @@ namespace ActivosFijos.Formularios
 
                         TxtIdRegistro.Text = "";
                         CmbRegistroNombre.SelectedIndex = -1;
-                        DtpFechaSalida.Value = DateTime.Today;
+                        DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
                         DtpFechaRetorno.Value = DateTime.Today;
+                        DtpFechaSalida.Value = DateTime.Today;
                         TxtDiasTomados.Text = "";
                         TxtObservaciones.Text = "";
 
@@ -355,6 +337,7 @@ namespace ActivosFijos.Formularios
                         BtnRegistroEliminar.Visible = false;
                         BtnRegistroCancelar.Visible = false;
                         BtnRegistroGrabar.Visible = false;
+                        BtnImprimirSolicitud.Visible = false;
 
                         CmbFiltroRegistroBuscar.Enabled = true;
                         BtnFiltroRegistroBuscar.Enabled = true;
@@ -382,6 +365,7 @@ namespace ActivosFijos.Formularios
                 {
                     string secMax = sql.SecuenciaIdVacaciones();
                     Int32 secNew = Convert.ToInt32(secMax) + 1;
+                    TxtIdRegistro.Text = secNew.ToString();
                     string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
                     string cedula = ced[0];
 
@@ -390,30 +374,14 @@ namespace ActivosFijos.Formularios
                                                Convert.ToDateTime(DtpFechaSalida.Value),
                                                Convert.ToDateTime(DtpFechaRetorno.Value),
                                                TxtDiasTomados.Text.ToString(),
-                                               TxtObservaciones.Text))
+                                               TxtObservaciones.Text,
+                                               TxtAntiguedad.Text,
+                                               TxtDiasPorAnio.Text,
+                                               TxtSaldo.Text))
                     {
                         MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        FrmReporteSolicitudVacaciones rpt = new FrmReporteSolicitudVacaciones();
-
-                        ClsDatosSolicitudVacaciones data = new ClsDatosSolicitudVacaciones
-                        {
-                            RegId = Convert.ToInt32(TxtIdRegistro.Text.Trim()),
-                            RegCedula = TxtCedula.Text.Trim(),
-                            EmpNombre = CmbRegistroNombre.Text.Trim(),
-                            EmpAntiguedad = TxtAntiguedad.Text.Trim(),
-                            EmpDiasPorAnio = TxtDiasPorAnio.Text.Trim(),
-                            EmpSaldo = TxtSaldo.Text.Trim(),
-                            EmpFechaEntrada = DtpFechaEntrada.Value.ToString().Trim(),
-                            RegFechaSalida = DtpFechaSalida.Value.ToString().Trim(),
-                            RegFechaRetorno = DtpFechaRetorno.Value.ToString().Trim(),
-                            RegDiasTomados = TxtDiasTomados.Text.Trim(),
-                            RegObservaciones = TxtObservaciones.Text.Trim(),
-                            RegFechaCreacion = Convert.ToString(DateTime.Now)
-                        };
-
-                        rpt.DatosSV.Add(data);
-                        rpt.ShowDialog();
+                        BtnImprimirSolicitud.PerformClick();
 
                         sql.RecalcularVacaciones();
                         DgvEmpleados.DataSource = sql.MostrarDatos();
@@ -436,11 +404,16 @@ namespace ActivosFijos.Formularios
             BtnRegistroEliminar.Visible = false;
             BtnRegistroGrabar.Visible = false;
             BtnRegistroCancelar.Visible = false;
+            BtnImprimirSolicitud.Visible = false;
 
+            DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
             DtpFechaSalida.Value = DateTime.Today;
             DtpFechaRetorno.Value = DateTime.Today;
             TxtDiasTomados.Text = "";
             TxtObservaciones.Text = "";
+            TxtAntiguedad.Text = "";
+            TxtDiasPorAnio.Text = "";
+            TxtSaldo.Text = "";
 
             CmbRegistroNombre.Enabled = false;
             DtpFechaSalida.Enabled = false;
@@ -458,11 +431,13 @@ namespace ActivosFijos.Formularios
             BtnRegistroGrabar.Visible = false;
             BtnRegistroEliminar.Visible = false;
             BtnRegistroCancelar.Visible = false;
+            BtnImprimirSolicitud.Visible = false;
 
             TxtIdRegistro.Text = "";
             CmbRegistroNombre.SelectedIndex = -1;
-            DtpFechaSalida.Value = DateTime.Today;
+            DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
             DtpFechaRetorno.Value = DateTime.Today;
+            DtpFechaSalida.Value = DateTime.Today;
             TxtDiasTomados.Text = "";
             TxtObservaciones.Text = "";
 
@@ -507,10 +482,14 @@ namespace ActivosFijos.Formularios
                     TxtIdRegistro.Text = Convert.ToString(fila.Cells[0].Value);
                     int indexreg = CmbRegistroNombre.FindString(Convert.ToString(fila.Cells[1].Value).Trim());
                     CmbRegistroNombre.SelectedIndex = indexreg;
-                    DtpFechaSalida.Value = Convert.ToDateTime(fila.Cells[3].Value);
-                    DtpFechaRetorno.Value = Convert.ToDateTime(fila.Cells[4].Value);
-                    TxtDiasTomados.Text = Convert.ToString(fila.Cells[5].Value);
-                    TxtObservaciones.Text = Convert.ToString(fila.Cells[6].Value);
+                    DtpRegistroFechaEntrada.Value = Convert.ToDateTime(fila.Cells[3].Value);
+                    DtpFechaSalida.Value = Convert.ToDateTime(fila.Cells[4].Value);
+                    DtpFechaRetorno.Value = Convert.ToDateTime(fila.Cells[5].Value);
+                    TxtDiasTomados.Text = Convert.ToString(fila.Cells[6].Value);
+                    TxtObservaciones.Text = Convert.ToString(fila.Cells[7].Value);
+                    TxtAntiguedad.Text = Convert.ToString(fila.Cells[8].Value);
+                    TxtDiasPorAnio.Text = Convert.ToString(fila.Cells[9].Value);
+                    TxtSaldo.Text = Convert.ToString(fila.Cells[10].Value);
 
                     TxtCedula.Enabled = false;
                     TxtNombre.Enabled = false;
@@ -563,18 +542,47 @@ namespace ActivosFijos.Formularios
             {
                 string valor = Convert.ToString(Row.Cells["Cedula"].Value).Trim();
 
-                if (valor == cedula)
+                if (valor == cedula && cedula != "" )
                 {
                     //DgvEmpleados.Rows[strFila].DefaultCellStyle.BackColor = Color.Red;
 
                     string ant = Convert.ToString(Row.Cells["Antiguedad"].Value).Trim();
                     string[] antig = ant.Split('|');
                     TxtAntiguedad.Text = antig[0].Trim();
+                    DtpRegistroFechaEntrada.Value = Convert.ToDateTime(Row.Cells["Entrada"].Value);
                     TxtDiasPorAnio.Text = Convert.ToString(Row.Cells["DiasPorAnio"].Value).Trim();
                     TxtSaldo.Text = Convert.ToString(Row.Cells["Saldo"].Value).Trim();
                     break;
                 }
             }
+        }
+
+        private void BtnImprimirSolicitud_Click(object sender, EventArgs e)
+        {
+            string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
+            string cedula = ced[0];
+
+            FrmReporteSolicitudVacaciones rpt = new FrmReporteSolicitudVacaciones();
+
+            ClsDatosSolicitudVacaciones data = new ClsDatosSolicitudVacaciones
+            {
+                RegId = Convert.ToInt32(TxtIdRegistro.Text.Trim()),
+                RegCedula = cedula,
+                EmpNombre = CmbRegistroNombre.Text.Trim(),
+                EmpFechaEntrada = DtpRegistroFechaEntrada.Value.ToString().Trim(),
+                RegAntiguedad = TxtAntiguedad.Text.Trim(),
+                RegDiasPorAnio = TxtDiasPorAnio.Text.Trim(),
+                RegSaldo = TxtSaldo.Text.Trim(),
+                RegFechaSalida = DtpFechaSalida.Value.ToString().Trim(),
+                RegFechaRetorno = DtpFechaRetorno.Value.ToString().Trim(),
+                RegDiasTomados = TxtDiasTomados.Text.Trim(),
+                RegObservaciones = TxtObservaciones.Text.Trim(),
+                RegFechaCreacion = Convert.ToString(DateTime.Now)
+            };
+
+            rpt.DatosSV.Add(data);
+            rpt.ShowDialog();
+
         }
     }
 }

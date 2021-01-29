@@ -36,10 +36,14 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"RegistroVacaciones\".\"regId\" AS RegId, ";
             cadenaSql += "\"RegistroVacaciones\".\"regCedula\" AS Cedula, ";
             cadenaSql += "\"Empleados\".\"empNombre\" AS Nombre, ";
+            cadenaSql += "\"Empleados\".\"empFechaEntrada\" AS FechaEntrada, ";
             cadenaSql += "\"RegistroVacaciones\".\"regFechaSalida\" AS Salida, ";
             cadenaSql += "\"RegistroVacaciones\".\"regFechaRetorno\" AS Retorno, ";
             cadenaSql += "\"RegistroVacaciones\".\"regDiasTomados\" AS DiasTomados, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regObservaciones\" AS Observaciones ";
+            cadenaSql += "\"RegistroVacaciones\".\"regObservaciones\" AS Observaciones, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regAntiguedad\" AS Antiguedad, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regDiasPorAnio\" AS DiasPorAnio, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regSaldo\" AS Saldo ";
             cadenaSql += "FROM \"RegistroVacaciones\" ";
             cadenaSql += "INNER JOIN \"Empleados\" ON \"RegistroVacaciones\".\"regCedula\" = \"Empleados\".\"empCedula\" ";
 
@@ -318,7 +322,10 @@ namespace ActivosFijos.Clases
                                        DateTime regFechaSalida,
                                        DateTime regFechaRetorno,
                                        string regDiasTomados,
-                                       string regObservaciones)
+                                       string regObservaciones,
+                                       string regAntiguedad,
+                                       string regDiasPorAnio,
+                                       string regSaldo)
         {
             conexion.Open();
             cadenaSql = null;
@@ -329,7 +336,10 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"regFechaRetorno\", ";
             cadenaSql += "\"regDiasTomados\", ";
             cadenaSql += "\"regObservaciones\", ";
-            cadenaSql += "\"regFechaCreacion\" ";
+            cadenaSql += "\"regAntiguedad\", ";
+            cadenaSql += "\"regDiasPorAnio\", ";
+            cadenaSql += "\"regSaldo\", ";
+            cadenaSql += "\"regFechaProceso\" ";
             cadenaSql += ") ";
             cadenaSql += "VALUES('";
             cadenaSql += secId + "', '";
@@ -338,6 +348,9 @@ namespace ActivosFijos.Clases
             cadenaSql += regFechaRetorno.ToString() + "', '";
             cadenaSql += regDiasTomados + "', '";
             cadenaSql += regObservaciones + "', '";
+            cadenaSql += regAntiguedad + "', '";
+            cadenaSql += regDiasPorAnio + "', '";
+            cadenaSql += regSaldo + "', '";
             cadenaSql += DateTime.Today + "'";
             cadenaSql += ") ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);

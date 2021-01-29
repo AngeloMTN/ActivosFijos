@@ -2,65 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="EmpDiasPorAnio">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!EmpDiasPorAnio.Value, "DsReporteSolicitudVacaciones")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>EmpDiasPorAnio</rd:DefaultName>
-        <Top>3.14167cm</Top>
-        <Left>4.88104cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="EmpSaldo">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!EmpSaldo.Value, "DsReporteSolicitudVacaciones")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>EmpSaldo</rd:DefaultName>
-        <Top>3.14167cm</Top>
-        <Left>16.0401cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="RegDiasTomados">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -80,7 +21,6 @@
         <Left>19.0627cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -110,7 +50,7 @@
         <Left>11.45116cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -140,7 +80,7 @@
         <Left>4.88104cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -170,7 +110,7 @@
         <Left>4.88104cm</Left>
         <Height>1.89117cm</Height>
         <Width>14.58617cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -183,35 +123,6 @@
       </Textbox>
       <Rectangle Name="Rectangle2">
         <ReportItems>
-          <Textbox Name="EmpAntiguedad">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!EmpAntiguedad.Value, "DsReporteSolicitudVacaciones")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>EmpAntiguedad</rd:DefaultName>
-            <Top>1.80428cm</Top>
-            <Left>12.06733cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="EmpFechaEntrada">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -231,7 +142,6 @@
             <Left>3.74883cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
-            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -261,7 +171,7 @@
             <Left>3.72766cm</Left>
             <Height>0.6cm</Height>
             <Width>7.47417cm</Width>
-            <ZIndex>2</ZIndex>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -291,7 +201,7 @@
             <Left>3.74883cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
-            <ZIndex>3</ZIndex>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -321,7 +231,7 @@
             <Left>18.9465cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
-            <ZIndex>4</ZIndex>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -353,7 +263,7 @@
             <Left>0.21166cm</Left>
             <Height>0.6cm</Height>
             <Width>3.135cm</Width>
-            <ZIndex>5</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -383,7 +293,7 @@
             <Left>15.28889cm</Left>
             <Height>0.6cm</Height>
             <Width>3.30433cm</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -415,7 +325,7 @@
             <Left>0.21166cm</Left>
             <Height>0.6cm</Height>
             <Width>3.135cm</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -447,7 +357,7 @@
             <Left>0.21166cm</Left>
             <Height>0.6cm</Height>
             <Width>3.135cm</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -479,7 +389,7 @@
             <Left>8.49439cm</Left>
             <Height>0.6cm</Height>
             <Width>3.135cm</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -511,7 +421,67 @@
             <Left>15.28889cm</Left>
             <Height>0.6cm</Height>
             <Width>3.135cm</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="RegAntiguedad">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!RegAntiguedad.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>RegAntiguedad</rd:DefaultName>
+            <Top>1.80428cm</Top>
+            <Left>11.80578cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
             <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="RegAntiguedad2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!RegDiasPorAnio.Value, "DsReporteSolicitudVacaciones") - 15</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>RegAntiguedad</rd:DefaultName>
+            <Top>1.80428cm</Top>
+            <Left>18.94649cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -528,7 +498,7 @@
         <Left>0.11621cm</Left>
         <Height>2.61345cm</Height>
         <Width>21.7005cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -556,7 +526,7 @@
         <Left>0.32787cm</Left>
         <Height>0.6cm</Height>
         <Width>4.151cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -588,7 +558,7 @@
         <Left>11.45116cm</Left>
         <Height>0.6cm</Height>
         <Width>4.151cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -620,7 +590,7 @@
         <Left>15.4051cm</Left>
         <Height>0.6cm</Height>
         <Width>3.30433cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -652,7 +622,7 @@
         <Left>1.97887cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -684,7 +654,7 @@
         <Left>8.6106cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -716,7 +686,7 @@
         <Left>0.32787cm</Left>
         <Height>0.6cm</Height>
         <Width>4.151cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -751,7 +721,7 @@
         <Left>0.32787cm</Left>
         <Height>0.6cm</Height>
         <Width>21.23483cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -783,7 +753,7 @@
         <Left>1.97887cm</Left>
         <Height>0.6cm</Height>
         <Width>4.151cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -815,7 +785,7 @@
         <Left>8.9916cm</Left>
         <Height>0.6cm</Height>
         <Width>4.151cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -847,7 +817,7 @@
         <Left>15.14876cm</Left>
         <Height>0.6cm</Height>
         <Width>5.71733cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -863,7 +833,7 @@
         <Left>0.96287cm</Left>
         <Height>0cm</Height>
         <Width>5.97367cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -875,7 +845,7 @@
         <Left>7.97749cm</Left>
         <Height>0cm</Height>
         <Width>5.97367cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -887,13 +857,73 @@
         <Left>15.10643cm</Left>
         <Height>0cm</Height>
         <Width>6.016cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Line>
+      <Textbox Name="RegDiasPorAnio">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!RegDiasPorAnio.Value, "DsReporteSolicitudVacaciones")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>RegDiasPorAnio</rd:DefaultName>
+        <Top>3.14167cm</Top>
+        <Left>4.88104cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="RegSaldo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!RegSaldo.Value, "DsReporteSolicitudVacaciones")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>RegSaldo</rd:DefaultName>
+        <Top>3.14167cm</Top>
+        <Left>16.0401cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>4.70636in</Height>
     <Style />
@@ -1007,14 +1037,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="EmpAntiguedad">
-          <DataField>EmpAntiguedad</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EmpDiasPorAnio">
-          <DataField>EmpDiasPorAnio</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="EmpFechaEntrada">
           <DataField>EmpFechaEntrada</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1023,12 +1045,16 @@
           <DataField>EmpNombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="EmpSaldo">
-          <DataField>EmpSaldo</DataField>
+        <Field Name="RegAntiguedad">
+          <DataField>RegAntiguedad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="RegCedula">
           <DataField>RegCedula</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RegDiasPorAnio">
+          <DataField>RegDiasPorAnio</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="RegDiasTomados">
@@ -1053,6 +1079,10 @@
         </Field>
         <Field Name="RegObservaciones">
           <DataField>RegObservaciones</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RegSaldo">
+          <DataField>RegSaldo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

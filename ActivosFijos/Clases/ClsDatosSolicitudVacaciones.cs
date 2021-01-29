@@ -11,10 +11,10 @@ namespace ActivosFijos.Clases
         public Int32 RegId { get; set; }
         public string RegCedula { get; set; }
         public string EmpNombre { get; set; }
-        public string EmpAntiguedad { get; set; }
-        public string EmpDiasPorAnio { get; set; }
-        public string EmpSaldo { get; set; }
         public string EmpFechaEntrada { get; set; }
+        public string RegAntiguedad { get; set; }
+        public string RegDiasPorAnio { get; set; }
+        public string RegSaldo { get; set; }
         public string RegFechaSalida { get; set; }
         public string RegFechaRetorno { get; set; }
         public string RegDiasTomados { get; set; }
