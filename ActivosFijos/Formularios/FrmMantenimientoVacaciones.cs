@@ -502,6 +502,7 @@ namespace ActivosFijos.Formularios
 
                 BtnRegistroEliminar.Visible = true;
                 BtnRegistroCancelar.Visible = true;
+                BtnImprimirSolicitud.Visible = true;
 
             }
         }
