@@ -33,7 +33,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "pre.\"preValorAbono\" AS ValorAbono, ";
             cadenaSql += "pre.\"preSaldoParcial\" AS SaldoParcial, ";
             cadenaSql += "pre.\"preObservaciones\" AS Observaciones ";
-            cadenaSql += "FROM \"Prestamos\" AS pre ";
+            cadenaSql += "FROM \"PrestamosEmpleados\" AS pre ";
             cadenaSql += "INNER JOIN \"Empleados\" AS emp ON pre.\"preCedula\" = emp.\"empCedula\" ";
             return cadenaSql;
         }
@@ -98,7 +98,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string secId = null;
-            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(\"preId\") FROM \"Prestamos\" "), conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(\"preId\") FROM \"PrestamosEmpleados\" "), conexion);
             NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -125,7 +125,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             cadenaSql = null;
-            cadenaSql += "INSERT INTO \"Prestamos\" (";
+            cadenaSql += "INSERT INTO \"PrestamosEmpleados\" (";
             cadenaSql += "\"preId\", ";
             cadenaSql += "\"preCedula\", ";
             cadenaSql += "\"preFechaPrestamo\", ";

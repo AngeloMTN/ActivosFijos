@@ -65,12 +65,8 @@ namespace ActivosFijos.Formularios
                 CmbNombre.Enabled = true;
                 RbtAbono.Enabled = false;
                 RbtPrestamo.Enabled = false;
-            }
-            else
-            {
-                CmbNombre.Enabled = false;
-                RbtAbono.Enabled = false;
-                RbtPrestamo.Enabled = false;
+                BtnGrabar.Visible = true;
+                BtnNuevo.Visible = false;
             }
         }
 
@@ -81,12 +77,8 @@ namespace ActivosFijos.Formularios
                 CmbNombre.Enabled = true;
                 RbtAbono.Enabled = false;
                 RbtPrestamo.Enabled = false;
-            }
-            else
-            {
-                CmbNombre.Enabled = false;
-                RbtAbono.Enabled = false;
-                RbtPrestamo.Enabled = false;
+                BtnGrabar.Visible = true;
+                BtnNuevo.Visible = false;
             }
         }
 
@@ -320,7 +312,7 @@ namespace ActivosFijos.Formularios
             }
         }
 
-        private void CmbNombre_Validated(object sender, EventArgs e)
+        private void CmbNombre_TextChanged(object sender, EventArgs e)
         {
             if (RbtPrestamo.Checked == true)
             {
@@ -330,19 +322,17 @@ namespace ActivosFijos.Formularios
                 DtpFechaPrestamo.Enabled = true;
                 TxtValorPrestamo.Enabled = true;
                 TxtValorCuota.Enabled = true;
-                BtnGrabar.Visible = true;
                 TxtObservaciones.Enabled = true;
             }
-            else
+            if (RbtAbono.Checked == true)
             {
                 DtpFechaAbono.Enabled = true;
                 TxtValorAbono.Enabled = true;
+                TxtObservaciones.Enabled = true;
 
                 DtpFechaPrestamo.Enabled = false;
                 TxtValorPrestamo.Enabled = false;
                 TxtValorCuota.Enabled = false;
-                BtnGrabar.Visible = true;
-                TxtObservaciones.Enabled = true;
             }
         }
     }
