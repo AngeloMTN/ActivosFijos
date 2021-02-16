@@ -367,7 +367,7 @@ namespace ActivosFijos.Formularios
                     Int32 secNew = Convert.ToInt32(secMax) + 1;
                     TxtIdRegistro.Text = secNew.ToString();
                     string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
-                    string cedula = ced[0];
+                    string cedula = ced[0].Trim();
 
                     if (sql.InsertarVacaciones(secNew.ToString(),
                                                cedula,
@@ -457,7 +457,7 @@ namespace ActivosFijos.Formularios
             if (CmbFiltroRegistroBuscar.SelectedIndex != -1)
             {
                 string[] ced = CmbFiltroRegistroBuscar.Text.ToString().Trim().Split('-');
-                string cedula = ced[0];
+                string cedula = ced[0].Trim();
 
                 DgvRegistroVacaciones.DataSource = sql.BuscarVacaciones(cedula);
                 CmbFiltroRegistroBuscar.SelectedIndex = -1;
@@ -561,7 +561,7 @@ namespace ActivosFijos.Formularios
         private void BtnImprimirSolicitud_Click(object sender, EventArgs e)
         {
             string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
-            string cedula = ced[0];
+            string cedula = ced[0].Trim();
 
             FrmReporteSolicitudVacaciones rpt = new FrmReporteSolicitudVacaciones();
 

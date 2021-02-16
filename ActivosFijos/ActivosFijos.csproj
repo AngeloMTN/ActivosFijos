@@ -115,6 +115,7 @@
     <Compile Include="Clases\ClsQueryCustodios.cs" />
     <Compile Include="Clases\ClsQueryEmpresas.cs" />
     <Compile Include="Clases\ClsQueryPlanCuentas.cs" />
+    <Compile Include="Clases\ClsQueryPrestamos.cs" />
     <Compile Include="Clases\ClsQueryProveedores.cs" />
     <Compile Include="Clases\ClsQueryReportes.cs" />
     <Compile Include="Clases\ClsQueryVacaciones.cs" />
@@ -166,6 +167,12 @@
     <Compile Include="Formularios\FrmMantenimientoVacaciones.Designer.cs">
       <DependentUpon>FrmMantenimientoVacaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmMantenimientoPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimientoPrestamos.Designer.cs">
+      <DependentUpon>FrmMantenimientoPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmReporteActivos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMantenimientoVacaciones.resx">
       <DependentUpon>FrmMantenimientoVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMantenimientoPrestamos.resx">
+      <DependentUpon>FrmMantenimientoPrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReporteActivos.resx">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>
