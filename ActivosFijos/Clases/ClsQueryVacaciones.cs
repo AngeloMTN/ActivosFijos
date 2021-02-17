@@ -24,7 +24,7 @@ namespace ActivosFijos.Clases
             cadenaSql += "SELECT \"empId\" AS EmpId, \"empCedula\" AS Cedula, \"empNombre\" AS Nombre, ";
             cadenaSql += "\"empFechaEntrada\" AS Entrada, \"empAniosAntiguedad\" AS Antiguedad, ";
             cadenaSql += "\"empDiasPorAnio\" AS DiasPorAnio,\"empDiasAcumulado\" AS Acumulado, ";
-            cadenaSql += "\"empDiasUtilizado\" AS Utilizado, \"empDiasPendiente\" AS DiasPediente ";
+            cadenaSql += "\"empDiasUtilizado\" AS Utilizado, \"empDiasPendiente\" AS DiasPendiente ";
             cadenaSql += "FROM \"Empleados\" ";
             return cadenaSql;
         }
@@ -41,9 +41,9 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"RegistroVacaciones\".\"regFechaRetorno\" AS Retorno, ";
             cadenaSql += "\"RegistroVacaciones\".\"regDiasTomados\" AS DiasTomados, ";
             cadenaSql += "\"RegistroVacaciones\".\"regObservaciones\" AS Observaciones, ";
-            cadenaSql += "\"RegistroVacaciones\".\"empAniosAntiguedad\" AS Antiguedad, ";
-            cadenaSql += "\"RegistroVacaciones\".\"empDiasPorAnio\" AS DiasPorAnio, ";
-            cadenaSql += "\"RegistroVacaciones\".\"empDiasPendiente\" AS DiasPendiente ";
+            cadenaSql += "\"RegistroVacaciones\".\"regAniosAntiguedad\" AS Antiguedad, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regDiasPorAnio\" AS DiasPorAnio, ";
+            cadenaSql += "\"RegistroVacaciones\".\"regDiasPendiente\" AS DiasPendiente ";
             cadenaSql += "FROM \"RegistroVacaciones\" ";
             cadenaSql += "INNER JOIN \"Empleados\" ON \"RegistroVacaciones\".\"regCedula\" = \"Empleados\".\"empCedula\" ";
 
@@ -323,9 +323,9 @@ namespace ActivosFijos.Clases
                                        DateTime regFechaRetorno,
                                        string regDiasTomados,
                                        string regObservaciones,
-                                       string empAniosAntiguedad,
-                                       string empDiasPorAnio,
-                                       string empDiasPendiente)
+                                       string regAniosAntiguedad,
+                                       string regDiasPorAnio,
+                                       string regDiasPendiente)
         {
             conexion.Open();
             cadenaSql = null;
@@ -336,9 +336,9 @@ namespace ActivosFijos.Clases
             cadenaSql += "\"regFechaRetorno\", ";
             cadenaSql += "\"regDiasTomados\", ";
             cadenaSql += "\"regObservaciones\", ";
-            cadenaSql += "\"empAniosAntiguedad\", ";
-            cadenaSql += "\"empDiasPorAnio\", ";
-            cadenaSql += "\"empDiasPendiente\", ";
+            cadenaSql += "\"regAniosAntiguedad\", ";
+            cadenaSql += "\"regDiasPorAnio\", ";
+            cadenaSql += "\"regDiasPendiente\", ";
             cadenaSql += "\"regFechaProceso\" ";
             cadenaSql += ") ";
             cadenaSql += "VALUES('";
@@ -348,9 +348,9 @@ namespace ActivosFijos.Clases
             cadenaSql += regFechaRetorno.ToString() + "', '";
             cadenaSql += regDiasTomados + "', '";
             cadenaSql += regObservaciones + "', '";
-            cadenaSql += empAniosAntiguedad + "', '";
-            cadenaSql += empDiasPorAnio + "', '";
-            cadenaSql += empDiasPendiente + "', '";
+            cadenaSql += regAniosAntiguedad + "', '";
+            cadenaSql += regDiasPorAnio + "', '";
+            cadenaSql += regDiasPendiente + "', '";
             cadenaSql += DateTime.Today + "'";
             cadenaSql += ") ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);

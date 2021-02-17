@@ -507,33 +507,6 @@ namespace ActivosFijos.Formularios
             }
         }
 
-        private void DtpFechaSalida_ValueChanged(object sender, EventArgs e)
-        {
-            if (DtpFechaSalida.Value <= DtpFechaRetorno.Value)
-            {
-                TimeSpan dias = DtpFechaRetorno.Value - DtpFechaSalida.Value;
-                TxtDiasTomados.Text = dias.Days.ToString();
-            }
-            else
-            {
-                MessageBox.Show("La fecha de Salida debe ser menor o igual a la fecha de Retorno ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void DtpFechaRetorno_ValueChanged(object sender, EventArgs e)
-        {
-            if (DtpFechaRetorno.Value >= DtpFechaSalida.Value)
-            {
-                TimeSpan dias = DtpFechaRetorno.Value - DtpFechaSalida.Value;
-                TxtDiasTomados.Text = dias.Days.ToString();
-            }
-            else
-            {
-                MessageBox.Show("La fecha de Retorno debe ser mayor o igual a la fecha de Salida ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void CmbRegistroNombre_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
@@ -552,7 +525,7 @@ namespace ActivosFijos.Formularios
                     TxtAntiguedad.Text = antig[0].Trim();
                     DtpRegistroFechaEntrada.Value = Convert.ToDateTime(Row.Cells["Entrada"].Value);
                     TxtDiasPorAnio.Text = Convert.ToString(Row.Cells["DiasPorAnio"].Value).Trim();
-                    TxtSaldo.Text = Convert.ToString(Row.Cells["Saldo"].Value).Trim();
+                    TxtSaldo.Text = Convert.ToString(Row.Cells["DiasPendiente"].Value).Trim();
                     break;
                 }
             }
@@ -584,6 +557,34 @@ namespace ActivosFijos.Formularios
             rpt.DatosSV.Add(data);
             rpt.ShowDialog();
 
+        }
+
+        private void DtpFechaSalida_Validated(object sender, EventArgs e)
+        {
+            if (DtpFechaSalida.Value <= DtpFechaRetorno.Value)
+            {
+                TimeSpan dias = DtpFechaRetorno.Value - DtpFechaSalida.Value;
+                TxtDiasTomados.Text = dias.Days.ToString();
+            }
+            else
+            {
+                MessageBox.Show("La fecha de Salida debe ser menor o igual a la fecha de Retorno ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DtpFechaSalida.Focus();
+            }
+        }
+
+        private void DtpFechaRetorno_Validated(object sender, EventArgs e)
+        {
+            if (DtpFechaRetorno.Value >= DtpFechaSalida.Value)
+            {
+                TimeSpan dias = DtpFechaRetorno.Value - DtpFechaSalida.Value;
+                TxtDiasTomados.Text = dias.Days.ToString();
+            }
+            else
+            {
+                MessageBox.Show("La fecha de Retorno debe ser mayor o igual a la fecha de Salida ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DtpFechaRetorno.Focus();
+            }
         }
     }
 }
