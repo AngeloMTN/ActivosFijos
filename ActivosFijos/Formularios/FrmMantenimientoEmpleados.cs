@@ -131,6 +131,11 @@ namespace ActivosFijos.Formularios
             TxtNombre.Enabled = false;
             DtpFechaEntrada.Enabled = false;
 
+            TxtId.Text = "";
+            TxtCedula.Text = "";
+            TxtNombre.Text = "";
+            DtpFechaEntrada.Value = DateTime.Today;
+
         }
 
         private void BtnGrabar_Click(object sender, EventArgs e)
