@@ -39,12 +39,6 @@ namespace ActivosFijos.Formularios
 
         private void FrmMantenimientoVacaciones_Load(object sender, EventArgs e)
         {
-            BtnEmpleadoGrabar.Visible = false;
-            BtnEmpleadoModificar.Visible = false;
-            BtnEmpleadoEliminar.Visible = false;
-            BtnEmpleadoCancelar.Visible = false;
-            BtnEmpleadoCancelar.Visible = false;
-
             BtnRegistroGrabar.Visible = false;
             BtnRegistroEliminar.Visible = false;
             BtnRegistroCancelar.Visible = false;
@@ -53,7 +47,6 @@ namespace ActivosFijos.Formularios
             CmbRegistroNombre.SelectedIndex = -1;
             CmbFiltroRegistroBuscar.SelectedIndex = -1;
 
-            DtpFechaEntrada.Value = DateTime.Today;
             DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
             DtpFechaRetorno.Value = DateTime.Today;
             DtpFechaSalida.Value = DateTime.Today;
@@ -63,213 +56,6 @@ namespace ActivosFijos.Formularios
             DgvEmpleados.DataSource = sql.MostrarDatos();
 
             DgvRegistroVacaciones.DataSource = sql.MostrarDatosVacaciones();
-        }
-
-        private void BtnEmpleadoNuevo_Click(object sender, EventArgs e)
-        {
-            opcion = "add";
-
-            BtnEmpleadoNuevo.Visible = false;
-            BtnEmpleadoEliminar.Visible = false;
-            BtnEmpleadoGrabar.Visible = true;
-            BtnEmpleadoCancelar.Visible = true;
-            BtnEmpleadoModificar.Visible = false;
-
-            BtnEmpleadoGrabar.Enabled = true;
-            BtnEmpleadoModificar.Enabled = true;
-            BtnEmpleadoEliminar.Enabled = true;
-            BtnEmpleadoCancelar.Enabled = true;
-            TxtFiltroEmpleadoBuscar.Enabled = false;
-            BtnFiltroEmpleadoBuscar.Enabled = false;
-
-            TxtCedula.Enabled = true;
-            TxtNombre.Enabled = true;
-            DtpFechaEntrada.Enabled = true;
-
-            TxtId.Text = "";
-            TxtCedula.Text = "";
-            TxtNombre.Text = "";
-            DtpFechaEntrada.Value = DateTime.Today;
-
-        }
-
-        private void BtnEmpleadoModificar_Click(object sender, EventArgs e)
-        {
-            opcion = "upd";
-            BtnEmpleadoNuevo.Visible = false;
-            BtnEmpleadoEliminar.Visible = false;
-            BtnEmpleadoModificar.Visible = false;
-            BtnEmpleadoCancelar.Visible = true;
-            BtnEmpleadoGrabar.Visible = true;
-
-            TxtCedula.Enabled = true;
-            TxtNombre.Enabled = true;
-            DtpFechaEntrada.Enabled = true;
-        }
-
-        private void BtnEmpleadoEliminar_Click(object sender, EventArgs e)
-        {
-            DialogResult resp = MessageBox.Show("Confirma que desea Eliminar el Empleado...?", "", MessageBoxButtons.YesNo);
-            if (resp == DialogResult.Yes)
-            {
-                if (TxtCedula.Text.Trim() != "")
-                {
-                    if (sql.Eliminar(TxtId.Text))
-                    {
-                        DgvEmpleados.DataSource = sql.MostrarDatos();
-
-                        TxtId.Text = "";
-                        TxtCedula.Text = "";
-                        TxtNombre.Text = "";
-                        DtpFechaEntrada.Value = DateTime.Today;
-
-                        BtnEmpleadoNuevo.Visible = true;
-                        BtnEmpleadoEliminar.Visible = false;
-                        BtnEmpleadoModificar.Visible = false;
-                        BtnEmpleadoCancelar.Visible = false;
-                        BtnEmpleadoGrabar.Visible = false;
-
-                        TxtFiltroEmpleadoBuscar.Enabled = true;
-                        BtnFiltroEmpleadoBuscar.Enabled = true;
-
-                        MessageBox.Show("Datos Eliminados OK...", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al Eliminar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Eliminación...", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-
-        }
-
-        private void BtnEmpleadoGrabar_Click(object sender, EventArgs e)
-        {
-            if (opcion == "add")
-            {
-                if (TxtCedula.Text.Trim() != "")
-                {
-                    string secMax = sql.SecuenciaId();
-                    Int32 secNew = Convert.ToInt32(secMax) + 1;
-
-                    if (sql.Insertar(secNew.ToString(), TxtCedula.Text, TxtNombre.Text, Convert.ToDateTime(DtpFechaEntrada.Value)))
-                    {
-                        DgvEmpleados.DataSource = sql.MostrarDatos();
-                        CargarComboBox();
-                        CmbRegistroNombre.SelectedIndex = -1;
-                        CmbFiltroRegistroBuscar.SelectedIndex = -1;
-
-                        MessageBox.Show("Datos Insertados OK...", "Inserción", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al Insertar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Falta llenar datos, imposible Grabar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            if (opcion == "upd")
-            {
-                if (TxtCedula.Text.Trim() != "")
-                {
-                    if (sql.Actualizar(TxtId.Text, TxtCedula.Text, TxtNombre.Text, Convert.ToDateTime(DtpFechaEntrada.Value)))
-                    {
-                        DgvEmpleados.DataSource = sql.MostrarDatos();
-                        CargarComboBox();
-                        CmbRegistroNombre.SelectedIndex = -1;
-                        CmbFiltroRegistroBuscar.SelectedIndex = -1;
-
-                        MessageBox.Show("Datos Modificados OK...", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al Modificar datos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Primero seleccione cualquier fila dando click para proceder con la Modificacion...", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-
-            BtnEmpleadoNuevo.Visible = true;
-            BtnEmpleadoEliminar.Visible = false;
-            BtnEmpleadoGrabar.Visible = false;
-            BtnEmpleadoCancelar.Visible = false;
-            BtnEmpleadoModificar.Visible = false;
-
-            TxtCedula.Enabled = false;
-            TxtNombre.Enabled = false;
-            DtpFechaEntrada.Enabled = false;
-
-            TxtCedula.Text = "";
-            TxtNombre.Text = "";
-            DtpFechaEntrada.Value = DateTime.Today;
-
-            TxtFiltroEmpleadoBuscar.Enabled = true;
-            BtnFiltroEmpleadoBuscar.Enabled = true;
-        }
-
-        private void BtnEmpleadoCancelar_Click(object sender, EventArgs e)
-        {
-            BtnEmpleadoNuevo.Visible = true;
-            BtnEmpleadoGrabar.Visible = false;
-            BtnEmpleadoModificar.Visible = false;
-            BtnEmpleadoEliminar.Visible = false;
-            BtnEmpleadoCancelar.Visible = false;
-
-            TxtId.Text = "";
-            TxtCedula.Text = "";
-            TxtNombre.Text = "";
-            DtpFechaEntrada.Value = DateTime.Today;
-
-            TxtCedula.Enabled = false;
-            TxtNombre.Enabled = false;
-            DtpFechaEntrada.Enabled = false;
-
-            TxtFiltroEmpleadoBuscar.Enabled = true;
-            BtnFiltroEmpleadoBuscar.Enabled = true;
-
-        }
-
-        private void DgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int totalFilas = DgvEmpleados.Rows.Count - 2;
-            int filaSeleccionada = DgvEmpleados.CurrentRow.Index;
-
-            if (e.RowIndex != -1 && e.RowIndex <= totalFilas)
-            {
-                if (filaSeleccionada >= 0 && filaSeleccionada <= totalFilas)
-                {
-                    DataGridViewRow fila = DgvEmpleados.Rows[e.RowIndex];
-                    TxtId.Text = Convert.ToString(fila.Cells[0].Value);
-                    TxtCedula.Text = Convert.ToString(fila.Cells[1].Value);
-                    TxtNombre.Text = Convert.ToString(fila.Cells[2].Value);
-                    DtpFechaEntrada.Value = Convert.ToDateTime(fila.Cells[3].Value);
-
-                    TxtCedula.Enabled = false;
-                    TxtNombre.Enabled = false;
-                    DtpFechaEntrada.Enabled = false;
-                }
-                else
-                {
-                    sql.LimpiarCampos(this, groupBox2, groupBox3, groupBox4, groupBox5);
-                }
-
-                BtnEmpleadoModificar.Visible = true;
-                BtnEmpleadoEliminar.Visible = true;
-                BtnEmpleadoCancelar.Visible = true;
-
-            }
-
         }
 
         private void BtnFiltroEmpleadoBuscar_Click(object sender, EventArgs e)
@@ -490,14 +276,10 @@ namespace ActivosFijos.Formularios
                     TxtAntiguedad.Text = Convert.ToString(fila.Cells[8].Value);
                     TxtDiasPorAnio.Text = Convert.ToString(fila.Cells[9].Value);
                     TxtSaldo.Text = Convert.ToString(fila.Cells[10].Value);
-
-                    TxtCedula.Enabled = false;
-                    TxtNombre.Enabled = false;
-                    DtpFechaEntrada.Enabled = false;
                 }
                 else
                 {
-                    sql.LimpiarCampos(this, groupBox2, groupBox3, groupBox4, groupBox5);
+                    sql.LimpiarCampos(this, groupBox2, groupBox4, groupBox5);
                 }
 
                 BtnRegistroEliminar.Visible = true;

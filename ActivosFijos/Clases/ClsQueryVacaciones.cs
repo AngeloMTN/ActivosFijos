@@ -196,7 +196,7 @@ namespace ActivosFijos.Clases
                 return false;
         }
 
-        public void LimpiarCampos(Control ctr, GroupBox gb2, GroupBox gb3, GroupBox gb4, GroupBox gb5)
+        public void LimpiarCampos(Control ctr, GroupBox gb2, GroupBox gb4, GroupBox gb5)
         {
             foreach (var txt in ctr.Controls)
             {
@@ -212,19 +212,6 @@ namespace ActivosFijos.Clases
             }
 
             foreach (var combo in gb2.Controls)
-            {
-                switch (combo)
-                {
-                    case TextBox _:
-                        ((TextBox)combo).Clear();
-                        break;
-                    case ComboBox _:
-                        ((ComboBox)combo).SelectedIndex = 0;
-                        break;
-                }
-            }
-
-            foreach (var combo in gb3.Controls)
             {
                 switch (combo)
                 {

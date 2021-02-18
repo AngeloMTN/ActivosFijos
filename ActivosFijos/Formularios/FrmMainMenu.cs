@@ -116,5 +116,12 @@ namespace ActivosFijos.Formularios
         {
             AbrirFormularioHijo(new FrmMantenimientoPrestamos());
         }
+
+        private void BtnEmpleados_Click(object sender, EventArgs e)
+        {
+            PnlSubMenuTablas.Visible = false;
+            AbrirFormularioHijo(new FrmMantenimientoEmpleados());
+
+        }
     }
 }

@@ -30,30 +30,16 @@ namespace ActivosFijos.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMantenimientoVacaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TpgEmpleados = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.TxtId = new System.Windows.Forms.TextBox();
-            this.IblId = new System.Windows.Forms.Label();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtCedula = new System.Windows.Forms.TextBox();
-            this.BtnEmpleadoCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnEmpleadoGrabar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnEmpleadoEliminar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnEmpleadoModificar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnEmpleadoNuevo = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.DtpFechaEntrada = new System.Windows.Forms.DateTimePicker();
-            this.LblFechaEntrada = new System.Windows.Forms.Label();
-            this.LblCedula = new System.Windows.Forms.Label();
             this.BtnEmpleadoReportes = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnFiltroEmpleadoBuscar = new System.Windows.Forms.Button();
@@ -94,7 +80,6 @@ namespace ActivosFijos.Formularios
             this.DgvRegistroVacaciones = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.TpgEmpleados.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
             this.TpgRegistro.SuspendLayout();
@@ -119,7 +104,6 @@ namespace ActivosFijos.Formularios
             // TpgEmpleados
             // 
             this.TpgEmpleados.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TpgEmpleados.Controls.Add(this.groupBox3);
             this.TpgEmpleados.Controls.Add(this.BtnEmpleadoReportes);
             this.TpgEmpleados.Controls.Add(this.groupBox2);
             this.TpgEmpleados.Controls.Add(this.DgvEmpleados);
@@ -129,249 +113,6 @@ namespace ActivosFijos.Formularios
             this.TpgEmpleados.Size = new System.Drawing.Size(1257, 709);
             this.TpgEmpleados.TabIndex = 0;
             this.TpgEmpleados.Text = "Empleados";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.TxtId);
-            this.groupBox3.Controls.Add(this.IblId);
-            this.groupBox3.Controls.Add(this.TxtNombre);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.TxtCedula);
-            this.groupBox3.Controls.Add(this.BtnEmpleadoCancelar);
-            this.groupBox3.Controls.Add(this.BtnEmpleadoGrabar);
-            this.groupBox3.Controls.Add(this.BtnEmpleadoEliminar);
-            this.groupBox3.Controls.Add(this.BtnEmpleadoModificar);
-            this.groupBox3.Controls.Add(this.BtnEmpleadoNuevo);
-            this.groupBox3.Controls.Add(this.DtpFechaEntrada);
-            this.groupBox3.Controls.Add(this.LblFechaEntrada);
-            this.groupBox3.Controls.Add(this.LblCedula);
-            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(9, 3);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1237, 143);
-            this.groupBox3.TabIndex = 48;
-            this.groupBox3.TabStop = false;
-            // 
-            // TxtId
-            // 
-            this.TxtId.Enabled = false;
-            this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtId.Location = new System.Drawing.Point(149, 23);
-            this.TxtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtId.MaxLength = 15;
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(64, 28);
-            this.TxtId.TabIndex = 58;
-            // 
-            // IblId
-            // 
-            this.IblId.AutoSize = true;
-            this.IblId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IblId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.IblId.Location = new System.Drawing.Point(110, 28);
-            this.IblId.Name = "IblId";
-            this.IblId.Size = new System.Drawing.Size(28, 20);
-            this.IblId.TabIndex = 57;
-            this.IblId.Text = "Id:";
-            // 
-            // TxtNombre
-            // 
-            this.TxtNombre.Enabled = false;
-            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(149, 63);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtNombre.MaxLength = 50;
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(543, 28);
-            this.TxtNombre.TabIndex = 56;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(66, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Nombre:";
-            // 
-            // TxtCedula
-            // 
-            this.TxtCedula.Enabled = false;
-            this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCedula.Location = new System.Drawing.Point(366, 23);
-            this.TxtCedula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtCedula.MaxLength = 15;
-            this.TxtCedula.Name = "TxtCedula";
-            this.TxtCedula.Size = new System.Drawing.Size(135, 28);
-            this.TxtCedula.TabIndex = 54;
-            // 
-            // BtnEmpleadoCancelar
-            // 
-            this.BtnEmpleadoCancelar.ActiveBorderThickness = 1;
-            this.BtnEmpleadoCancelar.ActiveCornerRadius = 20;
-            this.BtnEmpleadoCancelar.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoCancelar.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnEmpleadoCancelar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnEmpleadoCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEmpleadoCancelar.BackgroundImage")));
-            this.BtnEmpleadoCancelar.ButtonText = "CANCELAR";
-            this.BtnEmpleadoCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEmpleadoCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEmpleadoCancelar.ForeColor = System.Drawing.Color.DarkGray;
-            this.BtnEmpleadoCancelar.IdleBorderThickness = 1;
-            this.BtnEmpleadoCancelar.IdleCornerRadius = 20;
-            this.BtnEmpleadoCancelar.IdleFillColor = System.Drawing.Color.Black;
-            this.BtnEmpleadoCancelar.IdleForecolor = System.Drawing.Color.DarkKhaki;
-            this.BtnEmpleadoCancelar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoCancelar.Location = new System.Drawing.Point(1065, 76);
-            this.BtnEmpleadoCancelar.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnEmpleadoCancelar.Name = "BtnEmpleadoCancelar";
-            this.BtnEmpleadoCancelar.Size = new System.Drawing.Size(160, 60);
-            this.BtnEmpleadoCancelar.TabIndex = 53;
-            this.BtnEmpleadoCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnEmpleadoCancelar.Click += new System.EventHandler(this.BtnEmpleadoCancelar_Click);
-            // 
-            // BtnEmpleadoGrabar
-            // 
-            this.BtnEmpleadoGrabar.ActiveBorderThickness = 1;
-            this.BtnEmpleadoGrabar.ActiveCornerRadius = 20;
-            this.BtnEmpleadoGrabar.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoGrabar.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnEmpleadoGrabar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoGrabar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnEmpleadoGrabar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEmpleadoGrabar.BackgroundImage")));
-            this.BtnEmpleadoGrabar.ButtonText = "GRABAR";
-            this.BtnEmpleadoGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEmpleadoGrabar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEmpleadoGrabar.ForeColor = System.Drawing.Color.DarkGray;
-            this.BtnEmpleadoGrabar.IdleBorderThickness = 1;
-            this.BtnEmpleadoGrabar.IdleCornerRadius = 20;
-            this.BtnEmpleadoGrabar.IdleFillColor = System.Drawing.Color.Black;
-            this.BtnEmpleadoGrabar.IdleForecolor = System.Drawing.Color.DarkKhaki;
-            this.BtnEmpleadoGrabar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoGrabar.Location = new System.Drawing.Point(725, 76);
-            this.BtnEmpleadoGrabar.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnEmpleadoGrabar.Name = "BtnEmpleadoGrabar";
-            this.BtnEmpleadoGrabar.Size = new System.Drawing.Size(160, 60);
-            this.BtnEmpleadoGrabar.TabIndex = 52;
-            this.BtnEmpleadoGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnEmpleadoGrabar.Click += new System.EventHandler(this.BtnEmpleadoGrabar_Click);
-            // 
-            // BtnEmpleadoEliminar
-            // 
-            this.BtnEmpleadoEliminar.ActiveBorderThickness = 1;
-            this.BtnEmpleadoEliminar.ActiveCornerRadius = 20;
-            this.BtnEmpleadoEliminar.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoEliminar.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnEmpleadoEliminar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnEmpleadoEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEmpleadoEliminar.BackgroundImage")));
-            this.BtnEmpleadoEliminar.ButtonText = "ELIMINAR";
-            this.BtnEmpleadoEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEmpleadoEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEmpleadoEliminar.ForeColor = System.Drawing.Color.DarkGray;
-            this.BtnEmpleadoEliminar.IdleBorderThickness = 1;
-            this.BtnEmpleadoEliminar.IdleCornerRadius = 20;
-            this.BtnEmpleadoEliminar.IdleFillColor = System.Drawing.Color.Black;
-            this.BtnEmpleadoEliminar.IdleForecolor = System.Drawing.Color.DarkKhaki;
-            this.BtnEmpleadoEliminar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoEliminar.Location = new System.Drawing.Point(1065, 14);
-            this.BtnEmpleadoEliminar.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnEmpleadoEliminar.Name = "BtnEmpleadoEliminar";
-            this.BtnEmpleadoEliminar.Size = new System.Drawing.Size(160, 60);
-            this.BtnEmpleadoEliminar.TabIndex = 51;
-            this.BtnEmpleadoEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnEmpleadoEliminar.Click += new System.EventHandler(this.BtnEmpleadoEliminar_Click);
-            // 
-            // BtnEmpleadoModificar
-            // 
-            this.BtnEmpleadoModificar.ActiveBorderThickness = 1;
-            this.BtnEmpleadoModificar.ActiveCornerRadius = 20;
-            this.BtnEmpleadoModificar.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoModificar.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnEmpleadoModificar.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoModificar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnEmpleadoModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEmpleadoModificar.BackgroundImage")));
-            this.BtnEmpleadoModificar.ButtonText = "MODIFICAR";
-            this.BtnEmpleadoModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEmpleadoModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEmpleadoModificar.ForeColor = System.Drawing.Color.DarkGray;
-            this.BtnEmpleadoModificar.IdleBorderThickness = 1;
-            this.BtnEmpleadoModificar.IdleCornerRadius = 20;
-            this.BtnEmpleadoModificar.IdleFillColor = System.Drawing.Color.Black;
-            this.BtnEmpleadoModificar.IdleForecolor = System.Drawing.Color.DarkKhaki;
-            this.BtnEmpleadoModificar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoModificar.Location = new System.Drawing.Point(895, 14);
-            this.BtnEmpleadoModificar.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnEmpleadoModificar.Name = "BtnEmpleadoModificar";
-            this.BtnEmpleadoModificar.Size = new System.Drawing.Size(160, 60);
-            this.BtnEmpleadoModificar.TabIndex = 50;
-            this.BtnEmpleadoModificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnEmpleadoModificar.Click += new System.EventHandler(this.BtnEmpleadoModificar_Click);
-            // 
-            // BtnEmpleadoNuevo
-            // 
-            this.BtnEmpleadoNuevo.ActiveBorderThickness = 1;
-            this.BtnEmpleadoNuevo.ActiveCornerRadius = 20;
-            this.BtnEmpleadoNuevo.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoNuevo.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnEmpleadoNuevo.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoNuevo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnEmpleadoNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEmpleadoNuevo.BackgroundImage")));
-            this.BtnEmpleadoNuevo.ButtonText = "NUEVO";
-            this.BtnEmpleadoNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEmpleadoNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEmpleadoNuevo.ForeColor = System.Drawing.Color.DarkGray;
-            this.BtnEmpleadoNuevo.IdleBorderThickness = 1;
-            this.BtnEmpleadoNuevo.IdleCornerRadius = 20;
-            this.BtnEmpleadoNuevo.IdleFillColor = System.Drawing.Color.Black;
-            this.BtnEmpleadoNuevo.IdleForecolor = System.Drawing.Color.DarkKhaki;
-            this.BtnEmpleadoNuevo.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoNuevo.Location = new System.Drawing.Point(725, 14);
-            this.BtnEmpleadoNuevo.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnEmpleadoNuevo.Name = "BtnEmpleadoNuevo";
-            this.BtnEmpleadoNuevo.Size = new System.Drawing.Size(160, 60);
-            this.BtnEmpleadoNuevo.TabIndex = 49;
-            this.BtnEmpleadoNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnEmpleadoNuevo.Click += new System.EventHandler(this.BtnEmpleadoNuevo_Click);
-            // 
-            // DtpFechaEntrada
-            // 
-            this.DtpFechaEntrada.CustomFormat = "yyyy/MM/dd";
-            this.DtpFechaEntrada.Enabled = false;
-            this.DtpFechaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaEntrada.Location = new System.Drawing.Point(149, 104);
-            this.DtpFechaEntrada.Name = "DtpFechaEntrada";
-            this.DtpFechaEntrada.Size = new System.Drawing.Size(138, 27);
-            this.DtpFechaEntrada.TabIndex = 46;
-            this.DtpFechaEntrada.Value = new System.DateTime(2021, 1, 21, 0, 0, 0, 0);
-            // 
-            // LblFechaEntrada
-            // 
-            this.LblFechaEntrada.AutoSize = true;
-            this.LblFechaEntrada.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaEntrada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblFechaEntrada.Location = new System.Drawing.Point(18, 108);
-            this.LblFechaEntrada.Name = "LblFechaEntrada";
-            this.LblFechaEntrada.Size = new System.Drawing.Size(120, 20);
-            this.LblFechaEntrada.TabIndex = 45;
-            this.LblFechaEntrada.Text = "Fecha Entrada:";
-            // 
-            // LblCedula
-            // 
-            this.LblCedula.AutoSize = true;
-            this.LblCedula.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCedula.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblCedula.Location = new System.Drawing.Point(288, 28);
-            this.LblCedula.Name = "LblCedula";
-            this.LblCedula.Size = new System.Drawing.Size(67, 20);
-            this.LblCedula.TabIndex = 44;
-            this.LblCedula.Text = "Cedula:";
             // 
             // BtnEmpleadoReportes
             // 
@@ -391,7 +132,7 @@ namespace ActivosFijos.Formularios
             this.BtnEmpleadoReportes.IdleFillColor = System.Drawing.Color.Black;
             this.BtnEmpleadoReportes.IdleForecolor = System.Drawing.Color.DarkKhaki;
             this.BtnEmpleadoReportes.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEmpleadoReportes.Location = new System.Drawing.Point(1075, 155);
+            this.BtnEmpleadoReportes.Location = new System.Drawing.Point(1087, 5);
             this.BtnEmpleadoReportes.Margin = new System.Windows.Forms.Padding(5);
             this.BtnEmpleadoReportes.Name = "BtnEmpleadoReportes";
             this.BtnEmpleadoReportes.Size = new System.Drawing.Size(159, 60);
@@ -404,7 +145,7 @@ namespace ActivosFijos.Formularios
             this.groupBox2.Controls.Add(this.TxtFiltroEmpleadoBuscar);
             this.groupBox2.Controls.Add(this.LblFiltroNombre);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(10, 148);
+            this.groupBox2.Location = new System.Drawing.Point(9, 5);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -451,50 +192,49 @@ namespace ActivosFijos.Formularios
             this.DgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvEmpleados.ColumnHeadersHeight = 30;
             this.DgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvEmpleados.EnableHeadersVisualStyles = false;
             this.DgvEmpleados.GridColor = System.Drawing.Color.SteelBlue;
-            this.DgvEmpleados.Location = new System.Drawing.Point(9, 226);
+            this.DgvEmpleados.Location = new System.Drawing.Point(9, 77);
             this.DgvEmpleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvEmpleados.Name = "DgvEmpleados";
             this.DgvEmpleados.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvEmpleados.RowHeadersWidth = 51;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvEmpleados.RowTemplate.Height = 24;
             this.DgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvEmpleados.Size = new System.Drawing.Size(1237, 474);
+            this.DgvEmpleados.Size = new System.Drawing.Size(1237, 623);
             this.DgvEmpleados.TabIndex = 22;
-            this.DgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleados_CellClick);
             // 
             // TpgRegistro
             // 
@@ -947,45 +687,45 @@ namespace ActivosFijos.Formularios
             this.DgvRegistroVacaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.DgvRegistroVacaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DgvRegistroVacaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvRegistroVacaciones.ColumnHeadersHeight = 30;
             this.DgvRegistroVacaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.DefaultCellStyle = dataGridViewCellStyle6;
             this.DgvRegistroVacaciones.EnableHeadersVisualStyles = false;
             this.DgvRegistroVacaciones.GridColor = System.Drawing.Color.SteelBlue;
             this.DgvRegistroVacaciones.Location = new System.Drawing.Point(9, 274);
             this.DgvRegistroVacaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvRegistroVacaciones.Name = "DgvRegistroVacaciones";
             this.DgvRegistroVacaciones.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRegistroVacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRegistroVacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvRegistroVacaciones.RowHeadersWidth = 51;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.DgvRegistroVacaciones.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.DgvRegistroVacaciones.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvRegistroVacaciones.RowTemplate.Height = 24;
             this.DgvRegistroVacaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvRegistroVacaciones.Size = new System.Drawing.Size(1237, 425);
@@ -1008,8 +748,6 @@ namespace ActivosFijos.Formularios
             this.Load += new System.EventHandler(this.FrmMantenimientoVacaciones_Load);
             this.tabControl1.ResumeLayout(false);
             this.TpgEmpleados.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).EndInit();
@@ -1034,18 +772,6 @@ namespace ActivosFijos.Formularios
         private System.Windows.Forms.Label LblFiltroNombre;
         private System.Windows.Forms.DataGridView DgvEmpleados;
         private System.Windows.Forms.TabPage TpgRegistro;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtCedula;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnEmpleadoCancelar;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnEmpleadoGrabar;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnEmpleadoEliminar;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnEmpleadoModificar;
-        private Bunifu.Framework.UI.BunifuThinButton2 BtnEmpleadoNuevo;
-        private System.Windows.Forms.DateTimePicker DtpFechaEntrada;
-        private System.Windows.Forms.Label LblFechaEntrada;
-        private System.Windows.Forms.Label LblCedula;
         private System.Windows.Forms.GroupBox groupBox5;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnRegistroCancelar;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnRegistroGrabar;
@@ -1061,8 +787,6 @@ namespace ActivosFijos.Formularios
         private System.Windows.Forms.Button BtnFiltroRegistroBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DgvRegistroVacaciones;
-        private System.Windows.Forms.TextBox TxtId;
-        private System.Windows.Forms.Label IblId;
         private System.Windows.Forms.TextBox TxtIdRegistro;
         private System.Windows.Forms.Label LblIdRegistro;
         private System.Windows.Forms.Label LblObservaciones;
