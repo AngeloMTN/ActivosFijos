@@ -42,6 +42,7 @@
             this.BtnPrestamos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnVacaciones = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PnlSubMenuTablas = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.BtnEmpleados = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnProveedores = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnPlanCuentas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnCustodios = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -57,7 +58,6 @@
             this.MoverDashBoard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.BnfRadioPanelChart = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.PnlWraper = new System.Windows.Forms.Panel();
-            this.BtnEmpleados = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PnlMenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxMinimizar)).BeginInit();
@@ -146,9 +146,9 @@
             this.LblDashBoard.Location = new System.Drawing.Point(68, 20);
             this.LblDashBoard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblDashBoard.Name = "LblDashBoard";
-            this.LblDashBoard.Size = new System.Drawing.Size(376, 25);
+            this.LblDashBoard.Size = new System.Drawing.Size(185, 25);
             this.LblDashBoard.TabIndex = 1;
-            this.LblDashBoard.Text = "ADMINISTRACION de ACTIVOS FIJOS ";
+            this.LblDashBoard.Text = "ADMINISTRACION";
             // 
             // PbxMenuSidebar
             // 
@@ -290,6 +290,42 @@
             this.PnlSubMenuTablas.Size = new System.Drawing.Size(218, 272);
             this.PnlSubMenuTablas.TabIndex = 19;
             this.PnlSubMenuTablas.Visible = false;
+            // 
+            // BtnEmpleados
+            // 
+            this.BtnEmpleados.Activecolor = System.Drawing.Color.Transparent;
+            this.BtnEmpleados.BackColor = System.Drawing.Color.Transparent;
+            this.BtnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnEmpleados.BorderRadius = 0;
+            this.BtnEmpleados.ButtonText = "■ Empleados";
+            this.BtnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEmpleados.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnEmpleados.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnEmpleados.Iconimage = null;
+            this.BtnEmpleados.Iconimage_right = null;
+            this.BtnEmpleados.Iconimage_right_Selected = null;
+            this.BtnEmpleados.Iconimage_Selected = null;
+            this.BtnEmpleados.IconMarginLeft = 0;
+            this.BtnEmpleados.IconMarginRight = 0;
+            this.BtnEmpleados.IconRightVisible = true;
+            this.BtnEmpleados.IconRightZoom = 0D;
+            this.BtnEmpleados.IconVisible = true;
+            this.BtnEmpleados.IconZoom = 50D;
+            this.BtnEmpleados.IsTab = false;
+            this.BtnEmpleados.Location = new System.Drawing.Point(43, 88);
+            this.BtnEmpleados.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnEmpleados.Name = "BtnEmpleados";
+            this.BtnEmpleados.Normalcolor = System.Drawing.Color.Transparent;
+            this.BtnEmpleados.OnHovercolor = System.Drawing.Color.Transparent;
+            this.BtnEmpleados.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnEmpleados.selected = false;
+            this.BtnEmpleados.Size = new System.Drawing.Size(170, 35);
+            this.BtnEmpleados.TabIndex = 32;
+            this.BtnEmpleados.Text = "■ Empleados";
+            this.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEmpleados.Textcolor = System.Drawing.Color.White;
+            this.BtnEmpleados.TextFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
             // BtnProveedores
             // 
@@ -616,42 +652,6 @@
             this.PnlWraper.Name = "PnlWraper";
             this.PnlWraper.Size = new System.Drawing.Size(1683, 916);
             this.PnlWraper.TabIndex = 2;
-            // 
-            // BtnEmpleados
-            // 
-            this.BtnEmpleados.Activecolor = System.Drawing.Color.Transparent;
-            this.BtnEmpleados.BackColor = System.Drawing.Color.Transparent;
-            this.BtnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnEmpleados.BorderRadius = 0;
-            this.BtnEmpleados.ButtonText = "■ Empleados";
-            this.BtnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEmpleados.DisabledColor = System.Drawing.Color.Gray;
-            this.BtnEmpleados.Iconcolor = System.Drawing.Color.Transparent;
-            this.BtnEmpleados.Iconimage = null;
-            this.BtnEmpleados.Iconimage_right = null;
-            this.BtnEmpleados.Iconimage_right_Selected = null;
-            this.BtnEmpleados.Iconimage_Selected = null;
-            this.BtnEmpleados.IconMarginLeft = 0;
-            this.BtnEmpleados.IconMarginRight = 0;
-            this.BtnEmpleados.IconRightVisible = true;
-            this.BtnEmpleados.IconRightZoom = 0D;
-            this.BtnEmpleados.IconVisible = true;
-            this.BtnEmpleados.IconZoom = 50D;
-            this.BtnEmpleados.IsTab = false;
-            this.BtnEmpleados.Location = new System.Drawing.Point(43, 88);
-            this.BtnEmpleados.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnEmpleados.Name = "BtnEmpleados";
-            this.BtnEmpleados.Normalcolor = System.Drawing.Color.Transparent;
-            this.BtnEmpleados.OnHovercolor = System.Drawing.Color.Transparent;
-            this.BtnEmpleados.OnHoverTextColor = System.Drawing.Color.White;
-            this.BtnEmpleados.selected = false;
-            this.BtnEmpleados.Size = new System.Drawing.Size(170, 35);
-            this.BtnEmpleados.TabIndex = 32;
-            this.BtnEmpleados.Text = "■ Empleados";
-            this.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEmpleados.Textcolor = System.Drawing.Color.White;
-            this.BtnEmpleados.TextFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
             // FrmMainMenu
             // 

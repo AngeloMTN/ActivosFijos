@@ -74,7 +74,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegCedula.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacCedula.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -106,7 +106,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegFechaCreacion.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacFechaCreacion.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -346,7 +346,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegAntiguedad.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacAntiguedad.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -378,7 +378,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegDiasPorAnio.Value, "DsReporteSolicitudVacaciones") - 15</Value>
+                    <Value>=First(Fields!VacDiasPorAnio.Value, "DsReporteSolicitudVacaciones")-15</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -598,7 +598,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegObservaciones.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacObservaciones.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -666,7 +666,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegDiasTomados.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacDiasTomados.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -698,7 +698,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegFechaRetorno.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacFechaRetorno.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -730,7 +730,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegFechaSalida.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacFechaSalida.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -937,7 +937,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegDiasPorAnio.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacDiasPorAnio.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -962,14 +962,14 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="RegSaldo">
+          <Textbox Name="VacDiasPendiente">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!RegSaldo.Value, "DsReporteSolicitudVacaciones")</Value>
+                    <Value>=First(Fields!VacDiasPendiente.Value, "DsReporteSolicitudVacaciones")</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                     </Style>
@@ -978,11 +978,11 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>RegSaldo</rd:DefaultName>
+            <rd:DefaultName>VacDiasPendiente</rd:DefaultName>
             <Top>0.3175cm</Top>
-            <Left>10.82792cm</Left>
+            <Left>10.82886cm</Left>
             <Height>0.6cm</Height>
-            <Width>1.27233cm</Width>
+            <Width>1.0395cm</Width>
             <ZIndex>18</ZIndex>
             <Style>
               <Border>
@@ -1142,44 +1142,44 @@
           <DataField>EmpNombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegAntiguedad">
-          <DataField>RegAntiguedad</DataField>
+        <Field Name="VacAntiguedad">
+          <DataField>VacAntiguedad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegCedula">
-          <DataField>RegCedula</DataField>
+        <Field Name="VacCedula">
+          <DataField>VacCedula</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegDiasPorAnio">
-          <DataField>RegDiasPorAnio</DataField>
+        <Field Name="VacDiasPendiente">
+          <DataField>VacDiasPendiente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegDiasTomados">
-          <DataField>RegDiasTomados</DataField>
+        <Field Name="VacDiasPorAnio">
+          <DataField>VacDiasPorAnio</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegFechaCreacion">
-          <DataField>RegFechaCreacion</DataField>
+        <Field Name="VacDiasTomados">
+          <DataField>VacDiasTomados</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegFechaRetorno">
-          <DataField>RegFechaRetorno</DataField>
+        <Field Name="VacFechaCreacion">
+          <DataField>VacFechaCreacion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegFechaSalida">
-          <DataField>RegFechaSalida</DataField>
+        <Field Name="VacFechaRetorno">
+          <DataField>VacFechaRetorno</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="RegId">
-          <DataField>RegId</DataField>
+        <Field Name="VacFechaSalida">
+          <DataField>VacFechaSalida</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VacId">
+          <DataField>VacId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="RegObservaciones">
-          <DataField>RegObservaciones</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RegSaldo">
-          <DataField>RegSaldo</DataField>
+        <Field Name="VacObservaciones">
+          <DataField>VacObservaciones</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

@@ -48,7 +48,7 @@ namespace ActivosFijos.Formularios
             this.ClientSize = new System.Drawing.Size(1282, 763);
             this.Controls.Add(this.RpvSolicitudVacaciones);
             this.Name = "FrmReporteSolicitudVacaciones";
-            this.Text = "FrmReporteSolicitudVacaciones";
+            this.Text = "Reporte Solicitud de Vacaciones";
             this.Load += new System.EventHandler(this.FrmReporteSolicitudVacaciones_Load);
             this.ResumeLayout(false);
 

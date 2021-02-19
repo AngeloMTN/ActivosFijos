@@ -33,19 +33,19 @@ namespace ActivosFijos.Clases
         {
             string cadenaSql = null;
             cadenaSql += "SELECT ";
-            cadenaSql += "\"RegistroVacaciones\".\"regId\" AS RegId, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regCedula\" AS Cedula, ";
+            cadenaSql += "\"Vacaciones\".\"vacId\" AS RegId, ";
+            cadenaSql += "\"Vacaciones\".\"vacCedula\" AS Cedula, ";
             cadenaSql += "\"Empleados\".\"empNombre\" AS Nombre, ";
             cadenaSql += "\"Empleados\".\"empFechaEntrada\" AS FechaEntrada, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regFechaSalida\" AS Salida, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regFechaRetorno\" AS Retorno, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regDiasTomados\" AS DiasTomados, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regObservaciones\" AS Observaciones, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regAniosAntiguedad\" AS Antiguedad, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regDiasPorAnio\" AS DiasPorAnio, ";
-            cadenaSql += "\"RegistroVacaciones\".\"regDiasPendiente\" AS DiasPendiente ";
-            cadenaSql += "FROM \"RegistroVacaciones\" ";
-            cadenaSql += "INNER JOIN \"Empleados\" ON \"RegistroVacaciones\".\"regCedula\" = \"Empleados\".\"empCedula\" ";
+            cadenaSql += "\"Vacaciones\".\"vacFechaSalida\" AS Salida, ";
+            cadenaSql += "\"Vacaciones\".\"vacFechaRetorno\" AS Retorno, ";
+            cadenaSql += "\"Vacaciones\".\"vacDiasTomados\" AS DiasTomados, ";
+            cadenaSql += "\"Vacaciones\".\"vacObservaciones\" AS Observaciones, ";
+            cadenaSql += "\"Vacaciones\".\"vacAniosAntiguedad\" AS Antiguedad, ";
+            cadenaSql += "\"Vacaciones\".\"vacDiasPorAnio\" AS DiasPorAnio, ";
+            cadenaSql += "\"Vacaciones\".\"vacDiasPendiente\" AS DiasPendiente ";
+            cadenaSql += "FROM \"Vacaciones\" ";
+            cadenaSql += "INNER JOIN \"Empleados\" ON \"Vacaciones\".\"vacCedula\" = \"Empleados\".\"empCedula\" ";
 
             return cadenaSql;
         }
@@ -86,9 +86,9 @@ namespace ActivosFijos.Clases
             string cadenaSql = ConsultaSqlVacaciones();
             if (cedula != "")
             {
-                cadenaSql += "WHERE \"regCedula\" ILIKE '%{0}%' ";
+                cadenaSql += "WHERE \"vacCedula\" ILIKE '%{0}%' ";
             }
-            cadenaSql += "ORDER BY \"regFechaSalida\" ";
+            cadenaSql += "ORDER BY \"vacFechaSalida\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(string.Format(cadenaSql, cedula), conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
@@ -101,7 +101,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string cadenaSql = ConsultaSqlVacaciones();
-            cadenaSql += "ORDER BY \"regCedula\", \"regFechaSalida\" ";
+            cadenaSql += "ORDER BY \"vacCedula\", \"vacFechaSalida\" ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
             ds = new DataSet();
@@ -132,7 +132,7 @@ namespace ActivosFijos.Clases
         {
             conexion.Open();
             string secId = null;
-            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(\"regId\") FROM \"RegistroVacaciones\" "), conexion);
+            NpgsqlCommand cmd = new NpgsqlCommand(string.Format("SELECT max(\"vacId\") FROM \"Vacaciones\" "), conexion);
             NpgsqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -305,39 +305,39 @@ namespace ActivosFijos.Clases
         }
 
         public bool InsertarVacaciones(string secId,
-                                       string regCedula,
-                                       DateTime regFechaSalida,
-                                       DateTime regFechaRetorno,
-                                       string regDiasTomados,
-                                       string regObservaciones,
-                                       string regAniosAntiguedad,
-                                       string regDiasPorAnio,
-                                       string regDiasPendiente)
+                                       string vacCedula,
+                                       DateTime vacFechaSalida,
+                                       DateTime vacFechaRetorno,
+                                       string vacDiasTomados,
+                                       string vacObservaciones,
+                                       string vacAniosAntiguedad,
+                                       string vacDiasPorAnio,
+                                       string vacDiasPendiente)
         {
             conexion.Open();
             cadenaSql = null;
             cadenaSql += "INSERT INTO \"RegistroVacaciones\" (";
-            cadenaSql += "\"regId\", ";
-            cadenaSql += "\"regCedula\", ";
-            cadenaSql += "\"regFechaSalida\", ";
-            cadenaSql += "\"regFechaRetorno\", ";
-            cadenaSql += "\"regDiasTomados\", ";
-            cadenaSql += "\"regObservaciones\", ";
-            cadenaSql += "\"regAniosAntiguedad\", ";
-            cadenaSql += "\"regDiasPorAnio\", ";
-            cadenaSql += "\"regDiasPendiente\", ";
-            cadenaSql += "\"regFechaProceso\" ";
+            cadenaSql += "\"vacId\", ";
+            cadenaSql += "\"vacCedula\", ";
+            cadenaSql += "\"vacFechaSalida\", ";
+            cadenaSql += "\"vacFechaRetorno\", ";
+            cadenaSql += "\"vacDiasTomados\", ";
+            cadenaSql += "\"vacObservaciones\", ";
+            cadenaSql += "\"vacAniosAntiguedad\", ";
+            cadenaSql += "\"vacDiasPorAnio\", ";
+            cadenaSql += "\"vacDiasPendiente\", ";
+            cadenaSql += "\"vacFechaProceso\" ";
             cadenaSql += ") ";
             cadenaSql += "VALUES('";
             cadenaSql += secId + "', '";
-            cadenaSql += regCedula + "', '";
-            cadenaSql += regFechaSalida.ToString() + "', '";
-            cadenaSql += regFechaRetorno.ToString() + "', '";
-            cadenaSql += regDiasTomados + "', '";
-            cadenaSql += regObservaciones + "', '";
-            cadenaSql += regAniosAntiguedad + "', '";
-            cadenaSql += regDiasPorAnio + "', '";
-            cadenaSql += regDiasPendiente + "', '";
+            cadenaSql += vacCedula + "', '";
+            cadenaSql += vacFechaSalida.ToString() + "', '";
+            cadenaSql += vacFechaRetorno.ToString() + "', '";
+            cadenaSql += vacDiasTomados + "', '";
+            cadenaSql += vacObservaciones + "', '";
+            cadenaSql += vacAniosAntiguedad + "', '";
+            cadenaSql += vacDiasPorAnio + "', '";
+            cadenaSql += vacDiasPendiente + "', '";
             cadenaSql += DateTime.Today + "'";
             cadenaSql += ") ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
@@ -349,10 +349,10 @@ namespace ActivosFijos.Clases
                 return false;
         }
 
-        public bool EliminarVacaciones(string empId)
+        public bool EliminarVacaciones(string vacId)
         {
             conexion.Open();
-            string cadenaSql = "DELETE FROM \"RegistroVacaciones\" WHERE \"regId\" = " + empId;
+            string cadenaSql = "DELETE FROM \"Vacaciones\" WHERE \"vacId\" = " + vacId;
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);
             int filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
@@ -386,11 +386,11 @@ namespace ActivosFijos.Clases
             cadenaSql += "      subquery.\"parAnios\"; ";
             cadenaSql += " ";
             cadenaSql += "UPDATE \"Empleados\" SET \"empDiasUtilizado\" = subquery.DiasTomados ";
-            cadenaSql += "FROM(SELECT rv.\"regCedula\", SUM (rv.\"regDiasTomados\") AS DiasTomados";
-            cadenaSql += "      FROM \"RegistroVacaciones\" AS rv";
-            cadenaSql += "      INNER JOIN \"Empleados\" AS em ON rv.\"regCedula\" = em.\"empCedula\" ";
-            cadenaSql += "      GROUP BY rv.\"regCedula\" ) AS subquery ";
-            cadenaSql += "WHERE \"Empleados\".\"empCedula\" = subquery.\"regCedula\" ;";
+            cadenaSql += "FROM(SELECT va.\"vacCedula\", SUM (va.\"vacDiasTomados\") AS DiasTomados";
+            cadenaSql += "      FROM \"Vacaciones\" AS va";
+            cadenaSql += "      INNER JOIN \"Empleados\" AS em ON va.\"vacCedula\" = em.\"empCedula\" ";
+            cadenaSql += "      GROUP BY va.\"vacCedula\" ) AS subquery ";
+            cadenaSql += "WHERE \"Empleados\".\"empCedula\" = subquery.\"vacCedula\" ;";
             cadenaSql += " ";
             cadenaSql += "UPDATE \"Empleados\" SET \"empDiasPendiente\" = \"empDiasAcumulado\" - \"empDiasUtilizado\"; ";
             NpgsqlCommand cmd = new NpgsqlCommand(cadenaSql, conexion);

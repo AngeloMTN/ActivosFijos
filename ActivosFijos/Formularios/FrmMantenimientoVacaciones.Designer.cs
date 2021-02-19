@@ -62,7 +62,7 @@ namespace ActivosFijos.Formularios
             this.TxtObservaciones = new System.Windows.Forms.TextBox();
             this.DtpFechaRetorno = new System.Windows.Forms.DateTimePicker();
             this.LblFechaRetorno = new System.Windows.Forms.Label();
-            this.TxtIdRegistro = new System.Windows.Forms.TextBox();
+            this.TxtId = new System.Windows.Forms.TextBox();
             this.LblIdRegistro = new System.Windows.Forms.Label();
             this.BtnRegistroCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnRegistroGrabar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -264,7 +264,7 @@ namespace ActivosFijos.Formularios
             this.groupBox5.Controls.Add(this.TxtObservaciones);
             this.groupBox5.Controls.Add(this.DtpFechaRetorno);
             this.groupBox5.Controls.Add(this.LblFechaRetorno);
-            this.groupBox5.Controls.Add(this.TxtIdRegistro);
+            this.groupBox5.Controls.Add(this.TxtId);
             this.groupBox5.Controls.Add(this.LblIdRegistro);
             this.groupBox5.Controls.Add(this.BtnRegistroCancelar);
             this.groupBox5.Controls.Add(this.BtnRegistroGrabar);
@@ -448,16 +448,16 @@ namespace ActivosFijos.Formularios
             this.LblFechaRetorno.TabIndex = 61;
             this.LblFechaRetorno.Text = "Fecha Retorno:";
             // 
-            // TxtIdRegistro
+            // TxtId
             // 
-            this.TxtIdRegistro.Enabled = false;
-            this.TxtIdRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIdRegistro.Location = new System.Drawing.Point(76, 23);
-            this.TxtIdRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TxtIdRegistro.MaxLength = 15;
-            this.TxtIdRegistro.Name = "TxtIdRegistro";
-            this.TxtIdRegistro.Size = new System.Drawing.Size(64, 28);
-            this.TxtIdRegistro.TabIndex = 60;
+            this.TxtId.Enabled = false;
+            this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtId.Location = new System.Drawing.Point(76, 23);
+            this.TxtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtId.MaxLength = 15;
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(64, 28);
+            this.TxtId.TabIndex = 60;
             // 
             // LblIdRegistro
             // 
@@ -787,7 +787,7 @@ namespace ActivosFijos.Formularios
         private System.Windows.Forms.Button BtnFiltroRegistroBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DgvRegistroVacaciones;
-        private System.Windows.Forms.TextBox TxtIdRegistro;
+        private System.Windows.Forms.TextBox TxtId;
         private System.Windows.Forms.Label LblIdRegistro;
         private System.Windows.Forms.Label LblObservaciones;
         private System.Windows.Forms.TextBox TxtObservaciones;

@@ -41,7 +41,6 @@ namespace ActivosFijos.Formularios
             DgvPrestamos.DataSource = sql.MostrarDatos();
             BtnGrabar.Visible = false;
             BtnCancelar.Visible = false;
-            BtnImprimirSolicitud.Visible = false;
 
             CmbNombre.SelectedIndex = -1;
             DtpFechaPrestamo.Value = DateTime.Today;
@@ -334,6 +333,34 @@ namespace ActivosFijos.Formularios
                 TxtValorPrestamo.Enabled = false;
                 TxtValorCuota.Enabled = false;
             }
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            FrmReportePrestamos rpt = new FrmReportePrestamos();
+
+            for (int i = 0; i < DgvPrestamos.Rows.Count - 1; i++)
+            {
+                ClsDatosPrestamos data = new ClsDatosPrestamos
+                {
+                    PreId = Convert.ToInt32(DgvPrestamos.Rows[i].Cells[0].Value),
+                    PreCedula = Convert.ToString(DgvPrestamos.Rows[i].Cells[1].Value),
+                    EmpNombre = Convert.ToString(DgvPrestamos.Rows[i].Cells[2].Value),
+                    PreFechaPrestamo = Convert.ToString(DgvPrestamos.Rows[i].Cells[3].Value),
+                    PreValorPrestamo = Convert.ToDecimal(DgvPrestamos.Rows[i].Cells[4].Value),
+                    PreNumeroCuotas = Convert.ToInt32(DgvPrestamos.Rows[i].Cells[5].Value),
+                    PreValorCuota = Convert.ToDecimal(DgvPrestamos.Rows[i].Cells[6].Value),
+                    PreFechaAbono = Convert.ToString(DgvPrestamos.Rows[i].Cells[7].Value),
+                    PreValorAbono = Convert.ToDecimal(DgvPrestamos.Rows[i].Cells[8].Value),
+                    PreSaldoParcial = Convert.ToDecimal(DgvPrestamos.Rows[i].Cells[9].Value),
+                    PreObservaciones = Convert.ToString(DgvPrestamos.Rows[i].Cells[10].Value)
+
+                };
+
+                rpt.Datos.Add(data);
+            }
+            rpt.ShowDialog();
+
         }
     }
 }

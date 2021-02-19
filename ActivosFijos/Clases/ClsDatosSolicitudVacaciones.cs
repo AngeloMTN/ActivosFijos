@@ -8,17 +8,17 @@ namespace ActivosFijos.Clases
 {
     class ClsDatosSolicitudVacaciones
     {
-        public Int32 RegId { get; set; }
-        public string RegCedula { get; set; }
+        public Int32 VacId { get; set; }
+        public string VacCedula { get; set; }
         public string EmpNombre { get; set; }
         public string EmpFechaEntrada { get; set; }
-        public string RegAntiguedad { get; set; }
-        public string RegDiasPorAnio { get; set; }
-        public string RegSaldo { get; set; }
-        public string RegFechaSalida { get; set; }
-        public string RegFechaRetorno { get; set; }
-        public string RegDiasTomados { get; set; }
-        public string RegObservaciones { get; set; }
-        public string RegFechaCreacion { get; set; }
+        public string VacAntiguedad { get; set; }
+        public string VacDiasPorAnio { get; set; }
+        public string VacDiasPendiente { get; set; }
+        public string VacFechaSalida { get; set; }
+        public string VacFechaRetorno { get; set; }
+        public string VacDiasTomados { get; set; }
+        public string VacObservaciones { get; set; }
+        public string VacFechaCreacion { get; set; }
     }
 }

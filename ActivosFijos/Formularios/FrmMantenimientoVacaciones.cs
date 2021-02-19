@@ -103,15 +103,15 @@ namespace ActivosFijos.Formularios
             DialogResult resp = MessageBox.Show("Confirma que desea Eliminar el Registro...?", "", MessageBoxButtons.YesNo);
             if (resp == DialogResult.Yes)
             {
-                if (TxtIdRegistro.Text.Trim() != "")
+                if (TxtId.Text.Trim() != "")
                 {
-                    if (sql.EliminarVacaciones(TxtIdRegistro.Text))
+                    if (sql.EliminarVacaciones(TxtId.Text))
                     {
                         sql.RecalcularVacaciones();
 
                         DgvRegistroVacaciones.DataSource = sql.MostrarDatosVacaciones();
 
-                        TxtIdRegistro.Text = "";
+                        TxtId.Text = "";
                         CmbRegistroNombre.SelectedIndex = -1;
                         DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
                         DtpFechaRetorno.Value = DateTime.Today;
@@ -151,7 +151,7 @@ namespace ActivosFijos.Formularios
                 {
                     string secMax = sql.SecuenciaIdVacaciones();
                     Int32 secNew = Convert.ToInt32(secMax) + 1;
-                    TxtIdRegistro.Text = secNew.ToString();
+                    TxtId.Text = secNew.ToString();
                     string[] ced = CmbRegistroNombre.Text.ToString().Trim().Split('-');
                     string cedula = ced[0].Trim();
 
@@ -219,7 +219,7 @@ namespace ActivosFijos.Formularios
             BtnRegistroCancelar.Visible = false;
             BtnImprimirSolicitud.Visible = false;
 
-            TxtIdRegistro.Text = "";
+            TxtId.Text = "";
             CmbRegistroNombre.SelectedIndex = -1;
             DtpRegistroFechaEntrada.Value = Convert.ToDateTime("1900/01/01");
             DtpFechaRetorno.Value = DateTime.Today;
@@ -265,7 +265,7 @@ namespace ActivosFijos.Formularios
                 if (filaSeleccionada >= 0 && filaSeleccionada <= totalFilas)
                 {
                     DataGridViewRow fila = DgvRegistroVacaciones.Rows[e.RowIndex];
-                    TxtIdRegistro.Text = Convert.ToString(fila.Cells[0].Value);
+                    TxtId.Text = Convert.ToString(fila.Cells[0].Value);
                     int indexreg = CmbRegistroNombre.FindString(Convert.ToString(fila.Cells[1].Value).Trim());
                     CmbRegistroNombre.SelectedIndex = indexreg;
                     DtpRegistroFechaEntrada.Value = Convert.ToDateTime(fila.Cells[3].Value);
@@ -322,18 +322,18 @@ namespace ActivosFijos.Formularios
 
             ClsDatosSolicitudVacaciones data = new ClsDatosSolicitudVacaciones
             {
-                RegId = Convert.ToInt32(TxtIdRegistro.Text.Trim()),
-                RegCedula = cedula,
+                VacId = Convert.ToInt32(TxtId.Text.Trim()),
+                VacCedula = cedula,
                 EmpNombre = CmbRegistroNombre.Text.Trim(),
                 EmpFechaEntrada = DtpRegistroFechaEntrada.Value.ToString().Trim(),
-                RegAntiguedad = TxtAntiguedad.Text.Trim(),
-                RegDiasPorAnio = TxtDiasPorAnio.Text.Trim(),
-                RegSaldo = TxtSaldo.Text.Trim(),
-                RegFechaSalida = DtpFechaSalida.Value.ToString().Trim(),
-                RegFechaRetorno = DtpFechaRetorno.Value.ToString().Trim(),
-                RegDiasTomados = TxtDiasTomados.Text.Trim(),
-                RegObservaciones = TxtObservaciones.Text.Trim(),
-                RegFechaCreacion = Convert.ToString(DateTime.Now)
+                VacAntiguedad = TxtAntiguedad.Text.Trim(),
+                VacDiasPorAnio = TxtDiasPorAnio.Text.Trim(),
+                VacDiasPendiente = TxtSaldo.Text.Trim(),
+                VacFechaSalida = DtpFechaSalida.Value.ToString().Trim(),
+                VacFechaRetorno = DtpFechaRetorno.Value.ToString().Trim(),
+                VacDiasTomados = TxtDiasTomados.Text.Trim(),
+                VacObservaciones = TxtObservaciones.Text.Trim(),
+                VacFechaCreacion = Convert.ToString(DateTime.Now)
             };
 
             rpt.DatosSV.Add(data);

@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ClsDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clsEstructuraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.RpvActivos = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ClsDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.clsEstructuraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClsDatosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clsEstructuraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // RpvActivos
@@ -43,16 +43,12 @@
             reportDataSource1.Name = "DsReporteActivos";
             reportDataSource1.Value = this.ClsDatosBindingSource;
             this.RpvActivos.LocalReport.DataSources.Add(reportDataSource1);
-            this.RpvActivos.LocalReport.ReportEmbeddedResource = "ActivosFijosHogar.Reportes.RptActivos.rdlc";
+            this.RpvActivos.LocalReport.ReportEmbeddedResource = "ActivosFijos.Reportes.RptActivos.rdlc";
             this.RpvActivos.Location = new System.Drawing.Point(0, 0);
             this.RpvActivos.Name = "RpvActivos";
             this.RpvActivos.ServerReport.BearerToken = null;
             this.RpvActivos.Size = new System.Drawing.Size(1282, 763);
             this.RpvActivos.TabIndex = 0;
-            // 
-            // ClsDatosBindingSource
-            // 
-            this.ClsDatosBindingSource.DataSource = typeof(ActivosFijos.Clases.ClsDatos);
             // 
             // FrmReporteActivos
             // 
@@ -63,8 +59,8 @@
             this.Name = "FrmReporteActivos";
             this.Text = "FrmReporteActivos";
             this.Load += new System.EventHandler(this.FrmReporteActivos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.clsEstructuraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClsDatosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clsEstructuraBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

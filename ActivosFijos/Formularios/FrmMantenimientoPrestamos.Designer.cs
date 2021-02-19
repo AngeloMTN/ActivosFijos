@@ -61,7 +61,6 @@ namespace ActivosFijos.Formularios
             this.LblNumeroCuotas = new System.Windows.Forms.Label();
             this.LblValorPrestamo = new System.Windows.Forms.Label();
             this.TxtNumeroCuotas = new System.Windows.Forms.TextBox();
-            this.BtnImprimirSolicitud = new System.Windows.Forms.Button();
             this.LblRegistroNombre = new System.Windows.Forms.Label();
             this.LblObservaciones = new System.Windows.Forms.Label();
             this.TxtObservaciones = new System.Windows.Forms.TextBox();
@@ -70,6 +69,7 @@ namespace ActivosFijos.Formularios
             this.BtnNuevo = new Bunifu.Framework.UI.BunifuThinButton2();
             this.CmbNombre = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.BtnReporte = new Bunifu.Framework.UI.BunifuThinButton2();
             this.CmbFiltroBuscar = new System.Windows.Forms.ComboBox();
             this.BtnFiltroBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -216,7 +216,6 @@ namespace ActivosFijos.Formularios
             this.groupBox5.Controls.Add(this.RbtPrestamo);
             this.groupBox5.Controls.Add(this.GbxAbono);
             this.groupBox5.Controls.Add(this.GbxPrestamo);
-            this.groupBox5.Controls.Add(this.BtnImprimirSolicitud);
             this.groupBox5.Controls.Add(this.LblRegistroNombre);
             this.groupBox5.Controls.Add(this.LblObservaciones);
             this.groupBox5.Controls.Add(this.TxtObservaciones);
@@ -229,7 +228,7 @@ namespace ActivosFijos.Formularios
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(1237, 213);
+            this.groupBox5.Size = new System.Drawing.Size(1237, 208);
             this.groupBox5.TabIndex = 47;
             this.groupBox5.TabStop = false;
             // 
@@ -238,7 +237,7 @@ namespace ActivosFijos.Formularios
             this.RbtAbono.AutoSize = true;
             this.RbtAbono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RbtAbono.ForeColor = System.Drawing.Color.Gold;
-            this.RbtAbono.Location = new System.Drawing.Point(161, 24);
+            this.RbtAbono.Location = new System.Drawing.Point(161, 19);
             this.RbtAbono.Name = "RbtAbono";
             this.RbtAbono.Size = new System.Drawing.Size(107, 27);
             this.RbtAbono.TabIndex = 1;
@@ -251,7 +250,7 @@ namespace ActivosFijos.Formularios
             this.RbtPrestamo.AutoSize = true;
             this.RbtPrestamo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RbtPrestamo.ForeColor = System.Drawing.Color.Gold;
-            this.RbtPrestamo.Location = new System.Drawing.Point(13, 24);
+            this.RbtPrestamo.Location = new System.Drawing.Point(13, 19);
             this.RbtPrestamo.Name = "RbtPrestamo";
             this.RbtPrestamo.Size = new System.Drawing.Size(132, 27);
             this.RbtPrestamo.TabIndex = 2;
@@ -265,7 +264,7 @@ namespace ActivosFijos.Formularios
             this.GbxAbono.Controls.Add(this.LblValorAbono);
             this.GbxAbono.Controls.Add(this.DtpFechaAbono);
             this.GbxAbono.Controls.Add(this.LblFechaAbono);
-            this.GbxAbono.Location = new System.Drawing.Point(581, 56);
+            this.GbxAbono.Location = new System.Drawing.Point(581, 47);
             this.GbxAbono.Name = "GbxAbono";
             this.GbxAbono.Size = new System.Drawing.Size(294, 86);
             this.GbxAbono.TabIndex = 81;
@@ -327,7 +326,7 @@ namespace ActivosFijos.Formularios
             this.GbxPrestamo.Controls.Add(this.LblNumeroCuotas);
             this.GbxPrestamo.Controls.Add(this.LblValorPrestamo);
             this.GbxPrestamo.Controls.Add(this.TxtNumeroCuotas);
-            this.GbxPrestamo.Location = new System.Drawing.Point(11, 57);
+            this.GbxPrestamo.Location = new System.Drawing.Point(11, 48);
             this.GbxPrestamo.Name = "GbxPrestamo";
             this.GbxPrestamo.Size = new System.Drawing.Size(564, 86);
             this.GbxPrestamo.TabIndex = 80;
@@ -427,24 +426,12 @@ namespace ActivosFijos.Formularios
             this.TxtNumeroCuotas.TabIndex = 78;
             this.TxtNumeroCuotas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // BtnImprimirSolicitud
-            // 
-            this.BtnImprimirSolicitud.BackColor = System.Drawing.Color.OliveDrab;
-            this.BtnImprimirSolicitud.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImprimirSolicitud.ForeColor = System.Drawing.Color.Khaki;
-            this.BtnImprimirSolicitud.Location = new System.Drawing.Point(928, 138);
-            this.BtnImprimirSolicitud.Name = "BtnImprimirSolicitud";
-            this.BtnImprimirSolicitud.Size = new System.Drawing.Size(140, 55);
-            this.BtnImprimirSolicitud.TabIndex = 74;
-            this.BtnImprimirSolicitud.Text = "IMPRIMIR SOLICITUD";
-            this.BtnImprimirSolicitud.UseVisualStyleBackColor = false;
-            // 
             // LblRegistroNombre
             // 
             this.LblRegistroNombre.AutoSize = true;
             this.LblRegistroNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblRegistroNombre.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblRegistroNombre.Location = new System.Drawing.Point(292, 30);
+            this.LblRegistroNombre.Location = new System.Drawing.Point(292, 23);
             this.LblRegistroNombre.Name = "LblRegistroNombre";
             this.LblRegistroNombre.Size = new System.Drawing.Size(72, 20);
             this.LblRegistroNombre.TabIndex = 71;
@@ -455,7 +442,7 @@ namespace ActivosFijos.Formularios
             this.LblObservaciones.AutoSize = true;
             this.LblObservaciones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblObservaciones.ForeColor = System.Drawing.Color.DarkGreen;
-            this.LblObservaciones.Location = new System.Drawing.Point(20, 149);
+            this.LblObservaciones.Location = new System.Drawing.Point(20, 147);
             this.LblObservaciones.Name = "LblObservaciones";
             this.LblObservaciones.Size = new System.Drawing.Size(125, 20);
             this.LblObservaciones.TabIndex = 64;
@@ -465,7 +452,7 @@ namespace ActivosFijos.Formularios
             // 
             this.TxtObservaciones.Enabled = false;
             this.TxtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtObservaciones.Location = new System.Drawing.Point(158, 149);
+            this.TxtObservaciones.Location = new System.Drawing.Point(158, 140);
             this.TxtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtObservaciones.MaxLength = 0;
             this.TxtObservaciones.Multiline = true;
@@ -557,7 +544,7 @@ namespace ActivosFijos.Formularios
             this.CmbNombre.Enabled = false;
             this.CmbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbNombre.FormattingEnabled = true;
-            this.CmbNombre.Location = new System.Drawing.Point(370, 27);
+            this.CmbNombre.Location = new System.Drawing.Point(370, 20);
             this.CmbNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbNombre.Name = "CmbNombre";
             this.CmbNombre.Size = new System.Drawing.Size(505, 28);
@@ -566,18 +553,45 @@ namespace ActivosFijos.Formularios
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.BtnReporte);
             this.groupBox4.Controls.Add(this.CmbFiltroBuscar);
             this.groupBox4.Controls.Add(this.BtnFiltroBuscar);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(10, 219);
+            this.groupBox4.Location = new System.Drawing.Point(10, 208);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(1236, 62);
+            this.groupBox4.Size = new System.Drawing.Size(1236, 70);
             this.groupBox4.TabIndex = 46;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtros:";
+            // 
+            // BtnReporte
+            // 
+            this.BtnReporte.ActiveBorderThickness = 1;
+            this.BtnReporte.ActiveCornerRadius = 20;
+            this.BtnReporte.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnReporte.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnReporte.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnReporte.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnReporte.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnReporte.BackgroundImage")));
+            this.BtnReporte.ButtonText = "REPORTE";
+            this.BtnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnReporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.ForeColor = System.Drawing.Color.DarkGray;
+            this.BtnReporte.IdleBorderThickness = 1;
+            this.BtnReporte.IdleCornerRadius = 20;
+            this.BtnReporte.IdleFillColor = System.Drawing.Color.Black;
+            this.BtnReporte.IdleForecolor = System.Drawing.Color.DarkKhaki;
+            this.BtnReporte.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnReporte.Location = new System.Drawing.Point(1047, 11);
+            this.BtnReporte.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(170, 53);
+            this.BtnReporte.TabIndex = 45;
+            this.BtnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // CmbFiltroBuscar
             // 
@@ -688,7 +702,6 @@ namespace ActivosFijos.Formularios
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TpgRegistro;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button BtnImprimirSolicitud;
         private System.Windows.Forms.Label LblRegistroNombre;
         private System.Windows.Forms.Label LblObservaciones;
         private System.Windows.Forms.TextBox TxtObservaciones;
@@ -723,5 +736,6 @@ namespace ActivosFijos.Formularios
         private System.Windows.Forms.TextBox TxtFiltroEmpleadoBuscar;
         private System.Windows.Forms.Label LblFiltroNombre;
         private System.Windows.Forms.DataGridView DgvEmpleados;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnReporte;
     }
 }
