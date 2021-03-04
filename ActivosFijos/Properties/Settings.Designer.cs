@@ -12,7 +12,7 @@ namespace ActivosFijos.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -35,8 +35,8 @@ namespace ActivosFijos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=SISTEMAS-LP;Port=5432;User Id=postgres;Password=admin;Database=ActivosFijo" +
-            "s")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=192.168.100.10;Port=5432;User Id=postgres;Password=admin;Database=ActivosF" +
+            "ijos")]
         public string ActivosFijosConnectionString {
             get {
                 return ((string)(this["ActivosFijosConnectionString"]));

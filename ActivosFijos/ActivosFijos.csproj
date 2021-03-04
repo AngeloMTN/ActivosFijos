@@ -15,6 +15,21 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <PublishUrl>D:\Proyectos\Visual Studio C-Sharp\ActivosFijos\Instalador\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -119,7 +134,6 @@
     <Compile Include="Clases\ClsQueryPlanCuentas.cs" />
     <Compile Include="Clases\ClsQueryPrestamos.cs" />
     <Compile Include="Clases\ClsQueryProveedores.cs" />
-    <Compile Include="Clases\ClsQueryReportes.cs" />
     <Compile Include="Clases\ClsQueryVacaciones.cs" />
     <Compile Include="Formularios\FrmMainMenu.cs">
       <SubType>Form</SubType>
@@ -187,12 +201,6 @@
     <Compile Include="Formularios\FrmReporteActivos.Designer.cs">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmReportePrestamos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmReportePrestamos.Designer.cs">
-      <DependentUpon>FrmReportePrestamos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmReporteSolicitudVacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,9 +242,6 @@
     <EmbeddedResource Include="Formularios\FrmReporteActivos.resx">
       <DependentUpon>FrmReporteActivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmReportePrestamos.resx">
-      <DependentUpon>FrmReportePrestamos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReporteSolicitudVacaciones.resx">
       <DependentUpon>FrmReporteSolicitudVacaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +256,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\RptActivos.rdlc" />
-    <EmbeddedResource Include="Reportes\RptPrestamos.rdlc" />
     <EmbeddedResource Include="Reportes\RptSolicitudVacaciones.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ActivosFijos.Clases.ClsDatos.datasource" />
@@ -295,7 +299,18 @@
   <ItemGroup>
     <None Include="Imagenes\cuadroestadistico.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

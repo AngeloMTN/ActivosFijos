@@ -591,7 +591,6 @@ namespace ActivosFijos.Formularios
             this.BtnReporte.Size = new System.Drawing.Size(170, 53);
             this.BtnReporte.TabIndex = 45;
             this.BtnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // CmbFiltroBuscar
             // 
